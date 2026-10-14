@@ -15,7 +15,7 @@ function Run-Author([string]$File,[string[]]$Arguments=@()) {
 function Reject-Author([string]$File,[string[]]$Arguments,[string]$Name) {
     $failed=$false;try {Run-Author $File $Arguments} catch {$failed=$true};Check $failed $Name
 }
-foreach ($name in @('New-ReleaseSigningKey.ps1','Configure-Release.ps1','Sign-Release.ps1','Build-Distribution.ps1','Prepare-GitHub.ps1','Bootstrapper.template.ps1','Distribution.Core.ps1','CommandRegistration.ps1','SourceCommandRegistration.ps1','.gitignore','.gitattributes')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $builder}
+foreach ($name in @('New-ReleaseSigningKey.ps1','Configure-Release.ps1','Sign-Release.ps1','Build-Distribution.ps1','Prepare-GitHub.ps1','Bootstrapper.template.ps1','Distribution.Core.ps1','CommandRegistration.ps1','SourceCommandRegistration.ps1','Setup.Core.ps1','QuickLauncher.template.ps1','.gitignore','.gitattributes')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $builder}
 Reject-Author New-ReleaseSigningKey.ps1 @('-Directory',(Join-Path $builder 'keys')) 'Private keys inside the author project are refused'
 Check (-not (Test-Path (Join-Path $builder 'keys'))) 'Refused generation creates no key directory'
 Run-Author New-ReleaseSigningKey.ps1 @('-Directory',$keys)
@@ -54,7 +54,7 @@ Check ($command.Contains('-NoProfile -STA -ExecutionPolicy Bypass -File $p') -an
 # Test the actual generated command from a Restricted parent. Network/hash
 # adapters are mocked; the child is a harmless local fixture, never WinTune.
 $child=Join-Path $test 'child.ps1';$marker=Join-Path $test 'child.json'
-[IO.File]::WriteAllText($child,'param([switch]$CheckOnly) [pscustomobject]@{Policy=[string](Get-ExecutionPolicy);Apartment=[Threading.Thread]::CurrentThread.ApartmentState.ToString();CheckOnly=[bool]$CheckOnly}|ConvertTo-Json|Set-Content -LiteralPath $env:WINTUNE_FIXTURE_MARKER -Encoding UTF8',[Text.UTF8Encoding]::new($true))
+[IO.File]::WriteAllText($child,'param([switch]$CheckOnly,[switch]$Setup) [pscustomobject]@{Policy=[string](Get-ExecutionPolicy);Apartment=[Threading.Thread]::CurrentThread.ApartmentState.ToString();CheckOnly=[bool]$CheckOnly;Setup=[bool]$Setup}|ConvertTo-Json|Set-Content -LiteralPath $env:WINTUNE_FIXTURE_MARKER -Encoding UTF8',[Text.UTF8Encoding]::new($true))
 function Run-CommandFixture([string]$Body,[string]$Hash,[bool]$FailDownload=$false) {
     $setup=@'
 $ErrorActionPreference='Stop'
@@ -78,6 +78,8 @@ $run=Run-CommandFixture ($line+' -CheckOnly') $publishedHash
 if ($run.ExitCode -ne 0) {throw $run.Output}
 $result=Get-Content $marker -Raw | ConvertFrom-Json
 Check ($result.Policy -eq 'Bypass' -and $result.Apartment -eq 'STA' -and $result.CheckOnly -and (Get-Content (Join-Path $test 'parent-policy.txt') -Raw).Trim() -eq 'Restricted') 'Restricted parent can launch verified fixture in a separate STA session without changing parent policy'
+Check (-not $result.Setup) 'Default online command opens the app without registering PATH'
+Check ($command.Contains('irm https://fixture.github.io/WinTune | iex') -and $command.Contains('powershell -NoProfile -Command') -and $command.Contains('irm https://raw.githubusercontent.com/fixture/WinTune/main/get.ps1 | iex')) 'Short Pages command and raw fallback use the configured publisher'
 [IO.File]::Delete($marker)
 $run=Run-CommandFixture ($line+' -CheckOnly') ('0'*64)
 Check ($run.ExitCode -ne 0 -and -not (Test-Path $marker)) 'Checksum mismatch prevents the child from being launched'
@@ -91,6 +93,20 @@ Check ((Get-Content (Join-Path $ready 'PREPARED.json') -Raw|ConvertFrom-Json).Si
 Check (@(Get-ChildItem (Join-Path $ready 'Source') -Recurse -File | Where-Object {$_.Extension -in @('.exe','.dpapi','.zip')}).Count -eq 0) 'Public source folder contains no binaries, archives or private key'
 Check (-not (Test-Path (Join-Path $ready 'Source/simulation-data'))) 'Source preparation excludes unlisted mutable data even after running the portable app'
 Check ((Get-ChildItem (Join-Path $ready 'Release') -File).Count -eq 6 -and (Test-Path (Join-Path $ready 'Source/.gitattributes'))) 'Release assets are separated from source and preserve byte-exact hashes in Git'
+Check ((Get-FileHash (Join-Path $ready 'Source/get.ps1')).Hash -ceq (Get-FileHash (Join-Path $assets 'get.ps1')).Hash) 'Generated get.ps1 enters Source while six release assets remain unchanged'
+Check ((Get-FileHash (Join-Path $ready 'Source/docs/index.html')).Hash -ceq (Get-FileHash (Join-Path $assets 'get.ps1')).Hash -and (Get-Item (Join-Path $ready 'Source/docs/.nojekyll')).Length -eq 0) 'Pages index is byte-identical to the verified entry, with no Jekyll processing'
+$indexPath=Join-Path $assets 'Pages/index.html';$indexBefore=[IO.File]::ReadAllBytes($indexPath)
+[IO.File]::WriteAllText($indexPath,'changed page')
+Reject-Author Prepare-GitHub.ps1 @('-Package',$package,'-Assets',$assets) 'Changed hosted entry is rejected before publishing source'
+[IO.File]::WriteAllBytes($indexPath,$indexBefore)
+$quickBefore=[IO.File]::ReadAllText((Join-Path $assets 'get.ps1'))
+[IO.File]::WriteAllText((Join-Path $assets 'get.ps1'),$quickBefore+' changed')
+Reject-Author Prepare-GitHub.ps1 @('-Package',$package,'-Assets',$assets) 'A modified first-stage entry is rejected during source preparation'
+[IO.File]::WriteAllText((Join-Path $assets 'get.ps1'),$quickBefore,[Text.UTF8Encoding]::new($false))
+$quickPath=Join-Path $assets 'get.ps1';$quickBytes=[IO.File]::ReadAllBytes($quickPath)
+[IO.File]::WriteAllBytes($quickPath,([Text.UTF8Encoding]::new($true).GetPreamble()+$quickBytes))
+Reject-Author Prepare-GitHub.ps1 @('-Package',$package,'-Assets',$assets) 'UTF-8 BOM is refused for the hosted IEX entry'
+[IO.File]::WriteAllBytes($quickPath,$quickBytes)
 $bytes=[IO.File]::ReadAllBytes($manifest);$bytes[$bytes.Length-2]=$bytes[$bytes.Length-2] -bxor 1
 $failed=$false;try {Read-SignedRelease $bytes ([IO.File]::ReadAllBytes($signature)) $cfg 'v0.15.0' | Out-Null} catch {$failed=$true}
 Check $failed 'Modified production-format metadata cannot pass the author verification'

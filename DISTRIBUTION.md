@@ -201,3 +201,15 @@ Gõ wintune / wintune demo / wintune update; CLI và ShellExecute đã thử b�
 fixture PATH trong process. Native Win+R sau đăng ký User PATH vẫn chưa thử;
 Explorer/terminal đang mở có thể giữ PATH cũ và cần mở lại/đăng nhập lại.
 File lệnh/phiên bản cũ/lịch sử giữ khi bỏ đăng ký. Không thử native PATH.
+
+## Thiết lập gọn cho máy khác (0.15.2)
+
+Gói portable có Cai-WinTune.cmd: giải nén và chạy một lần; xác nhận vị trí lưu và thêm lệnh cho tài khoản. Sau đó mở CMD/PowerShell mới từ Start và gõ wintune. Online caller mới truyền -Setup; một xác nhận gộp tải/xác minh, đăng ký và mở. -CheckOnly luôn chỉ đọc. Không thực thi setup khi chỉ mở portable bằng Mo-WinTune.cmd. Không đổi Machine PATH hoặc tự cài dependency. Máy chưa từng nhận bộ WinTune phải thiết lập lần đầu để Windows tìm được tên lệnh. Gói0.15.2 còn local; Release0.15.1 không bị sửa.
+
+## Online một dòng — yêu cầu cập nhật
+
+Người dùng đã yêu cầu dùng cách irm URL | iex giống WinUtil; hạn chế IEX trước đó được thay cho entry chính thức này. get.ps1 nằm trên main, sinh từ QuickLauncher.template cùng SHA launcher của bộ Release. Dùng lệnh ngắn PowerShell hoặc CMD trong ONLINE-COMMAND.txt. Không truyền -Setup/-RegisterCommand; dán lệnh chủ động tải/mở với -Confirmed. Entry đầu tin cậy HTTPS/repository, không được hash-check trước IEX; những bước sau kiểm SHA launcher/RSA manifest/ZIP/resource. Lệnh dài hash-check vẫn giữ, installer offline tùy chọn. Gói app cache theo tài khoản, không cài thêm dependency/PATH/service. Màn hình cập nhật vẫn xác nhận riêng. get.ps1 được sinh sau ZIP và chỉ thêm vào Source qua Prepare-GitHub có kiểm template/hash; không phải runtime cần chép trong portable. Source/get.ps1 và Release0.15.2 chưa công khai.
+
+## URL ngắn GitHub Pages
+
+Địa chỉ chuẩn bị: https://dinhluxury.github.io/WinTune-VI. Builder sinh Pages/index.html cùng byte get.ps1 (UTF-8 không BOM), .nojekyll rỗng. Prepare kiểm cả ba tệp, thêm docs vào Source; không phải runtime ZIP. Bật Pages main /docs một lần theo PUBLISHING.md. IRM theo redirect cuối slash, MIME text/html trả entry nguyên văn; đã kiểm loopback. URL chưa kích hoạt trên GitHub. Phục vụ mã PowerShell tại index.html là chủ đích, không phải trang giao diện. Không thêm HTML/BOM hay Jekyll layout vào tệp này. Raw get.ps1 dự phòng vẫn giữ. Entry đầu dựa HTTPS, không kiểm hash trước IEX, các bước sau giữ SHA/RSA/resources.

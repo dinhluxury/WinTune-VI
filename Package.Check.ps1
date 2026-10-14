@@ -19,6 +19,8 @@ foreach ($line in @(Get-Content -LiteralPath "$package/SHA256.txt" -Encoding UTF
 $code=Get-Content "$package/WinTune.ps1" -Raw -Encoding UTF8
 if (-not $code.Contains('Kiểm tra') -and -not $code.Contains('KIỂM TRA')) { throw 'UTF-8 source check failed.' }
 $started=Get-Date
+& (Join-Path $env:WINDIR 'System32/WindowsPowerShell/v1.0/powershell.exe') -NoProfile -STA -ExecutionPolicy Bypass -File "$package/Install-WinTune.ps1" -CheckOnly
+if ($LASTEXITCODE -ne 0) {throw 'Read-only packaged setup preflight failed.'}
 & (Join-Path $env:WINDIR 'System32/WindowsPowerShell/v1.0/powershell.exe') -NoProfile -STA -ExecutionPolicy Bypass -File "$package/WinTune.ps1" -GuiProbe
 if ($LASTEXITCODE -ne 0) {throw 'Primary PowerShell/WPF package probe failed.'}
 $exeVerified=$true;$exeNote='compiled Demo launcher /probe exit 0'
@@ -39,7 +41,7 @@ $verify=& (Join-Path $env:WINDIR 'System32/WindowsPowerShell/v1.0/powershell.exe
 if ($LASTEXITCODE -ne 0) { throw 'Packaged source verification failed.' }
 $actionTests=& (Join-Path $env:WINDIR 'System32/WindowsPowerShell/v1.0/powershell.exe') -NoProfile -STA -ExecutionPolicy Bypass -File "$package/Actions.Tests.ps1" 2>&1
 if ($LASTEXITCODE -ne 0) { throw 'Packaged action mock tests failed.' }
-foreach ($test in @('Tools.Tests.ps1','Tools.Worker.Tests.ps1','Monitor.Tests.ps1','Theme.Tests.ps1','Usability.Core.Tests.ps1','Registry.Typed.Tests.ps1','Coverage.Tests.ps1','Distribution.Tests.ps1','SourceCommand.Tests.ps1')) {
+foreach ($test in @('Tools.Tests.ps1','Tools.Worker.Tests.ps1','Monitor.Tests.ps1','Theme.Tests.ps1','Usability.Core.Tests.ps1','Registry.Typed.Tests.ps1','Coverage.Tests.ps1','Distribution.Tests.ps1','SourceCommand.Tests.ps1','Setup.Tests.ps1','QuickLauncher.Tests.ps1')) {
     $previousPreference=$ErrorActionPreference
     try {
         $ErrorActionPreference='Continue'

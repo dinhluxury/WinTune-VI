@@ -20,7 +20,7 @@ if ($zipCfg.Repository -cne $cfg.Repository -or $zipCfg.PublicKeyXml -cne $cfg.P
 $output=Join-Path $PSScriptRoot ('release-assets/v'+$v+'-'+[guid]::NewGuid().ToString('N').Substring(0,8));$null=New-Item -ItemType Directory -Path $output -Force
 $trust=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(($cfg|ConvertTo-Json -Compress)))
 $template=[IO.File]::ReadAllText("$PSScriptRoot/Bootstrapper.template.ps1")
-$code=$template.Replace('__TRUST_BASE64__',$trust).Replace('__DISTRIBUTION_CORE__',[IO.File]::ReadAllText("$PSScriptRoot/Distribution.Core.ps1")).Replace('__COMMAND_REGISTRATION__',[IO.File]::ReadAllText("$PSScriptRoot/CommandRegistration.ps1")).Replace('__SOURCE_COMMAND_REGISTRATION__',[IO.File]::ReadAllText("$PSScriptRoot/SourceCommandRegistration.ps1"))
+$code=$template.Replace('__TRUST_BASE64__',$trust).Replace('__DISTRIBUTION_CORE__',[IO.File]::ReadAllText("$PSScriptRoot/Distribution.Core.ps1")).Replace('__COMMAND_REGISTRATION__',[IO.File]::ReadAllText("$PSScriptRoot/CommandRegistration.ps1")).Replace('__SOURCE_COMMAND_REGISTRATION__',[IO.File]::ReadAllText("$PSScriptRoot/SourceCommandRegistration.ps1")).Replace('__SETUP_CORE__',[IO.File]::ReadAllText("$PSScriptRoot/Setup.Core.ps1"))
 $online=Join-Path $output 'WinTune-Online.ps1';[IO.File]::WriteAllText($online,$code,(New-Object Text.UTF8Encoding($true)))
 Copy-Item -LiteralPath $Zip -Destination $output
 $m=[pscustomobject]@{Schema=1;Repository=$cfg.Repository;Version=$v;Architecture='x64';MinimumBuild=$versionInfo.MinimumBuild;Asset=[IO.Path]::GetFileName($Zip);Size=(Get-Item -LiteralPath $Zip).Length;SHA256=(Get-FileHash -LiteralPath $Zip).Hash}
@@ -28,7 +28,19 @@ $m=[pscustomobject]@{Schema=1;Repository=$cfg.Repository;Version=$v;Architecture
 $hash=(Get-FileHash -LiteralPath $online).Hash
 $url='https://github.com/'+$(if ($cfg.Repository) {$cfg.Repository} else {'OWNER/REPOSITORY'})+'/releases/download/v'+$v+'/WinTune-Online.ps1'
 $command='$p=Join-Path $env:TEMP (''WinTune-''+[guid]::NewGuid().ToString(''N'')+''.ps1''); Invoke-WebRequest -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop -Uri '''+$url+''' -OutFile $p; if((Get-FileHash -LiteralPath $p -Algorithm SHA256 -ErrorAction Stop).Hash -cne '''+$hash+'''){throw ''Checksum bootstrapper sai''}; & (Join-Path $env:WINDIR ''System32\WindowsPowerShell\v1.0\powershell.exe'') -NoProfile -STA -ExecutionPolicy Bypass -File $p'
-$notice="Mở WinTune VI bằng PowerShell. Lấy lệnh này từ kênh tin cậy của tác giả; SHA256 bootstrapper ghim trong lệnh. Tải ra file, xác minh rồi mở phiên PowerShell riêng; không đổi ExecutionPolicy của tài khoản hoặc toàn máy. Bootstrapper tiếp tục kiểm tra chữ ký manifest và ZIP, hỏi DONG Y trước khi tải/khởi chạy. Lệnh dùng được sau khi tác giả công khai bản stable với đủ asset đã ký. Không dùng irm | iex.`r`n`r`n"+$command
+$quickCode=[IO.File]::ReadAllText("$PSScriptRoot/QuickLauncher.template.ps1").Replace('__BOOTSTRAP_URL__',$url).Replace('__BOOTSTRAP_SHA256__',$hash)
+# HTTP IEX retains a UTF-8 BOM as a token; hosted entries must be BOM-free.
+[IO.File]::WriteAllText((Join-Path $output 'get.ps1'),$quickCode,[Text.UTF8Encoding]::new($false))
+$repository=$(if ($cfg.Repository) {$cfg.Repository} else {'OWNER/REPOSITORY'})
+$parts=$repository.Split('/')
+$quickUrl='https://'+$parts[0].ToLowerInvariant()+'.github.io/'+$parts[1]
+$pages=Join-Path $output 'Pages';$null=New-Item -ItemType Directory -Path $pages
+Copy-Item -LiteralPath (Join-Path $output 'get.ps1') -Destination (Join-Path $pages 'index.html')
+[IO.File]::WriteAllText((Join-Path $pages '.nojekyll'),'', [Text.UTF8Encoding]::new($false))
+$short='irm '+$quickUrl+' | iex'
+$cmd='powershell -NoProfile -Command "'+$short+'"'
+$raw='irm https://raw.githubusercontent.com/'+$repository+'/main/get.ps1 | iex'
+$notice="Mở PowerShell hoặc Windows Terminal (tab PowerShell), rồi dán lệnh ngắn bên dưới. Mở online trên máy mới, không đăng ký PATH hay cài dependency. Entry đầu tin cậy HTTPS của GitHub Pages, chưa được kiểm hash trước IEX. Sau đó giữ SHA launcher/RSA manifest/ZIP/resource. Chỉ hoạt động sau khi Source/docs đã lên main, GitHub Pages được bật từ main /docs và Release stable đã công khai.`r`n`r`nLỆNH NGẮN:`r`n"+$short+"`r`n`r`nCMD (tùy chọn):`r`n"+$cmd+"`r`n`r`nLINK RAW DỰ PHÒNG:`r`n"+$raw+"`r`n`r`nLỆNH GHIM HASH TRƯỚC KHI CHẠY (tùy chọn):`r`n"+$command
 [IO.File]::WriteAllText((Join-Path $output 'ONLINE-COMMAND.txt'),$notice,(New-Object Text.UTF8Encoding($true)))
 [IO.File]::WriteAllText((Join-Path $output 'WinTune-Online.ps1.sha256'),$hash,(New-Object Text.UTF8Encoding($true)))
 $output | Set-Content "$PSScriptRoot/release-assets/LATEST.txt" -Encoding UTF8

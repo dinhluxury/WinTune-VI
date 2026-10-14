@@ -1,8 +1,18 @@
-﻿WINTUNE VI 0.15.1 — HƯỚNG DẪN NGẮN
+﻿WINTUNE VI 0.15.2 — HƯỚNG DẪN NGẮN
 
 Giải nén hoặc chép TOÀN BỘ thư mục ứng dụng sang Desktop, rồi mở
 Mo-WinTune.cmd. Mo-Ban-Mo-Phong.cmd chỉ mô phỏng, không thay đổi Windows.
 Giữ các file cạnh nhau. Hỗ trợ Windows 11 x64, Windows PowerShell 5.1.
+
+MỞ OFFLINE BẰNG TÊN WINTUNE (TÙY CHỌN)
+Chạy Cai-WinTune.cmd một lần và xác nhận. Sau đó mở CMD/PowerShell
+mới từ Start, gõ wintune. Không phải vào app đăng ký riêng.
+Nếu Terminal đã mở, đóng cả cửa sổ Terminal rồi mở lại.
+
+ONLINE MỘT DÒNG (SAU KHI PHÁT HÀNH 0.15.2)
+Dùng dòng PowerShell hoặc CMD trong ONLINE-COMMAND.txt. Không cần đăng
+ký PATH hay cài dependency. Chỉ dùng URL repository chính thức; get.ps1
+đầu tiên chạy qua IEX/HTTPS, những bước sau kiểm hash và chữ ký.
 
 TỔNG QUAN
 CPU, RAM, GPU, ổ đĩa và thông tin Windows. Bảng 10 tiến trình dùng RAM

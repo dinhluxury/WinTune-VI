@@ -249,4 +249,14 @@ Tham khảo trải nghiệm khởi chạy của WinUtil, viết riêng bootstrap
 
 ## Phân phối 0.15.1
 
-Sau khi EXE chưa ký bị Application Control chặn, PowerShell/WPF được chọn làm lối mở chính ngay từ đầu; không tự fallback hoặc đổi chính sách khi bị từ chối. Đăng ký mới dùng CMD và reader PowerShell qua User PATH, không tạo App Paths; vẫn hỗ trợ gỡ/khắc phục receipt cũ. Reader xác minh pointer UTF-8, đường dẫn và checksum trước khi nạp module. Bộ 0.15.1 được chuẩn bị local; chưa phát hành. Các tính năng Windows trong bảng giữ nguyên.
+Sau khi EXE chưa ký bị Application Control chặn, PowerShell/WPF được chọn làm lối mở chính ngay từ đầu; không tự fallback hoặc đổi chính sách khi bị từ chối. Đăng ký mới dùng CMD và reader PowerShell qua User PATH, không tạo App Paths; vẫn hỗ trợ gỡ/khắc phục receipt cũ. Reader xác minh pointer UTF-8, đường dẫn và checksum trước khi nạp module. Người dùng đã phát hành 0.15.1; checksum và chữ ký tải thật đã được xác minh. Các tính năng Windows trong bảng giữ nguyên.
+
+## Phân phối 0.15.2
+
+Thiết lập một lần trên máy/tài khoản mới bằng Cai-WinTune.cmd hoặc caller -Setup. Dùng lại installer/receipt User PATH có kiểm tra; một xác nhận gộp thiết lập và mở. Sau đó gõ wintune. Không tự đổi PATH khi mở portable thuần hoặc -CheckOnly, không bỏ chữ ký/checksum để rút ngắn lệnh tải. Windows cần biết vị trí chương trình lần đầu; chưa phát hành 0.15.2 và chưa thử cài thật trên PC thứ hai. Các tính năng Windows trong bảng giữ nguyên.
+
+## Online một dòng — thay đổi yêu cầu
+
+Người dùng yêu cầu irm URL | iex giống WinUtil, thay hạn chế IEX cho entry chính thức. get.ps1 sinh theo bộ Release, trên main; default gọi launcher -Confirmed, không -Setup/-RegisterCommand. Cache app theo tài khoản, giữ kiểm SHA launcher/RSA manifest/ZIP/resource. Entry đầu dựa vào HTTPS/repository, chưa kiểm hash trước IEX. Cài offline/PATH chỉ là tùy chọn. Không lấy mã launcher upstream. Chưa đẩy entry hoặc publish0.15.2; Source và Release cùng bộ cần được đưa lên trước khi sử dụng.
+
+URLngắn chuẩn bị qua GitHub Pages projectsite: https://dinhluxury.github.io/WinTune-VI. ChỉhostentryPowerShellkhôngBOM trongdocs/index.html+nojekyll. Khôngdùngshortenerbênngoài/customdomain, khôngcopycodeWinUtil. Raw fallbackgiữ. Loopback5 kiểmredirect/htmlMIME/IEX antoàn; Pageslive chưa bật. Bậtmain /docs theoGitHubDocs,khôngtựpublish.

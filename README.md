@@ -1,8 +1,8 @@
-﻿# WinTune VI 0.15.1
+﻿# WinTune VI 0.15.2
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
-Nguồn/cập nhật ghim khóa công khai RSA3072; bộ tải có manifest ký. 0.15.0 đã được người dùng phát hành;0.15.1 đang chuẩn bị. Release
+Nguồn/cập nhật ghim khóa công khai RSA3072; bộ tải có manifest ký. 0.15.1 đã được người dùng phát hành;0.15.2 đang chuẩn bị. Release
 chỉ có sau khi tác giả chủ động đăng. [PUBLISHING.md](PUBLISHING.md) hướng
 dẫn đưa mã và bộ phát hành lên GitHub; [DISTRIBUTION.md](DISTRIBUTION.md)
 giải thích tải/cập nhật có xác nhận và đăng ký lệnh `wintune`.
@@ -10,6 +10,41 @@ Giữ các tính năng và dữ liệu của 0.14; giao diện gọn theo cách 
 Win11Debloat. Không có preset tăng FPS/RAM hoặc thay bảo mật để giảm tiến trình.
 
 ## Mở ứng dụng
+
+**Online — mở bằng một dòng trên máy mới:**
+
+PowerShell:
+
+```powershell
+irm https://dinhluxury.github.io/WinTune-VI | iex
+```
+
+CMD:
+
+```bat
+powershell -NoProfile -Command "irm https://dinhluxury.github.io/WinTune-VI | iex"
+```
+
+Lệnh ngắn hoạt động sau khi Source/docs được đẩy lên main, GitHub Pages
+được bật từ main /docs và Release 0.15.2 stable đã công khai. Hiện các phần
+này còn local/chưa bật. Chỉ dùng URL chính thức. Raw get.ps1 vẫn được giữ
+trong ONLINE-COMMAND.txt để dùng khi Pages chưa sẵn sàng.
+Dán lệnh là yêu cầu tải và mở app: không có bước đăng ký PATH, không cần
+cài dependency và không tự áp dụng tinh chỉnh. Gói app được lưu trong
+cache WinTune của tài khoản; không tạo shortcut hoặc thay Machine PATH.
+
+Theo yêu cầu mới của người dùng, lệnh ngắn dùng IEX cho get.ps1 đầu tiên
+và tin cậy repository qua HTTPS. Hash đầu vào get.ps1 chưa được kiểm trước
+IEX. Các bước sau vẫn ghim SHA256 launcher, chữ ký RSA manifest/ZIP và
+checksum tài nguyên. ONLINE-COMMAND.txt cũng giữ lệnh dài kiểm hash trước
+khi chạy để tự chọn; không đồng nhất hai mức xác minh.
+
+**Tùy chọn mở offline bằng tên wintune:** chạy Cai-WinTune.cmd một lần,
+xác nhận thêm User PATH rồi mở CMD/PowerShell mới từ Start. Đăng ký lệnh
+là tùy chọn riêng, không bắt buộc khi dùng online. Không tự tải cập nhật
+trong app; màn hình cập nhật vẫn cần xác nhận của người dùng.
+
+**Muốn dùng portable ngay:**
 
 1. Giải nén **toàn bộ** gói portable vào thư mục có quyền ghi.
 2. Mở **Mo-WinTune.cmd** (PowerShell/WPF). Thử mô phỏng bằng **Mo-Ban-Mo-Phong.cmd** trước. EXE là lựa chọn riêng khi chính sách Windows cho phép.

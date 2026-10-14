@@ -366,3 +366,16 @@ qua PowerShell/WPF và xác nhận; không coi đó là test gỡ/cài/repair m�
 Đợt cấu hình repository:715 assertions đạt (695 bài cũ, gồm WPF238,
 +20 author). Public source chỉ lấy file đã liệt kê trong checksum; không
 đưa simulation-data hoặc file phát sinh sau khi chạy vào Source.
+
+## 0.15.2 — thiết lập một lần
+
+Setup22 đạt: mọi installer/PATH/Start-Process mock. Xác nhận duy nhất, hủy trước ghi, lỗi truy cập/đăng ký/tệp/launch, NoOp, từ chối App Paths cũ/khác, tham số đường dẫn, -Setup -CheckOnly chỉ đọc. Template bootstrap thật được kiểm với provider giả; bản đã cài mới hơn release vẫn mở theo version của chính nó, không downgrade. Author25 đạt; caller ghim hash/host và truyền -Setup. Source17 kiểm CLI/PATH riêng trong process; Distribution74 giữ undo/receipt. Native cài/đăng ký máy thứ hai chưa thử. Hồi quy dùng bộ trước + setup mới; không thay đổi Windows thật. Package.Check thêm preflight Install-WinTune.ps1 -CheckOnly.
+
+
+## Online ngắn — 0.15.2
+
+QuickLauncher10 đạt: thực thi đúng cú pháp irm/iex từ template local đã biết với cả hai HTTP provider giả, child Microsoft PowerShell là fixture vô hại. Kiểm -Confirmed không setup/PATH, STA, parent Restricted giữ nguyên, CheckOnly, checksum sai, mạng lỗi, child lỗi và cleanup file tạm. Không thực thi mã Internet trong test. Bộ sinh/Prepare kiểm get.ps1 theo template và SHA launcher; get.ps1 là entry sinh thêm vào Source, không nằm trong runtime ZIP. Dòng CMD bao PowerShell -Command, không giả định CMD có alias irm/iex. Online endpoint chưa live vì Source/get.ps1 chưa được push và Release0.15.2 chưa publish. App/Windows operations vẫn mock; WPF và package checks là kiểm riêng.
+
+## GitHub Pages entry
+
+Pages.Serving.Tests5 đạt riêng: TCP listener chỉ127.0.0.1, redirect không slash→slash, text/html UTF8 được IRM trảstring, IEX của entry localknown chỉ chạychildfixture vôhại; dọnfiletạm vàđónglistener/hoàntrảenvprocess. Khôngfirewall/PATH/registry/Internet. Lượt sandbox mặc định không nối loopback; lượt có quyền networklocal đã đạt. Thử đầu BOM gây IEX lỗi, đã sửa builder tạo get/index UTF8noBOM, Prepare từ chối BOM. Bài này chạy riêng, không giả định sandbox Package.Check có TCPloopback. Author kiểm byte index/get, nojekyll và từ chối index đổi/BOM; GitHubPageslive chưa kiểm. Publisher phải bật main /docs và chờ workflow, không tự bật trong kiểm thử.

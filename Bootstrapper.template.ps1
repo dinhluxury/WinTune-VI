@@ -1,11 +1,12 @@
 ﻿#Requires -Version 5.1
-param([switch]$CheckOnly,[switch]$RegisterCommand,[switch]$Confirmed)
+param([switch]$CheckOnly,[switch]$RegisterCommand,[switch]$Confirmed,[switch]$Setup)
 $ErrorActionPreference='Stop'
 # Replaced only by the local build, never by Internet input.
 $script:BootstrapTrust=ConvertFrom-Json ([Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('__TRUST_BASE64__')))
 __DISTRIBUTION_CORE__
 __COMMAND_REGISTRATION__
 __SOURCE_COMMAND_REGISTRATION__
+__SETUP_CORE__
 try {
     Assert-ReleaseTrust $script:BootstrapTrust
     $root=Get-WinTuneInstallRoot
@@ -18,6 +19,13 @@ try {
     $info=Get-DistributionUpdate $script:BootstrapTrust $current
     Write-Host ("Đã cài: $current; bản stable đã xác minh: "+$info.Manifest.Version)
     if ($CheckOnly) {return}
+    if ($Setup) {
+        Write-Host (Get-WinTuneSetupText $info.Manifest.Version $root)
+        if (-not $Confirmed -and (Read-Host 'Thiết lập lệnh wintune và mở ứng dụng? Gõ DONG Y') -cne 'DONG Y') {Write-Host 'Đã hủy trước khi tải hoặc đăng ký.';return}
+        $Confirmed=$true
+        $RegisterCommand=$true
+        if ((Get-UserCommandRegistration).AppExists) {throw 'Có lệnh wintune kiểu cũ hoặc của ứng dụng khác. Bỏ đăng ký cũ trước; không ghi đè.'}
+    }
     if ($info.Status -eq 'Available') {
         if (-not $Confirmed) {
             Write-Host ("Sẽ tải "+$info.Manifest.Size+" byte từ "+$info.ReleaseUrl)
@@ -29,14 +37,14 @@ try {
         if (-not $Confirmed -and (Read-Host 'Mở bản đã cài? Gõ DONG Y') -cne 'DONG Y') {return}
         Test-PortableIntegrity $path $current
     }
-    if ($RegisterCommand) {Register-WinTuneCommand $path $root $true | Write-Host}
+    if ($RegisterCommand) {
+        $registration=Register-WinTuneCommand $path $root $true
+        if ($registration.Status -notin @('Registered','NoOp')) {throw 'Chưa xác minh được lệnh wintune; chưa mở app.'}
+        Write-Host 'Đã thiết lập lệnh wintune. Từ lần sau chỉ cần gõ wintune trong CMD hoặc PowerShell.'
+    }
     # PowerShell/WPF is the primary online entry, never a fallback after a denial.
     # Windows still enforces policy on this host, scripts and dependent assemblies.
-    Test-PortableIntegrity $path $info.Manifest.Version
-    $hostExe=Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe'
-    $entry=Join-Path $path 'WinTune.ps1'
-    if ($entry.Contains('"')) {throw 'Đường dẫn khởi chạy không hợp lệ.'}
-    Start-Process -FilePath $hostExe -ArgumentList ('-NoLogo -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File "'+$entry+'"') -WorkingDirectory $path
+    Start-VerifiedWinTuneApp $path (Get-WinTuneVersion $path).Version
 } catch {
     $reason=$_.Exception.Message
     if ($reason -match 'Application Control|code integrity|digital signature') {

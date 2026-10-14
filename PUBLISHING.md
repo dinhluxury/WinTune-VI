@@ -6,7 +6,7 @@ Việc chuẩn bị chỉ tạo file local, chưa đưa gì lên GitHub hoặc p
 
 ## 1. Đưa mã nguồn lên bằng GitHub Desktop
 
-Nếu đã clone repository và phát hành 0.15.0, dùng lại thư mục Git đó;
+Nếu đã clone repository và phát hành 0.15.1, dùng lại thư mục Git đó;
 bỏ qua bước 1–3. Chỉ chép Source mới, commit và Push origin.
 
 1. Tải [GitHub Desktop chính thức](https://desktop.github.com/download/), mở và đăng nhập tài khoản **dinhluxury**.
@@ -15,22 +15,33 @@ bỏ qua bước 1–3. Chỉ chép Source mới, commit và Push origin.
    Không chọn thư mục phát triển cũ đang có nhiều ZIP/ISO/bản thử.
 4. Mở thư mục `Source` trong bộ `github-ready` đã chuẩn bị. Chép **nội dung bên trong Source** vào thư mục vừa clone. Chép cả `.gitignore` và `.gitattributes`, giữ nguyên `.git` của GitHub Desktop.
 5. Quay lại GitHub Desktop, xem danh sách thay đổi. Bộ Source gồm mã, XAML, JSON, tài liệu, license và snapshot tham khảo chỉ đọc. Không có EXE/ZIP/ISO, lịch sử máy hay khóa riêng.
-6. Điền Summary: `WinTune VI 0.15.1: ứng dụng và hệ thống phân phối`, bấm **Commit to main**, rồi **Push origin** (hoặc **Publish branch** nếu nhánh main chưa có trên GitHub).
+6. Điền Summary: `WinTune VI 0.15.2: ứng dụng và hệ thống phân phối`, bấm **Commit to main**, rồi **Push origin** (hoặc **Publish branch** nếu nhánh main chưa có trên GitHub).
 7. Mở lại repository trên web để kiểm tra README và các file đã xuất hiện.
+
+Source có **get.ps1** ở thư mục gốc và **docs/index.html**, **docs/.nojekyll**.
+Entry được sinh theo hash launcher trong đúng bộ Release; index.html là
+cùng mã PowerShell để phục vụ cho URL ngắn. Không sửa nội dung hoặc thêm
+BOM/HTML vào index.html. Chép toàn bộ Source đã chuẩn bị.
+
+Để bật URL ngắn một lần: mở Settings → Pages của repository, chọn Source
+**Deploy from a branch**, Branch **main**, Folder **/docs**, rồi **Save**.
+Sau khi workflow Pages hoàn tất, URL là https://dinhluxury.github.io/WinTune-VI.
+Nguồn: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site.
+Lệnh mở chỉ dùng khi Pages đã phục vụ đúng entry và Release mới công khai.
 
 [Hướng dẫn clone của GitHub](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop).
 Không cần tải EXE/ZIP lên danh sách mã nguồn. Các gói tải nằm trong Releases.
 
-## 2. Tạo bản phát hành 0.15.1
+## 2. Tạo bản phát hành 0.15.2
 
 Làm sau khi mã nguồn đã lên repository:
 
 1. Mở [tạo Release](https://github.com/dinhluxury/WinTune-VI/releases/new).
-2. **Choose a tag:** gõ `v0.15.1`, chọn tạo tag mới. **Target:** `main` với commit vừa đưa lên.
-3. **Release title:** `WinTune VI 0.15.1`.
+2. **Choose a tag:** gõ `v0.15.2`, chọn tạo tag mới. **Target:** `main` với commit vừa đưa lên.
+3. **Release title:** `WinTune VI 0.15.2`.
 4. Mở `RELEASE-NOTES.md` trong bộ `github-ready`, chép nội dung vào phần mô tả.
 5. Kéo **6 file bên trong thư mục Release** vào ô đính kèm, giữ nguyên tên:
-   - `WinTune-VI-v0.15.1-portable.zip`
+   - `WinTune-VI-v0.15.2-portable.zip`
    - `WinTune-Online.ps1`
    - `WinTune-Online.ps1.sha256`
    - `release.json`
@@ -83,3 +94,5 @@ mã riêng. Không dùng trình chọn license của GitHub để thay thế ch�
 Chữ ký manifest RSA là cơ chế xác minh của WinTune, không phải chữ ký
 Authenticode của EXE. Không thay chính sách Application Control hoặc tắt
 bảo mật Windows để phát hành/chạy thử.
+
+Sau khi Source/get.ps1 và Release cùng phiên bản đã công khai, tải entry từ URL raw và đối chiếu Source/get.ps1 đã chuẩn bị trước khi thử. Có thể chạy bản local đã xác minh với -CheckOnly để chỉ kiểm metadata; không thử mở mặc định trong bài tự động vì nó chủ động tải và mở app. Entry đầu IEX tin cậy qua HTTPS; bản dài vẫn giữ hash-check trước chạy.
