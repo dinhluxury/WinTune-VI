@@ -4,6 +4,31 @@ Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/
 Mã nguồn và bộ tải đã chuẩn bị tại thư mục ghi trong `github-ready/LATEST.txt`.
 Việc chuẩn bị chỉ tạo file local, chưa đưa gì lên GitHub hoặc phát hành.
 
+## Bổ sung entry CMD cho bản 0.15.2 đã phát hành
+
+Không thay 6 asset hoặc tag v0.15.2. Dùng bộ Source đã chuẩn bị mới nhất:
+
+```powershell
+.\Build-CmdLauncher.ps1 -Prepared .\github-ready\v0.15.2-dc6f7c74
+```
+
+Đường dẫn bộ mới được ghi riêng trong `github-ready/CMD-LATEST.txt`.
+Chép nội dung `Source` trong bộ đó vào repository đã clone, xem thay đổi,
+Commit rồi Push origin. Bộ này thêm `docs/run.cmd`, template, công cụ tạo
+launcher và bài kiểm thử; mã ứng dụng và entry PowerShell cũ giữ nguyên.
+Pages main /docs đã bật sẽ tự cập nhật. Không cần tạo Release mới.
+
+Sau khi Pages deploy thành công, tải `run.cmd`, đối chiếu SHA256 với
+`PREPARED.json` trong bộ mới rồi kiểm tra `--check-only` từ CMD. Chế độ này
+không mở ứng dụng, tải ZIP hay thay PATH. Thử mở ứng dụng trên PC mới là
+bước riêng; không coi kiểm thử metadata/mock là bảo đảm mọi PC cho chạy.
+Nếu Defender/App Control chặn, dừng; không đổi host/câu lệnh để né nhận diện.
+Cách tải thành file và kiểm hash có mục đích làm nguồn thực thi reviewable,
+không phải che dấu lệnh. Không dùng lại wrapper CMD `irm | iex` đã bị chặn.
+
+Entry batch đầu tiên tin cậy HTTPS của GitHub Pages; chưa được hash-check
+trước khi chạy. Không sửa byte template/entry đã kiểm tra khi đưa lên Git.
+
 ## 1. Đưa mã nguồn lên bằng GitHub Desktop
 
 Nếu đã clone repository và phát hành 0.15.1, dùng lại thư mục Git đó;

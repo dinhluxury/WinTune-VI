@@ -38,9 +38,9 @@ $pages=Join-Path $output 'Pages';$null=New-Item -ItemType Directory -Path $pages
 Copy-Item -LiteralPath (Join-Path $output 'get.ps1') -Destination (Join-Path $pages 'index.html')
 [IO.File]::WriteAllText((Join-Path $pages '.nojekyll'),'', [Text.UTF8Encoding]::new($false))
 $short='irm '+$quickUrl+' | iex'
-$cmd='powershell -NoProfile -Command "'+$short+'"'
+$cmd='curl.exe -q -fL --proto =https --proto-redir =https -o "%TEMP%\wintune.cmd" '+$quickUrl+'/run.cmd && "%TEMP%\wintune.cmd"'
 $raw='irm https://raw.githubusercontent.com/'+$repository+'/main/get.ps1 | iex'
-$notice="Mở PowerShell hoặc Windows Terminal (tab PowerShell), rồi dán lệnh ngắn bên dưới. Mở online trên máy mới, không đăng ký PATH hay cài dependency. Entry đầu tin cậy HTTPS của GitHub Pages, chưa được kiểm hash trước IEX. Sau đó giữ SHA launcher/RSA manifest/ZIP/resource. Chỉ hoạt động sau khi Source/docs đã lên main, GitHub Pages được bật từ main /docs và Release stable đã công khai.`r`n`r`nLỆNH NGẮN:`r`n"+$short+"`r`n`r`nCMD (tùy chọn):`r`n"+$cmd+"`r`n`r`nLINK RAW DỰ PHÒNG:`r`n"+$raw+"`r`n`r`nLỆNH GHIM HASH TRƯỚC KHI CHẠY (tùy chọn):`r`n"+$command
+$notice="Mở PowerShell hoặc Windows Terminal (tab PowerShell), rồi dán lệnh ngắn bên dưới. Mở online trên máy mới, không đăng ký PATH hay cài dependency. Entry đầu tin cậy HTTPS của GitHub Pages, chưa được kiểm hash trước IEX. Sau đó giữ SHA launcher/RSA manifest/ZIP/resource. Chỉ hoạt động sau khi Source/docs đã lên main, GitHub Pages được bật từ main /docs và Release stable đã công khai.`r`n`r`nLỆNH NGẮN POWERSHELL:`r`n"+$short+"`r`n`r`nCMD (cần Build-CmdLauncher và docs/run.cmd đã được đưa lên Pages):`r`n"+$cmd+"`r`nEntry CMD đầu tin cậy HTTPS; batch kiểm SHA256 ghim của file bootstrapper trước khi chạy. Nếu Windows chặn, dừng, không tắt Defender hay thêm ngoại lệ.`r`n`r`nLINK RAW DỰ PHÒNG:`r`n"+$raw+"`r`n`r`nLỆNH GHIM HASH TRƯỚC KHI CHẠY (tùy chọn):`r`n"+$command
 [IO.File]::WriteAllText((Join-Path $output 'ONLINE-COMMAND.txt'),$notice,(New-Object Text.UTF8Encoding($true)))
 [IO.File]::WriteAllText((Join-Path $output 'WinTune-Online.ps1.sha256'),$hash,(New-Object Text.UTF8Encoding($true)))
 $output | Set-Content "$PSScriptRoot/release-assets/LATEST.txt" -Encoding UTF8

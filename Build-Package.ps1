@@ -38,6 +38,7 @@ foreach ($file in @('New-ReleaseSigningKey.ps1','Configure-Release.ps1','Sign-Re
 foreach ($file in @('SourceCommandRegistration.ps1','CommandRouter.ps1','Wintune.Registered.cmd','SourceCommand.Tests.ps1','CHANGELOG-v0.15.1.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 foreach ($file in @('Setup.Core.ps1','Install-WinTune.ps1','Cai-WinTune.cmd','Setup.Tests.ps1','CHANGELOG-v0.15.2.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 foreach ($file in @('QuickLauncher.template.ps1','QuickLauncher.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
+foreach ($file in @('CmdLauncher.template.cmd','Build-CmdLauncher.ps1','CmdLauncher.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'Pages.Serving.Tests.ps1') -Destination $portable -Force
 if ($PublicRelease) {
     $publicProgress="# Tiến độ bản public`r`n`r`nWinTune VI $packageVersion. Mã nguồn và manifest ký đã được chuẩn bị local cho`r`nrepository dinhluxury/WinTune-VI. Không tự upload hoặc phát hành.`r`n`r`nXem CHANGELOG-v$packageVersion.md và KIEM-THU.md về kiểm thử/giới hạn;`r`nPUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.`r`nNhật ký/ảnh kiểm thử riêng của máy không được phân phối trong gói public.`r`n"

@@ -2,8 +2,8 @@
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
-Nguồn/cập nhật ghim khóa công khai RSA3072; bộ tải có manifest ký. 0.15.1 đã được người dùng phát hành;0.15.2 đang chuẩn bị. Release
-chỉ có sau khi tác giả chủ động đăng. [PUBLISHING.md](PUBLISHING.md) hướng
+Nguồn/cập nhật ghim khóa công khai RSA3072; bộ tải có manifest ký. Bản 0.15.2
+đã được tác giả phát hành. [PUBLISHING.md](PUBLISHING.md) hướng
 dẫn đưa mã và bộ phát hành lên GitHub; [DISTRIBUTION.md](DISTRIBUTION.md)
 giải thích tải/cập nhật có xác nhận và đăng ký lệnh `wintune`.
 Giữ các tính năng và dữ liệu của 0.14; giao diện gọn theo cách tổ chức Windows Settings, có trang theo dõi máy. Các công cụ viết riêng, chỉ tham khảo có chọn lọc WinUtil và
@@ -19,23 +19,26 @@ PowerShell:
 irm https://dinhluxury.github.io/WinTune-VI | iex
 ```
 
-CMD:
+CMD trên máy Windows 11 mới:
 
 ```bat
-powershell -NoProfile -Command "irm https://dinhluxury.github.io/WinTune-VI | iex"
+curl.exe -q -fL --proto =https --proto-redir =https -o "%TEMP%\wintune.cmd" https://dinhluxury.github.io/WinTune-VI/run.cmd && "%TEMP%\wintune.cmd"
 ```
 
-Lệnh ngắn hoạt động sau khi Source/docs được đẩy lên main, GitHub Pages
-được bật từ main /docs và Release 0.15.2 stable đã công khai. Hiện các phần
-này còn local/chưa bật. Chỉ dùng URL chính thức. Raw get.ps1 vẫn được giữ
-trong ONLINE-COMMAND.txt để dùng khi Pages chưa sẵn sàng.
+Lệnh CMD dùng entry `run.cmd` riêng: tải file bootstrapper, kiểm SHA256 ghim
+rồi mới chạy file đã đối chiếu. Lệnh chỉ sẵn sàng sau khi tác giả đưa entry
+CMD mới lên GitHub Pages; bản 0.15.2 và entry PowerShell đã công khai.
+Không dùng lại cách gọi `powershell -Command` chứa `irm | iex` từ CMD:
+Defender đã chặn cách gọi đó trên máy kiểm tra. Nếu Windows chặn bất kỳ
+launcher/file nào, dừng lại; không tắt Defender hoặc thêm ngoại lệ.
+Chỉ dùng URL chính thức. Raw get.ps1 vẫn được giữ trong ONLINE-COMMAND.txt.
 Dán lệnh là yêu cầu tải và mở app: không có bước đăng ký PATH, không cần
 cài dependency và không tự áp dụng tinh chỉnh. Gói app được lưu trong
 cache WinTune của tài khoản; không tạo shortcut hoặc thay Machine PATH.
 
-Theo yêu cầu mới của người dùng, lệnh ngắn dùng IEX cho get.ps1 đầu tiên
-và tin cậy repository qua HTTPS. Hash đầu vào get.ps1 chưa được kiểm trước
-IEX. Các bước sau vẫn ghim SHA256 launcher, chữ ký RSA manifest/ZIP và
+Entry đầu tiên của cả hai cách tin cậy repository qua HTTPS. Entry CMD
+không dùng IEX/EncodedCommand. Hash của entry HTTP đầu tiên chưa được kiểm
+trước khi chạy. Các bước sau vẫn ghim SHA256 launcher, chữ ký RSA manifest/ZIP và
 checksum tài nguyên. ONLINE-COMMAND.txt cũng giữ lệnh dài kiểm hash trước
 khi chạy để tự chọn; không đồng nhất hai mức xác minh.
 

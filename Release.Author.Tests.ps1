@@ -79,7 +79,7 @@ if ($run.ExitCode -ne 0) {throw $run.Output}
 $result=Get-Content $marker -Raw | ConvertFrom-Json
 Check ($result.Policy -eq 'Bypass' -and $result.Apartment -eq 'STA' -and $result.CheckOnly -and (Get-Content (Join-Path $test 'parent-policy.txt') -Raw).Trim() -eq 'Restricted') 'Restricted parent can launch verified fixture in a separate STA session without changing parent policy'
 Check (-not $result.Setup) 'Default online command opens the app without registering PATH'
-Check ($command.Contains('irm https://fixture.github.io/WinTune | iex') -and $command.Contains('powershell -NoProfile -Command') -and $command.Contains('irm https://raw.githubusercontent.com/fixture/WinTune/main/get.ps1 | iex')) 'Short Pages command and raw fallback use the configured publisher'
+Check ($command.Contains('irm https://fixture.github.io/WinTune | iex') -and $command.Contains('curl.exe -q -fL --proto =https --proto-redir =https') -and $command.Contains('https://fixture.github.io/WinTune/run.cmd') -and $command.Contains('irm https://raw.githubusercontent.com/fixture/WinTune/main/get.ps1 | iex') -and -not $command.Contains('powershell -NoProfile -Command "irm')) 'PowerShell entry, file-based CMD entry and raw fallback use the configured publisher; blocked CMD-IEX wrapper is absent'
 [IO.File]::Delete($marker)
 $run=Run-CommandFixture ($line+' -CheckOnly') ('0'*64)
 Check ($run.ExitCode -ne 0 -and -not (Test-Path $marker)) 'Checksum mismatch prevents the child from being launched'

@@ -5,13 +5,40 @@
 Đã triển khai portable EXE, đăng ký lệnh theo tài khoản, bootstrapper và
 cập nhật có xác nhận. Cấu hình hiện ghim **dinhluxury/WinTune-VI** và khóa
 công khai RSA3072 của tác giả. Bộ local có manifest ký và checksum ZIP.
-**Bản0.15.0 đã do người dùng phát hành;0.15.1 đang chuẩn bị local.** Online chỉ tải được sau khi
+**Bản 0.15.2 đã do người dùng phát hành.** Online chỉ tải được sau khi
 có bản stable với đầy đủ asset; thiếu nguồn/khóa vẫn dừng trước mạng.
 Không đăng ký PATH/App Paths hay cài vào Windows trong quá trình kiểm thử.
 Khóa riêng sản xuất tạo riêng ngoài dự án; bài kiểm thử chỉ dùng khóa thử.
 Xem [PUBLISHING.md](PUBLISHING.md) để đưa mã và bộ tải lên từng bước.
 
 ## Người dùng: portable và lệnh wintune
+
+### CMD online trên máy Windows 11 mới
+
+Entry riêng `docs/run.cmd` được chuẩn bị bằng `Build-CmdLauncher.ps1` từ
+bộ Source/Release đã ký hiện có. Không đổi asset của bản đã phát hành.
+CMD dùng curl và Windows PowerShell có sẵn; không yêu cầu đăng ký lệnh,
+cài dependency hoặc thay PATH. Launcher tải bootstrapper thành file trong
+thư mục tạm riêng, kiểm SHA256 ghim rồi chạy `-File`; không IEX, không mã
+hóa câu lệnh và không thử host khác sau khi Windows chặn.
+
+```bat
+curl.exe -q -fL --proto =https --proto-redir =https -o "%TEMP%\wintune.cmd" https://dinhluxury.github.io/WinTune-VI/run.cmd && "%TEMP%\wintune.cmd"
+```
+
+Entry HTTP đầu tiên tin cậy HTTPS của repository; chưa được kiểm hash
+trước khi batch này chạy. Đây không phải chữ ký Authenticode. Child host
+dùng ExecutionPolicy Bypass chỉ trong tiến trình chạy file đã đối chiếu;
+không thay cấu hình Defender/App Control. Không bảo đảm mọi chính sách máy
+đều cho chạy. Khi có cảnh báo bảo mật, dừng và phân tích, không thêm ngoại lệ.
+`run.cmd --check-only` chỉ tải/kiểm bootstrapper và metadata có chữ ký;
+không tải ZIP, đăng ký lệnh, kích hoạt phiên bản hay mở ứng dụng.
+
+Lệnh CMD phải chờ entry mới được đưa lên GitHub Pages và kiểm chứng từ URL
+sản xuất. Cách `powershell -Command` chứa `irm | iex` từ CMD đã bị Defender
+phát hiện loại CmdLine trên máy kiểm tra và được ngừng khuyến nghị.
+
+### Portable và đăng ký lệnh tùy chọn
 
 Giải nén toàn bộ ZIP rồi mở `Mo-WinTune.cmd`. Windows 11 x64, PowerShell
 5.1 + WPF và .NET Framework có sẵn; không cài module/dependency âm thầm.
