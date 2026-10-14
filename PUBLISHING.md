@@ -1,4 +1,4 @@
-# Đưa WinTune VI lên GitHub
+﻿# Đưa WinTune VI lên GitHub
 
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
 Mã nguồn và bộ tải đã chuẩn bị tại thư mục ghi trong `github-ready/LATEST.txt`.
@@ -6,28 +6,31 @@ Việc chuẩn bị chỉ tạo file local, chưa đưa gì lên GitHub hoặc p
 
 ## 1. Đưa mã nguồn lên bằng GitHub Desktop
 
+Nếu đã clone repository và phát hành 0.15.0, dùng lại thư mục Git đó;
+bỏ qua bước 1–3. Chỉ chép Source mới, commit và Push origin.
+
 1. Tải [GitHub Desktop chính thức](https://desktop.github.com/download/), mở và đăng nhập tài khoản **dinhluxury**.
 2. Chọn **File → Clone repository → URL**, dán `https://github.com/dinhluxury/WinTune-VI`.
 3. Chọn một thư mục mới cho bản Git, ví dụ `Documents\GitHub\WinTune-VI`, rồi bấm **Clone**.
    Không chọn thư mục phát triển cũ đang có nhiều ZIP/ISO/bản thử.
 4. Mở thư mục `Source` trong bộ `github-ready` đã chuẩn bị. Chép **nội dung bên trong Source** vào thư mục vừa clone. Chép cả `.gitignore` và `.gitattributes`, giữ nguyên `.git` của GitHub Desktop.
 5. Quay lại GitHub Desktop, xem danh sách thay đổi. Bộ Source gồm mã, XAML, JSON, tài liệu, license và snapshot tham khảo chỉ đọc. Không có EXE/ZIP/ISO, lịch sử máy hay khóa riêng.
-6. Điền Summary: `WinTune VI 0.15.0: ứng dụng và hệ thống phân phối`, bấm **Commit to main**, rồi **Push origin** (hoặc **Publish branch** nếu nhánh main chưa có trên GitHub).
+6. Điền Summary: `WinTune VI 0.15.1: ứng dụng và hệ thống phân phối`, bấm **Commit to main**, rồi **Push origin** (hoặc **Publish branch** nếu nhánh main chưa có trên GitHub).
 7. Mở lại repository trên web để kiểm tra README và các file đã xuất hiện.
 
 [Hướng dẫn clone của GitHub](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop).
 Không cần tải EXE/ZIP lên danh sách mã nguồn. Các gói tải nằm trong Releases.
 
-## 2. Tạo bản phát hành 0.15.0
+## 2. Tạo bản phát hành 0.15.1
 
 Làm sau khi mã nguồn đã lên repository:
 
 1. Mở [tạo Release](https://github.com/dinhluxury/WinTune-VI/releases/new).
-2. **Choose a tag:** gõ `v0.15.0`, chọn tạo tag mới. **Target:** `main` với commit vừa đưa lên.
-3. **Release title:** `WinTune VI 0.15.0`.
+2. **Choose a tag:** gõ `v0.15.1`, chọn tạo tag mới. **Target:** `main` với commit vừa đưa lên.
+3. **Release title:** `WinTune VI 0.15.1`.
 4. Mở `RELEASE-NOTES.md` trong bộ `github-ready`, chép nội dung vào phần mô tả.
 5. Kéo **6 file bên trong thư mục Release** vào ô đính kèm, giữ nguyên tên:
-   - `WinTune-VI-v0.15.0-portable.zip`
+   - `WinTune-VI-v0.15.1-portable.zip`
    - `WinTune-Online.ps1`
    - `WinTune-Online.ps1.sha256`
    - `release.json`

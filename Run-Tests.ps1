@@ -11,7 +11,7 @@ foreach ($file in @(Get-ChildItem -LiteralPath $PSScriptRoot -File | Where-Objec
 }
 if ($errors.Count -gt 0) { throw ($errors | Out-String) }
 'PASS: All project PowerShell scripts parsed by Windows PowerShell 5.1' | Set-Content "$evidence/parser.log" -Encoding UTF8
-foreach ($name in @('Environment.Check.ps1','Core.Tests.ps1','Core.ExtendedTests.ps1','Catalog.Verify.ps1','Actions.Tests.ps1','Tools.Tests.ps1','Tools.Worker.Tests.ps1','Monitor.Tests.ps1','Theme.Tests.ps1','Usability.Core.Tests.ps1','Registry.Typed.Tests.ps1','Coverage.Tests.ps1','Distribution.Tests.ps1','Release.Author.Tests.ps1','Launcher.Tests.ps1')) {
+foreach ($name in @('Environment.Check.ps1','Core.Tests.ps1','Core.ExtendedTests.ps1','Catalog.Verify.ps1','Actions.Tests.ps1','Tools.Tests.ps1','Tools.Worker.Tests.ps1','Monitor.Tests.ps1','Theme.Tests.ps1','Usability.Core.Tests.ps1','Registry.Typed.Tests.ps1','Coverage.Tests.ps1','Distribution.Tests.ps1','Release.Author.Tests.ps1','SourceCommand.Tests.ps1','Launcher.Tests.ps1')) {
     $output=& $hostExe -NoProfile -STA -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot $name) 2>&1
     $code=$LASTEXITCODE
     $output | Set-Content (Join-Path $evidence ($name+'.log')) -Encoding UTF8

@@ -42,17 +42,20 @@ $note=@'
 - Gỡ ứng dụng theo tài khoản, bảo vệ thành phần thiết yếu; không gỡ sẵn.
 - Cài 17 phần mềm thông dụng khi tự chọn và xác nhận.
 - Tổng quan máy tính, tiến trình cập nhật theo chu kỳ mục tiêu 2 giây.
-- Portable EXE, đăng ký lệnh wintune theo tài khoản khi có xác nhận.
+- PowerShell/WPF là lối mở chính; đăng ký wintune.cmd theo tài khoản khi xác nhận.
 - Kiểm tra GitHub Releases khi bấm; RSA-SHA256 manifest và SHA256 ZIP.
 
 Tải **WinTune-VI-v0.15.0-portable.zip**, giải nén toàn bộ và mở
-**WinTune-VI.exe**. Thử mô phỏng bằng **WinTune-Demo.exe**.
+**Mo-WinTune.cmd**. Thử mô phỏng bằng **Mo-Ban-Mo-Phong.cmd**.
+EXE có sẵn là lựa chọn riêng khi chính sách Windows cho phép; chưa ký Authenticode.
 Không dùng gói Source code tự tạo bởi GitHub để chạy EXE.
 
 Online Launcher: lệnh trong **ONLINE-COMMAND.txt** tải bootstrapper ra file,
 kiểm tra SHA256 ghim rồi khởi chạy. Không dùng irm | iex.
 Đọc lệnh từ kênh tin cậy của tác giả; bootstrapper tiếp tục xác minh chữ ký
 manifest và ZIP. Chỉ hoạt động sau khi bản stable này được phát hành.
+Khởi chạy bằng host PowerShell Microsoft và script WPF đã xác minh; không
+phụ thuộc EXE tự biên dịch, không tự đổi hoặc né chính sách Application Control.
 
 EXE không có chữ ký Authenticode; chữ ký release.sig dùng cho WinTune xác minh
 bản phát hành. Không bỏ qua chính sách bảo mật Windows.

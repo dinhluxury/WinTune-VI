@@ -245,4 +245,8 @@ Các hàng “Tùy chọn nâng cao — Chưa tích hợp” là chưa hoàn th�
 Software update/list/search WinGet chuyên sâu và shortcut Settings đã được người dùng yêu cầu bỏ; chỉ tìm trong danh mục cài phần mềm và kiểm tra ID khi cài. Nhật ký và kiểm thử chi tiết tại README.md, KIEM-THU.md và CHANGELOG-v0.14.md.
 ## Phân phối 0.15.0
 
-Tham khảo trải nghiệm khởi chạy của WinUtil, viết riêng bootstrapper ghim trust/RSA-SHA256 và checksum, đăng ký User PATH/App Paths, cập nhật có xác nhận. Không lấy mã launcher từ upstream, không IEX và không thay các đích Windows trong bảng này. Cấu hình ghim dinhluxury/WinTune-VI và RSA3072; bộ local đã ký, chưa phát hành. Portable EXE + tài nguyên vẫn được giữ. Phương án PS2EXE được nghiên cứu nhưng không cài hoặc nhúng vì các biến đường dẫn/worker/tài nguyên. Chi tiết tại DISTRIBUTION.md và PUBLISHING.md.
+Tham khảo trải nghiệm khởi chạy của WinUtil, viết riêng bootstrapper ghim trust/RSA-SHA256 và checksum, đăng ký User PATH/App Paths, cập nhật có xác nhận. Không lấy mã launcher từ upstream, không IEX và không thay các đích Windows trong bảng này. Cấu hình ghim dinhluxury/WinTune-VI và RSA3072; người dùng đã phát hành 0.15.0. Portable EXE + tài nguyên vẫn được giữ. Phương án PS2EXE được nghiên cứu nhưng không cài hoặc nhúng vì các biến đường dẫn/worker/tài nguyên. Chi tiết tại DISTRIBUTION.md và PUBLISHING.md.
+
+## Phân phối 0.15.1
+
+Sau khi EXE chưa ký bị Application Control chặn, PowerShell/WPF được chọn làm lối mở chính ngay từ đầu; không tự fallback hoặc đổi chính sách khi bị từ chối. Đăng ký mới dùng CMD và reader PowerShell qua User PATH, không tạo App Paths; vẫn hỗ trợ gỡ/khắc phục receipt cũ. Reader xác minh pointer UTF-8, đường dẫn và checksum trước khi nạp module. Bộ 0.15.1 được chuẩn bị local; chưa phát hành. Các tính năng Windows trong bảng giữ nguyên.

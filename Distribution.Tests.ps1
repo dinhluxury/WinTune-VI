@@ -1,7 +1,8 @@
 ﻿#Requires -Version 5.1
 $ErrorActionPreference='Stop'
 . "$PSScriptRoot/Distribution.Core.ps1";. "$PSScriptRoot/CommandRegistration.ps1"
-$test=Join-Path $PSScriptRoot ('.test-runs/d-'+[guid]::NewGuid().ToString('N').Substring(0,6));$null=New-Item -ItemType Directory -Path $test;$pass=0
+. "$PSScriptRoot/SourceCommandRegistration.ps1"
+$test=Join-Path $PSScriptRoot ('.test-runs/Phân phối '+[guid]::NewGuid().ToString('N').Substring(0,6));$null=New-Item -ItemType Directory -Path $test;$pass=0
 function Check($Ok,$Name) {if (-not $Ok) {throw "DISTRIBUTION FAILED: $Name"};$script:pass++;Write-Output "PASS DISTRIBUTION: $Name"}
 function Reject([scriptblock]$Work,$Name) {$failed=$false;try {& $Work | Out-Null} catch {$failed=$true};Check $failed $Name}
 function Bytes($Object) {return ,[Text.Encoding]::UTF8.GetBytes(($Object|ConvertTo-Json -Depth 6 -Compress))}
@@ -9,6 +10,7 @@ $rsa=New-Object Security.Cryptography.RSACryptoServiceProvider 2048;$rsa.Persist
 $cfg=[pscustomobject]@{Schema=1;Repository='fixture/WinTune';PublicKeyXml=$rsa.ToXmlString($false);Channel='stable'}
 $source=Join-Path $test 'WinTune-VI-v0.16.0';$null=New-Item -ItemType Directory -Path $source
 foreach ($name in @('WinTune-VI.exe','WinTune-Demo.exe','WinTune.ps1','MainWindow.xaml','features.json','Core.ps1','Tools.Core.ps1','Tools.Worker.ps1','Theme.UI.ps1','Monitor.UI.ps1','Wintune.Command.exe')) {[IO.File]::WriteAllText((Join-Path $source $name),'fixture, never executed')}
+foreach ($name in @('Wintune.Registered.cmd','CommandRouter.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $source}
 [IO.File]::WriteAllText((Join-Path $source 'version.json'),'{"Schema":1,"Version":"0.16.0","MinimumBuild":22000,"Architecture":"x64"}')
 [IO.File]::WriteAllText((Join-Path $source 'release-config.json'),($cfg|ConvertTo-Json))
 function Write-FixtureChecksums {
@@ -69,6 +71,9 @@ $install=Join-Path $test 'installed';$count=[WinTuneFakeHttp]::URLs.Count;Reject
 Response 200 (Bytes 'wrong ZIP');Reject {Install-DistributionUpdate $info $install $true $null $cfg} 'Incorrect ZIP checksum/size never activates';Check (-not (Test-Path (Join-Path $install 'current.txt'))) 'Failed validation leaves active version untouched'
 Response 200 $zipBytes;$installed=Install-DistributionUpdate $info $install $true $null $cfg
 Check ($installed.Status -eq 'Prepared' -and (Get-Content (Join-Path $install 'current.txt') -Raw).Trim() -eq $installed.Path) 'Verified update prepares a side-by-side version, never starts an EXE'
+[IO.File]::WriteAllText((Join-Path $install 'current.txt'),$installed.Path,[Text.UTF8Encoding]::new($false))
+Check ((Get-PreparedDistributionVersion $install '0.15.0') -eq '0.16.0') 'UTF-8 pointer without BOM supports Vietnamese installation paths'
+Write-DistributionAtomic (Join-Path $install 'current.txt') $installed.Path
 $beforePointer=Get-Content (Join-Path $install 'current.txt') -Raw;$mutated=$info.PSObject.Copy();$mutated.Url='https://github.com/other/repo/release.zip';Reject {Install-DistributionUpdate $mutated $install $true $null $cfg} 'Edited plan URL cannot override signed release identity'
 Check ((Get-Content (Join-Path $install 'current.txt') -Raw) -ceq $beforePointer) 'Invalid subsequent request preserves active pointer'
 Check ((Install-LocalDistribution $source $install $true).Status -eq 'Existing') 'Local install reuses a verified same/newer version'
@@ -80,29 +85,42 @@ Reject {Install-DistributionUpdate $altered $install $true $null $cfg} 'Modified
 $null=New-Item -ItemType Directory -Path (Join-Path $installed.Path 'simulation-data');[IO.File]::WriteAllText((Join-Path $installed.Path 'simulation-data/demo.json'),'fixture output');Test-PortableIntegrity $installed.Path '0.16.0'
 Check $true 'Known demo output does not invalidate immutable application resources'
 # Native environment/registry writers are replaced; no User/Machine PATH changes.
-$script:FakeReg=[pscustomobject]@{Path='C:\Fixture';PathKind='ExpandString';PathExists=$true;AppExists=$false;AppTarget='';AppPath='';AppNames=@()};$script:RegWrites=0;$script:Refreshed=0;$script:FailApp=$false
+$script:FakeReg=[pscustomobject]@{Path='C:\Fixture';PathKind='ExpandString';PathExists=$true;AppExists=$false;AppTarget='';AppPath='';AppNames=@()};$script:RegWrites=0;$script:Refreshed=0;$script:FailApp=$false;$script:FailPath=$false
 function Get-UserCommandRegistration {return $script:FakeReg.PSObject.Copy()}
-function Set-UserCommandPath($Value,$Kind,$Exists=$true) {$script:RegWrites++;$script:FakeReg.Path=$Value;$script:FakeReg.PathKind=$Kind;$script:FakeReg.PathExists=$Exists}
+function Set-UserCommandPath($Value,$Kind,$Exists=$true) {if($script:FailPath){$script:FailPath=$false;throw 'fixture PATH failure'};$script:RegWrites++;$script:FakeReg.Path=$Value;$script:FakeReg.PathKind=$Kind;$script:FakeReg.PathExists=$Exists}
 function Set-UserCommandAppPath($Target,$Folder,$Remove=$false) {if ($script:FailApp) {throw 'fixture app path failure'};$script:RegWrites++;$script:FakeReg.AppExists=-not $Remove;$script:FakeReg.AppTarget=$Target;$script:FakeReg.AppPath=$Folder;$script:FakeReg.AppNames=if ($Remove) {@()} else {@('','Path')}}
 function Get-CommandRegistrationUser {return 'Fixture-SID'}
 function Notify-UserCommandEnvironment {$script:Refreshed++}
 Reject {Register-WinTuneCommand $installed.Path $install $false} 'Command registration also requires confirmation';Check ($RegWrites -eq 0) 'Opening/preparing command registration writes no registry'
-$r=Register-WinTuneCommand $installed.Path $install $true;Check ($r.Status -eq 'Registered' -and $FakeReg.Path.Contains('launcher') -and $FakeReg.AppTarget.EndsWith('wintune.exe')) 'Confirmed registration targets only the mocked User PATH and App Paths'
+$r=Register-WinTuneCommand $installed.Path $install $true;Check ($r.Status -eq 'Registered' -and $FakeReg.Path.Contains('command') -and -not $FakeReg.AppExists -and (Test-Path (Join-Path $install 'command/wintune.cmd'))) 'Confirmed source registration targets only mocked User PATH and copies CMD/PowerShell entries'
 $writes=$RegWrites;Check ((Register-WinTuneCommand $installed.Path $install $true).Status -eq 'NoOp' -and $RegWrites -eq $writes) 'Repeated registration is idempotent'
 $FakeReg.Path+=';C:\NewExternalTool';$null=Unregister-WinTuneCommand $install $true;Check ($FakeReg.Path -eq 'C:\Fixture;C:\NewExternalTool' -and -not $FakeReg.AppExists) 'Unregister retains unrelated PATH changes and removes only owned registration'
 Check (Test-Path $installed.Path) 'Unregister keeps app versions and user journals'
 $FakeReg.AppExists=$true;$FakeReg.AppTarget='C:\Other\wintune.exe';$FakeReg.AppPath='C:\Other';$FakeReg.AppNames=@('','Path');Reject {Register-WinTuneCommand $installed.Path $install $true} 'Existing foreign wintune registration is not overwritten'
-$FakeReg.AppExists=$false;$FakeReg.AppTarget='';$FakeReg.AppPath='';$FakeReg.AppNames=@();$script:FailApp=$true;$old=$FakeReg.Path
+$FakeReg.AppExists=$false;$FakeReg.AppTarget='';$FakeReg.AppPath='';$FakeReg.AppNames=@();$script:FailPath=$true;$old=$FakeReg.Path
 Reject {Register-WinTuneCommand $installed.Path $install $true} 'Mid-registration access failure is reported'
 Check ($FakeReg.Path -eq $old -and (Get-Content (Join-Path $install 'command-registration.json') -Raw|ConvertFrom-Json).Status -eq 'RolledBack') 'Failed registration conditionally rolls back its PATH change'
-$script:FailApp=$false;$null=Register-WinTuneCommand $installed.Path $install $true;$FakeReg.AppTarget='C:\External\wintune.exe';Reject {Unregister-WinTuneCommand $install $true} 'Unregister refuses externally changed App Paths'
+$script:FailApp=$false;$null=Register-WinTuneCommand $installed.Path $install $true;$FakeReg.AppExists=$true;$FakeReg.AppTarget='C:\External\wintune.exe';$FakeReg.AppPath='C:\External';$FakeReg.AppNames=@('','Path');$null=Unregister-WinTuneCommand $install $true
+Check ($FakeReg.AppExists -and $FakeReg.AppTarget -eq 'C:\External\wintune.exe') 'Source unregister preserves unrelated external App Paths'
+$FakeReg.AppExists=$false;$FakeReg.AppTarget='';$FakeReg.AppPath='';$FakeReg.AppNames=@();$null=Register-WinTuneCommand $installed.Path $install $true
 $j=Get-Content (Join-Path $install 'command-registration.json') -Raw|ConvertFrom-Json;$j.Status='Pending';Write-DistributionAtomic (Join-Path $install 'command-registration.json') ($j|ConvertTo-Json -Depth 5)
-Reject {Repair-WinTuneCommandRegistration $install $true} 'Recovery refuses externally changed command registration'
-$FakeReg.AppTarget=$j.Target;Reject {Repair-WinTuneCommandRegistration $install $false} 'Recovery also requires confirmation'
+$FakeReg.Path+=';C:\ExternalChange';Reject {Repair-WinTuneCommandRegistration $install $true} 'Recovery refuses externally changed command registration'
+$FakeReg.Path=$j.After;Reject {Repair-WinTuneCommandRegistration $install $false} 'Recovery also requires confirmation'
 Check ((Repair-WinTuneCommandRegistration $install $true).Status -eq 'RolledBack' -and $FakeReg.Path -eq $j.Before.Path -and -not $FakeReg.AppExists) 'Owned pending registration can be repaired with conditional mock rollback'
-$null=Register-WinTuneCommand $installed.Path $install $true;$script:FailApp=$true
+$null=Register-WinTuneCommand $installed.Path $install $true;$script:FailPath=$true
 Reject {Unregister-WinTuneCommand $install $true} 'Partial command removal is reported and retains a recovery receipt'
 Check ((Get-Content (Join-Path $install 'command-registration.json') -Raw|ConvertFrom-Json).Status -eq 'PendingRemoval') 'Interrupted removal remains recoverable instead of silently claiming completion'
 $script:FailApp=$false;Check ((Repair-WinTuneCommandRegistration $install $true).Status -eq 'Removed' -and -not $FakeReg.AppExists) 'Conditional recovery completes owned partial removal without deleting app data'
+$legacyRoot=Join-Path $test 'legacy-install';$null=Complete-LegacyWinTuneCommandRegistration $installed.Path $legacyRoot $true
+Check ($FakeReg.AppExists -and (Get-Content (Join-Path $legacyRoot 'command-registration.json') -Raw|ConvertFrom-Json).Schema -eq 1) 'Legacy fixture preserves the original EXE registration receipt format'
+Reject {Register-WinTuneCommand $installed.Path $legacyRoot $true} 'Registered legacy command must be removed explicitly before migration'
+Check ((Unregister-WinTuneCommand $legacyRoot $true).Status -eq 'Removed' -and -not $FakeReg.AppExists) 'New release can conditionally unregister an owned schema1 EXE command'
+$null=Complete-LegacyWinTuneCommandRegistration $installed.Path $legacyRoot $true
+$legacy=Get-Content (Join-Path $legacyRoot 'command-registration.json') -Raw|ConvertFrom-Json;$legacy.Status='Pending';Write-DistributionAtomic (Join-Path $legacyRoot 'command-registration.json') ($legacy|ConvertTo-Json -Depth 5)
+Check ((Repair-WinTuneCommandRegistration $legacyRoot $true).Status -eq 'RolledBack' -and -not $FakeReg.AppExists) 'New release can repair an interrupted schema1 EXE registration'
+$null=Register-WinTuneCommand $installed.Path $install $true;$cmd=Join-Path $install 'command/wintune.cmd';$originalCmd=[IO.File]::ReadAllBytes($cmd);[IO.File]::WriteAllText($cmd,'tampered local command');$beforeWrites=$RegWrites
+Reject {Register-WinTuneCommand $installed.Path $install $true} 'Source registration refuses a changed existing command helper'
+Check ($RegWrites -eq $beforeWrites) 'Changed helper causes no native registration changes';[IO.File]::WriteAllBytes($cmd,$originalCmd)
+$null=Unregister-WinTuneCommand $install $true
 $rsa.Dispose()
 Write-Output "DISTRIBUTION TESTS PASSED: $pass; Internet and registry/environment changes mocked; filesystem fixtures remain inside workspace."

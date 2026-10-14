@@ -1,8 +1,8 @@
-﻿# WinTune VI 0.15.0
+﻿# WinTune VI 0.15.1
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
-Nguồn/cập nhật ghim khóa công khai RSA3072; bộ tải có manifest ký. Release
+Nguồn/cập nhật ghim khóa công khai RSA3072; bộ tải có manifest ký. 0.15.0 đã được người dùng phát hành;0.15.1 đang chuẩn bị. Release
 chỉ có sau khi tác giả chủ động đăng. [PUBLISHING.md](PUBLISHING.md) hướng
 dẫn đưa mã và bộ phát hành lên GitHub; [DISTRIBUTION.md](DISTRIBUTION.md)
 giải thích tải/cập nhật có xác nhận và đăng ký lệnh `wintune`.
@@ -12,7 +12,7 @@ Win11Debloat. Không có preset tăng FPS/RAM hoặc thay bảo mật để gi�
 ## Mở ứng dụng
 
 1. Giải nén **toàn bộ** gói portable vào thư mục có quyền ghi.
-2. Mở **WinTune-VI.exe**. Thử an toàn bằng **WinTune-Demo.exe** trước.
+2. Mở **Mo-WinTune.cmd** (PowerShell/WPF). Thử mô phỏng bằng **Mo-Ban-Mo-Phong.cmd** trước. EXE là lựa chọn riêng khi chính sách Windows cho phép.
 3. Trang Tổng quan mở trước. Chọn **Tùy chỉnh Windows** ở thanh trái. Dùng **Chọn nhanh** trên bảng hoặc tick từng mục; vùng **Đang chọn** liệt kê những gì sẽ áp dụng.
 4. Đọc màn hình xem trước rồi mới xác nhận thao tác cụ thể.
 
@@ -273,15 +273,26 @@ Không cài phần mềm thật để chạy kiểm thử tự động.
 
 **WinTune và cập nhật** ở thanh trái: kiểm tra phiên bản khi bấm, tải bản
 mới chỉ sau xác nhận, giữ bản cũ và lịch sử. Không tự mở cập nhật. Có thể
-đăng ký lệnh `wintune` cho CMD/PowerShell/Win + R qua User PATH/App Paths.
+đăng ký lệnh `wintune` cho CMD/PowerShell/Win + R qua User PATH.
 Tính năng này có xác nhận riêng, không ghi Machine PATH. Chưa thực hiện
 đăng ký thật khi phát triển. Portable vẫn mở EXE trực tiếp, không cần mạng.
 
 Repository phát hành hiện là dinhluxury/WinTune-VI, khóa công khai RSA3072
-đã ghim. Bộ Release local có manifest ký và ZIP được xác minh; chưa đăng
-online. Tác giả chủ động đưa mã/gói lên theo [PUBLISHING.md](PUBLISHING.md).
+đã ghim. Bản0.15.0 đã công khai; bộ0.15.1 chuẩn bị local có manifest ký/ZIP
+được xác minh. Tác giả chủ động đưa mã/gói lên theo [PUBLISHING.md](PUBLISHING.md).
 Không dùng `irm | iex`. Đọc [DISTRIBUTION.md](DISTRIBUTION.md)
 để biết trust anchor, lệnh một dòng, đăng ký/bỏ đăng ký, tài nguyên portable
 và những bước sản xuất còn cần. EXE mở PowerShell/WPF, không phải single EXE.
 Wrapper mở thường kết thúc sớm; tác vụ cập nhật không có worker/timer khi
 chưa dùng. Không tuyên bố phần trăm tăng tốc hoặc mức RAM cố định.
+
+## Bản0.15.1 — mở trực tiếp PowerShell/WPF
+
+Online và wintune dùng host PowerShell Microsoft với script WPF đã xác minh.
+Không phụ thuộc EXE tự biên dịch chưa ký, không tự fallback sau lỗi bảo mật.
+Đăng ký mới dùng User PATH và receipt schema2; không tạo App Paths mới.
+Bỏ đăng ký EXE cũ bằng nút Bỏ đăng ký trước khi chuyển; không xóa app hoặcv2.
+Mở lại CMD/PowerShell sau đăng ký. Win+R dùng đường tìm kiếm Windows;
+ShellExecute đã kiểm trong fixture PATH process, chưa thử Win+R/PATH user thật.
+Windows vẫn kiểm script/module/assembly, không đổi bảo mật hoặc allowlist.
+Xem CHANGELOG-v0.15.1.md, DISTRIBUTION.md, KIEM-THU.md.

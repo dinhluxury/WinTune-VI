@@ -44,7 +44,7 @@ function Register-WinTuneCommand([string]$Package,[string]$Root,[bool]$Confirmed
     $mutex=Enter-WinTuneDistributionLock $Root
     try {return Complete-WinTuneCommandRegistration $Package $Root $Confirmed} finally {Exit-WinTuneDistributionLock $mutex}
 }
-function Complete-WinTuneCommandRegistration([string]$Package,[string]$Root,[bool]$Confirmed) {
+function Complete-LegacyWinTuneCommandRegistration([string]$Package,[string]$Root,[bool]$Confirmed) {
     if (-not $Confirmed) {throw 'Chưa xác nhận đăng ký lệnh; không sửa User PATH/App Paths.'}
     $root=Assert-DistributionPath $Root $Root;$folder=Assert-DistributionPath (Join-Path $root 'launcher') $root;$target=Join-Path $folder 'wintune.exe'
     $before=Get-UserCommandRegistration;$plan=Get-CommandPathPlan $before $folder $target
@@ -93,7 +93,7 @@ function Unregister-WinTuneCommand([string]$Root,[bool]$Confirmed) {
     $mutex=Enter-WinTuneDistributionLock $Root
     try {return Complete-WinTuneCommandRemoval $Root $Confirmed} finally {Exit-WinTuneDistributionLock $mutex}
 }
-function Complete-WinTuneCommandRemoval([string]$Root,[bool]$Confirmed) {
+function Complete-LegacyWinTuneCommandRemoval([string]$Root,[bool]$Confirmed) {
     if (-not $Confirmed) {throw 'Chưa xác nhận bỏ đăng ký lệnh.'}
     $root=Assert-DistributionPath $Root $Root;$receipt=Join-Path $root 'command-registration.json';$j=Get-Content -LiteralPath $receipt -Raw -Encoding UTF8 | ConvertFrom-Json
     if ($j.User -ne (Get-CommandRegistrationUser) -or $j.Status -ne 'Registered' -or $j.Folder -ine (Join-Path $root 'launcher') -or $j.Target -ine (Join-Path $root 'launcher/wintune.exe')) {throw 'Receipt không thuộc đăng ký đang hoạt động của tài khoản này.'}
@@ -117,7 +117,7 @@ function Repair-WinTuneCommandRegistration([string]$Root,[bool]$Confirmed) {
     $mutex=Enter-WinTuneDistributionLock $Root
     try {return Complete-WinTuneCommandRepair $Root $Confirmed} finally {Exit-WinTuneDistributionLock $mutex}
 }
-function Complete-WinTuneCommandRepair([string]$Root,[bool]$Confirmed) {
+function Complete-LegacyWinTuneCommandRepair([string]$Root,[bool]$Confirmed) {
     if (-not $Confirmed) {throw 'Chưa xác nhận phục hồi đăng ký dang dở.'}
     $root=Assert-DistributionPath $Root $Root;$receipt=Join-Path $root 'command-registration.json';$j=Get-Content -LiteralPath $receipt -Raw -Encoding UTF8 | ConvertFrom-Json
     if ($j.Schema -ne 1 -or $j.User -ne (Get-CommandRegistrationUser) -or $j.Status -notin @('Pending','PendingRemoval') -or $j.Folder -ine (Join-Path $root 'launcher') -or $j.Target -ine (Join-Path $root 'launcher/wintune.exe')) {throw 'Không có đăng ký dang dở hợp lệ của tài khoản này.'}

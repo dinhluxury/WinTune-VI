@@ -15,7 +15,7 @@ function Run-Author([string]$File,[string[]]$Arguments=@()) {
 function Reject-Author([string]$File,[string[]]$Arguments,[string]$Name) {
     $failed=$false;try {Run-Author $File $Arguments} catch {$failed=$true};Check $failed $Name
 }
-foreach ($name in @('New-ReleaseSigningKey.ps1','Configure-Release.ps1','Sign-Release.ps1','Build-Distribution.ps1','Prepare-GitHub.ps1','Bootstrapper.template.ps1','Distribution.Core.ps1','CommandRegistration.ps1','.gitignore','.gitattributes')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $builder}
+foreach ($name in @('New-ReleaseSigningKey.ps1','Configure-Release.ps1','Sign-Release.ps1','Build-Distribution.ps1','Prepare-GitHub.ps1','Bootstrapper.template.ps1','Distribution.Core.ps1','CommandRegistration.ps1','SourceCommandRegistration.ps1','.gitignore','.gitattributes')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $builder}
 Reject-Author New-ReleaseSigningKey.ps1 @('-Directory',(Join-Path $builder 'keys')) 'Private keys inside the author project are refused'
 Check (-not (Test-Path (Join-Path $builder 'keys'))) 'Refused generation creates no key directory'
 Run-Author New-ReleaseSigningKey.ps1 @('-Directory',$keys)
@@ -48,7 +48,41 @@ $online=Join-Path $assets 'WinTune-Online.ps1';$tokens=$null;$parseErrors=$null
 $null=[Management.Automation.Language.Parser]::ParseFile($online,[ref]$tokens,[ref]$parseErrors)
 Check (@($parseErrors).Count -eq 0) 'Generated standalone bootstrapper parses in PowerShell 5.1'
 $command=Get-Content (Join-Path $assets 'ONLINE-COMMAND.txt') -Raw
-Check ($command.Contains((Get-FileHash $online).Hash) -and $command.Contains('/fixture/WinTune/releases/download/v0.15.0/') -and -not $command.Contains('irm | iex')) 'Online command pins version, repository and bootstrapper checksum'
+$line=@($command -split '\r?\n' | Where-Object {$_ -like '$p=*'})[0]
+Check ($line.Contains((Get-FileHash $online).Hash) -and $line.Contains('/fixture/WinTune/releases/download/v0.15.0/') -and -not $line.Contains('irm | iex')) 'Online command pins version, repository and bootstrapper checksum'
+Check ($command.Contains('-NoProfile -STA -ExecutionPolicy Bypass -File $p') -and $command.Contains('System32\WindowsPowerShell\v1.0\powershell.exe') -and -not $command.Contains('Set-ExecutionPolicy')) 'Generated launch command uses a fixed child host with process-only policy'
+# Test the actual generated command from a Restricted parent. Network/hash
+# adapters are mocked; the child is a harmless local fixture, never WinTune.
+$child=Join-Path $test 'child.ps1';$marker=Join-Path $test 'child.json'
+[IO.File]::WriteAllText($child,'param([switch]$CheckOnly) [pscustomobject]@{Policy=[string](Get-ExecutionPolicy);Apartment=[Threading.Thread]::CurrentThread.ApartmentState.ToString();CheckOnly=[bool]$CheckOnly}|ConvertTo-Json|Set-Content -LiteralPath $env:WINTUNE_FIXTURE_MARKER -Encoding UTF8',[Text.UTF8Encoding]::new($true))
+function Run-CommandFixture([string]$Body,[string]$Hash,[bool]$FailDownload=$false) {
+    $setup=@'
+$ErrorActionPreference='Stop'
+$env:TEMP='__TEMP__'
+$env:WINTUNE_FIXTURE_MARKER='__MARKER__'
+$script:ParentMarker='__PARENT__'
+$script:FixtureSource='__CHILD__'
+$script:FixtureHash='__HASH__'
+$script:FixtureFail=__FAIL__
+function Invoke-WebRequest { [CmdletBinding()]param($Uri,$OutFile,[switch]$UseBasicParsing,$TimeoutSec) if($script:FixtureFail){throw 'mock connection failure'};Copy-Item -LiteralPath $script:FixtureSource -Destination $OutFile }
+function Get-FileHash { [CmdletBinding()]param($LiteralPath,$Algorithm) return [pscustomobject]@{Hash=$script:FixtureHash} }
+'@
+    $setup=$setup.Replace('__TEMP__',$test.Replace("'","''")).Replace('__MARKER__',$marker.Replace("'","''")).Replace('__PARENT__',(Join-Path $test 'parent-policy.txt').Replace("'","''")).Replace('__CHILD__',$child.Replace("'","''")).Replace('__HASH__',$Hash).Replace('__FAIL__',$(if ($FailDownload) {'$true'} else {'$false'}))
+    $encoded=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($setup+"`r`n"+$Body+"`r`n[string](Get-ExecutionPolicy) | Set-Content -LiteralPath `$script:ParentMarker`r`nexit `$LASTEXITCODE"))
+    $ErrorActionPreference='Continue' # Capture expected native stderr and exit code.
+    $output=& $ps -NoProfile -ExecutionPolicy Restricted -EncodedCommand $encoded 2>&1
+    return [pscustomobject]@{ExitCode=$LASTEXITCODE;Output=($output|Out-String)}
+}
+$publishedHash=(Get-FileHash $online).Hash
+$run=Run-CommandFixture ($line+' -CheckOnly') $publishedHash
+if ($run.ExitCode -ne 0) {throw $run.Output}
+$result=Get-Content $marker -Raw | ConvertFrom-Json
+Check ($result.Policy -eq 'Bypass' -and $result.Apartment -eq 'STA' -and $result.CheckOnly -and (Get-Content (Join-Path $test 'parent-policy.txt') -Raw).Trim() -eq 'Restricted') 'Restricted parent can launch verified fixture in a separate STA session without changing parent policy'
+[IO.File]::Delete($marker)
+$run=Run-CommandFixture ($line+' -CheckOnly') ('0'*64)
+Check ($run.ExitCode -ne 0 -and -not (Test-Path $marker)) 'Checksum mismatch prevents the child from being launched'
+$run=Run-CommandFixture ($line+' -CheckOnly') $publishedHash $true
+Check ($run.ExitCode -ne 0 -and -not (Test-Path $marker)) 'Connection failure terminates before checksum or child execution'
 $null=New-Item -ItemType Directory -Path (Join-Path $package 'simulation-data')
 [IO.File]::WriteAllText((Join-Path $package 'simulation-data/private-history.json'),'{"fixture":"not for public source"}')
 Run-Author Prepare-GitHub.ps1 @('-Package',$package,'-Assets',$assets)

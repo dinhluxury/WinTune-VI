@@ -35,8 +35,9 @@ foreach ($file in @('Distribution.Core.ps1','Distribution.Runtime.psm1','Distrib
 foreach ($file in @('New-ReleaseSigningKey.ps1','Configure-Release.ps1','Sign-Release.ps1','Build-Distribution.ps1','Bootstrapper.template.ps1','Release.Author.Tests.ps1','Prepare-GitHub.ps1','PUBLISHING.md','.gitignore','.gitattributes')) {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force
 }
+foreach ($file in @('SourceCommandRegistration.ps1','CommandRouter.ps1','Wintune.Registered.cmd','SourceCommand.Tests.ps1','CHANGELOG-v0.15.1.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 if ($PublicRelease) {
-    $publicProgress="# Tiến độ bản public`r`n`r`nWinTune VI $packageVersion. Mã nguồn và manifest ký đã được chuẩn bị local cho`r`nrepository dinhluxury/WinTune-VI. Không tự upload hoặc phát hành.`r`n`r`nXem CHANGELOG-v0.15.md và KIEM-THU.md về kiểm thử/giới hạn;`r`nPUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.`r`nNhật ký/ảnh kiểm thử riêng của máy không được phân phối trong gói public.`r`n"
+    $publicProgress="# Tiến độ bản public`r`n`r`nWinTune VI $packageVersion. Mã nguồn và manifest ký đã được chuẩn bị local cho`r`nrepository dinhluxury/WinTune-VI. Không tự upload hoặc phát hành.`r`n`r`nXem CHANGELOG-v0.15.1.md và KIEM-THU.md về kiểm thử/giới hạn;`r`nPUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.`r`nNhật ký/ảnh kiểm thử riêng của máy không được phân phối trong gói public.`r`n"
     [IO.File]::WriteAllText((Join-Path $portable 'TIEN-DO.md'),$publicProgress,[Text.UTF8Encoding]::new($true))
 }
 $sourceDest=Join-Path $portable 'sources'

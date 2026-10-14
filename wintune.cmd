@@ -11,23 +11,23 @@ if /I "%~1"=="unregister" goto unregister
 echo Tham so khong hop le. Go: wintune help
 exit /b 2
 :app
-if not exist "%~dp0WinTune-VI.exe" goto missing
-start "" "%~dp0WinTune-VI.exe"
+if not exist "%~dp0WinTune.ps1" goto missing
+start "" "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File "%~dp0WinTune.ps1"
 exit /b %errorlevel%
 :demo
-if not exist "%~dp0WinTune-Demo.exe" goto missing
-start "" "%~dp0WinTune-Demo.exe"
+if not exist "%~dp0WinTune.ps1" goto missing
+start "" "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File "%~dp0WinTune.ps1" -Simulation
 exit /b %errorlevel%
 :test
 "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -STA -ExecutionPolicy Bypass -File "%~dp0Run-Tests.ps1"
 exit /b %errorlevel%
 :probe
-if not exist "%~dp0WinTune-Demo.exe" goto missing
-start "" /wait "%~dp0WinTune-Demo.exe" /probe
+if not exist "%~dp0WinTune.ps1" goto missing
+"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -STA -ExecutionPolicy Bypass -File "%~dp0WinTune.ps1" -GuiProbe
 exit /b %errorlevel%
 :update
-if not exist "%~dp0WinTune-VI.exe" goto missing
-start "" "%~dp0WinTune-VI.exe" /updates
+if not exist "%~dp0WinTune.ps1" goto missing
+start "" "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File "%~dp0WinTune.ps1" -Updates
 exit /b %errorlevel%
 :register
 "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Register-WinTune.ps1"
@@ -36,7 +36,7 @@ exit /b %errorlevel%
 "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Register-WinTune.ps1" -Remove
 exit /b %errorlevel%
 :missing
-echo Thieu EXE. Hay giai nen toan bo goi portable vao cung thu muc.
+echo Thieu WinTune.ps1. Hay giai nen toan bo goi portable vao cung thu muc.
 exit /b 1
 :help
 echo wintune       : Mo ung dung; khong tu ap dung thay doi.

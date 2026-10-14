@@ -5,12 +5,13 @@ $ErrorActionPreference='Stop'
 $script:BootstrapTrust=ConvertFrom-Json ([Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('__TRUST_BASE64__')))
 __DISTRIBUTION_CORE__
 __COMMAND_REGISTRATION__
+__SOURCE_COMMAND_REGISTRATION__
 try {
     Assert-ReleaseTrust $script:BootstrapTrust
     $root=Get-WinTuneInstallRoot
     $current='0.0.0'
     if (Test-Path -LiteralPath (Join-Path $root 'current.txt')) {
-        $path=(Get-Content -LiteralPath (Join-Path $root 'current.txt') -Raw).Trim()
+        $path=(Get-Content -LiteralPath (Join-Path $root 'current.txt') -Raw -Encoding UTF8).Trim()
         $path=Assert-DistributionPath $path (Join-Path $root 'apps');$current=(Get-WinTuneVersion $path).Version
     }
     Write-Host 'Đang kiểm tra GitHub Releases và chữ ký manifest…'
@@ -29,6 +30,17 @@ try {
         Test-PortableIntegrity $path $current
     }
     if ($RegisterCommand) {Register-WinTuneCommand $path $root $true | Write-Host}
-    # Confirmation above explicitly covers launching. Updater inside WPF never launches.
-    Start-Process -FilePath (Join-Path $path 'WinTune-VI.exe') -WorkingDirectory $path
-} catch {Write-Error ('Không khởi chạy WinTune: '+$_.Exception.Message);exit 1}
+    # PowerShell/WPF is the primary online entry, never a fallback after a denial.
+    # Windows still enforces policy on this host, scripts and dependent assemblies.
+    Test-PortableIntegrity $path $info.Manifest.Version
+    $hostExe=Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe'
+    $entry=Join-Path $path 'WinTune.ps1'
+    if ($entry.Contains('"')) {throw 'Đường dẫn khởi chạy không hợp lệ.'}
+    Start-Process -FilePath $hostExe -ArgumentList ('-NoLogo -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File "'+$entry+'"') -WorkingDirectory $path
+} catch {
+    $reason=$_.Exception.Message
+    if ($reason -match 'Application Control|code integrity|digital signature') {
+        Write-Error ('Windows Application Control chặn file khởi chạy. Chữ ký manifest xác minh gói tải không phải chữ ký Authenticode của EXE. Không tự đổi chính sách bảo mật hoặc thử cách mở khác. Gói đã chuẩn bị vẫn được giữ; xem DISTRIBUTION.md, mục lỗi khởi chạy, về lối PowerShell/WPF có sẵn nếu chính sách cho phép. Chi tiết: '+$reason)
+    } else {Write-Error ('Không khởi chạy WinTune: '+$reason)}
+    exit 1
+}

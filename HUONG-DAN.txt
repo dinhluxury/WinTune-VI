@@ -1,7 +1,7 @@
-﻿WINTUNE VI 0.15.0 — HƯỚNG DẪN NGẮN
+﻿WINTUNE VI 0.15.1 — HƯỚNG DẪN NGẮN
 
 Giải nén hoặc chép TOÀN BỘ thư mục ứng dụng sang Desktop, rồi mở
-WinTune-VI.exe. WinTune-Demo.exe chỉ mô phỏng, không thay đổi Windows.
+Mo-WinTune.cmd. Mo-Ban-Mo-Phong.cmd chỉ mô phỏng, không thay đổi Windows.
 Giữ các file cạnh nhau. Hỗ trợ Windows 11 x64, Windows PowerShell 5.1.
 
 TỔNG QUAN
@@ -58,9 +58,13 @@ CHANGELOG-v0.15.md: thay đổi, file sửa và giới hạn.
 KIEM-THU.md, TIEN-DO.md và evidence: kết quả kiểm tra thực tế.
 MỞ NHANH VÀ CẬP NHẬT
 WinTune và cập nhật: kiểm tra khi bấm, xác nhận trước tải, không tự mở bản mới.
-Đăng ký lệnh wintune chép bản vào thư mục user, chỉ sửa User PATH/App Paths.
+Đăng ký lệnh wintune chép bản vào thư mục user, đăng ký mới chỉ sửa User PATH.
 Mở lại CMD/PowerShell rồi gõ wintune; Win + R cũng dùng được sau đăng ký.
 Nguồn phát hành dinhluxury/WinTune-VI và khóa công khai đã ghim. Bộ ký local
 chỉ tải được online sau khi tác giả phát hành stable. Xem DISTRIBUTION.md;
 PUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.
 Không chạy đăng ký/cài đặt thật để kiểm thử tự động.
+
+0.15.1 dùng PowerShell/WPF cho lối mở chính và wintune.cmd.
+Đăng ký mới chỉ User PATH, không tạo App Paths; đăng ký EXE cũ cần bỏ trước.
+Không tắt Application Control. EXE chưa ký chỉ dùng khi Windows cho phép.

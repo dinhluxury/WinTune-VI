@@ -327,6 +327,42 @@ và kiểm WPF mô phỏng qua PowerShell, không đổi hoặc vượt chính s
 CMD/PATH/Win+R thật và chuỗi GitHub Release sản xuất còn chưa xác minh.
 Không coi số assertion là bảo đảm mọi tinh chỉnh có hiệu lực trên mọi build.
 
+### Lệnh online từ phiên PowerShell Restricted
+
+Ảnh người dùng cho thấy `& $p` bị chặn bởi ExecutionPolicy. Bộ sinh lệnh
+chuyển sang host Windows PowerShell riêng với `-ExecutionPolicy Bypass`
+chỉ trong process con; SHA256 vẫn kiểm trước chạy, tải lỗi dừng ngay.
+24 bài author đạt (thêm4), gồm kiểm parent Restricted giữ nguyên, child STA,
+checksum sai/lỗi mạng không tạo child. Network/hash dùng provider giả;
+child chỉ là fixture local, không cài/khởi chạy app hoặc sửa Windows.
+
+Lệnh sửa cũng đã thử với GitHub thật bằng `-CheckOnly`, parent trước/sau
+Restricted, child exit0; chỉ tải bootstrapper có hash ghim và đọc chữ ký
+metadata. Không cài, chạy EXE, đăng ký PATH hoặc đổi policy lưu trong registry.
+evidence/online-policy-fix.json và .test-runs/online-policy-fix/live-check.log.
+Năm asset còn lại byte-identical với bộ0.15.0 đã phát hành. GitHub chưa được
+chỉnh asset; ONLINE-COMMAND-FIXED.txt là hướng dẫn local cho người dùng.
+
+## 0.15.1 — entry PowerShell/WPF
+
+743 assertion core/mock/WPF đạt:18+100+42+60+16+25+29+23+8+69+74+24+17+238.
+Thêm7 bài compiled fixture launcher/resolver cũ đã đạt ở lượt hồi quy này;
+không dùng kết quả đó bảo đảm EXE của gói sẽ được mọi chính sách chấp nhận.
+Primary source entry và các component Windows vẫn chịu App Control.
+
+Distribution74 thử register/remove/repair schema2 bằng native adapters giả,
+giữ kiểu dữ liệu PATH và xung đột; schema1 vẫn gỡ/repair có điều kiện.
+Pointer UTF-8 không BOM và đường dẫn chứa dấu tiếng Việt được kiểm tra.
+Source17 dùng CMD/PowerShell/ShellExecute thật với child fixture an toàn,
+PATH chỉ trong process rồi trả lại. Không đọc/ghi User/Machine PATH để thử,
+không cài app, không chạy tinh chỉnh; pointer/tamper/extra args/mode kiểm thật.
+WPF238 hồi quy giữ theme/lựa chọn/handler cũ. Đọc source/catalog vẫn khớp
+51DWORD/5REG_SZ/31choices/17software/30apps đã ghim.
+
+Native Win+R qua Explorer, User PATH sau đăng ký, cài/cập nhật Release0.15.1
+thật và hiệu lực mọi tinh chỉnh vẫn chưa thử. Người dùng đã tự mở bản0.15.0
+qua PowerShell/WPF và xác nhận; không coi đó là test gỡ/cài/repair mới.
+
 Đợt cấu hình repository:715 assertions đạt (695 bài cũ, gồm WPF238,
 +20 author). Public source chỉ lấy file đã liệt kê trong checksum; không
 đưa simulation-data hoặc file phát sinh sau khi chạy vào Source.

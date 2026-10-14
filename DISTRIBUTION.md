@@ -5,7 +5,7 @@
 Đã triển khai portable EXE, đăng ký lệnh theo tài khoản, bootstrapper và
 cập nhật có xác nhận. Cấu hình hiện ghim **dinhluxury/WinTune-VI** và khóa
 công khai RSA3072 của tác giả. Bộ local có manifest ký và checksum ZIP.
-**Chưa đăng mã hoặc phát hành GitHub Release.** Online chỉ tải được sau khi
+**Bản0.15.0 đã do người dùng phát hành;0.15.1 đang chuẩn bị local.** Online chỉ tải được sau khi
 có bản stable với đầy đủ asset; thiếu nguồn/khóa vẫn dừng trước mạng.
 Không đăng ký PATH/App Paths hay cài vào Windows trong quá trình kiểm thử.
 Khóa riêng sản xuất tạo riêng ngoài dự án; bài kiểm thử chỉ dùng khóa thử.
@@ -13,7 +13,7 @@ Xem [PUBLISHING.md](PUBLISHING.md) để đưa mã và bộ tải lên từng b�
 
 ## Người dùng: portable và lệnh wintune
 
-Giải nén toàn bộ ZIP rồi mở `WinTune-VI.exe`. Windows 11 x64, PowerShell
+Giải nén toàn bộ ZIP rồi mở `Mo-WinTune.cmd`. Windows 11 x64, PowerShell
 5.1 + WPF và .NET Framework có sẵn; không cài module/dependency âm thầm.
 
 Để dùng lệnh ở mọi nơi, mở **WinTune và cập nhật → Đăng ký lệnh wintune**,
@@ -24,8 +24,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Register-WinTune.ps1
 ```
 
 Script hỏi `DONG Y` trước khi chép bản vào `%LOCALAPPDATA%\WinTuneVI\apps`
-và đăng ký `%LOCALAPPDATA%\WinTuneVI\launcher` vào **User PATH**, cùng
-**HKCU App Paths\wintune.exe** cho Win + R. Không đổi Machine PATH,
+và đăng ký `%LOCALAPPDATA%\WinTuneVI\command` vào **User PATH**. Lệnh CMD
+đọc pointer rồi mở PowerShell/WPF; không tạo App Paths mới. Không đổi Machine PATH,
 không ghi đè lệnh cùng tên của chương trình khác. Mở lại CMD/PowerShell;
 cửa sổ cũ có thể giữ PATH cũ. Một số terminal thừa hưởng môi trường từ
 process cha cũ và cần mở lại ứng dụng terminal hoặc đăng xuất/đăng nhập.
@@ -107,7 +107,53 @@ Bootstrapper hỏi trước khi tải/khởi chạy. `-CheckOnly` chỉ kiểm t
 khi mở UI. HTTP chỉ HTTPS GitHub, redirect giới hạn, tối đa ba lần thử,
 giới hạn dung lượng/thời gian. Lỗi mạng/API được báo; không chạy dữ liệu lỗi.
 
+### Sửa lỗi PowerShell chặn script
+
+Lệnh trong ONLINE-COMMAND.txt đã phát hành ở0.15.0 dùng `& $p`, nên phiên
+PowerShell có ExecutionPolicy Restricted chặn script sau khi tải/hash đúng.
+Bộ sinh lệnh local đã sửa để gọi host Windows PowerShell cố định với
+`-NoProfile -STA -ExecutionPolicy Bypass -File $p` sau bước kiểm SHA256.
+Tham số chỉ áp dụng cho process con; không gọi Set-ExecutionPolicy, không
+thay CurrentUser/LocalMachine hoặc chính sách Group Policy/Application Control.
+[Tài liệu Microsoft](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1).
+
+Lệnh sửa cho bản0.15.0 tại `ONLINE-COMMAND-FIXED.txt`. Chỉ thay cách gọi;
+ZIP, bootstrapper, khóa, manifest và chữ ký khớp bộ đã phát hành.
+Chưa thay file công khai trên GitHub. Bộ local mới tại release-assets/LATEST.txt
+chứa ONLINE-COMMAND.txt đã sửa để tác giả kiểm tra/cập nhật có chủ ý.
+
+24 bài author đạt, gồm Restricted parent/STA child, checksum sai và lỗi
+mạng. Kiểm tra Release thật với lệnh mới `-CheckOnly` đạt; parent vẫn
+Restricted. Chưa dùng kết quả này để khẳng định đã cài/khởi chạy EXE hoặc
+đăng ký lệnh thật. Bằng chứng local: evidence/online-policy-fix.json.
+
 ## Vì sao chọn portable EXE
+
+### Windows Application Control chặn EXE
+
+Ảnh lỗi và CodeIntegrity3077 trên máy người dùng xác nhận `WinTune-VI.exe`
+bị chính sách `VerifiedAndReputableDesktop` chặn. File chưa có Authenticode;
+gói tải/295checksum vẫn đúng và đã được lưu trong apps/current.txt. Quyền
+Administrator hoặc ExecutionPolicy của PowerShell không cấp phép cho EXE.
+Khóa RSA của release.sig chỉ xác minh manifest/ZIP; không thay chứng chỉ
+code signing được Windows tin cậy. Không tắt Smart App Control/Defender,
+thay rule hoặc tạo chứng chỉ tự ký rồi thêm vào Trusted Root để khắc phục.
+
+WinTune vốn có lối chạy PowerShell/WPF ở `Mo-WinTune.cmd`; đây là entry
+point có sẵn từ trước EXE. Chỉ dùng nếu chính sách Windows cho phép script
+và các module/assembly phụ thuộc. Windows vẫn kiểm tra chúng. Không tự
+chuyển sang lối khác sau khi bị App Control chặn. Đã thử trực tiếp script
+trong gói tải đã xác minh bằng -GuiProbe: WPF main/owned dialog render,
+46 entries, lựa chọn0/ghi0; đây là mô phỏng, không thực thi các tinh chỉnh.
+
+Nếu người dùng chọn mở lối PowerShell/WPF của bản đã tải, thư mục hiện tại
+đọc từ `%LOCALAPPDATA%\WinTuneVI\current.txt`; có thể mở `Mo-WinTune.cmd`
+trong thư mục đó. Muốn phân phối EXE trên máy yêu cầu chữ ký cần chứng chỉ
+Authenticode được tin cậy và đáp ứng chính sách của máy; hiện không có
+chứng chỉ đó trong workspace. Không hứa tự ký RSA manifest sẽ làm EXE được
+chấp nhận. Bootstrapper local báo lỗi tiếng Việt và dừng, không fallback.
+[Microsoft: sự kiện App Control](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/app-control-for-business/operations/event-id-explanations),
+[Microsoft: script enforcement](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/app-control-for-business/design/script-enforcement).
 
 [PS2EXE](https://github.com/MScholtes/PS2EXE) hỗ trợ script PowerShell 5.x,
 nhưng các biến đường dẫn script như `$PSScriptRoot` thay đổi khi biên dịch;
@@ -141,3 +187,17 @@ thực thi script tải từ các repository này.
 Application Control trên host đã chặn một số EXE fixture mới biên dịch. Không tắt/bỏ qua chính sách; kết quả có ghi Executable/benchmark chưa xác minh khi bị chặn. PowerShell/WPF trực tiếp vẫn được thử. Chữ ký manifest RSA không phải chữ ký Authenticode và không tự cho phép EXE qua Application Control.
 
 Gói cuối và resolver đã chạy /probe mô phỏng thành công; phần đo so sánh wrapper cũ/mới còn bị chặn. Không áp dụng kết quả probe cho PATH/Win + R thật hoặc Release online. Bộ dữ liệu mô phỏng ở workspace không phải cài ứng dụng vào Windows.
+
+## Đăng ký source của0.15.1
+
+Lối mở online chọn PowerShell/WPF ngay từ đầu, không thử EXE rồi tự đổihost
+sau khi bị từ chối. Mọi file trong gói được kiểm checksum trước mở.
+Đăng ký mới copy Wintune.Registered.cmd thành command/wintune.cmd và
+CommandRouter.ps1, thêm command vào User PATH. Không đăng ký App Paths mới.
+Receipt schema2 chỉ theo dõi User PATH. Đăng ký/hoàn tác schema1 EXE cũ
+vẫn hỗ trợ; cần tự bỏ đăng ký cũ trước khi chuyển, không tự thay lệnh khác.
+
+Gõ wintune / wintune demo / wintune update; CLI và ShellExecute đã thử bằng
+fixture PATH trong process. Native Win+R sau đăng ký User PATH vẫn chưa thử;
+Explorer/terminal đang mở có thể giữ PATH cũ và cần mở lại/đăng nhập lại.
+File lệnh/phiên bản cũ/lịch sử giữ khi bỏ đăng ký. Không thử native PATH.

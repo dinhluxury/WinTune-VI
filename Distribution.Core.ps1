@@ -184,7 +184,7 @@ function Complete-DistributionActivation([string]$Package,[string]$Root,[string]
     Assert-DistributionCancelled $Cancellation
     $root=Assert-DistributionPath $Root $Root;$null=New-Item -ItemType Directory -Path (Join-Path $root 'apps') -Force
     if (Test-Path -LiteralPath (Join-Path $root 'current.txt')) {
-        $current=(Get-Content -LiteralPath (Join-Path $root 'current.txt') -Raw).Trim();$current=Assert-DistributionPath $current (Join-Path $root 'apps')
+        $current=(Get-Content -LiteralPath (Join-Path $root 'current.txt') -Raw -Encoding UTF8).Trim();$current=Assert-DistributionPath $current (Join-Path $root 'apps')
         if ([version](Get-WinTuneVersion $current).Version -gt [version]$Version) {throw 'Đã có bản mới hơn; không hạ phiên bản hoặc ghi đè current.txt.'}
     }
     $dest=Assert-DistributionPath (Join-Path $root ('apps/v'+$Version+'-'+$Digest.Substring(0,12)+'-'+[guid]::NewGuid().ToString('N').Substring(0,8))) $root
@@ -217,7 +217,7 @@ function Get-DistributionBuild {return [int](Get-ItemProperty 'HKLM:\SOFTWARE\Mi
 function Get-PreparedDistributionVersion([string]$Root,[string]$Fallback) {
     $current=Join-Path $Root 'current.txt'
     if (-not (Test-Path -LiteralPath $current)) {return $Fallback}
-    $path=Assert-DistributionPath ((Get-Content -LiteralPath $current -Raw).Trim()) (Join-Path $Root 'apps')
+    $path=Assert-DistributionPath ((Get-Content -LiteralPath $current -Raw -Encoding UTF8).Trim()) (Join-Path $Root 'apps')
     $version=(Get-WinTuneVersion $path).Version;Test-PortableIntegrity $path $version
     return $(if ([version]$version -gt [version]$Fallback) {$version} else {$Fallback})
 }
@@ -226,7 +226,7 @@ function Install-LocalDistribution([string]$Source,[string]$Root,[bool]$Confirme
     $v=Get-WinTuneVersion $Source;Test-PortableIntegrity $Source $v.Version
     $root=Assert-DistributionPath $Root $Root
     if (Test-Path -LiteralPath (Join-Path $root 'current.txt')) {
-        $current=(Get-Content -LiteralPath (Join-Path $root 'current.txt') -Raw).Trim();$current=Assert-DistributionPath $current (Join-Path $root 'apps')
+        $current=(Get-Content -LiteralPath (Join-Path $root 'current.txt') -Raw -Encoding UTF8).Trim();$current=Assert-DistributionPath $current (Join-Path $root 'apps')
         if ([version](Get-WinTuneVersion $current).Version -ge [version]$v.Version) {Test-PortableIntegrity $current (Get-WinTuneVersion $current).Version;return [pscustomobject]@{Path=$current;Version=(Get-WinTuneVersion $current).Version;Status='Existing'}}
     }
     if ([IO.Path]::GetFullPath($Source).StartsWith((Join-Path $root 'apps')+'\',[StringComparison]::OrdinalIgnoreCase)) {return [pscustomobject]@{Path=$Source;Version=$v.Version;Status='Existing'}}
