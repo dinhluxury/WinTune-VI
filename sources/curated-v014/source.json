@@ -1,0 +1,29 @@
+﻿{
+  "Repository": "microsoft/winget-pkgs",
+  "Commit": "2266f556516ee3159b4f2ac38a3e38e04ba6af3c",
+  "Path": "manifests/u/UniKey/UniKey/4.6.230919",
+  "PackageId": "UniKey.UniKey",
+  "Official": "https://www.unikey.org/",
+  "Checked": "2026-10-14T17:14:08.9276455+07:00",
+  "Version": "4.6.230919",
+  "Architecture": "x64",
+  "License": "MIT (manifest), UniKey freeware/application terms remain separate",
+  "Files": [
+    {
+      "Name": "LICENSE.txt",
+      "SHA256": "55317081207882CFB60C1D51A280994CCE3DA47323027FEF43431C68CA6A6809"
+    },
+    {
+      "Name": "UniKey.UniKey.installer.yaml.txt",
+      "SHA256": "3B40BF3B7144D6F538982818E8D620599DC72F20BC7BBF054F74C59A9A4A3893"
+    },
+    {
+      "Name": "UniKey.UniKey.locale.en-US.yaml.txt",
+      "SHA256": "2EA35DAA039C001722273EE5C12345013D417EB30607C6D21926A658C6762669"
+    },
+    {
+      "Name": "UniKey.UniKey.yaml.txt",
+      "SHA256": "D2BA0AC5210594707D2238A100E2C085D1758242CC420F0FA472E573AE71EA70"
+    }
+  ]
+}

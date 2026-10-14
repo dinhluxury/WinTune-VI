@@ -1,0 +1,242 @@
+﻿[
+    {
+        "Name":  "Microsoft.WindowsFeedbackHub",
+        "Title":  "Trung tâm phản hồi",
+        "Impact":  "Gửi góp ý và lỗi cho Microsoft. Gỡ sẽ mất giao diện gửi phản hồi này.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NBLGGH4R32N",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.GetHelp",
+        "Title":  "Ứng dụng Trợ giúp",
+        "Impact":  "Mở hỗ trợ và hướng dẫn sửa lỗi của Microsoft. Giữ nếu bạn thường dùng hỗ trợ Windows.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9PKDZBMV1H3T",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.OutlookForWindows",
+        "Title":  "Outlook for Windows",
+        "Impact":  "Quản lý email và lịch bằng Outlook mới. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NRX63209R7B",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "MSTeams",
+        "Title":  "Microsoft Teams",
+        "Impact":  "Nhắn tin, họp và nhận thông báo Teams. Gỡ nếu không dùng; không chọn nếu công việc hoặc trường học cần Teams.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "XP8BT8DW290MPQ",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Clipchamp.Clipchamp",
+        "Title":  "Trình sửa video Clipchamp",
+        "Impact":  "Sửa và xuất video. Gỡ có thể mất dự án hoặc dữ liệu cục bộ; tự xuất/sao lưu dự án trước.",
+        "Publisher":  "yxz26nhyzhsrt",
+        "StoreId":  "9P1J8S7CCWWT",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.MicrosoftOfficeHub",
+        "Title":  "Office Hub",
+        "Impact":  "Trang mở nhanh và quản lý nội dung Microsoft 365/Copilot; đây không phải toàn bộ Word, Excel hoặc PowerPoint. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRD29V9",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.ZuneMusic",
+        "Title":  "Media Player",
+        "Impact":  "Nghe nhạc bằng Media Player. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFJ3PT",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.BingSearch",
+        "Title":  "Bing Search",
+        "Impact":  "Ứng dụng tìm kiếm Bing của Microsoft. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NZBF4GT040C",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "MicrosoftCorporationII.QuickAssist",
+        "Title":  "Quick Assist",
+        "Impact":  "Hỗ trợ máy tính từ xa bằng Quick Assist. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9P7BP5VNWKX5",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.Windows.DevHome",
+        "Title":  "Dev Home",
+        "Impact":  "Công cụ Dev Home dành cho lập trình viên. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9N8MHTPHNGVV",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "MicrosoftWindows.CrossDevice",
+        "Title":  "Cross Device Experience",
+        "Impact":  "Hỗ trợ kết nối và trải nghiệm thiết bị điện thoại với Windows. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NTXGKQ8P7N0",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.Todos",
+        "Title":  "Microsoft To Do",
+        "Impact":  "Quản lý danh sách việc cần làm. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NBLGGH5R558",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.PowerAutomateDesktop",
+        "Title":  "Power Automate",
+        "Impact":  "Tự động hóa công việc trên máy; giữ nếu bạn có quy trình đang dùng. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NFTCH6J7FHV",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.YourPhone",
+        "Title":  "Liên kết điện thoại",
+        "Impact":  "Đồng bộ thông báo, cuộc gọi, ảnh và tin nhắn từ điện thoại. Gỡ sẽ mất kết nối và đồng bộ, có thể bớt hoạt động nền nếu đang dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NMPJ99VJBWV",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.MicrosoftStickyNotes",
+        "Title":  "Sticky Notes",
+        "Impact":  "Lưu ghi chú nhanh trên màn hình. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NBLGGH4QGHW",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.WindowsSoundRecorder",
+        "Title":  "Sound Recorder",
+        "Impact":  "Ghi âm từ micro. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFHWKN",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.WindowsAlarms",
+        "Title":  "Alarms \u0026 Clock",
+        "Impact":  "Đồng hồ, báo thức và bộ đếm giờ. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFJ3PR",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.Paint",
+        "Title":  "Paint",
+        "Impact":  "Vẽ và chỉnh sửa ảnh đơn giản. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9PCFS5B6T72H",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.WindowsNotepad",
+        "Title":  "Notepad",
+        "Impact":  "Đọc và soạn thảo file văn bản. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9MSMLRH6LZF3",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.ScreenSketch",
+        "Title":  "Snipping Tool",
+        "Impact":  "Chụp ảnh màn hình bằng Snipping Tool. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9MZ95KL8MR0L",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.Copilot",
+        "Title":  "Microsoft Copilot",
+        "Impact":  "Trợ lý AI độc lập. Gỡ chỉ ứng dụng này của tài khoản hiện tại, không gỡ Office, Edge hoặc thành phần Windows AI. Không bảo đảm giảm RAM nếu ứng dụng vốn không chạy.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NHT9RB2F4HD",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.WindowsCalculator",
+        "Title":  "Calculator",
+        "Impact":  "Máy tính để tính toán thông thường và chuyển đổi đơn vị. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFHVN5",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.WindowsCamera",
+        "Title":  "Camera",
+        "Impact":  "Chụp ảnh hoặc quay video bằng camera của máy. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFJBBG",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.Windows.Photos",
+        "Title":  "Photos",
+        "Impact":  "Xem và chỉnh sửa ảnh. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFJBH4",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.BingNews",
+        "Title":  "Ứng dụng Tin tức",
+        "Impact":  "Đọc tin tức trong app. Không tắt toàn bộ Widgets hay nội dung tin tức trên web.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFHVFW",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.BingWeather",
+        "Title":  "Ứng dụng Thời tiết",
+        "Impact":  "Xem dự báo trong app. Không tự ẩn ô thời tiết Widgets trên taskbar; dùng mục Ẩn thời tiết và Widgets nếu muốn ẩn ô đó.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFJ3Q2",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.GamingApp",
+        "Title":  "Ứng dụng Xbox",
+        "Impact":  "Quản lý game và Game Pass. Giữ nếu chơi game qua Xbox; không gỡ Gaming Services hoặc trò chơi cùng mục này.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9MV0B5HZVK9Z",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.XboxGamingOverlay",
+        "Title":  "Xbox Game Bar",
+        "Impact":  "Mở Win+G, chụp và quay clip bằng Game Bar. Gỡ sẽ mất các chức năng đó, không gỡ OBS hoặc phần mềm ghi hình khác.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9NZKPSTSNW4P",
+        "Recommendation":  "Review"
+    },
+    {
+        "Name":  "Microsoft.MicrosoftSolitaireCollection",
+        "Title":  "Solitaire Collection",
+        "Impact":  "Bộ trò chơi bài Solitaire của Microsoft. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "",
+        "Recommendation":  "Normal"
+    },
+    {
+        "Name":  "Microsoft.ZuneVideo",
+        "Title":  "Movies \u0026 TV",
+        "Impact":  "Xem phim và video bằng Movies \u0026 TV. Gỡ làm mất chức năng và có thể xóa dữ liệu ứng dụng. Chỉ chọn nếu bạn không dùng.",
+        "Publisher":  "8wekyb3d8bbwe",
+        "StoreId":  "9WZDNCRFJ3P2",
+        "Recommendation":  "Normal"
+    }
+]

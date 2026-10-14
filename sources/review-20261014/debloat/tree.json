@@ -1,0 +1,3790 @@
+{
+  "sha": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+  "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "697c1bea68f818feebaa91b96331cfe93ec2706e",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/697c1bea68f818feebaa91b96331cfe93ec2706e"
+    },
+    {
+      "path": ".github/CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b080835916dc855355129e8e90bac883a276e1b",
+      "size": 24315,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1b080835916dc855355129e8e90bac883a276e1b"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08c06a312c28534bbdc1207d3628d44df5233e3a",
+      "size": 30,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/08c06a312c28534bbdc1207d3628d44df5233e3a"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5ad5ed259347d1589e613c89066dbe31b2e738a7",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/5ad5ed259347d1589e613c89066dbe31b2e738a7"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c89d67e7450fc01c89afd1ecad05ae6ed297031",
+      "size": 2663,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0c89d67e7450fc01c89afd1ecad05ae6ed297031"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b078a63eb396ad02721152b555d14941d10d9d63",
+      "size": 203,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b078a63eb396ad02721152b555d14941d10d9d63"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f84077ef98d5e08a06f1e9c12f2c5d24222eb3a8",
+      "size": 1631,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f84077ef98d5e08a06f1e9c12f2c5d24222eb3a8"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "db46d20153705f246c70ca101d10de4b3de59c46",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/db46d20153705f246c70ca101d10de4b3de59c46"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b95720bb67524ecf5b095d4505553edcfd99bfe",
+      "size": 463,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0b95720bb67524ecf5b095d4505553edcfd99bfe"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8f7eae1ad5219e61934b95c5b460dc486086d22",
+      "size": 38,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c8f7eae1ad5219e61934b95c5b460dc486086d22"
+    },
+    {
+      "path": "Assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b069579c6bd72393a1ead953f9828346c3c413b",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/2b069579c6bd72393a1ead953f9828346c3c413b"
+    },
+    {
+      "path": "Assets/Images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "475a37c40f11b940dd8c509675b514b3fbd06175",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/475a37c40f11b940dd8c509675b514b3fbd06175"
+    },
+    {
+      "path": "Assets/Images/menu.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25f2fee4a1c5dd38f471c7e348567cf68c4b0eab",
+      "size": 63191,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/25f2fee4a1c5dd38f471c7e348567cf68c4b0eab"
+    },
+    {
+      "path": "Assets/Start",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f35ac78866022c9e478a6aec640b6cbe518c05af",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/f35ac78866022c9e478a6aec640b6cbe518c05af"
+    },
+    {
+      "path": "Assets/Start/What is this file.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d85ffb0f55acda2206b5d7e63d9f10502b43922",
+      "size": 329,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5d85ffb0f55acda2206b5d7e63d9f10502b43922"
+    },
+    {
+      "path": "Assets/Start/start2.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98159fb0e65f33de40f1ddfc545c103385565767",
+      "size": 972,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/98159fb0e65f33de40f1ddfc545c103385565767"
+    },
+    {
+      "path": "Config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cf3e74b327cf7940c841d6e4fb42c36febd33ee4",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/cf3e74b327cf7940c841d6e4fb42c36febd33ee4"
+    },
+    {
+      "path": "Config/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0f21b43e9f0530d4bdd17aef89d7e2d81dca440",
+      "size": 38309,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f0f21b43e9f0530d4bdd17aef89d7e2d81dca440"
+    },
+    {
+      "path": "Config/DefaultSettings.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3cf0b4707865e70fd2b5c58c44c610e34f292ef",
+      "size": 1543,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e3cf0b4707865e70fd2b5c58c44c610e34f292ef"
+    },
+    {
+      "path": "Config/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e0346c21cd618a3a07f36a12eab710fdb7800ee",
+      "size": 73487,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6e0346c21cd618a3a07f36a12eab710fdb7800ee"
+    },
+    {
+      "path": "Config/Languages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "edeb07495109da5010d42eaa6cf92e64a5d4d8cb",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/edeb07495109da5010d42eaa6cf92e64a5d4d8cb"
+    },
+    {
+      "path": "Config/Languages/en-US",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "047ed6a2a0e4449431efcb831f7f7f90f420dfdf",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/047ed6a2a0e4449431efcb831f7f7f90f420dfdf"
+    },
+    {
+      "path": "Config/Languages/en-US/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15b6b8a25069aecd9afd3ea485151f00c7b04d7d",
+      "size": 20177,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/15b6b8a25069aecd9afd3ea485151f00c7b04d7d"
+    },
+    {
+      "path": "Config/Languages/en-US/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "924ae017062f264bdcce2a2f1bb19104ded6a570",
+      "size": 632,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/924ae017062f264bdcce2a2f1bb19104ded6a570"
+    },
+    {
+      "path": "Config/Languages/en-US/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "955cb31e37c246f2b1efd4030a119d677988c780",
+      "size": 23628,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/955cb31e37c246f2b1efd4030a119d677988c780"
+    },
+    {
+      "path": "Config/Languages/en-US/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa75afe1ca23e44b3f58bb9505042d2e2b18742e",
+      "size": 45471,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/fa75afe1ca23e44b3f58bb9505042d2e2b18742e"
+    },
+    {
+      "path": "Config/Languages/it-IT",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "42527bb8f37175485f87908ce3573a9fbe809cc6",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/42527bb8f37175485f87908ce3573a9fbe809cc6"
+    },
+    {
+      "path": "Config/Languages/it-IT/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4130726497a30e0eb225052d8d480549905923fc",
+      "size": 21941,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/4130726497a30e0eb225052d8d480549905923fc"
+    },
+    {
+      "path": "Config/Languages/it-IT/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94e19bc9dc1aef99a650ab926e15982203c8bf13",
+      "size": 659,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/94e19bc9dc1aef99a650ab926e15982203c8bf13"
+    },
+    {
+      "path": "Config/Languages/it-IT/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f87219d99a8e30490cf0f97ac58d02412c962304",
+      "size": 26392,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f87219d99a8e30490cf0f97ac58d02412c962304"
+    },
+    {
+      "path": "Config/Languages/it-IT/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57f4797af07e673c7f75ebfd71b7fcd18298774b",
+      "size": 54817,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/57f4797af07e673c7f75ebfd71b7fcd18298774b"
+    },
+    {
+      "path": "Config/Languages/ja-JP",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8bf0934d4451af4019693547f8db395aedd1f405",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/8bf0934d4451af4019693547f8db395aedd1f405"
+    },
+    {
+      "path": "Config/Languages/ja-JP/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0fe162d47433f6f5d5bb348b939f76444c76335",
+      "size": 25122,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c0fe162d47433f6f5d5bb348b939f76444c76335"
+    },
+    {
+      "path": "Config/Languages/ja-JP/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fe36f6966cf08c450d13637f21ec4aa5b7f9be0",
+      "size": 709,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2fe36f6966cf08c450d13637f21ec4aa5b7f9be0"
+    },
+    {
+      "path": "Config/Languages/ja-JP/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0881c901850af2ae59229b4144c978440cd32c44",
+      "size": 29493,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0881c901850af2ae59229b4144c978440cd32c44"
+    },
+    {
+      "path": "Config/Languages/ja-JP/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8efaf47f49b7f12ca6a9eda74abf23c09845d2e",
+      "size": 63634,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e8efaf47f49b7f12ca6a9eda74abf23c09845d2e"
+    },
+    {
+      "path": "Config/Languages/nl-NL",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb3961bd68198ccf613224e987de47ee7a4712c3",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/bb3961bd68198ccf613224e987de47ee7a4712c3"
+    },
+    {
+      "path": "Config/Languages/nl-NL/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5846d3481c1f97f72ef63dd805f96a9bf96416d4",
+      "size": 21478,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5846d3481c1f97f72ef63dd805f96a9bf96416d4"
+    },
+    {
+      "path": "Config/Languages/nl-NL/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47aa2554fb22335e9fe6b6476340dc837250dcde",
+      "size": 561,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/47aa2554fb22335e9fe6b6476340dc837250dcde"
+    },
+    {
+      "path": "Config/Languages/nl-NL/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17aa3755793e8fd21b70ea65f77ec94280a1d945",
+      "size": 25700,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/17aa3755793e8fd21b70ea65f77ec94280a1d945"
+    },
+    {
+      "path": "Config/Languages/nl-NL/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36664f8b67ccf5bfafa8aaa42e04ac4b9c0ded94",
+      "size": 46501,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/36664f8b67ccf5bfafa8aaa42e04ac4b9c0ded94"
+    },
+    {
+      "path": "Config/Languages/pt-BR",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "df3f3fcf7bdd10db7c421bf099edfbab75adc5d7",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/df3f3fcf7bdd10db7c421bf099edfbab75adc5d7"
+    },
+    {
+      "path": "Config/Languages/pt-BR/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44519eb15be348f44805487a73a7581cc9759743",
+      "size": 21993,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/44519eb15be348f44805487a73a7581cc9759743"
+    },
+    {
+      "path": "Config/Languages/pt-BR/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7d5c919d0cc4cb57a7ee52c42252086a78ac8f7",
+      "size": 680,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a7d5c919d0cc4cb57a7ee52c42252086a78ac8f7"
+    },
+    {
+      "path": "Config/Languages/pt-BR/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad76db3b6cf5e2895298cea20202f40bd009b2e0",
+      "size": 26791,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ad76db3b6cf5e2895298cea20202f40bd009b2e0"
+    },
+    {
+      "path": "Config/Languages/pt-BR/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05ab435bc53cbedcc8e2a5f6b2089b3d215f750c",
+      "size": 52728,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/05ab435bc53cbedcc8e2a5f6b2089b3d215f750c"
+    },
+    {
+      "path": "Config/Languages/zh-CN",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bf67ca40c9cd302d124d8ce04d82b03644a63918",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/bf67ca40c9cd302d124d8ce04d82b03644a63918"
+    },
+    {
+      "path": "Config/Languages/zh-CN/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87f57df4f5983e0e9109baa156eadedf06be94e0",
+      "size": 21312,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/87f57df4f5983e0e9109baa156eadedf06be94e0"
+    },
+    {
+      "path": "Config/Languages/zh-CN/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d689e206fd6a9dfd8e47a567ff0f62b78d3afe90",
+      "size": 632,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d689e206fd6a9dfd8e47a567ff0f62b78d3afe90"
+    },
+    {
+      "path": "Config/Languages/zh-CN/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5dc1ec64a0134f1667acde789207ae040dd35412",
+      "size": 22057,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5dc1ec64a0134f1667acde789207ae040dd35412"
+    },
+    {
+      "path": "Config/Languages/zh-CN/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ccf7a06c63dfd249af15633825b4de34f1a9bdf",
+      "size": 42986,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7ccf7a06c63dfd249af15633825b4de34f1a9bdf"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea0417aa651fe90af45216d49512d17bf8708a5c",
+      "size": 1093,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ea0417aa651fe90af45216d49512d17bf8708a5c"
+    },
+    {
+      "path": "README.md",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "29a87f796a99f31b8bef96778757f47f8d8a176e",
+      "size": 9284,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/29a87f796a99f31b8bef96778757f47f8d8a176e"
+    },
+    {
+      "path": "Regfiles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "84fdb56753624a318a898feceae25090263946d3",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/84fdb56753624a318a898feceae25090263946d3"
+    },
+    {
+      "path": "Regfiles/Add_All_Folders_Under_This_PC.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4d9f407a5b97dee3dd50c3f6a2100ee38a1ffec",
+      "size": 4432,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a4d9f407a5b97dee3dd50c3f6a2100ee38a1ffec"
+    },
+    {
+      "path": "Regfiles/Align_Taskbar_Left.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65100bd50657040d5919f3655d6b73f7307d31f8",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/65100bd50657040d5919f3655d6b73f7307d31f8"
+    },
+    {
+      "path": "Regfiles/Combine_MMTaskbar_Always.reg",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "80306f750c96444787c328da5e81c2eddcbfdbd4",
+      "size": 326,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/80306f750c96444787c328da5e81c2eddcbfdbd4"
+    },
+    {
+      "path": "Regfiles/Combine_MMTaskbar_Never.reg",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f61449997636c92c630b69a5d14e6876a934fc88",
+      "size": 326,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f61449997636c92c630b69a5d14e6876a934fc88"
+    },
+    {
+      "path": "Regfiles/Combine_MMTaskbar_When_Full.reg",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1f4b7113e3aa57458f1b96be5671872a7194b45e",
+      "size": 326,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1f4b7113e3aa57458f1b96be5671872a7194b45e"
+    },
+    {
+      "path": "Regfiles/Combine_Taskbar_Always.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2f11445907644a0b96b1bc053ff651a53ca6666",
+      "size": 322,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a2f11445907644a0b96b1bc053ff651a53ca6666"
+    },
+    {
+      "path": "Regfiles/Combine_Taskbar_Never.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dbab3134728853d004a501a49332b881fd74cb0",
+      "size": 322,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1dbab3134728853d004a501a49332b881fd74cb0"
+    },
+    {
+      "path": "Regfiles/Combine_Taskbar_When_Full.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a09159521b85b4b983a99ce78a56cdc6d6085a2",
+      "size": 322,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5a09159521b85b4b983a99ce78a56cdc6d6085a2"
+    },
+    {
+      "path": "Regfiles/Disable_AI_Recall.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2f7ece80c9ea16932de92aa0706027b0a20ce26",
+      "size": 962,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e2f7ece80c9ea16932de92aa0706027b0a20ce26"
+    },
+    {
+      "path": "Regfiles/Disable_AI_Service_Auto_Start.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "139b4b0cb0faa08847d8b7b906d13ee628000993",
+      "size": 278,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/139b4b0cb0faa08847d8b7b906d13ee628000993"
+    },
+    {
+      "path": "Regfiles/Disable_Animations.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d15aec4c9bfdbaff4fc6f5c2a4d5cda0782bd8f0",
+      "size": 278,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d15aec4c9bfdbaff4fc6f5c2a4d5cda0782bd8f0"
+    },
+    {
+      "path": "Regfiles/Disable_Bing_Cortana_In_Search.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b84563bc93ef862a35ac42ee210d4b509986521f",
+      "size": 702,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b84563bc93ef862a35ac42ee210d4b509986521f"
+    },
+    {
+      "path": "Regfiles/Disable_Bitlocker_Auto_Encryption.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67e6af563f18fd01c47e73805005c7dab8e93aed",
+      "size": 304,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/67e6af563f18fd01c47e73805005c7dab8e93aed"
+    },
+    {
+      "path": "Regfiles/Disable_Brave_Bloat.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d94e0cfe935596c7524212b5715a3b250359d703",
+      "size": 652,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d94e0cfe935596c7524212b5715a3b250359d703"
+    },
+    {
+      "path": "Regfiles/Disable_Chat_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d1c8b4e1b1c7ff34a774ac39a9f4f7421d9c499",
+      "size": 596,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1d1c8b4e1b1c7ff34a774ac39a9f4f7421d9c499"
+    },
+    {
+      "path": "Regfiles/Disable_Chrome_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fcec73ae17ad1e87bd947d3f5f6f2da199a2959",
+      "size": 1606,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7fcec73ae17ad1e87bd947d3f5f6f2da199a2959"
+    },
+    {
+      "path": "Regfiles/Disable_Click_to_Do.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f303f428afdf2039c7afc818b1564f1df8db761c",
+      "size": 500,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f303f428afdf2039c7afc818b1564f1df8db761c"
+    },
+    {
+      "path": "Regfiles/Disable_Copilot.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "638c74c5a4a097d501343c463029694ab7b0091e",
+      "size": 1022,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/638c74c5a4a097d501343c463029694ab7b0091e"
+    },
+    {
+      "path": "Regfiles/Disable_DVR.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f4dd3f57054698e5ff5fbf82e80350ad89697f3",
+      "size": 662,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7f4dd3f57054698e5ff5fbf82e80350ad89697f3"
+    },
+    {
+      "path": "Regfiles/Disable_Delivery_Optimization.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d46d6cd55cc047db89b4ef3dafa6ee49b2d47810",
+      "size": 496,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d46d6cd55cc047db89b4ef3dafa6ee49b2d47810"
+    },
+    {
+      "path": "Regfiles/Disable_Desktop_Spotlight.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b685d363f657ff5fb94f9ae9f5a4093a0469955c",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b685d363f657ff5fb94f9ae9f5a4093a0469955c"
+    },
+    {
+      "path": "Regfiles/Disable_Device_Auto_App_Download.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e58b59ec1d2f42ae3c05b3b571de2ab0c7883fd",
+      "size": 464,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9e58b59ec1d2f42ae3c05b3b571de2ab0c7883fd"
+    },
+    {
+      "path": "Regfiles/Disable_Edge_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "832e5b4521fc34697efb37574e2714ee2742d891",
+      "size": 990,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/832e5b4521fc34697efb37574e2714ee2742d891"
+    },
+    {
+      "path": "Regfiles/Disable_Edge_Ads_And_Suggestions.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "829dd894a9f49c1eff62fd162f1e8251980f910a",
+      "size": 1642,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/829dd894a9f49c1eff62fd162f1e8251980f910a"
+    },
+    {
+      "path": "Regfiles/Disable_Enhance_Pointer_Precision.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df6008e09fca0009b2d51728efe596cf12ca4903",
+      "size": 300,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/df6008e09fca0009b2d51728efe596cf12ca4903"
+    },
+    {
+      "path": "Regfiles/Disable_Fast_Startup.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17b27ebf00966e8f74979c0c82d94febf2f50de6",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/17b27ebf00966e8f74979c0c82d94febf2f50de6"
+    },
+    {
+      "path": "Regfiles/Disable_Find_My_Device.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5af9daeb3d583a1ed460d9d3175538cd45b4c908",
+      "size": 376,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5af9daeb3d583a1ed460d9d3175538cd45b4c908"
+    },
+    {
+      "path": "Regfiles/Disable_Game_Bar_Integration.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2dcf86c78b76f5c322046075e1e92c19be4369d3",
+      "size": 1212,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2dcf86c78b76f5c322046075e1e92c19be4369d3"
+    },
+    {
+      "path": "Regfiles/Disable_Give_access_to_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df58d7d4890bc745edbcca3f7f44c1383646cff4",
+      "size": 970,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/df58d7d4890bc745edbcca3f7f44c1383646cff4"
+    },
+    {
+      "path": "Regfiles/Disable_Include_in_library_from_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca93a6d10de40d70abe0a9ec872a978a08903f2a",
+      "size": 426,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ca93a6d10de40d70abe0a9ec872a978a08903f2a"
+    },
+    {
+      "path": "Regfiles/Disable_Location_Services.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24862416dd18a45576376bbd9389e0ddaf33cff1",
+      "size": 312,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/24862416dd18a45576376bbd9389e0ddaf33cff1"
+    },
+    {
+      "path": "Regfiles/Disable_Lockscreen_Tips.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "010c88dc6671645be08bd73306408bdda7d4e0cc",
+      "size": 614,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/010c88dc6671645be08bd73306408bdda7d4e0cc"
+    },
+    {
+      "path": "Regfiles/Disable_Modern_Standby_Networking.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b344f9fac496dc7138de18afac8cbab200d9370",
+      "size": 432,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0b344f9fac496dc7138de18afac8cbab200d9370"
+    },
+    {
+      "path": "Regfiles/Disable_Notepad_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1c6e02e6c4b2e92149e51dd1d04c2c4e60209c7",
+      "size": 272,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d1c6e02e6c4b2e92149e51dd1d04c2c4e60209c7"
+    },
+    {
+      "path": "Regfiles/Disable_Notifications.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f56f628b0c74606c63f3cd10df37c1e16d7e674",
+      "size": 302,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/4f56f628b0c74606c63f3cd10df37c1e16d7e674"
+    },
+    {
+      "path": "Regfiles/Disable_Paint_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "037dcb53d79ac201321e7d6b74096780bd9cd213",
+      "size": 640,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/037dcb53d79ac201321e7d6b74096780bd9cd213"
+    },
+    {
+      "path": "Regfiles/Disable_Phone_Link_In_Start.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9d50118419f9700916294a5da01387cf111124f",
+      "size": 452,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a9d50118419f9700916294a5da01387cf111124f"
+    },
+    {
+      "path": "Regfiles/Disable_Settings_365_Ads.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32b4d5a9a583b9eff5fc5673c3806d34cfdf3601",
+      "size": 416,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/32b4d5a9a583b9eff5fc5673c3806d34cfdf3601"
+    },
+    {
+      "path": "Regfiles/Disable_Settings_Home.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1e28d1d5eb646779585fbee3040232d6ae574f7",
+      "size": 330,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a1e28d1d5eb646779585fbee3040232d6ae574f7"
+    },
+    {
+      "path": "Regfiles/Disable_Share_Drag_Tray.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5669f764fd9a909c0c337e56fd8442c156dc372d",
+      "size": 288,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5669f764fd9a909c0c337e56fd8442c156dc372d"
+    },
+    {
+      "path": "Regfiles/Disable_Share_from_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36e5c4f5592dfa923fbdd31a1e991925819e6a17",
+      "size": 222,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/36e5c4f5592dfa923fbdd31a1e991925819e6a17"
+    },
+    {
+      "path": "Regfiles/Disable_Show_More_Options_Context_Menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3486e9589b45ee98839655564021ee88ad7a3062",
+      "size": 298,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3486e9589b45ee98839655564021ee88ad7a3062"
+    },
+    {
+      "path": "Regfiles/Disable_Snap_Assist.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3978e329d026b5ddeda5b1ebc84b2be7b4ff9185",
+      "size": 310,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3978e329d026b5ddeda5b1ebc84b2be7b4ff9185"
+    },
+    {
+      "path": "Regfiles/Disable_Snap_Layouts.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "002b41112c37543cb829b0e57dde39765c3e329c",
+      "size": 582,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/002b41112c37543cb829b0e57dde39765c3e329c"
+    },
+    {
+      "path": "Regfiles/Disable_Start_All_Apps.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "691df09ef02b6e979ac92ca01c7fa447c378cc68",
+      "size": 336,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/691df09ef02b6e979ac92ca01c7fa447c378cc68"
+    },
+    {
+      "path": "Regfiles/Disable_Start_Recommended.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "012647a4f9c7f313e01fd294e8b63d8eae115979",
+      "size": 304,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/012647a4f9c7f313e01fd294e8b63d8eae115979"
+    },
+    {
+      "path": "Regfiles/Disable_Sticky_Keys_Shortcut.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fc904be67cfc47ed807ec7ec74ea8241409f6bc",
+      "size": 240,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/8fc904be67cfc47ed807ec7ec74ea8241409f6bc"
+    },
+    {
+      "path": "Regfiles/Disable_Storage_Sense.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8108b3d0792021d2b00f207b0e8ae9dcd210adb",
+      "size": 384,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f8108b3d0792021d2b00f207b0e8ae9dcd210adb"
+    },
+    {
+      "path": "Regfiles/Disable_Telemetry.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "874f1d2f3615cc9310d589f81d2349336a165f36",
+      "size": 4294,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/874f1d2f3615cc9310d589f81d2349336a165f36"
+    },
+    {
+      "path": "Regfiles/Disable_Transparency.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea8c3555ae3309bc39eb5b88bbb6c5e25af34917",
+      "size": 328,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ea8c3555ae3309bc39eb5b88bbb6c5e25af34917"
+    },
+    {
+      "path": "Regfiles/Disable_Update_ASAP.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1642687651d04e226f5a674f3a52ba47b6535489",
+      "size": 452,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1642687651d04e226f5a674f3a52ba47b6535489"
+    },
+    {
+      "path": "Regfiles/Disable_Window_Snapping.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a65743fd843572f38ac82bbb68634ca679f9e84f",
+      "size": 238,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a65743fd843572f38ac82bbb68634ca679f9e84f"
+    },
+    {
+      "path": "Regfiles/Disable_Windows_Suggestions.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7793a35dad5bf93eff04ee18d385581409b2dc5",
+      "size": 5636,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a7793a35dad5bf93eff04ee18d385581409b2dc5"
+    },
+    {
+      "path": "Regfiles/Enable_Dark_Mode.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a7fec95fef5707ceae92b18c376ed54d8a36c11",
+      "size": 404,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/4a7fec95fef5707ceae92b18c376ed54d8a36c11"
+    },
+    {
+      "path": "Regfiles/Enable_Desktop_Spotlight.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48cf5715b09bc9b403b88531c6f315dfdffbf84a",
+      "size": 293,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/48cf5715b09bc9b403b88531c6f315dfdffbf84a"
+    },
+    {
+      "path": "Regfiles/Enable_End_Task.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e4384c0acc8fddc1c7d635e539fab047c8e5bb2",
+      "size": 368,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1e4384c0acc8fddc1c7d635e539fab047c8e5bb2"
+    },
+    {
+      "path": "Regfiles/Enable_Last_Active_Click.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67d823b0ebde306a1db064956d9c35e6928f80e2",
+      "size": 1492,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/67d823b0ebde306a1db064956d9c35e6928f80e2"
+    },
+    {
+      "path": "Regfiles/Hide_3D_Objects_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14d574bd58be09751fd730a3b1b9ba292d0e1d22",
+      "size": 654,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/14d574bd58be09751fd730a3b1b9ba292d0e1d22"
+    },
+    {
+      "path": "Regfiles/Hide_Desktop_Spotlight_Icon.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9004895e2d4291bf37ccd4585dee1494d1cc2aff",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9004895e2d4291bf37ccd4585dee1494d1cc2aff"
+    },
+    {
+      "path": "Regfiles/Hide_Drive_Letters.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70f35237ce690a6d396497d6af1c9e611c5a7997",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/70f35237ce690a6d396497d6af1c9e611c5a7997"
+    },
+    {
+      "path": "Regfiles/Hide_Gallery_from_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cfb4098f94c9850702955b070e21828cb573fd6",
+      "size": 1466,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1cfb4098f94c9850702955b070e21828cb573fd6"
+    },
+    {
+      "path": "Regfiles/Hide_Home_from_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3361c47feb91152d7a6c873d4f6dd8106751b894",
+      "size": 1500,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3361c47feb91152d7a6c873d4f6dd8106751b894"
+    },
+    {
+      "path": "Regfiles/Hide_Music_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40488d4825bf945d262b4e92f01284f357d8e8ea",
+      "size": 654,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/40488d4825bf945d262b4e92f01284f357d8e8ea"
+    },
+    {
+      "path": "Regfiles/Hide_Onedrive_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0eea1ca521624bbe3c759e5e2139e6fb71d9bcd0",
+      "size": 1474,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0eea1ca521624bbe3c759e5e2139e6fb71d9bcd0"
+    },
+    {
+      "path": "Regfiles/Hide_Search_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfe3f7788db8b360edcfad3aa57608d209afd0e1",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cfe3f7788db8b360edcfad3aa57608d209afd0e1"
+    },
+    {
+      "path": "Regfiles/Hide_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47af5ccb3f62a27fd384d9e30c8fc43a98d3ab90",
+      "size": 338,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/47af5ccb3f62a27fd384d9e30c8fc43a98d3ab90"
+    },
+    {
+      "path": "Regfiles/Hide_Taskview_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47ff839527bd3e2897e1c6ddf11561f943a61d6a",
+      "size": 326,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/47ff839527bd3e2897e1c6ddf11561f943a61d6a"
+    },
+    {
+      "path": "Regfiles/Hide_duplicate_removable_drives_from_navigation_pane_of_File_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34ddd0e1309efab09548eb8a686c1660e6e26744",
+      "size": 384,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/34ddd0e1309efab09548eb8a686c1660e6e26744"
+    },
+    {
+      "path": "Regfiles/Launch_File_Explorer_To_Downloads.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be695328bd4a4bfeb36f346b9f3812439551b223",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/be695328bd4a4bfeb36f346b9f3812439551b223"
+    },
+    {
+      "path": "Regfiles/Launch_File_Explorer_To_Home.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e977d31c22a181ef66390cf622b042e3c2c97b05",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e977d31c22a181ef66390cf622b042e3c2c97b05"
+    },
+    {
+      "path": "Regfiles/Launch_File_Explorer_To_OneDrive.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a334a1d5573e74d70ea95876515dad757a484e2",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0a334a1d5573e74d70ea95876515dad757a484e2"
+    },
+    {
+      "path": "Regfiles/Launch_File_Explorer_To_This_PC.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76c18ea69d8c7017d1363cd660d159327e5da8e0",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/76c18ea69d8c7017d1363cd660d159327e5da8e0"
+    },
+    {
+      "path": "Regfiles/MMTaskbarMode_Active.reg",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "aca928049c1c2a24993f982f30127a54ecd1418d",
+      "size": 316,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/aca928049c1c2a24993f982f30127a54ecd1418d"
+    },
+    {
+      "path": "Regfiles/MMTaskbarMode_All.reg",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "b9642fc7bed15bd896bc23c8134448f8a50a8335",
+      "size": 316,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b9642fc7bed15bd896bc23c8134448f8a50a8335"
+    },
+    {
+      "path": "Regfiles/MMTaskbarMode_Main_Active.reg",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9ee6282c11a9a68ee0883747e2971e2fe99405d8",
+      "size": 316,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9ee6282c11a9a68ee0883747e2971e2fe99405d8"
+    },
+    {
+      "path": "Regfiles/Prevent_Auto_Reboot.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96bf6c11852979028c396abe9c94112a579e714d",
+      "size": 456,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/96bf6c11852979028c396abe9c94112a579e714d"
+    },
+    {
+      "path": "Regfiles/Show_20_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b52a220001f0bf6386bdd862588cc9a8c251905d",
+      "size": 338,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b52a220001f0bf6386bdd862588cc9a8c251905d"
+    },
+    {
+      "path": "Regfiles/Show_3_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f7a1015804f04850831cefa0175868828a95880",
+      "size": 338,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6f7a1015804f04850831cefa0175868828a95880"
+    },
+    {
+      "path": "Regfiles/Show_5_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d42c12b21fab8f99a0971dcbf2ed42e70fef7454",
+      "size": 338,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d42c12b21fab8f99a0971dcbf2ed42e70fef7454"
+    },
+    {
+      "path": "Regfiles/Show_Drive_Letters_First.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ecdc5b1c5e2a07c041119fdb600070aa2c323d4",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7ecdc5b1c5e2a07c041119fdb600070aa2c323d4"
+    },
+    {
+      "path": "Regfiles/Show_Drive_Letters_Last.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25154696b5beb6994dc4db99b11ef0b033566b20",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/25154696b5beb6994dc4db99b11ef0b033566b20"
+    },
+    {
+      "path": "Regfiles/Show_Extensions_For_Known_File_Types.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60a63ac279e201c99c8f89719b9cbd487845388f",
+      "size": 312,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/60a63ac279e201c99c8f89719b9cbd487845388f"
+    },
+    {
+      "path": "Regfiles/Show_Hidden_Folders.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e4d7ac91cb1548c61f6a41890c9922df68a332c",
+      "size": 302,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1e4d7ac91cb1548c61f6a41890c9922df68a332c"
+    },
+    {
+      "path": "Regfiles/Show_Network_Drive_Letters_First.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de7a7756c0e82a56b9b3cd1be7baca8d9897bb09",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/de7a7756c0e82a56b9b3cd1be7baca8d9897bb09"
+    },
+    {
+      "path": "Regfiles/Show_Search_Box.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2287c54bda810c7cba9b622ecebd995887a2cf83",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2287c54bda810c7cba9b622ecebd995887a2cf83"
+    },
+    {
+      "path": "Regfiles/Show_Search_Icon.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41e747ef7f1ac29836091ed09d02e2c417bae0f4",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/41e747ef7f1ac29836091ed09d02e2c417bae0f4"
+    },
+    {
+      "path": "Regfiles/Show_Search_Icon_And_Label.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adfa3baffa5724aafc091ada9029441612723d51",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/adfa3baffa5724aafc091ada9029441612723d51"
+    },
+    {
+      "path": "Regfiles/Start_AllApps_Category.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9991d5abba989e915915700ccfececb5b4bc5298",
+      "size": 248,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9991d5abba989e915915700ccfececb5b4bc5298"
+    },
+    {
+      "path": "Regfiles/Start_AllApps_Grid.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7816c870a341c5bd0a792a3fc61f03e20c98a14d",
+      "size": 248,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7816c870a341c5bd0a792a3fc61f03e20c98a14d"
+    },
+    {
+      "path": "Regfiles/Start_AllApps_List.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c56a2fbe22f38af08cc8b0e281eb3e8e38f9500a",
+      "size": 248,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c56a2fbe22f38af08cc8b0e281eb3e8e38f9500a"
+    },
+    {
+      "path": "Regfiles/Sysprep",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "48cdfb2f337495b58525b5fb29442d6421a9165f",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/48cdfb2f337495b58525b5fb29442d6421a9165f"
+    },
+    {
+      "path": "Regfiles/Sysprep/Add_All_Folders_Under_This_PC.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4d9f407a5b97dee3dd50c3f6a2100ee38a1ffec",
+      "size": 4432,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a4d9f407a5b97dee3dd50c3f6a2100ee38a1ffec"
+    },
+    {
+      "path": "Regfiles/Sysprep/Align_Taskbar_Left.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75be7c02b1ee893d5c031b8fc7afb20e8385b295",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/75be7c02b1ee893d5c031b8fc7afb20e8385b295"
+    },
+    {
+      "path": "Regfiles/Sysprep/Combine_MMTaskbar_Always.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "976f73e599357a0350147fb6804105fa53cabf49",
+      "size": 328,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/976f73e599357a0350147fb6804105fa53cabf49"
+    },
+    {
+      "path": "Regfiles/Sysprep/Combine_MMTaskbar_Never.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b39ceeb4277af3934bc206a98fb62d8d2ecc73d",
+      "size": 328,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5b39ceeb4277af3934bc206a98fb62d8d2ecc73d"
+    },
+    {
+      "path": "Regfiles/Sysprep/Combine_MMTaskbar_When_Full.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d4d747535bc271e3b0b7bacee952802842ef1c3",
+      "size": 328,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1d4d747535bc271e3b0b7bacee952802842ef1c3"
+    },
+    {
+      "path": "Regfiles/Sysprep/Combine_Taskbar_Always.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d48e6c5f3ade8c2ee899473eff4919d3f5c06371",
+      "size": 324,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d48e6c5f3ade8c2ee899473eff4919d3f5c06371"
+    },
+    {
+      "path": "Regfiles/Sysprep/Combine_Taskbar_Never.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69349d183131ec65d77dfab93e21802278444398",
+      "size": 324,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/69349d183131ec65d77dfab93e21802278444398"
+    },
+    {
+      "path": "Regfiles/Sysprep/Combine_Taskbar_When_Full.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d48b495fe5247f33deb7eeedc3d639587b7c48db",
+      "size": 324,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d48b495fe5247f33deb7eeedc3d639587b7c48db"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_AI_Recall.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15a7ee039457b506bbc0c16200fecd505d4e8501",
+      "size": 968,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/15a7ee039457b506bbc0c16200fecd505d4e8501"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_AI_Service_Auto_Start.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "139b4b0cb0faa08847d8b7b906d13ee628000993",
+      "size": 278,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/139b4b0cb0faa08847d8b7b906d13ee628000993"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Animations.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "affb4f0a392d13003d81b20c10da59b0d8e89afd",
+      "size": 654,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/affb4f0a392d13003d81b20c10da59b0d8e89afd"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Bing_Cortana_In_Search.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b99a26391a1976bd6b5a136c51e7dfc1d8ad1fa",
+      "size": 704,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6b99a26391a1976bd6b5a136c51e7dfc1d8ad1fa"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Bitlocker_Auto_Encryption.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67e6af563f18fd01c47e73805005c7dab8e93aed",
+      "size": 304,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/67e6af563f18fd01c47e73805005c7dab8e93aed"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Brave_Bloat.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d94e0cfe935596c7524212b5715a3b250359d703",
+      "size": 652,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d94e0cfe935596c7524212b5715a3b250359d703"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Chat_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87c8dcfe251765ffdd4f673cfae761a74768e703",
+      "size": 600,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/87c8dcfe251765ffdd4f673cfae761a74768e703"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Chrome_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fcec73ae17ad1e87bd947d3f5f6f2da199a2959",
+      "size": 1606,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7fcec73ae17ad1e87bd947d3f5f6f2da199a2959"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Click_to_Do.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11f3d0b6733ca10ced7ea384c008f058c5c643ea",
+      "size": 502,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/11f3d0b6733ca10ced7ea384c008f058c5c643ea"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Copilot.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21aaf0d1e76146c0b6191e835d0d364ed4f503c2",
+      "size": 1026,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/21aaf0d1e76146c0b6191e835d0d364ed4f503c2"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_DVR.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abfee7c3c48f407d09d397a1e6b4f031c57d07a9",
+      "size": 666,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/abfee7c3c48f407d09d397a1e6b4f031c57d07a9"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Delivery_Optimization.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d46d6cd55cc047db89b4ef3dafa6ee49b2d47810",
+      "size": 496,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d46d6cd55cc047db89b4ef3dafa6ee49b2d47810"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Desktop_Spotlight.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4b16397326c72f1624ef34630a949cc0aa5b156",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d4b16397326c72f1624ef34630a949cc0aa5b156"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Device_Auto_App_Download.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e58b59ec1d2f42ae3c05b3b571de2ab0c7883fd",
+      "size": 464,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9e58b59ec1d2f42ae3c05b3b571de2ab0c7883fd"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Edge_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "832e5b4521fc34697efb37574e2714ee2742d891",
+      "size": 990,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/832e5b4521fc34697efb37574e2714ee2742d891"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Edge_Ads_And_Suggestions.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "829dd894a9f49c1eff62fd162f1e8251980f910a",
+      "size": 1642,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/829dd894a9f49c1eff62fd162f1e8251980f910a"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Enhance_Pointer_Precision.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca00017d8ba249147e4252be89ab5cdad2ae58a3",
+      "size": 302,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ca00017d8ba249147e4252be89ab5cdad2ae58a3"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Fast_Startup.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17b27ebf00966e8f74979c0c82d94febf2f50de6",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/17b27ebf00966e8f74979c0c82d94febf2f50de6"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Find_My_Device.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5af9daeb3d583a1ed460d9d3175538cd45b4c908",
+      "size": 376,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5af9daeb3d583a1ed460d9d3175538cd45b4c908"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Game_Bar_Integration.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ce7cd14fa291ac732aea1b1dc3cf942848fef0b",
+      "size": 1210,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5ce7cd14fa291ac732aea1b1dc3cf942848fef0b"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Give_access_to_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df58d7d4890bc745edbcca3f7f44c1383646cff4",
+      "size": 970,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/df58d7d4890bc745edbcca3f7f44c1383646cff4"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Include_in_library_from_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca93a6d10de40d70abe0a9ec872a978a08903f2a",
+      "size": 426,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ca93a6d10de40d70abe0a9ec872a978a08903f2a"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Location_Services.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24862416dd18a45576376bbd9389e0ddaf33cff1",
+      "size": 312,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/24862416dd18a45576376bbd9389e0ddaf33cff1"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Lockscreen_Tips.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e1a6f520cf60940e4f6ec7ae0cd810604d2cfd",
+      "size": 616,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/48e1a6f520cf60940e4f6ec7ae0cd810604d2cfd"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Modern_Standby_Networking.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b344f9fac496dc7138de18afac8cbab200d9370",
+      "size": 432,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0b344f9fac496dc7138de18afac8cbab200d9370"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Notepad_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1c6e02e6c4b2e92149e51dd1d04c2c4e60209c7",
+      "size": 272,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d1c6e02e6c4b2e92149e51dd1d04c2c4e60209c7"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Notifications.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3f6e7fbac499b3cbd89cc8abad8afa142676dc6",
+      "size": 304,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f3f6e7fbac499b3cbd89cc8abad8afa142676dc6"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Paint_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "037dcb53d79ac201321e7d6b74096780bd9cd213",
+      "size": 640,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/037dcb53d79ac201321e7d6b74096780bd9cd213"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Phone_Link_In_Start.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "196b2b827165088da94e944a9325685bf7f6cd8c",
+      "size": 454,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/196b2b827165088da94e944a9325685bf7f6cd8c"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Settings_365_Ads.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32b4d5a9a583b9eff5fc5673c3806d34cfdf3601",
+      "size": 416,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/32b4d5a9a583b9eff5fc5673c3806d34cfdf3601"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Settings_Home.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1e28d1d5eb646779585fbee3040232d6ae574f7",
+      "size": 330,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a1e28d1d5eb646779585fbee3040232d6ae574f7"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Share_Drag_Tray.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3faa70a87ec280cbe01abc6ac46ddd3a9f0b9789",
+      "size": 290,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3faa70a87ec280cbe01abc6ac46ddd3a9f0b9789"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Share_from_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36e5c4f5592dfa923fbdd31a1e991925819e6a17",
+      "size": 222,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/36e5c4f5592dfa923fbdd31a1e991925819e6a17"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Show_More_Options_Context_Menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23a840f4740ee73a52139c2020fb7f58aee36359",
+      "size": 710,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/23a840f4740ee73a52139c2020fb7f58aee36359"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Snap_Assist.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11a74ab2280c7385a56121ab5d65a564a2011504",
+      "size": 312,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/11a74ab2280c7385a56121ab5d65a564a2011504"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Snap_Layouts.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b0b117816f620c4e43f506aa7e688070f7cbb11",
+      "size": 584,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9b0b117816f620c4e43f506aa7e688070f7cbb11"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Start_All_Apps.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55018c25d42b35862384f1b932fe3c30da4913ac",
+      "size": 338,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/55018c25d42b35862384f1b932fe3c30da4913ac"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Start_Recommended.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc9dab98110ff71f3a32423bb08dda9cfc858c13",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/dc9dab98110ff71f3a32423bb08dda9cfc858c13"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Sticky_Keys_Shortcut.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d98c40ce21f43e6eab191182378a321444d709b",
+      "size": 242,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1d98c40ce21f43e6eab191182378a321444d709b"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Storage_Sense.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5557d8f737e6fd6933825ae47f00ab810266e1b",
+      "size": 390,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e5557d8f737e6fd6933825ae47f00ab810266e1b"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Telemetry.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5c16607a7a17f7e7e5272a36b7894b1a39ddc68",
+      "size": 4312,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f5c16607a7a17f7e7e5272a36b7894b1a39ddc68"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Transparency.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31d79f98e508be7e5d6d0544c5db3f249873f5b8",
+      "size": 330,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/31d79f98e508be7e5d6d0544c5db3f249873f5b8"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Update_ASAP.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1642687651d04e226f5a674f3a52ba47b6535489",
+      "size": 452,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1642687651d04e226f5a674f3a52ba47b6535489"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Window_Snapping.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eee17eb7f10f0e3dc57db3f05b9449ee34523f39",
+      "size": 240,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/eee17eb7f10f0e3dc57db3f05b9449ee34523f39"
+    },
+    {
+      "path": "Regfiles/Sysprep/Disable_Windows_Suggestions.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aa0e994513e4b7cd2e055e6ffaafbc724e58f2d",
+      "size": 5654,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2aa0e994513e4b7cd2e055e6ffaafbc724e58f2d"
+    },
+    {
+      "path": "Regfiles/Sysprep/Enable_Dark_Mode.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "760445f91290d155a008fd11840d5699f50032d0",
+      "size": 1146,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/760445f91290d155a008fd11840d5699f50032d0"
+    },
+    {
+      "path": "Regfiles/Sysprep/Enable_Desktop_Spotlight.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22f0cc2a36f58c6313d9afb024c889266a480cad",
+      "size": 295,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/22f0cc2a36f58c6313d9afb024c889266a480cad"
+    },
+    {
+      "path": "Regfiles/Sysprep/Enable_End_Task.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "802b1cc2c4a662d250f67ca6250bd792cfe1e881",
+      "size": 370,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/802b1cc2c4a662d250f67ca6250bd792cfe1e881"
+    },
+    {
+      "path": "Regfiles/Sysprep/Enable_Last_Active_Click.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8d8f1a214322536b114cfe7360a97b43dedcb53",
+      "size": 1494,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e8d8f1a214322536b114cfe7360a97b43dedcb53"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_3D_Objects_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14d574bd58be09751fd730a3b1b9ba292d0e1d22",
+      "size": 654,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/14d574bd58be09751fd730a3b1b9ba292d0e1d22"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Desktop_Spotlight_Icon.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12daaeafa1646838630a6e8c71b241d971a72b66",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/12daaeafa1646838630a6e8c71b241d971a72b66"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Drive_Letters.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4673dba64910d03eb1a06d5da8d5f5ae93df77bb",
+      "size": 316,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/4673dba64910d03eb1a06d5da8d5f5ae93df77bb"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Gallery_from_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf8f8d6ee373eabcbc1f2a66b67f7da10c156134",
+      "size": 1900,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cf8f8d6ee373eabcbc1f2a66b67f7da10c156134"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Home_from_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4e7b57d737e40b52ca27183346da00e382fa3c1",
+      "size": 2202,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f4e7b57d737e40b52ca27183346da00e382fa3c1"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Music_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40488d4825bf945d262b4e92f01284f357d8e8ea",
+      "size": 654,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/40488d4825bf945d262b4e92f01284f357d8e8ea"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Onedrive_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee19fd8eca37f4e322a904254f363220e9d1daa4",
+      "size": 1910,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ee19fd8eca37f4e322a904254f363220e9d1daa4"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Search_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75a907ef6e59f60798dffbc90536f9070903cb77",
+      "size": 732,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/75a907ef6e59f60798dffbc90536f9070903cb77"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b241135ba33c34d89457fd13362ff16b1875721",
+      "size": 340,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/8b241135ba33c34d89457fd13362ff16b1875721"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_Taskview_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02f6ccda163b4a47012bdd7d7b6b60e2fdb07d64",
+      "size": 328,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/02f6ccda163b4a47012bdd7d7b6b60e2fdb07d64"
+    },
+    {
+      "path": "Regfiles/Sysprep/Hide_duplicate_removable_drives_from_navigation_pane_of_File_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34ddd0e1309efab09548eb8a686c1660e6e26744",
+      "size": 384,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/34ddd0e1309efab09548eb8a686c1660e6e26744"
+    },
+    {
+      "path": "Regfiles/Sysprep/Launch_File_Explorer_To_Downloads.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6f6d73ccbb09c6f85b643c0d4b420d52c82599b",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a6f6d73ccbb09c6f85b643c0d4b420d52c82599b"
+    },
+    {
+      "path": "Regfiles/Sysprep/Launch_File_Explorer_To_Home.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca3142c0f360872cfe1c5bcbfd0d79ba930788ee",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ca3142c0f360872cfe1c5bcbfd0d79ba930788ee"
+    },
+    {
+      "path": "Regfiles/Sysprep/Launch_File_Explorer_To_OneDrive.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ab84e28a976b247588d1bfc591b41464a9dd25c",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5ab84e28a976b247588d1bfc591b41464a9dd25c"
+    },
+    {
+      "path": "Regfiles/Sysprep/Launch_File_Explorer_To_This_PC.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8131fe6527fc5de61f702ed7723fd8f41dda584",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b8131fe6527fc5de61f702ed7723fd8f41dda584"
+    },
+    {
+      "path": "Regfiles/Sysprep/MMTaskbarMode_Active.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "438aab4479d8bd0016111cd882a622d919f274c1",
+      "size": 318,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/438aab4479d8bd0016111cd882a622d919f274c1"
+    },
+    {
+      "path": "Regfiles/Sysprep/MMTaskbarMode_All.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0be928e22dec8920778fdc1ddefbc8918832df5f",
+      "size": 318,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0be928e22dec8920778fdc1ddefbc8918832df5f"
+    },
+    {
+      "path": "Regfiles/Sysprep/MMTaskbarMode_Main_Active.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b3ba4e96d31e106e422fc4e5ea53438960064ff",
+      "size": 318,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1b3ba4e96d31e106e422fc4e5ea53438960064ff"
+    },
+    {
+      "path": "Regfiles/Sysprep/Prevent_Auto_Reboot.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96bf6c11852979028c396abe9c94112a579e714d",
+      "size": 456,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/96bf6c11852979028c396abe9c94112a579e714d"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_20_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24bafaf8d6f8fbb1edf0f195278a68511446c588",
+      "size": 340,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/24bafaf8d6f8fbb1edf0f195278a68511446c588"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_3_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2968704b88c88b60656974ec2836c67744b2a6e7",
+      "size": 340,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2968704b88c88b60656974ec2836c67744b2a6e7"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_5_Tabs_In_Alt_Tab.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f7ee60897f1bea7ac53af204ba737b0e2ce59f0",
+      "size": 340,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2f7ee60897f1bea7ac53af204ba737b0e2ce59f0"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Drive_Letters_First.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "42427857407dc02a7a6d0610502bd5014b87e1a1",
+      "size": 316,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/42427857407dc02a7a6d0610502bd5014b87e1a1"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Drive_Letters_Last.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5990ec512e5bb75a5d5557a887f472b8b593176f",
+      "size": 316,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5990ec512e5bb75a5d5557a887f472b8b593176f"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Extensions_For_Known_File_Types.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "721091077a5780fc4d9b95f68bc858867a6c5c89",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/721091077a5780fc4d9b95f68bc858867a6c5c89"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Hidden_Folders.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b52b1f96f62b17ae87f2e70b9b9134b7f67f7571",
+      "size": 304,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b52b1f96f62b17ae87f2e70b9b9134b7f67f7571"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Network_Drive_Letters_First.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a05f0b56a40abcfa7ef7f3fb112eea6744e0ecbf",
+      "size": 316,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a05f0b56a40abcfa7ef7f3fb112eea6744e0ecbf"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Search_Box.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3605234d8a3109fd3ca3242bd2e93472485dfb4d",
+      "size": 732,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3605234d8a3109fd3ca3242bd2e93472485dfb4d"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Search_Icon.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "796f406cbdf345edb6ecb105d000cbbe8dd7a6c1",
+      "size": 732,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/796f406cbdf345edb6ecb105d000cbbe8dd7a6c1"
+    },
+    {
+      "path": "Regfiles/Sysprep/Show_Search_Icon_And_Label.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f44344291555b3f853e0fb2cfd7b25460462f20",
+      "size": 732,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/4f44344291555b3f853e0fb2cfd7b25460462f20"
+    },
+    {
+      "path": "Regfiles/Sysprep/Start_AllApps_Category.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05c03bc4d09a38b85840b03e63f7e74cbed7916b",
+      "size": 250,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/05c03bc4d09a38b85840b03e63f7e74cbed7916b"
+    },
+    {
+      "path": "Regfiles/Sysprep/Start_AllApps_Grid.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd5c550645cd8e7e7fa85f89dbd061b75db3969f",
+      "size": 250,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cd5c550645cd8e7e7fa85f89dbd061b75db3969f"
+    },
+    {
+      "path": "Regfiles/Sysprep/Start_AllApps_List.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5727289e7d9de989899f365ebcf36b493c210672",
+      "size": 250,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5727289e7d9de989899f365ebcf36b493c210672"
+    },
+    {
+      "path": "Regfiles/Sysprep/Undo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0607bfdfb90722f3212d49007893036f24d2f44d",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/0607bfdfb90722f3212d49007893036f24d2f44d"
+    },
+    {
+      "path": "Regfiles/Sysprep/Undo/Enable_Desktop_Spotlight.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22f0cc2a36f58c6313d9afb024c889266a480cad",
+      "size": 295,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/22f0cc2a36f58c6313d9afb024c889266a480cad"
+    },
+    {
+      "path": "Regfiles/Sysprep/Undo/Show_Desktop_Spotlight_Icon.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5915e13432d9450b87fc23598b8b75db1ad8596e",
+      "size": 184,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5915e13432d9450b87fc23598b8b75db1ad8596e"
+    },
+    {
+      "path": "Regfiles/Undo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "085bc1c4ce3bac71efc3ae16503765051b694a85",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/085bc1c4ce3bac71efc3ae16503765051b694a85"
+    },
+    {
+      "path": "Regfiles/Undo/Align_Taskbar_Center.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27c817d2bb030c994abbe1b9f3d03b1817aa2815",
+      "size": 282,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/27c817d2bb030c994abbe1b9f3d03b1817aa2815"
+    },
+    {
+      "path": "Regfiles/Undo/Allow_Auto_Reboot.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee3f7ccf2980131caa2d7ccef3078838017da7c5",
+      "size": 426,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ee3f7ccf2980131caa2d7ccef3078838017da7c5"
+    },
+    {
+      "path": "Regfiles/Undo/Allow_Edge_Telemetry.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55055ffc699573ebb53a19b0bb551503e1c8ffe2",
+      "size": 844,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/55055ffc699573ebb53a19b0bb551503e1c8ffe2"
+    },
+    {
+      "path": "Regfiles/Undo/Disable_End_Task.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "748d03dbc0d0b52510415a71a65a2cdbdcf340e4",
+      "size": 368,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/748d03dbc0d0b52510415a71a65a2cdbdcf340e4"
+    },
+    {
+      "path": "Regfiles/Undo/Disable_Last_Active_Click.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2969c4a74a809a6f8ee75f87680e06b7245d97e",
+      "size": 622,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c2969c4a74a809a6f8ee75f87680e06b7245d97e"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_AI_Recall.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "beb51f4711dc2fb17bbb5f642992b1ea8f00978a",
+      "size": 1104,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/beb51f4711dc2fb17bbb5f642992b1ea8f00978a"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_AI_Service_Auto_Start.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6ac4eb7ee160b6f4c3cd6df318af8761a5de89b",
+      "size": 278,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f6ac4eb7ee160b6f4c3cd6df318af8761a5de89b"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Activity_History.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99ed1ad8d3690ab5711e7e3588db005e536fc856",
+      "size": 328,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/99ed1ad8d3690ab5711e7e3588db005e536fc856"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Animations.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36b7c445231497901f2b1ac872df7890b22806c5",
+      "size": 278,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/36b7c445231497901f2b1ac872df7890b22806c5"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Bing_Cortana_In_Search.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "220817d32866ff6cb9f7598513eb1fa7e055fca5",
+      "size": 646,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/220817d32866ff6cb9f7598513eb1fa7e055fca5"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Bitlocker_Auto_Encryption.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5093318c19c305ec2b4534bf7486013ad87d186f",
+      "size": 278,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5093318c19c305ec2b4534bf7486013ad87d186f"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Brave_Bloat.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d6c1dbde26fbb5397f842cd13d3ff07ba2c0428",
+      "size": 286,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2d6c1dbde26fbb5397f842cd13d3ff07ba2c0428"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Chat_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d79ec5ae0afb8832a2d4ae2b2bb78c19f8ac0277",
+      "size": 596,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d79ec5ae0afb8832a2d4ae2b2bb78c19f8ac0277"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Chrome_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a9c83f8bcb08d6945076f4d10f4ae36c8b52a08",
+      "size": 1092,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9a9c83f8bcb08d6945076f4d10f4ae36c8b52a08"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Click_to_Do.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7068bfa00e4f4181fc7233e08697865be1b20bca",
+      "size": 448,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7068bfa00e4f4181fc7233e08697865be1b20bca"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Copilot.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c0cc966a0266519cf72574a653ab71a53054e8f",
+      "size": 964,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/8c0cc966a0266519cf72574a653ab71a53054e8f"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_DVR.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f14df2975a55cfc223f6609b64229d325ff2313",
+      "size": 658,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6f14df2975a55cfc223f6609b64229d325ff2313"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Delivery_Optimization.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58f9ce622e903e56e014643bc916a59ac2413787",
+      "size": 494,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/58f9ce622e903e56e014643bc916a59ac2413787"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Desktop_Spotlight.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48cf5715b09bc9b403b88531c6f315dfdffbf84a",
+      "size": 293,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/48cf5715b09bc9b403b88531c6f315dfdffbf84a"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Device_Auto_App_Download.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46b1ac6cfa181fe2cafc83fa35e373675daa24d4",
+      "size": 432,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/46b1ac6cfa181fe2cafc83fa35e373675daa24d4"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Edge_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "946bc5b3edc9d3d29a70f67e5c85127fb75555cc",
+      "size": 756,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/946bc5b3edc9d3d29a70f67e5c85127fb75555cc"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Edge_Ads_And_Suggestions.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de312cd528af5754ffdcd0e5bc07decc17caf379",
+      "size": 1302,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/de312cd528af5754ffdcd0e5bc07decc17caf379"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Enhance_Pointer_Precision.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2867214ca3ae104ee7da19d68c038fd12db8fdd",
+      "size": 302,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d2867214ca3ae104ee7da19d68c038fd12db8fdd"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Fast_Startup.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fda6f1882ec75ab1ca1f79365502e8f0332f2ef0",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/fda6f1882ec75ab1ca1f79365502e8f0332f2ef0"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Find_My_Device.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cdb5697648821c20880b7650722689e7da6ba49",
+      "size": 352,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6cdb5697648821c20880b7650722689e7da6ba49"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Game_Bar_Integration.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8f4328d3bf5175ba1c570d67b56a2a5cff5ac7a",
+      "size": 1048,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d8f4328d3bf5175ba1c570d67b56a2a5cff5ac7a"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Give_access_to_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b4fc7f938f9f8866bc18b2c3e77e4a6c5baf471",
+      "size": 1962,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9b4fc7f938f9f8866bc18b2c3e77e4a6c5baf471"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Include_in_library_in_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88529a375d3fd2ffa81a2e57189e4b80dcaab392",
+      "size": 598,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/88529a375d3fd2ffa81a2e57189e4b80dcaab392"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Light_Mode.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6b86d6e6dcf9ca43fecabd33893b135ca046f9b",
+      "size": 404,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b6b86d6e6dcf9ca43fecabd33893b135ca046f9b"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Location_Services.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c8254ada9533f4de08dfed0ed0bf9c7ff046852",
+      "size": 286,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/4c8254ada9533f4de08dfed0ed0bf9c7ff046852"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Lockscreen_Tips.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b714acecc66546047102715cef7c8fd9665035c",
+      "size": 620,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2b714acecc66546047102715cef7c8fd9665035c"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Modern_Standby_Networking.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd4ec6e21282149f2cad5a957c7bd9ff9c4c069b",
+      "size": 432,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/dd4ec6e21282149f2cad5a957c7bd9ff9c4c069b"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Notepad_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84aebf02297dba811bdbf1adf4df4cb8b89c75d2",
+      "size": 246,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/84aebf02297dba811bdbf1adf4df4cb8b89c75d2"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Notifications.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58fc5a21cf847857bfcb335f39cb26ed8b9f0440",
+      "size": 306,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/58fc5a21cf847857bfcb335f39cb26ed8b9f0440"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Paint_AI_Features.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05243ed1e1c578c0d0a74d88435b4327fc3d86f0",
+      "size": 510,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/05243ed1e1c578c0d0a74d88435b4327fc3d86f0"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Phone_Link_In_Start.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdcd328bd9c00a7c1f7218669d5c2aa92741022a",
+      "size": 450,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cdcd328bd9c00a7c1f7218669d5c2aa92741022a"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Settings_365_Ads.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5f1fffc45e08d63a8254b1495a8d61026500ba3",
+      "size": 388,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d5f1fffc45e08d63a8254b1495a8d61026500ba3"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Settings_Home.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3dbd8d6ac245b566489699308691136a281274a",
+      "size": 310,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b3dbd8d6ac245b566489699308691136a281274a"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Share_Drag_Tray.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1295836fc91c5365d09be5df94be214ff8bb8018",
+      "size": 288,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1295836fc91c5365d09be5df94be214ff8bb8018"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Share_in_context_menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e712c6099835864ac82281356c384b9ee00737af",
+      "size": 308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e712c6099835864ac82281356c384b9ee00737af"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Snap_Assist.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6686ab0c5ae4f3454ad578103fccfd22fc8ac2aa",
+      "size": 310,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6686ab0c5ae4f3454ad578103fccfd22fc8ac2aa"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Snap_Layouts.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea32f155bfa3cb469487326d49c837004b7fd882",
+      "size": 580,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ea32f155bfa3cb469487326d49c837004b7fd882"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Start_All_Apps.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cd324142567a2d37ff51357673213f7c4c0ca20",
+      "size": 536,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1cd324142567a2d37ff51357673213f7c4c0ca20"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Start_Recommended.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5791627eb2f4047db1d9a50a78fbb299ac64069c",
+      "size": 1584,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5791627eb2f4047db1d9a50a78fbb299ac64069c"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Sticky_Keys_Shortcut.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19bd00d846aa504e78842bfee150b6311e47d790",
+      "size": 240,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/19bd00d846aa504e78842bfee150b6311e47d790"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Storage_Sense.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf34a6be833c8b6508dfa12d921aab97a7d37f95",
+      "size": 386,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cf34a6be833c8b6508dfa12d921aab97a7d37f95"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Telemetry.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb17600722dedf8a15f577bc17fc3f714e1d7192",
+      "size": 4456,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/bb17600722dedf8a15f577bc17fc3f714e1d7192"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Transparency.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6071a204eee8c6572750e5e0669eed2005de19d",
+      "size": 328,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a6071a204eee8c6572750e5e0669eed2005de19d"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Update_ASAP.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85b218c96300df61977926c785eeae612f4fb210",
+      "size": 450,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/85b218c96300df61977926c785eeae612f4fb210"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_W11_Style_Context_Menu.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c63a3f7ea112be5316d3c95b16df17a259dd45ac",
+      "size": 262,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c63a3f7ea112be5316d3c95b16df17a259dd45ac"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Window_Snapping.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83f5f2ca8dd41b6315a9378c3562d453a75b93a8",
+      "size": 238,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/83f5f2ca8dd41b6315a9378c3562d453a75b93a8"
+    },
+    {
+      "path": "Regfiles/Undo/Enable_Windows_Suggestions.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ae41044c71e26a36bbd80aff60f35482ab266fc",
+      "size": 5850,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0ae41044c71e26a36bbd80aff60f35482ab266fc"
+    },
+    {
+      "path": "Regfiles/Undo/Hide_Extensions_For_Known_File_Types.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f649edcfc34ec90840507c6227681cdb4d214438",
+      "size": 312,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f649edcfc34ec90840507c6227681cdb4d214438"
+    },
+    {
+      "path": "Regfiles/Undo/Hide_Hidden_Folders.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44a379d5adce68253445a081cdcf95b59d5b42f8",
+      "size": 302,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/44a379d5adce68253445a081cdcf95b59d5b42f8"
+    },
+    {
+      "path": "Regfiles/Undo/Remove_All_Folders_Under_This_PC.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87c086bbc7760ba6214c984938889e173ee52e08",
+      "size": 4588,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/87c086bbc7760ba6214c984938889e173ee52e08"
+    },
+    {
+      "path": "Regfiles/Undo/Show_3D_Objects_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8213382c6ab1e5963577148016b91b72de5457d3",
+      "size": 572,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/8213382c6ab1e5963577148016b91b72de5457d3"
+    },
+    {
+      "path": "Regfiles/Undo/Show_Desktop_Spotlight_Icon.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d74056cb90854cf0c605b89dfb80e2717f965e8",
+      "size": 183,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0d74056cb90854cf0c605b89dfb80e2717f965e8"
+    },
+    {
+      "path": "Regfiles/Undo/Show_Drive_Letters_Last.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25154696b5beb6994dc4db99b11ef0b033566b20",
+      "size": 314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/25154696b5beb6994dc4db99b11ef0b033566b20"
+    },
+    {
+      "path": "Regfiles/Undo/Show_Gallery_in_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1bbe13335396d4b15744cd42acde4e1af372077",
+      "size": 1464,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a1bbe13335396d4b15744cd42acde4e1af372077"
+    },
+    {
+      "path": "Regfiles/Undo/Show_Home_in_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "986bb4465687e4bf66db8f0b5effab6d22c74deb",
+      "size": 1498,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/986bb4465687e4bf66db8f0b5effab6d22c74deb"
+    },
+    {
+      "path": "Regfiles/Undo/Show_Music_Folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90335ffa622c656f189a5a83d1de9bcb7bcab9fd",
+      "size": 650,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/90335ffa622c656f189a5a83d1de9bcb7bcab9fd"
+    },
+    {
+      "path": "Regfiles/Undo/Show_Onedrive_folder.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7397026062e4caa5a9cdad93d45b6d86fa16361",
+      "size": 1472,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b7397026062e4caa5a9cdad93d45b6d86fa16361"
+    },
+    {
+      "path": "Regfiles/Undo/Show_Taskview_Taskbar.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52bbacc4f13d0af566e0019c806fd1011a941ade",
+      "size": 326,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/52bbacc4f13d0af566e0019c806fd1011a941ade"
+    },
+    {
+      "path": "Regfiles/Undo/Show_duplicate_removable_drives_in_navigation_pane_of_File_Explorer.reg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f055ce76a084ebd6d3922df661ce15d0a6390323",
+      "size": 422,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f055ce76a084ebd6d3922df661ce15d0a6390323"
+    },
+    {
+      "path": "Run.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b88b13c3707d616504bb99ca8155ea8de2bb1af",
+      "size": 1854,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7b88b13c3707d616504bb99ca8155ea8de2bb1af"
+    },
+    {
+      "path": "Schemas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bf511176f8ddb98ce2f7bb95b3ce5f8a87372853",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/bf511176f8ddb98ce2f7bb95b3ce5f8a87372853"
+    },
+    {
+      "path": "Schemas/AboutWindow.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5be32af6f9cfa4d1829273b11c9559d250c0b948",
+      "size": 6712,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5be32af6f9cfa4d1829273b11c9559d250c0b948"
+    },
+    {
+      "path": "Schemas/AppSelectionWindow.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29e8478c51ba6424161133e30b66178ab01d4583",
+      "size": 7130,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/29e8478c51ba6424161133e30b66178ab01d4583"
+    },
+    {
+      "path": "Schemas/ApplyChangesWindow.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18b6fa98773d48e5deecdfc2fb0e1f203e031240",
+      "size": 9465,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/18b6fa98773d48e5deecdfc2fb0e1f203e031240"
+    },
+    {
+      "path": "Schemas/BubbleHint.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34cf11e97aa92dccaec89aa1b6b57778fac3515e",
+      "size": 1692,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/34cf11e97aa92dccaec89aa1b6b57778fac3515e"
+    },
+    {
+      "path": "Schemas/ImportExportConfigWindow.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fec523333a83b880f2a71823f4b7902eae678d1",
+      "size": 2375,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5fec523333a83b880f2a71823f4b7902eae678d1"
+    },
+    {
+      "path": "Schemas/MainWindow.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c9d0456e640e37827035b8cc1fa48453db6a239",
+      "size": 82483,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0c9d0456e640e37827035b8cc1fa48453db6a239"
+    },
+    {
+      "path": "Schemas/MessageBox.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36ab06f2cadf5ea0742fa5aaaff7abb2a601ac24",
+      "size": 4073,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/36ab06f2cadf5ea0742fa5aaaff7abb2a601ac24"
+    },
+    {
+      "path": "Schemas/RestoreBackupWindow.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4e3ed1a8931ba8de1ee9014f4a0950ed05f3a88",
+      "size": 24450,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e4e3ed1a8931ba8de1ee9014f4a0950ed05f3a88"
+    },
+    {
+      "path": "Schemas/SettingsWindow.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e762c60ba4c0f543b95788d69eaacde011169f1a",
+      "size": 5194,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e762c60ba4c0f543b95788d69eaacde011169f1a"
+    },
+    {
+      "path": "Schemas/SharedStyles.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3eeffbac865b816992ab123b0114fe79a464b174",
+      "size": 39247,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3eeffbac865b816992ab123b0114fe79a464b174"
+    },
+    {
+      "path": "Scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5a82c1578d68eace111cf3f0b6e93f88a8676b5",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/f5a82c1578d68eace111cf3f0b6e93f88a8676b5"
+    },
+    {
+      "path": "Scripts/AppRemoval",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b1c5bc9a0f794753a6e2f802bbfc6c988be59c8f",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/b1c5bc9a0f794753a6e2f802bbfc6c988be59c8f"
+    },
+    {
+      "path": "Scripts/AppRemoval/Get-WingetInstalledApps.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f698e2c5bb0429fa69a47862c9c7783fe2c955f",
+      "size": 3596,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2f698e2c5bb0429fa69a47862c9c7783fe2c955f"
+    },
+    {
+      "path": "Scripts/AppRemoval/Invoke-ForceRemoveEdge.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7041be5c94ccee96234b7bda6904fbfcf4df409",
+      "size": 5914,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c7041be5c94ccee96234b7bda6904fbfcf4df409"
+    },
+    {
+      "path": "Scripts/AppRemoval/Remove-SelectedApps.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cca53f2c8ea91908493a11513a068c118894f149",
+      "size": 20578,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cca53f2c8ea91908493a11513a068c118894f149"
+    },
+    {
+      "path": "Scripts/AppRemoval/Test-AppInWingetList.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01d977a8fa318b59d05fd98fd7a8754aafc0f310",
+      "size": 1184,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/01d977a8fa318b59d05fd98fd7a8754aafc0f310"
+    },
+    {
+      "path": "Scripts/CLI",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "60869527e89e7640f378d78fe365d582a9cb61fb",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/60869527e89e7640f378d78fe365d582a9cb61fb"
+    },
+    {
+      "path": "Scripts/CLI/Show-CliAppRemoval.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66e0cc3bb4c5991de5e1c05ca78dcf813067e177",
+      "size": 941,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/66e0cc3bb4c5991de5e1c05ca78dcf813067e177"
+    },
+    {
+      "path": "Scripts/CLI/Show-CliDefaultModeAppRemovalOptions.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c476893c98eab3ab75c34310568a9e35be2d6d4d",
+      "size": 1531,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c476893c98eab3ab75c34310568a9e35be2d6d4d"
+    },
+    {
+      "path": "Scripts/CLI/Show-CliDefaultModeOptions.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fa6ff3d46390eef87a15a98a169dd9d0ee29ce0",
+      "size": 1798,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0fa6ff3d46390eef87a15a98a169dd9d0ee29ce0"
+    },
+    {
+      "path": "Scripts/CLI/Show-CliLastUsedSettings.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22b877355da19156245c035d0ef30ebedc39dc5a",
+      "size": 597,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/22b877355da19156245c035d0ef30ebedc39dc5a"
+    },
+    {
+      "path": "Scripts/CLI/Show-CliMenuOptions.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94e7b34f57a33503e64ebd0d64075c3183f356a6",
+      "size": 996,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/94e7b34f57a33503e64ebd0d64075c3183f356a6"
+    },
+    {
+      "path": "Scripts/CLI/Wait-ForKeyPress.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12d4f841a196f532bbbafc1b8b53ea79851d6814",
+      "size": 488,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/12d4f841a196f532bbbafc1b8b53ea79851d6814"
+    },
+    {
+      "path": "Scripts/CLI/Write-CliHeader.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9b54d694c82cae912a28586b2575d16d8cdcdce",
+      "size": 587,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b9b54d694c82cae912a28586b2575d16d8cdcdce"
+    },
+    {
+      "path": "Scripts/CLI/Write-PendingChanges.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09a2479924e8b08c42731bad58b37185b63a6812",
+      "size": 2030,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/09a2479924e8b08c42731bad58b37185b63a6812"
+    },
+    {
+      "path": "Scripts/Features",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "73d4a9bed3b2320c90ff53e54bf2dc42d869c236",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/73d4a9bed3b2320c90ff53e54bf2dc42d869c236"
+    },
+    {
+      "path": "Scripts/Features/Backup-RegistryFeatureSelection.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b900c3fcbe853ee649b96c242155f5e6040f33e2",
+      "size": 364,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b900c3fcbe853ee649b96c242155f5e6040f33e2"
+    },
+    {
+      "path": "Scripts/Features/Backup-RegistrySnapshotCapture.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fe57d6e1400c290d8c06e96c2fe01f810807646",
+      "size": 10961,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5fe57d6e1400c290d8c06e96c2fe01f810807646"
+    },
+    {
+      "path": "Scripts/Features/Backup-RegistryState.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30a8753f2e97cc57ef4b37ccf970017ed1a30f12",
+      "size": 5364,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/30a8753f2e97cc57ef4b37ccf970017ed1a30f12"
+    },
+    {
+      "path": "Scripts/Features/Get-CurrentTweakState.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "525c1138280214805615408d365d39519cf9a090",
+      "size": 7902,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/525c1138280214805615408d365d39519cf9a090"
+    },
+    {
+      "path": "Scripts/Features/Import-RegistryFile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b856c7f1902e57fec01ef4bfeccfaa5ef92e3cbe",
+      "size": 4790,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b856c7f1902e57fec01ef4bfeccfaa5ef92e3cbe"
+    },
+    {
+      "path": "Scripts/Features/Invoke-Changes.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f892a7a99e1670108c4761a39c0234a948657e78",
+      "size": 19526,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f892a7a99e1670108c4761a39c0234a948657e78"
+    },
+    {
+      "path": "Scripts/Features/Invoke-RestartExplorer.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22e16e53121a6181f823b2d3df7f9a81bb997e24",
+      "size": 1531,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/22e16e53121a6181f823b2d3df7f9a81bb997e24"
+    },
+    {
+      "path": "Scripts/Features/Invoke-SystemRestorePoint.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dd2f3b4d068362a45a25a57bc48bb1ecdaad1e1",
+      "size": 4467,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7dd2f3b4d068362a45a25a57bc48bb1ecdaad1e1"
+    },
+    {
+      "path": "Scripts/Features/Registry-BackupValidation.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b4e7a904ca8b34bf079f48ff36e81b4f7410879",
+      "size": 19680,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3b4e7a904ca8b34bf079f48ff36e81b4f7410879"
+    },
+    {
+      "path": "Scripts/Features/Replace-StartMenu.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cff41e0f32cec8a8594600a153bb86f4915439ac",
+      "size": 17964,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cff41e0f32cec8a8594600a153bb86f4915439ac"
+    },
+    {
+      "path": "Scripts/Features/Restore-RegistryApplyState.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13e8f7f9058361c70362f02c82f3e92b184828da",
+      "size": 10522,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/13e8f7f9058361c70362f02c82f3e92b184828da"
+    },
+    {
+      "path": "Scripts/Features/Restore-RegistryBackup.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffc53b64aa373c43382e64626b8ecf57b24784f4",
+      "size": 8641,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ffc53b64aa373c43382e64626b8ecf57b24784f4"
+    },
+    {
+      "path": "Scripts/Features/Set-StoreSearchSuggestions.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0dd6b13167f8b95677a1e597e441cc6136496423",
+      "size": 13809,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0dd6b13167f8b95677a1e597e441cc6136496423"
+    },
+    {
+      "path": "Scripts/Features/Telemetry-ScheduledTasks.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7dd100596950ccb8354396544678965fc65658a",
+      "size": 7890,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e7dd100596950ccb8354396544678965fc65658a"
+    },
+    {
+      "path": "Scripts/Features/Windows-OptionalFeatures.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ccc9bedc2a99b9555247072b1d82f86518c18e0",
+      "size": 3552,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9ccc9bedc2a99b9555247072b1d82f86518c18e0"
+    },
+    {
+      "path": "Scripts/FileIO",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9870bdefb755b877c1ab3ac947b156d7ff84e3cb",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/9870bdefb755b877c1ab3ac947b156d7ff84e3cb"
+    },
+    {
+      "path": "Scripts/FileIO/Get-ValidatedAppList.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d471d02afd61aa34af76332c81101ed32c52a40a",
+      "size": 797,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d471d02afd61aa34af76332c81101ed32c52a40a"
+    },
+    {
+      "path": "Scripts/FileIO/Import-AppDetailsFromJson.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "684adebf7245891353cc4181535c4a00706c8854",
+      "size": 5795,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/684adebf7245891353cc4181535c4a00706c8854"
+    },
+    {
+      "path": "Scripts/FileIO/Import-AppPresetsFromJson.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "611312452aa5bb582f46c83e39741fd611852b68",
+      "size": 580,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/611312452aa5bb582f46c83e39741fd611852b68"
+    },
+    {
+      "path": "Scripts/FileIO/Import-AppsFromFile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9bb5346acc39797e735ce25d053ae0699f7663a",
+      "size": 1514,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f9bb5346acc39797e735ce25d053ae0699f7663a"
+    },
+    {
+      "path": "Scripts/FileIO/Import-JsonFile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e29c25852b9be4ecb91e6aa768156b1c531179c3",
+      "size": 992,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e29c25852b9be4ecb91e6aa768156b1c531179c3"
+    },
+    {
+      "path": "Scripts/FileIO/Import-LanguageFile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "000816273ee04c15a32d9f6cf24204bd2679143e",
+      "size": 17325,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/000816273ee04c15a32d9f6cf24204bd2679143e"
+    },
+    {
+      "path": "Scripts/FileIO/Import-Settings.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c8326889ccf25fa7942e651d53effb9a4d91123",
+      "size": 1330,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0c8326889ccf25fa7942e651d53effb9a4d91123"
+    },
+    {
+      "path": "Scripts/FileIO/Save-Settings.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "733dfe7bf57c8f9525635e997a96f8dfc7aa70c8",
+      "size": 933,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/733dfe7bf57c8f9525635e997a96f8dfc7aa70c8"
+    },
+    {
+      "path": "Scripts/FileIO/Save-ToFile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f989a2b78e6e59b4cafdfab722e96af01f398205",
+      "size": 893,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f989a2b78e6e59b4cafdfab722e96af01f398205"
+    },
+    {
+      "path": "Scripts/GUI",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a324bfc36a4393d04a6914f7b3cc1670254b41a1",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/a324bfc36a4393d04a6914f7b3cc1670254b41a1"
+    },
+    {
+      "path": "Scripts/GUI/Apply-SettingsToUiControls.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d0b36b5a1e2307c6aa792d23c870e7778d56713",
+      "size": 2851,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0d0b36b5a1e2307c6aa792d23c870e7778d56713"
+    },
+    {
+      "path": "Scripts/GUI/Attach-ShiftClickBehavior.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "369be0b9f0b9031052921be74900f3d093a60205",
+      "size": 2955,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/369be0b9f0b9031052921be74900f3d093a60205"
+    },
+    {
+      "path": "Scripts/GUI/Get-SystemUsesDarkMode.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "415a323abba5c4b232727aa820b278198e031614",
+      "size": 649,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/415a323abba5c4b232727aa820b278198e031614"
+    },
+    {
+      "path": "Scripts/GUI/MainWindow-AppSelection.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "501c2cc482319813c38d9f8dcba7e9a546e8e9c2",
+      "size": 27061,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/501c2cc482319813c38d9f8dcba7e9a546e8e9c2"
+    },
+    {
+      "path": "Scripts/GUI/MainWindow-Deployment.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "939da1a7063c2a9d3ded987e642da715ca26841c",
+      "size": 19260,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/939da1a7063c2a9d3ded987e642da715ca26841c"
+    },
+    {
+      "path": "Scripts/GUI/MainWindow-Localization.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfd6508f939030d6046be2830f8d473e76b5f35e",
+      "size": 7383,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/dfd6508f939030d6046be2830f8d473e76b5f35e"
+    },
+    {
+      "path": "Scripts/GUI/MainWindow-Navigation.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29bcd8be6a78b58771d57561211b16058d8c6777",
+      "size": 2320,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/29bcd8be6a78b58771d57561211b16058d8c6777"
+    },
+    {
+      "path": "Scripts/GUI/MainWindow-TweaksBuilder.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10002480b75440e4fd561419efa2df6f8df05069",
+      "size": 30023,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/10002480b75440e4fd561419efa2df6f8df05069"
+    },
+    {
+      "path": "Scripts/GUI/MainWindow-WindowChrome.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3bcc7a1a17cbe0b6a26e29151c6c3cc366745fc8",
+      "size": 6478,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3bcc7a1a17cbe0b6a26e29151c6c3cc366745fc8"
+    },
+    {
+      "path": "Scripts/GUI/Restore-BackupDialogFeatureLists.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efd6263a556bcca967391d44b518152ea411e3a1",
+      "size": 8448,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/efd6263a556bcca967391d44b518152ea411e3a1"
+    },
+    {
+      "path": "Scripts/GUI/Set-WindowThemeResources.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf7c93ee9ecf6b803593776563b913ba93e94505",
+      "size": 6270,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/bf7c93ee9ecf6b803593776563b913ba93e94505"
+    },
+    {
+      "path": "Scripts/GUI/Show-AboutDialog.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8ae23a73fa0ebab9d640e01bd47a747ea903b7f",
+      "size": 2858,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a8ae23a73fa0ebab9d640e01bd47a747ea903b7f"
+    },
+    {
+      "path": "Scripts/GUI/Show-AppSelectionWindow.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5dafba90f3f8aff24c915cd31d06d1281fed0a93",
+      "size": 6241,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5dafba90f3f8aff24c915cd31d06d1281fed0a93"
+    },
+    {
+      "path": "Scripts/GUI/Show-ApplyModal.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86f688999a64bfc3c2e7846a864746119a9b1150",
+      "size": 12676,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/86f688999a64bfc3c2e7846a864746119a9b1150"
+    },
+    {
+      "path": "Scripts/GUI/Show-Bubble.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d11242540016d3921841e62da9097752d2cc01fb",
+      "size": 5269,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d11242540016d3921841e62da9097752d2cc01fb"
+    },
+    {
+      "path": "Scripts/GUI/Show-ImportExportConfigWindow.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef4a70966d09f8e86c24c6cb34b632acf2bdba4d",
+      "size": 23308,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ef4a70966d09f8e86c24c6cb34b632acf2bdba4d"
+    },
+    {
+      "path": "Scripts/GUI/Show-MainWindow.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5063957f86628e629a1e5eeb232329379c606d56",
+      "size": 45368,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/5063957f86628e629a1e5eeb232329379c606d56"
+    },
+    {
+      "path": "Scripts/GUI/Show-MessageBox.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e43ac5a78cc77ee81ddd5616bf7e02697e261632",
+      "size": 8053,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e43ac5a78cc77ee81ddd5616bf7e02697e261632"
+    },
+    {
+      "path": "Scripts/GUI/Show-RestoreBackupDialog.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1891666f12e12a48a415e5f970fe33989f975018",
+      "size": 21133,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1891666f12e12a48a415e5f970fe33989f975018"
+    },
+    {
+      "path": "Scripts/GUI/Show-RestoreBackupWindow.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c1dc65ae0b2d1a38e49b910fd7157f54235e11f",
+      "size": 4866,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0c1dc65ae0b2d1a38e49b910fd7157f54235e11f"
+    },
+    {
+      "path": "Scripts/GUI/Show-SettingsDialog.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fb59865698addda12bcf926d25565bce7f3e59c",
+      "size": 4488,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9fb59865698addda12bcf926d25565bce7f3e59c"
+    },
+    {
+      "path": "Scripts/GUI/Ui-Preferences.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df5f300c81297e3ed0a95966d12db816320b0669",
+      "size": 5274,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/df5f300c81297e3ed0a95966d12db816320b0669"
+    },
+    {
+      "path": "Scripts/Get.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f86d307d8ccc83d850184d5c1e793e8eb304709",
+      "size": 9604,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/1f86d307d8ccc83d850184d5c1e793e8eb304709"
+    },
+    {
+      "path": "Scripts/Helpers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1ee89408f0e356431310093475d237ed5c3da791",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/1ee89408f0e356431310093475d237ed5c3da791"
+    },
+    {
+      "path": "Scripts/Helpers/Add-Parameter.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a01f92e2d871eb1fe4a1e638182eb0b3b47f80c",
+      "size": 424,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6a01f92e2d871eb1fe4a1e638182eb0b3b47f80c"
+    },
+    {
+      "path": "Scripts/Helpers/Apply-RegistryRegFile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7be999686b21f8ab1fcf4fb1851277a5c6826d26",
+      "size": 7938,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7be999686b21f8ab1fcf4fb1851277a5c6826d26"
+    },
+    {
+      "path": "Scripts/Helpers/Confirm-UnsafeAppRemoval.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab711435005cba7ace0f80a13410467d13878de1",
+      "size": 1026,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ab711435005cba7ace0f80a13410467d13878de1"
+    },
+    {
+      "path": "Scripts/Helpers/Generate-AppsList.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b290083a3e39e5e4cce12145d9a5d83a361dbdc8",
+      "size": 664,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b290083a3e39e5e4cce12145d9a5d83a361dbdc8"
+    },
+    {
+      "path": "Scripts/Helpers/Get-FriendlyRegistryBackupTarget.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a63ccdfe581f3ba2cddeb6f78ede1a36e620eee",
+      "size": 1313,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3a63ccdfe581f3ba2cddeb6f78ede1a36e620eee"
+    },
+    {
+      "path": "Scripts/Helpers/Get-FriendlyTargetUserName.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2be1024869b2c64b195b84a5931f64a1791c47bf",
+      "size": 342,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2be1024869b2c64b195b84a5931f64a1791c47bf"
+    },
+    {
+      "path": "Scripts/Helpers/Get-RebootFeatureLabels.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "756b72476e8571587678ea1d4ae63fbf97769d00",
+      "size": 1229,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/756b72476e8571587678ea1d4ae63fbf97769d00"
+    },
+    {
+      "path": "Scripts/Helpers/Get-RegFileOperations.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "273140de0d7c06bd9d752d9968478f8863878bdb",
+      "size": 5949,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/273140de0d7c06bd9d752d9968478f8863878bdb"
+    },
+    {
+      "path": "Scripts/Helpers/Get-TargetUserForAppRemoval.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d26f68d2547457f60f61a0a0385e272c5ca7d0e0",
+      "size": 375,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d26f68d2547457f60f61a0a0385e272c5ca7d0e0"
+    },
+    {
+      "path": "Scripts/Helpers/Get-UserDirectory.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e64fdd155912ef29d8b32e64596db3ec8fcc2737",
+      "size": 1948,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e64fdd155912ef29d8b32e64596db3ec8fcc2737"
+    },
+    {
+      "path": "Scripts/Helpers/Get-UserName.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3cd92a78fda741f1ea249e3a60ee52574f3456b",
+      "size": 251,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f3cd92a78fda741f1ea249e3a60ee52574f3456b"
+    },
+    {
+      "path": "Scripts/Helpers/Import-ConfigToParams.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "483e6c7137824a4c08854e78bb2dcf50a2f5d3a8",
+      "size": 5025,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/483e6c7137824a4c08854e78bb2dcf50a2f5d3a8"
+    },
+    {
+      "path": "Scripts/Helpers/Registry-PathHelpers.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "565c670221efbc26c44272b58b715d05f729287d",
+      "size": 3734,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/565c670221efbc26c44272b58b715d05f729287d"
+    },
+    {
+      "path": "Scripts/Helpers/Resolve-UserProfilePath.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38b21e7610e057b829587941064e1cdf07d5bf29",
+      "size": 30214,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/38b21e7610e057b829587941064e1cdf07d5bf29"
+    },
+    {
+      "path": "Scripts/Helpers/Test-ConfigConsistency.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73ea3b47d11e8afe3781cf37453edbf97afda6fb",
+      "size": 3845,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/73ea3b47d11e8afe3781cf37453edbf97afda6fb"
+    },
+    {
+      "path": "Scripts/Helpers/Test-ModernStandbySupport.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4efb0f394240a81d8fe1a8e37dc685ce0addc32",
+      "size": 734,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b4efb0f394240a81d8fe1a8e37dc685ce0addc32"
+    },
+    {
+      "path": "Scripts/Helpers/Test-TargetUserName.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8df47ffbe8c0859e7b34f6317dbd3825587da808",
+      "size": 1699,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/8df47ffbe8c0859e7b34f6317dbd3825587da808"
+    },
+    {
+      "path": "Scripts/Helpers/Test-UserProfileExists.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3508b19e0f0f4dc51ca529449b2e3a598722b9f",
+      "size": 1212,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b3508b19e0f0f4dc51ca529449b2e3a598722b9f"
+    },
+    {
+      "path": "Scripts/Helpers/User-HiveHelpers.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3066df762e67d9f7cb01fdf529b077e68bdda20d",
+      "size": 5317,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3066df762e67d9f7cb01fdf529b077e68bdda20d"
+    },
+    {
+      "path": "Scripts/Run-Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd0c5e866a790db82d958f1e622bee8fec5e1722",
+      "size": 1763,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/fd0c5e866a790db82d958f1e622bee8fec5e1722"
+    },
+    {
+      "path": "Scripts/Threading",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4daaed302ddfd44d9cadecf8cea45c92ca4a4793",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/4daaed302ddfd44d9cadecf8cea45c92ca4a4793"
+    },
+    {
+      "path": "Scripts/Threading/Invoke-DoEvents.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f12d53be9bd0de5afe123cf460b859f69237262",
+      "size": 717,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7f12d53be9bd0de5afe123cf460b859f69237262"
+    },
+    {
+      "path": "Scripts/Threading/Invoke-NonBlocking.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2448dc916b9867dd8d4db7fe1b894bee6f67ff9e",
+      "size": 2305,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2448dc916b9867dd8d4db7fe1b894bee6f67ff9e"
+    },
+    {
+      "path": "Tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67b8ae34222a7a29017e8e776a484d3844f11b04",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/67b8ae34222a7a29017e8e776a484d3844f11b04"
+    },
+    {
+      "path": "Tests/Apply-RegistryRegFile.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85b22d97ab59176cb4a163a9e396f2d66b3004bd",
+      "size": 9738,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/85b22d97ab59176cb4a163a9e396f2d66b3004bd"
+    },
+    {
+      "path": "Tests/Confirm-UnsafeAppRemoval.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6550e27ef5b2f75f2ae18eac7c971a3033b81006",
+      "size": 1700,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6550e27ef5b2f75f2ae18eac7c971a3033b81006"
+    },
+    {
+      "path": "Tests/FeatureParameterContracts.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "167f35492e0753d1b024c749f821d33c3d437358",
+      "size": 6111,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/167f35492e0753d1b024c749f821d33c3d437358"
+    },
+    {
+      "path": "Tests/Get-CurrentTweakState.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00200fdfabf49aaa58a14acb101a1652b5d6282c",
+      "size": 12644,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/00200fdfabf49aaa58a14acb101a1652b5d6282c"
+    },
+    {
+      "path": "Tests/Get-FriendlyRegistryBackupTarget.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59dc3370cc3f67b33041031b97cb14be0999966e",
+      "size": 1360,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/59dc3370cc3f67b33041031b97cb14be0999966e"
+    },
+    {
+      "path": "Tests/Get-LauncherArguments.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f572a522f09b66535785d6ef7ea9c52bac3dcd34",
+      "size": 10265,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f572a522f09b66535785d6ef7ea9c52bac3dcd34"
+    },
+    {
+      "path": "Tests/Get-RebootFeatureLabels.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "629051549248212fd44b3b204c99b03ad25be96d",
+      "size": 5790,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/629051549248212fd44b3b204c99b03ad25be96d"
+    },
+    {
+      "path": "Tests/Get-RegFileOperations.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c15562bc6f55dbf9fcc5b9e11a3eaa9500781c92",
+      "size": 4970,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c15562bc6f55dbf9fcc5b9e11a3eaa9500781c92"
+    },
+    {
+      "path": "Tests/Get-TargetUserForAppRemoval.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02177ea911885c8c449ca6f8d00c172b796c0d2a",
+      "size": 479,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/02177ea911885c8c449ca6f8d00c172b796c0d2a"
+    },
+    {
+      "path": "Tests/Get-WingetInstalledApps.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73edda4419825b4e03066201f46650b40c08f462",
+      "size": 4368,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/73edda4419825b4e03066201f46650b40c08f462"
+    },
+    {
+      "path": "Tests/Import-ConfigToParams.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0595cfc5f615332f54f8f4a6911db6d92a77d0d",
+      "size": 7410,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/e0595cfc5f615332f54f8f4a6911db6d92a77d0d"
+    },
+    {
+      "path": "Tests/Import-JsonFile.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe26273748f46854f1f69d38443e54919c3252d3",
+      "size": 2740,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/fe26273748f46854f1f69d38443e54919c3252d3"
+    },
+    {
+      "path": "Tests/Import-LanguageFile.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7855cf0c739d888836aa545f41cb3534f002c709",
+      "size": 15036,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7855cf0c739d888836aa545f41cb3534f002c709"
+    },
+    {
+      "path": "Tests/Import-RegistryFile.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1bbf9a65f588b6d9e745fe63701532fddd55c2d",
+      "size": 3764,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c1bbf9a65f588b6d9e745fe63701532fddd55c2d"
+    },
+    {
+      "path": "Tests/Invoke-Changes.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a0059ec0d195a57477b45e4118ce69176a06717",
+      "size": 25186,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3a0059ec0d195a57477b45e4118ce69176a06717"
+    },
+    {
+      "path": "Tests/Invoke-NonBlocking.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10b737c47e2f65c937c80df3c72c49049aa72c52",
+      "size": 2100,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/10b737c47e2f65c937c80df3c72c49049aa72c52"
+    },
+    {
+      "path": "Tests/Invoke-SystemRestorePoint.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "664d1bd37abed3fecaae837ca2073c05973e9e9d",
+      "size": 6261,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/664d1bd37abed3fecaae837ca2073c05973e9e9d"
+    },
+    {
+      "path": "Tests/LanguageCatalogs.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e57d1fdcb48debe7909abc6ddf24bccb560ca06",
+      "size": 4614,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6e57d1fdcb48debe7909abc6ddf24bccb560ca06"
+    },
+    {
+      "path": "Tests/MainWindow-AppSelection.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d58a4f96fd030bd65963e63fe1c371fa3047060",
+      "size": 14654,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7d58a4f96fd030bd65963e63fe1c371fa3047060"
+    },
+    {
+      "path": "Tests/MainWindow-Deployment.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fced2bba4f19a0d2d533069a85296a5919104ae5",
+      "size": 6140,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/fced2bba4f19a0d2d533069a85296a5919104ae5"
+    },
+    {
+      "path": "Tests/MainWindow-Localization.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6956cd74447be91a187c766a96e557355b2153d1",
+      "size": 17314,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6956cd74447be91a187c766a96e557355b2153d1"
+    },
+    {
+      "path": "Tests/ParameterDefaults.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cca4be341aa42ec8ee3911278b885e337626d8f",
+      "size": 2859,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0cca4be341aa42ec8ee3911278b885e337626d8f"
+    },
+    {
+      "path": "Tests/Registry-BackupCreation.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71589622c51ca1f4353bf5790a46502e0c0009d1",
+      "size": 11725,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/71589622c51ca1f4353bf5790a46502e0c0009d1"
+    },
+    {
+      "path": "Tests/Registry-BackupFeatureValidation.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fc8fd118cbc2125f3d69a587410a716df496b0d",
+      "size": 3179,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7fc8fd118cbc2125f3d69a587410a716df496b0d"
+    },
+    {
+      "path": "Tests/Registry-BackupValidation.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2496523e2de45d4d70ad8fe0fd974a290d0a6945",
+      "size": 13430,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2496523e2de45d4d70ad8fe0fd974a290d0a6945"
+    },
+    {
+      "path": "Tests/Registry-PathHelpers.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efc845d1f5e6b709ebaec03a8c5efddb71cdaf71",
+      "size": 3535,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/efc845d1f5e6b709ebaec03a8c5efddb71cdaf71"
+    },
+    {
+      "path": "Tests/Registry-SnapshotApply.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bdba7f4da5bb3d4846b2cd844a1c5c37b062a66",
+      "size": 12049,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0bdba7f4da5bb3d4846b2cd844a1c5c37b062a66"
+    },
+    {
+      "path": "Tests/Remove-SelectedApps.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0107e5ca812305feac8a18538e09629a82ddce21",
+      "size": 22526,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0107e5ca812305feac8a18538e09629a82ddce21"
+    },
+    {
+      "path": "Tests/Replace-StartMenu.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "593e1d8b511d64b531fe68abdbf511ed6ab9279e",
+      "size": 10245,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/593e1d8b511d64b531fe68abdbf511ed6ab9279e"
+    },
+    {
+      "path": "Tests/Resolve-UserProfilePath.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b3da08a0f3a850d09ee631d0a293b9d0d09993f",
+      "size": 8158,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2b3da08a0f3a850d09ee631d0a293b9d0d09993f"
+    },
+    {
+      "path": "Tests/Restore-BackupDialogFeatureLists.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47a1db9a9b14c58f464e7a3312dcb474c391c8e8",
+      "size": 4139,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/47a1db9a9b14c58f464e7a3312dcb474c391c8e8"
+    },
+    {
+      "path": "Tests/Restore-RegistryApplyState.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38406b26309d40146bf69dce1ff869677d42b20e",
+      "size": 3365,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/38406b26309d40146bf69dce1ff869677d42b20e"
+    },
+    {
+      "path": "Tests/Restore-RegistryBackup.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13613a6b6a45f3efe5f0d54bf61a4184efb5b986",
+      "size": 7616,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/13613a6b6a45f3efe5f0d54bf61a4184efb5b986"
+    },
+    {
+      "path": "Tests/Set-StoreSearchSuggestions.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a64236866f6e587e3f02531e0f1b45c6c5a0651b",
+      "size": 10874,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/a64236866f6e587e3f02531e0f1b45c6c5a0651b"
+    },
+    {
+      "path": "Tests/Settings-And-Apps-FileIO.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abcfd9a67a930262783ad72228831ef2c0ad578c",
+      "size": 9586,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/abcfd9a67a930262783ad72228831ef2c0ad578c"
+    },
+    {
+      "path": "Tests/Show-CliMenuOptions.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35e0f6b53155d80ff878c00ac6d4447d355bd1cc",
+      "size": 4671,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/35e0f6b53155d80ff878c00ac6d4447d355bd1cc"
+    },
+    {
+      "path": "Tests/Telemetry-ScheduledTasks.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2375fad6f975b2cd23767d20dd4e8aa70b8584c4",
+      "size": 11959,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2375fad6f975b2cd23767d20dd4e8aa70b8584c4"
+    },
+    {
+      "path": "Tests/Test-AppInWingetList.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "babd48479178d2054379d3e467ec2abf1d996e87",
+      "size": 1331,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/babd48479178d2054379d3e467ec2abf1d996e87"
+    },
+    {
+      "path": "Tests/TestData",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d7ab9f75de0d3f9492acfa14794afacb0967b9e8",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/d7ab9f75de0d3f9492acfa14794afacb0967b9e8"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5b730b38bc7a6841e55e8a968eaa6e8932a6bfa8",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/5b730b38bc7a6841e55e8a968eaa6e8932a6bfa8"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/Config.Invalid.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "512e1f18b6c2cd1d7d781fa4430950dfad872e57",
+      "size": 34,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/512e1f18b6c2cd1d7d781fa4430950dfad872e57"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/Config.Utf8NoBom.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecdebd1aca6cd24dd7fee583f7524857981b81d6",
+      "size": 63,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/ecdebd1aca6cd24dd7fee583f7524857981b81d6"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/Config.Valid.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b85a762ce0438057decde1ea8afc6f0373f80a20",
+      "size": 58,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/b85a762ce0438057decde1ea8afc6f0373f80a20"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/Config.VersionMismatch.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1ec9053b8604263a07147b6f1b92f1ed158fa3e",
+      "size": 63,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f1ec9053b8604263a07147b6f1b92f1ed158fa3e"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/DefaultSettings.MissingSettings.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d25f98117eed52c368f389badcaa9e0378476e6d",
+      "size": 23,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d25f98117eed52c368f389badcaa9e0378476e6d"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/DefaultSettings.Valid.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f224b8eb1b1b17f719ba8e1276e840e6753ba490",
+      "size": 288,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/f224b8eb1b1b17f719ba8e1276e840e6753ba490"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/ExportedConfig.SkipRegistryBackup.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a2489d8d5468065a933c9080f54023a2108d0f6",
+      "size": 98,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7a2489d8d5468065a933c9080f54023a2108d0f6"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/ExportedConfig.WithSettings.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02b7d6dc722c75d76040907a2413d2e45688e84a",
+      "size": 951,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/02b7d6dc722c75d76040907a2413d2e45688e84a"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/LastUsedSettings.Invalid.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86694236f8122cf62480f3e2ed8b750f660f01c8",
+      "size": 84,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/86694236f8122cf62480f3e2ed8b750f660f01c8"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/LastUsedSettings.Valid.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20ec008cafd3a7a71e65cc326e28bd142c74b683",
+      "size": 87,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/20ec008cafd3a7a71e65cc326e28bd142c74b683"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/RegistryBackup.Invalid.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1b14e27f11edd3126866ec4322c5913ece187ae",
+      "size": 40,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c1b14e27f11edd3126866ec4322c5913ece187ae"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/RegistryBackup.RealStructure.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64b688366f112977a245335268e5b2ee55b50456",
+      "size": 969,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/64b688366f112977a245335268e5b2ee55b50456"
+    },
+    {
+      "path": "Tests/TestData/JsonFileLoading/RegistryBackup.Valid.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "461c857f4fee66553f350c17c99d290541159618",
+      "size": 138,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/461c857f4fee66553f350c17c99d290541159618"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "180a07a6fc4691118e797a5de434976ff93fae32",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/180a07a6fc4691118e797a5de434976ff93fae32"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/en-US",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "35774c5a6d8a36abe1ad72403fdb65f2a314829c",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/35774c5a6d8a36abe1ad72403fdb65f2a314829c"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/en-US/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b1101e1e8c69c0ba8bcf8dd50888201243e4f05",
+      "size": 92,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7b1101e1e8c69c0ba8bcf8dd50888201243e4f05"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/en-US/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3838396a8337b91bca14741822f6bb7758623b45",
+      "size": 82,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/3838396a8337b91bca14741822f6bb7758623b45"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/en-US/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d61ac7d969f647e37ee7e3cb2ff315daf67890f9",
+      "size": 209,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/d61ac7d969f647e37ee7e3cb2ff315daf67890f9"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/en-US/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf8b2db651d4535068c09f66d97306acea011e24",
+      "size": 482,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/bf8b2db651d4535068c09f66d97306acea011e24"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/es-ES",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c424a4759592530a2f047dbfe17d5c34e290e2b8",
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/trees/c424a4759592530a2f047dbfe17d5c34e290e2b8"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/es-ES/Apps.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "size": 3,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0967ef424bce6791893e9a57bb952f80fd536e93"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/es-ES/Categories.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "size": 3,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/0967ef424bce6791893e9a57bb952f80fd536e93"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/es-ES/Chrome.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c57af947cc2fe6558c1060457779666662060846",
+      "size": 32,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/c57af947cc2fe6558c1060457779666662060846"
+    },
+    {
+      "path": "Tests/TestData/LanguageLoading/es-ES/Features.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36aeed998694b774bbafafd1cea793f5e581dd06",
+      "size": 39,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/36aeed998694b774bbafafd1cea793f5e581dd06"
+    },
+    {
+      "path": "Tests/TestSuiteSafety.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9abddfc2307c458eaffa116ccda9d331e9fe9d85",
+      "size": 3655,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/9abddfc2307c458eaffa116ccda9d331e9fe9d85"
+    },
+    {
+      "path": "Tests/Ui-Preferences.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dae93d4acae516750f1472e3feee028a13af73df",
+      "size": 3758,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/dae93d4acae516750f1472e3feee028a13af73df"
+    },
+    {
+      "path": "Tests/User-HiveHelpers.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7802942196720f97391e9911ed1f84da6b292958",
+      "size": 7271,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/7802942196720f97391e9911ed1f84da6b292958"
+    },
+    {
+      "path": "Tests/User-LookupHelpers.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d56f46777a8607b4bee39beced13c3fba3ba0d0",
+      "size": 1302,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/6d56f46777a8607b4bee39beced13c3fba3ba0d0"
+    },
+    {
+      "path": "Tests/Wait-ForKeyPress.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfe96532cf3e8f0856caa283edf39f74748d9b9b",
+      "size": 959,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/dfe96532cf3e8f0856caa283edf39f74748d9b9b"
+    },
+    {
+      "path": "Tests/Windows-OptionalFeatures.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "551733df50ed4c877db53ba55c52adeb3e922424",
+      "size": 8503,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/551733df50ed4c877db53ba55c52adeb3e922424"
+    },
+    {
+      "path": "Tests/XamlContracts.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd7aefe12b4eae7733488e9bee46af51021dc8d2",
+      "size": 9504,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/cd7aefe12b4eae7733488e9bee46af51021dc8d2"
+    },
+    {
+      "path": "Win11Debloat.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2358546872429639de3a8cc75d0d4a3e5b3b11df",
+      "size": 28870,
+      "url": "https://api.github.com/repos/Raphire/Win11Debloat/git/blobs/2358546872429639de3a8cc75d0d4a3e5b3b11df"
+    }
+  ],
+  "truncated": false
+}

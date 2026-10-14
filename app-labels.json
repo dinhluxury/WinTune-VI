@@ -1,0 +1,551 @@
+﻿{
+  "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Config/Apps.json",
+  "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+  "License": "MIT",
+  "Apps": [
+    {
+      "Name": "Clipchamp.Clipchamp",
+      "Title": "Clipchamp"
+    },
+    {
+      "Name": "Microsoft.3DBuilder",
+      "Title": "3D Builder"
+    },
+    {
+      "Name": "Microsoft.549981C3F5F10",
+      "Title": "Cortana"
+    },
+    {
+      "Name": "Microsoft.BingFinance",
+      "Title": "Bing Finance"
+    },
+    {
+      "Name": "Microsoft.BingFoodAndDrink",
+      "Title": "Bing Food And Drink"
+    },
+    {
+      "Name": "Microsoft.BingHealthAndFitness",
+      "Title": "Bing Health And Fitness"
+    },
+    {
+      "Name": "Microsoft.BingNews",
+      "Title": "Microsoft News"
+    },
+    {
+      "Name": "Microsoft.BingSports",
+      "Title": "Bing Sports"
+    },
+    {
+      "Name": "Microsoft.BingTranslator",
+      "Title": "Bing Translator"
+    },
+    {
+      "Name": "Microsoft.BingTravel",
+      "Title": "Bing Travel"
+    },
+    {
+      "Name": "Microsoft.BingWeather",
+      "Title": "Bing Weather"
+    },
+    {
+      "Name": "Microsoft.Windows.AIHub",
+      "Title": "Copilot+ AI Hub"
+    },
+    {
+      "Name": "Microsoft.PCManager",
+      "Title": "Microsoft PC Manager"
+    },
+    {
+      "Name": "Microsoft.Getstarted",
+      "Title": "Get Started"
+    },
+    {
+      "Name": "Microsoft.Messaging",
+      "Title": "Messaging"
+    },
+    {
+      "Name": "Microsoft.Microsoft3DViewer",
+      "Title": "3D Viewer"
+    },
+    {
+      "Name": "Microsoft.MicrosoftJournal",
+      "Title": "Microsoft Journal"
+    },
+    {
+      "Name": "Microsoft.MicrosoftOfficeHub",
+      "Title": "Office Hub"
+    },
+    {
+      "Name": "Microsoft.MicrosoftPowerBIForWindows",
+      "Title": "Power BI"
+    },
+    {
+      "Name": "Microsoft.MicrosoftSolitaireCollection",
+      "Title": "Solitaire Collection"
+    },
+    {
+      "Name": "Microsoft.MicrosoftStickyNotes",
+      "Title": "Sticky Notes"
+    },
+    {
+      "Name": "Microsoft.MixedReality.Portal",
+      "Title": "Mixed Reality Portal"
+    },
+    {
+      "Name": "Microsoft.NetworkSpeedTest",
+      "Title": "Network Speed Test"
+    },
+    {
+      "Name": "Microsoft.Office.OneNote",
+      "Title": "OneNote"
+    },
+    {
+      "Name": "Microsoft.Office.Sway",
+      "Title": "Sway"
+    },
+    {
+      "Name": "Microsoft.OneConnect",
+      "Title": "One Connect"
+    },
+    {
+      "Name": "Microsoft.Print3D",
+      "Title": "Print 3D"
+    },
+    {
+      "Name": "Microsoft.PowerAutomateDesktop",
+      "Title": "Power Automate"
+    },
+    {
+      "Name": "Microsoft.SkypeApp",
+      "Title": "Skype (UWP)"
+    },
+    {
+      "Name": "Microsoft.Todos",
+      "Title": "Microsoft To Do"
+    },
+    {
+      "Name": "Microsoft.Windows.DevHome",
+      "Title": "Dev Home"
+    },
+    {
+      "Name": "Microsoft.WindowsAlarms",
+      "Title": "Alarms & Clock"
+    },
+    {
+      "Name": "Microsoft.WindowsFeedbackHub",
+      "Title": "Feedback Hub"
+    },
+    {
+      "Name": "Microsoft.WindowsMaps",
+      "Title": "Windows Maps"
+    },
+    {
+      "Name": "Microsoft.WindowsSoundRecorder",
+      "Title": "Sound Recorder"
+    },
+    {
+      "Name": "Microsoft.XboxApp",
+      "Title": "Xbox Console Companion"
+    },
+    {
+      "Name": "Microsoft.ZuneVideo",
+      "Title": "Movies & TV"
+    },
+    {
+      "Name": "MicrosoftCorporationII.MicrosoftFamily",
+      "Title": "Family Safety"
+    },
+    {
+      "Name": "MicrosoftCorporationII.QuickAssist",
+      "Title": "Quick Assist"
+    },
+    {
+      "Name": "MicrosoftTeams",
+      "Title": "Microsoft Teams (Old)"
+    },
+    {
+      "Name": "MSTeams",
+      "Title": "Microsoft Teams (New)"
+    },
+    {
+      "Name": "ACGMediaPlayer",
+      "Title": "ACG Media Player"
+    },
+    {
+      "Name": "ActiproSoftwareLLC",
+      "Title": "Actipro Software"
+    },
+    {
+      "Name": "AdobeSystemsIncorporated.AdobePhotoshopExpress",
+      "Title": "Adobe Photoshop Express"
+    },
+    {
+      "Name": "Amazon.com.Amazon",
+      "Title": "Amazon"
+    },
+    {
+      "Name": "AmazonVideo.PrimeVideo",
+      "Title": "Prime Video"
+    },
+    {
+      "Name": "Asphalt8Airborne",
+      "Title": "Asphalt 8"
+    },
+    {
+      "Name": "AutodeskSketchBook",
+      "Title": "Autodesk SketchBook"
+    },
+    {
+      "Name": "CaesarsSlotsFreeCasino",
+      "Title": "Caesars Slots"
+    },
+    {
+      "Name": "COOKINGFEVER",
+      "Title": "Cooking Fever"
+    },
+    {
+      "Name": "CyberLinkMediaSuiteEssentials",
+      "Title": "CyberLink Media Suite"
+    },
+    {
+      "Name": "DisneyMagicKingdoms",
+      "Title": "Disney Magic Kingdoms"
+    },
+    {
+      "Name": "Disney.37853FC22B2CE",
+      "Title": "Disney+"
+    },
+    {
+      "Name": "DrawboardPDF",
+      "Title": "Drawboard PDF"
+    },
+    {
+      "Name": "Duolingo-LearnLanguagesforFree",
+      "Title": "Duolingo"
+    },
+    {
+      "Name": "FACEBOOK.FACEBOOK",
+      "Title": "Facebook"
+    },
+    {
+      "Name": "FarmVille2CountryEscape",
+      "Title": "FarmVille 2"
+    },
+    {
+      "Name": "Flipboard",
+      "Title": "Flipboard"
+    },
+    {
+      "Name": "HiddenCity",
+      "Title": "Hidden City"
+    },
+    {
+      "Name": "HULULLC.HULUPLUS",
+      "Title": "Hulu"
+    },
+    {
+      "Name": "iHeartRadio",
+      "Title": "iHeartRadio"
+    },
+    {
+      "Name": "Facebook.Instagram",
+      "Title": "Instagram"
+    },
+    {
+      "Name": "king.com.BubbleWitch3Saga",
+      "Title": "Bubble Witch 3"
+    },
+    {
+      "Name": "king.com.CandyCrushSaga",
+      "Title": "Candy Crush Saga"
+    },
+    {
+      "Name": "king.com.CandyCrushSodaSaga",
+      "Title": "Candy Crush Soda"
+    },
+    {
+      "Name": "LinkedInforWindows",
+      "Title": "LinkedIn"
+    },
+    {
+      "Name": "MarchofEmpires",
+      "Title": "March of Empires"
+    },
+    {
+      "Name": "4DF9E0F8.Netflix",
+      "Title": "Netflix"
+    },
+    {
+      "Name": "NYTCrossword",
+      "Title": "NYT Crossword"
+    },
+    {
+      "Name": "OneCalendar",
+      "Title": "One Calendar"
+    },
+    {
+      "Name": "PandoraMediaInc",
+      "Title": "Pandora"
+    },
+    {
+      "Name": "PhototasticCollage",
+      "Title": "Phototastic Collage"
+    },
+    {
+      "Name": "PicsArt-PhotoStudio",
+      "Title": "PicsArt"
+    },
+    {
+      "Name": "PolarrPhotoEditorAcademicEdition",
+      "Title": "Polarr Photo Editor"
+    },
+    {
+      "Name": "flaregamesGmbH.RoyalRevolt",
+      "Title": "Royal Revolt"
+    },
+    {
+      "Name": "Sidia.LiveWallpaper",
+      "Title": "Live Wallpaper"
+    },
+    {
+      "Name": "SlingTV",
+      "Title": "Sling TV"
+    },
+    {
+      "Name": "SpotifyAB.SpotifyMusic",
+      "Title": "Spotify"
+    },
+    {
+      "Name": "BytedancePte.Ltd.TikTok",
+      "Title": "TikTok"
+    },
+    {
+      "Name": "TuneInRadio",
+      "Title": "TuneIn Radio"
+    },
+    {
+      "Name": "WinZipUniversal",
+      "Title": "WinZip"
+    },
+    {
+      "Name": "Microsoft.BingSearch",
+      "Title": "Bing Search"
+    },
+    {
+      "Name": "Microsoft.GamingApp",
+      "Title": "Xbox Gaming App"
+    },
+    {
+      "Name": "Microsoft.GetHelp",
+      "Title": "Get Help"
+    },
+    {
+      "Name": "Microsoft.M365Companions",
+      "Title": "Microsoft 365 Companions"
+    },
+    {
+      "Name": "Microsoft.MSPaint",
+      "Title": "Paint 3D"
+    },
+    {
+      "Name": "Microsoft.OutlookForWindows",
+      "Title": "Outlook for Windows"
+    },
+    {
+      "Name": "Microsoft.Paint",
+      "Title": "Paint"
+    },
+    {
+      "Name": "Microsoft.People",
+      "Title": "People"
+    },
+    {
+      "Name": "Microsoft.RemoteDesktop",
+      "Title": "Remote Desktop"
+    },
+    {
+      "Name": "Microsoft.ScreenSketch",
+      "Title": "Snipping Tool"
+    },
+    {
+      "Name": "Microsoft.StartExperiencesApp",
+      "Title": "Widgets Experience"
+    },
+    {
+      "Name": "Microsoft.Whiteboard",
+      "Title": "Whiteboard"
+    },
+    {
+      "Name": "Microsoft.Windows.Photos",
+      "Title": "Photos"
+    },
+    {
+      "Name": "Microsoft.WindowsCalculator",
+      "Title": "Calculator"
+    },
+    {
+      "Name": "Microsoft.WindowsCamera",
+      "Title": "Camera"
+    },
+    {
+      "Name": "Microsoft.windowscommunicationsapps",
+      "Title": "Mail & Calendar"
+    },
+    {
+      "Name": "Microsoft.WindowsNotepad",
+      "Title": "Notepad"
+    },
+    {
+      "Name": "Microsoft.WindowsStore",
+      "Title": "Microsoft Store"
+    },
+    {
+      "Name": "Microsoft.WindowsTerminal",
+      "Title": "Windows Terminal"
+    },
+    {
+      "Name": "Microsoft.Xbox.TCUI",
+      "Title": "Xbox TCUI Framework"
+    },
+    {
+      "Name": "Microsoft.XboxGameOverlay",
+      "Title": "Xbox Game Overlay"
+    },
+    {
+      "Name": "Microsoft.XboxGamingOverlay",
+      "Title": "Xbox Gaming Overlay"
+    },
+    {
+      "Name": "Microsoft.XboxIdentityProvider",
+      "Title": "Xbox Identity Provider"
+    },
+    {
+      "Name": "Microsoft.XboxSpeechToTextOverlay",
+      "Title": "Xbox Speech To Text"
+    },
+    {
+      "Name": "Microsoft.YourPhone",
+      "Title": "Phone Link"
+    },
+    {
+      "Name": "Microsoft.ZuneMusic",
+      "Title": "Media Player"
+    },
+    {
+      "Name": "MicrosoftWindows.CrossDevice",
+      "Title": "Cross Device Experience"
+    },
+    {
+      "Name": "MicrosoftWindows.Client.WebExperience",
+      "Title": "Windows Web Experience Pack"
+    },
+    {
+      "Name": "Microsoft.WidgetsPlatformRuntime",
+      "Title": "Widgets Platform Runtime"
+    },
+    {
+      "Name": "LGElectronics.LGMonitorApp",
+      "Title": "LG Monitor App"
+    },
+    {
+      "Name": "AD2F1837.HPAIExperienceCenter",
+      "Title": "HP AI Experience Center"
+    },
+    {
+      "Name": "AD2F1837.HPConnectedMusic",
+      "Title": "HP Connected Music"
+    },
+    {
+      "Name": "AD2F1837.HPConnectedPhotopoweredbySnapfish",
+      "Title": "HP Connected Photo"
+    },
+    {
+      "Name": "AD2F1837.HPDesktopSupportUtilities",
+      "Title": "HP Desktop Support Utilities"
+    },
+    {
+      "Name": "AD2F1837.HPEasyClean",
+      "Title": "HP Easy Clean"
+    },
+    {
+      "Name": "AD2F1837.HPFileViewer",
+      "Title": "HP File Viewer"
+    },
+    {
+      "Name": "AD2F1837.HPJumpStarts",
+      "Title": "HP JumpStarts"
+    },
+    {
+      "Name": "AD2F1837.HPPCHardwareDiagnosticsWindows",
+      "Title": "HP PC Hardware Diagnostics"
+    },
+    {
+      "Name": "AD2F1837.HPPowerManager",
+      "Title": "HP Power Manager"
+    },
+    {
+      "Name": "AD2F1837.HPPrinterControl",
+      "Title": "HP Printer Control"
+    },
+    {
+      "Name": "AD2F1837.HPPrivacySettings",
+      "Title": "HP Privacy Settings"
+    },
+    {
+      "Name": "AD2F1837.HPQuickDrop",
+      "Title": "HP QuickDrop"
+    },
+    {
+      "Name": "AD2F1837.HPQuickTouch",
+      "Title": "HP QuickTouch"
+    },
+    {
+      "Name": "AD2F1837.HPRegistration",
+      "Title": "HP Registration"
+    },
+    {
+      "Name": "AD2F1837.HPSupportAssistant",
+      "Title": "HP Support Assistant"
+    },
+    {
+      "Name": "AD2F1837.HPSureShieldAI",
+      "Title": "HP Sure Shield AI"
+    },
+    {
+      "Name": "AD2F1837.HPSystemInformation",
+      "Title": "HP System Information"
+    },
+    {
+      "Name": "AD2F1837.HPWelcome",
+      "Title": "HP Welcome"
+    },
+    {
+      "Name": "AD2F1837.HPWorkWell",
+      "Title": "HP WorkWell"
+    },
+    {
+      "Name": "AD2F1837.myHP",
+      "Title": "myHP"
+    },
+    {
+      "Name": "E046963F.LenovoCompanion",
+      "Title": "Lenovo Vantage"
+    },
+    {
+      "Name": "LenovoCompanyLimited.LenovoVantageService",
+      "Title": "Lenovo Vantage Service"
+    },
+    {
+      "Name": "DellInc.DellSupportAssistforPCs",
+      "Title": "Dell SupportAssist"
+    },
+    {
+      "Name": "DellInc.DellDigitalDelivery",
+      "Title": "Dell Digital Delivery Services"
+    },
+    {
+      "Name": "DellInc.DellMobileConnect",
+      "Title": "Dell Mobile Connect"
+    }
+  ]
+}

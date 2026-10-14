@@ -1,0 +1,744 @@
+[
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "LICENSE",
+    "File": "sources\\review-20261014\\winutil\\LICENSE.txt",
+    "SHA256": "469B54DADFA5C0D0002291E452FCAA32165356D3459E1DEE040404DB5439FB1C"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "README.md",
+    "File": "sources\\review-20261014\\winutil\\README.md.txt",
+    "SHA256": "E1C4E2C9173FBBBC3620CB00948F78DEDE2BF586498568C646E54479438F3C84"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/applications.json",
+    "File": "sources\\review-20261014\\winutil\\config__applications.json.txt",
+    "SHA256": "5072FF3F3B4C689DB313000C8EF7FF93C655F5CEA55C5990192EAD87789ECF41"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/appnavigation.json",
+    "File": "sources\\review-20261014\\winutil\\config__appnavigation.json.txt",
+    "SHA256": "5A58128C68DF57FA22E6C9173D55462C32C2A866323FE63712467066CE333F47"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/appx.json",
+    "File": "sources\\review-20261014\\winutil\\config__appx.json.txt",
+    "SHA256": "435831591FAC1E2DDD465730ACD9228C44037B3BDA66D5C57E1F7D80AD8AC1C4"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/dns.json",
+    "File": "sources\\review-20261014\\winutil\\config__dns.json.txt",
+    "SHA256": "E77D9ECBA3361981EEB9F640EF88CDB915E5F0B6367CA31405BAF09BD7968997"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/feature.json",
+    "File": "sources\\review-20261014\\winutil\\config__feature.json.txt",
+    "SHA256": "D917926DA191F502B61C19F23D18E602594F572A3644578D2E463AF648B4AA9E"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/preset.json",
+    "File": "sources\\review-20261014\\winutil\\config__preset.json.txt",
+    "SHA256": "1A82437C16F0867137836E177990A7A993614132BCD9DD2607C03C3234DDEB73"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/themes.json",
+    "File": "sources\\review-20261014\\winutil\\config__themes.json.txt",
+    "SHA256": "1A3339457F59A7A5386280B32152B5F2904A2CB1CDD7D93F060351BE93FBEA60"
+  },
+  {
+    "Repository": "ChrisTitusTech/winutil",
+    "Commit": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+    "Path": "config/tweaks.json",
+    "File": "sources\\review-20261014\\winutil\\config__tweaks.json.txt",
+    "SHA256": "983E31C23C4C6AA576891D07A048B490FB213882CA92277AC274A4352F5253F4"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Config/Apps.json",
+    "File": "sources\\review-20261014\\debloat\\Config__Apps.json.txt",
+    "SHA256": "683F9AFEEEFB38C5A85EE2CD5BC36CA00761B94D4A20FB0BE224774DFEF05E3B"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Config/DefaultSettings.json",
+    "File": "sources\\review-20261014\\debloat\\Config__DefaultSettings.json.txt",
+    "SHA256": "AF3523FFA2ECB1EEC80C7A3E3ABA3A5891F80E81E01CA5DF950DAB23532CB862"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Config/Features.json",
+    "File": "sources\\review-20261014\\debloat\\Config__Features.json.txt",
+    "SHA256": "61F0FA2DD381504B2A51470B8A4C85A2AAC90C29BB7777DB97EC6E413E775869"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "LICENSE",
+    "File": "sources\\review-20261014\\debloat\\LICENSE.txt",
+    "SHA256": "22E6FEACBF3CF84858D5B4B7F3355CCFBE7BE6A8C633A41407AB41D0F0A8B4B8"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "README.md",
+    "File": "sources\\review-20261014\\debloat\\README.md.txt",
+    "SHA256": "BB2D88E44AD0F75E722DEF1997124D2DBEB283EF21AC576A6C5BF0154645F917"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Add_All_Folders_Under_This_PC.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Add_All_Folders_Under_This_PC.reg.txt",
+    "SHA256": "1BA445588ABBDB83F34AFD75FB342A948B235C98D70AA8400D7A8E78FD108185"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Align_Taskbar_Left.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Align_Taskbar_Left.reg.txt",
+    "SHA256": "F94B4247C21DE0E276B4F91393DC4E4BDABE57C7C28680BE020167638E1E5D79"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Combine_MMTaskbar_Always.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Combine_MMTaskbar_Always.reg.txt",
+    "SHA256": "572352A51D24DC713AEEC199325CD20FE26742C2451B1FC35AF26C404E8AA069"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Combine_MMTaskbar_Never.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Combine_MMTaskbar_Never.reg.txt",
+    "SHA256": "AE1F2C3D92C06CEA778A23DF9F80C9CBD3EA801A880A0980E0CE2E29B5235827"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Combine_MMTaskbar_When_Full.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Combine_MMTaskbar_When_Full.reg.txt",
+    "SHA256": "A1C19DB92D4BD05F2ADDAEB5F93C5293DB25CD6D637C9427D36677A228652924"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Combine_Taskbar_Always.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Combine_Taskbar_Always.reg.txt",
+    "SHA256": "E5BCC8B79D12CAB5D3D09FC451927CE099E75283CC5AEAA045860C6400017666"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Combine_Taskbar_Never.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Combine_Taskbar_Never.reg.txt",
+    "SHA256": "E22C0105C14866BADDFCAB1461CBA34FEFFDF71751E2A162080FC447F06B79C3"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Combine_Taskbar_When_Full.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Combine_Taskbar_When_Full.reg.txt",
+    "SHA256": "C59C4077EB2DD3E32468E053B1A325BDDA69119284974F18478876382ABC0E60"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_AI_Recall.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_AI_Recall.reg.txt",
+    "SHA256": "7F5C62A6394A75D4B7C881535E94F7E61D3391CDDE0DB87B45C11E6CFE9676AF"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_AI_Service_Auto_Start.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_AI_Service_Auto_Start.reg.txt",
+    "SHA256": "D153DB56B2BBD005AF47FD30A0A102F7F779324F237FDF086883DDC305594140"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Animations.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Animations.reg.txt",
+    "SHA256": "BD35767F0CC662D29BED3C01E0CE1B13FCEBCC4AC578FD5665D59BEFB2DD2380"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Bing_Cortana_In_Search.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Bing_Cortana_In_Search.reg.txt",
+    "SHA256": "D247168A918BF379BEDCBB7FD2E7E42B2A6877875E107E68562CA2C7CC54AC84"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Bitlocker_Auto_Encryption.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Bitlocker_Auto_Encryption.reg.txt",
+    "SHA256": "EFB411E654BC02DE30D76FE22D3FA21398E2EB361D344FF2FAE2614AB9B1BC83"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Brave_Bloat.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Brave_Bloat.reg.txt",
+    "SHA256": "2C8504174F124CF6CECDA8332694282629B0C723239C622067AE0366813192D8"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Chat_Taskbar.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Chat_Taskbar.reg.txt",
+    "SHA256": "1DE8B10B81C5C5B6191EC949D93C47A35168CACC340C90DB8FA521C4DFBE6A8A"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Chrome_AI_Features.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Chrome_AI_Features.reg.txt",
+    "SHA256": "0EC7C331F99924E4266C8E6985C6F3CAF9E791C8F375A64EE578F80673C5609B"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Click_to_Do.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Click_to_Do.reg.txt",
+    "SHA256": "F5D5DCFD9C55D0FB50C1C9CF964C044BD95EA468E31B23BE37E2694ED02E411C"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Copilot.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Copilot.reg.txt",
+    "SHA256": "DC742A4F908907B2206408CDE3C46EDE2FC02AB5662BC62B91D8DA0ECFE3F88D"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_DVR.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_DVR.reg.txt",
+    "SHA256": "7B67DFCB226BF50BB7DD61BE981FB54A08A47BE2EFDA89765FAD1C88BC56AFE6"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Delivery_Optimization.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Delivery_Optimization.reg.txt",
+    "SHA256": "54028DAB9B1AB7437F91304959F17F13AF2E6A9206D435CE515C6E27B6B1547B"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Desktop_Spotlight.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Desktop_Spotlight.reg.txt",
+    "SHA256": "A49B6C74B71FB0129ACCAAAB6B083D588202F9D099EAB1D00591BBA60FD9B173"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Device_Auto_App_Download.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Device_Auto_App_Download.reg.txt",
+    "SHA256": "5A7A105241AE0B2137A9365E51D3F63786C7F6AC1CE0B01FC990B51A9A750947"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Edge_AI_Features.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Edge_AI_Features.reg.txt",
+    "SHA256": "964D4856A47A70ECA8D03D57BBB4BB92F00782F8BC79D7F1DCFAF86AAD5C3501"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Edge_Ads_And_Suggestions.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Edge_Ads_And_Suggestions.reg.txt",
+    "SHA256": "4D94E0B11B20FE8BA3870F407A708AF87E34B1AB1397B342EF2F63C622F8C2C2"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Enhance_Pointer_Precision.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Enhance_Pointer_Precision.reg.txt",
+    "SHA256": "CD8CFE6AC1A77681210B39BD85E670F88DC51A5911547540480902745E289C8E"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Fast_Startup.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Fast_Startup.reg.txt",
+    "SHA256": "BA8AC3589193FCAAA26FF5A88FDB4CCF973C7A64DEC28B727CF5E2677A80B67C"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Find_My_Device.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Find_My_Device.reg.txt",
+    "SHA256": "B100F8876BE8EFEC490891C90EC04D10A3F0D677DA102FDFC917CCF575383FBB"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Game_Bar_Integration.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Game_Bar_Integration.reg.txt",
+    "SHA256": "A39888CA0313CC0B8B04D2841DBE78FAF6D53D6213DCEC338D1E112EAD9F7E9D"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Give_access_to_context_menu.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Give_access_to_context_menu.reg.txt",
+    "SHA256": "88FB1F6B2D32097B34C86A1340ADF4FD4A5B39FEEC2EB1822F65D734F80B4834"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Include_in_library_from_context_menu.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Include_in_library_from_context_menu.reg.txt",
+    "SHA256": "80A78262A8BD6607EEA59BE652855A9985CF94759588295883F3DAD34C4EE9A3"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Location_Services.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Location_Services.reg.txt",
+    "SHA256": "9C09D489E019425D0DA82C0BD9EDDEA3EE6AA4A9F2F4EBF8298FC32AAA5611DD"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Lockscreen_Tips.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Lockscreen_Tips.reg.txt",
+    "SHA256": "B44B7100E1A2CF08F0AD80E955907D0931CC808D7FDC6879A47294F1DA9689EC"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Modern_Standby_Networking.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Modern_Standby_Networking.reg.txt",
+    "SHA256": "391D75C0F01EDAE5C0CB0ADC3E0030FB70B7DDF048489BF9A5965C9D17F1E722"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Notepad_AI_Features.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Notepad_AI_Features.reg.txt",
+    "SHA256": "FCFE2894C9F9624044FADFE9752E2D4F05146407B32E876F78507D3E6D800C4D"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Notifications.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Notifications.reg.txt",
+    "SHA256": "2AA87A07E0F79FD03393797D61276687C8DFE8F8097094A93F03D5EBDFC50CA6"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Paint_AI_Features.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Paint_AI_Features.reg.txt",
+    "SHA256": "3D70EFF5A7C977227978F48DEAADE6C49FA40342EBC10CD942AF18EDEF6B7EEF"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Phone_Link_In_Start.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Phone_Link_In_Start.reg.txt",
+    "SHA256": "D3D310EF3EC9AA1ADFDD96B9FFEBE51AB423215F99A6E5EDC13494185BC87DBF"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Settings_365_Ads.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Settings_365_Ads.reg.txt",
+    "SHA256": "AEEF35CB4B9F71E8E1E8276C620BA37585BE191D9D0726448E82EAF349A77546"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Settings_Home.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Settings_Home.reg.txt",
+    "SHA256": "A4A0E091B1E10BFF0DCEAD0DF3E73CB579FA92DA3B3154B36A5AE1A74E859CD6"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Share_Drag_Tray.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Share_Drag_Tray.reg.txt",
+    "SHA256": "4A72A0F78B8B16B1D2B5B83081BCB1ED6871FC662F77067756F746A9E817FB34"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Share_from_context_menu.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Share_from_context_menu.reg.txt",
+    "SHA256": "044B927474D977A14886176F36BEB7291CF06A3524E3BA27AF321F2E6FA87ACC"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Show_More_Options_Context_Menu.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Show_More_Options_Context_Menu.reg.txt",
+    "SHA256": "4F80FE56A481BDC553047981FE231B1EEAFDF39295F033A8B11ECF93D8131381"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Snap_Assist.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Snap_Assist.reg.txt",
+    "SHA256": "94951AC1867D6EAEE60A312A12881C1E6C1FA635A783F5EC7582D1836B03F538"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Snap_Layouts.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Snap_Layouts.reg.txt",
+    "SHA256": "2881B894C46486CBF427B6049A49739F3AF4E636DE6A1012C30BDD92BF50CAAE"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Start_All_Apps.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Start_All_Apps.reg.txt",
+    "SHA256": "9BD61EB8097578AAF901941CC2196BC0A41B6D558056FF9C820067DCBBD05C8E"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Start_Recommended.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Start_Recommended.reg.txt",
+    "SHA256": "80E8B57E63707297E24CC75A0DAB2707BD1CCD5425100D9636407D8F1FDB903F"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Sticky_Keys_Shortcut.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Sticky_Keys_Shortcut.reg.txt",
+    "SHA256": "AF3D002F5FE0AD3E71ABF6281849258EFECA6ECBC9DC9FEE350A7A380F2C3CC2"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Storage_Sense.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Storage_Sense.reg.txt",
+    "SHA256": "96318ED2CC69AADAC25F22344AFED1EC8C21B54C0D99FE997A9AB53DE5CEBAAE"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Telemetry.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Telemetry.reg.txt",
+    "SHA256": "943D1348671C7C0B37F0CF13359113190FB012DA4D0253CBF7F839B5D439CAEC"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Transparency.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Transparency.reg.txt",
+    "SHA256": "1DA2E2BEDA9FF19052CDC94293D6F7A6AE3993C45FA17DE46277E6FC23D0815D"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Update_ASAP.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Update_ASAP.reg.txt",
+    "SHA256": "0CEF7E67C9C59407C81F25C637A0E5D51A3CD7AB7C0F800157B3281AC399F4FB"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Window_Snapping.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Window_Snapping.reg.txt",
+    "SHA256": "162132B2E8F2CBD32CC27E7464790B12DE3A1D0360E2239D89EE526B9C94C2AA"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Disable_Windows_Suggestions.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Disable_Windows_Suggestions.reg.txt",
+    "SHA256": "6DB962DB6DA06045B60C9D4561F1151B5BFB0D2B14AF6171C57E889F16BE715B"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Enable_Dark_Mode.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Enable_Dark_Mode.reg.txt",
+    "SHA256": "8960CA278B878A45A2E6D5E61B4EE63364E2F864C2D2B0EF84AD9914433EA6A8"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Enable_Desktop_Spotlight.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Enable_Desktop_Spotlight.reg.txt",
+    "SHA256": "9D5B582C4D3AC84327B153E63A41C98774C73393A365AC064C017F573DB91059"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Enable_End_Task.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Enable_End_Task.reg.txt",
+    "SHA256": "21E53B7B6786D199E63E18E8E612BB7BC8FA7DC673D171F1AF0934EF030777CB"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Enable_Last_Active_Click.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Enable_Last_Active_Click.reg.txt",
+    "SHA256": "46ADE8EBC36771B25955010888F05275C6B4A1563F236C65F53A2746E654A265"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_3D_Objects_Folder.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_3D_Objects_Folder.reg.txt",
+    "SHA256": "B8A7F7DEF95349D2B78763E4776BA131B0975E10406363F2B73D040576C76D8C"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Desktop_Spotlight_Icon.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Desktop_Spotlight_Icon.reg.txt",
+    "SHA256": "17DBD75F473EB3D0A86FBA9C587516D7A34FE7F6C3A8294E4BDC08F23B569AFD"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Drive_Letters.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Drive_Letters.reg.txt",
+    "SHA256": "5D1CC1959403FE7E18ABD943E210316EB0673F1F32B55EB35013F8E3D9FE3C07"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Gallery_from_Explorer.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Gallery_from_Explorer.reg.txt",
+    "SHA256": "2C9F7AF6F724590297F1D68E6B36F206CE9F17E08FBEDB2D10459BB6C3DCC332"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Home_from_Explorer.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Home_from_Explorer.reg.txt",
+    "SHA256": "6B35BD3A2C6846E8F4928ACD96206B9A73385DFBD60FE7E1DBA422E1615AA511"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Music_Folder.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Music_Folder.reg.txt",
+    "SHA256": "E85608A743A148D5E77D4C29810B3583898885699BFED5BFB18407A65103EDD4"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Onedrive_Folder.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Onedrive_Folder.reg.txt",
+    "SHA256": "E2B9C5044C0CA77ACAE9E3C9CF69A9CEFB5E8E5AF50687B5B7D67EB75AD742AB"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Search_Taskbar.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Search_Taskbar.reg.txt",
+    "SHA256": "0F7B2AA743B5DC843F5BE9DA4308F65628BFC7214C1281D890B1CDF46C87BDE7"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Tabs_In_Alt_Tab.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Tabs_In_Alt_Tab.reg.txt",
+    "SHA256": "55F9190338255AD7067E78113102C27D865E5240C52967902393B311234301BE"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_Taskview_Taskbar.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_Taskview_Taskbar.reg.txt",
+    "SHA256": "894CACCFAD9CA3A577D596C8638F5B32225A76510244E819B2BBF52B090414E5"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Hide_duplicate_removable_drives_from_navigation_pane_of_File_Explorer.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Hide_duplicate_removable_drives_from_navigation_pane_of_File_Explorer.reg.txt",
+    "SHA256": "BB5102FCB1C0ED39ABBCB8306387444CC6C2349767623DFDBD32090AF47AE70B"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Launch_File_Explorer_To_Downloads.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Launch_File_Explorer_To_Downloads.reg.txt",
+    "SHA256": "FE4248350607E85B0C636AD98313918B1AE767708F4BB6BA06340830D2F7EB08"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Launch_File_Explorer_To_Home.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Launch_File_Explorer_To_Home.reg.txt",
+    "SHA256": "A0182E878AA4D4FB6BB6BAC37A0A97F2AE57A71F8386C32C9286E5582E14A39C"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Launch_File_Explorer_To_OneDrive.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Launch_File_Explorer_To_OneDrive.reg.txt",
+    "SHA256": "C9B7980D19E0FE397C8635CEB9745014E68B1626AB7B3E2D3211536387028D28"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Launch_File_Explorer_To_This_PC.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Launch_File_Explorer_To_This_PC.reg.txt",
+    "SHA256": "1C28FC06AA1FC5C6821EA6C6BD39C1B1E0EA056CDF3AAB40410C4ED6CA13578E"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/MMTaskbarMode_Active.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__MMTaskbarMode_Active.reg.txt",
+    "SHA256": "B013E81E26D1A1D909BDF464F89AF928AFF88E477BA7EBCDC35017058AE391F8"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/MMTaskbarMode_All.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__MMTaskbarMode_All.reg.txt",
+    "SHA256": "F69898F53222609F6702E782B8ACC51A86902581FBD8B8C58B89EA6A677B9A98"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/MMTaskbarMode_Main_Active.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__MMTaskbarMode_Main_Active.reg.txt",
+    "SHA256": "8397CDB26611E64FE3A6C9249D1AFC2B309143FED2F4E82304C4DC4DD7D0351A"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Prevent_Auto_Reboot.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Prevent_Auto_Reboot.reg.txt",
+    "SHA256": "DB8F561112903346D624DBD1DDBA4EDCA256F06F80AE1A697BA01FABC51AE557"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_20_Tabs_In_Alt_Tab.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_20_Tabs_In_Alt_Tab.reg.txt",
+    "SHA256": "3EC3D0CF06EA8899877E4554959ABF168E0EEFA664FF2C995BF6F8BEA5B24F5F"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_3_Tabs_In_Alt_Tab.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_3_Tabs_In_Alt_Tab.reg.txt",
+    "SHA256": "4502B3691A0F69E50D5CB06FD346CAC846ABFAE81A6F30F96402623D3AF2B3AD"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_5_Tabs_In_Alt_Tab.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_5_Tabs_In_Alt_Tab.reg.txt",
+    "SHA256": "1A1339974B48B0335576DB88FC0CD635F1EE1581F30B15E327A7F40D3F3201C1"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Drive_Letters_First.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Drive_Letters_First.reg.txt",
+    "SHA256": "A98F249D5F230E3D708A49B5DE4A4798FC6F7E189B2F18051F545583F54A372B"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Drive_Letters_Last.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Drive_Letters_Last.reg.txt",
+    "SHA256": "C1178AC07BEC82B55A2D6DFC3B8C62C5010A55684DCBAD108AD7F7D1EADA2409"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Extensions_For_Known_File_Types.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Extensions_For_Known_File_Types.reg.txt",
+    "SHA256": "738CC481577E7D9160BEC45282195314E5B2E67CFC9E1D5D423077B68442DC19"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Hidden_Folders.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Hidden_Folders.reg.txt",
+    "SHA256": "26614FFBA5C3431E216CFB649F2E8E6742D659DFCD0281D85BD83E73955D1C2A"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Network_Drive_Letters_First.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Network_Drive_Letters_First.reg.txt",
+    "SHA256": "6A143BE4872F4E692DDF06DF3AD366A6F5EB29360DF842C21F28EFB32597A873"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Search_Box.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Search_Box.reg.txt",
+    "SHA256": "D926E10B8D71A612323BC2F30A17C3E44901B709550A7B2A209A67C5DA006B47"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Search_Icon.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Search_Icon.reg.txt",
+    "SHA256": "946EE4D19DA8E433A32B46ED3635A0E727A5D77F9542E3942F51E3FCC7217426"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Show_Search_Icon_And_Label.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Show_Search_Icon_And_Label.reg.txt",
+    "SHA256": "3CE9D5B2CBEA19F131026C23B88521C4A9BAE98DD23CE624741DA3D5A44020F9"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Start_AllApps_Category.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Start_AllApps_Category.reg.txt",
+    "SHA256": "47CF3A03FF1345B31715774CE93D1F52870AA8FC598D702F12E8351B2CD416C8"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Start_AllApps_Grid.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Start_AllApps_Grid.reg.txt",
+    "SHA256": "059BEC1CA07FBB6EC5A483E2E82B77F5578B32117A70348DEBFAB2A00270E57C"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Regfiles/Start_AllApps_List.reg",
+    "File": "sources\\review-20261014\\debloat\\Regfiles__Start_AllApps_List.reg.txt",
+    "SHA256": "41C29A17FE425DA9118F5FF422D21E3FE6EF9F83B35955E88F0A58FD8CF798A6"
+  },
+  {
+    "Repository": "Raphire/Win11Debloat",
+    "Commit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",
+    "Path": "Win11Debloat.ps1",
+    "File": "sources\\review-20261014\\debloat\\Win11Debloat.ps1.txt",
+    "SHA256": "F3C0F25B0BF4FCC8BB45F97F865012A68122EEC6CE4EDE94B5819A8647E5D02F"
+  }
+]

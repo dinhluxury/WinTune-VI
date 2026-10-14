@@ -1,0 +1,57 @@
+﻿[
+  {
+    "Id": "custom",
+    "Title": "Tự chọn",
+    "Ids": [],
+    "Description": "Tự chọn từng tính năng; chưa thay đổi Windows."
+  },
+  {
+    "Id": "minimal",
+    "Title": "Tối thiểu",
+    "Ids": [
+      "ads",
+      "tailored",
+      "tips",
+      "explorerads",
+      "locktips"
+    ],
+    "Description": "Giảm nội dung quảng cáo và gợi ý, không gỡ ứng dụng hoặc tắt dịch vụ."
+  },
+  {
+    "Id": "standard",
+    "Title": "Tiêu chuẩn",
+    "Ids": [
+      "ads",
+      "tailored",
+      "tips",
+      "explorerads",
+      "locktips",
+      "extensions",
+      "tracking",
+      "endtask",
+      "edgestartupboost",
+      "edgebackground"
+    ],
+    "Description": "Nhóm Tối thiểu, thêm tiện ích Explorer/taskbar và giảm hoạt động nền của Edge."
+  },
+  {
+    "Id": "advanced",
+    "Title": "Nâng cao",
+    "Ids": [
+      "ads",
+      "tailored",
+      "tips",
+      "explorerads",
+      "locktips",
+      "extensions",
+      "tracking",
+      "endtask",
+      "edgestartupboost",
+      "edgebackground",
+      "widgets",
+      "bing",
+      "classicmenu"
+    ],
+    "Description": "Nhóm Tiêu chuẩn, thêm ẩn Widgets, tìm Bing và menu chuột phải cũ. Đọc tác động từng mục trước khi áp dụng."
+  }
+]

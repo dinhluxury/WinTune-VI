@@ -1,0 +1,8 @@
+{
+  "Repository": "microsoft/winget-pkgs",
+  "Commit": "2266f556516ee3159b4f2ac38a3e38e04ba6af3c",
+  "Path": "manifests/u/UniKey/UniKey/4.6.250531",
+  "PackageId": "UniKey.UniKey",
+  "Official": "https://www.unikey.org/",
+  "Checked": "2026-10-14T17:14:08.9276455+07:00"
+}

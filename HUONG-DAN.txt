@@ -1,0 +1,66 @@
+﻿WINTUNE VI 0.15.0 — HƯỚNG DẪN NGẮN
+
+Giải nén hoặc chép TOÀN BỘ thư mục ứng dụng sang Desktop, rồi mở
+WinTune-VI.exe. WinTune-Demo.exe chỉ mô phỏng, không thay đổi Windows.
+Giữ các file cạnh nhau. Hỗ trợ Windows 11 x64, Windows PowerShell 5.1.
+
+TỔNG QUAN
+CPU, RAM, GPU, ổ đĩa và thông tin Windows. Bảng 10 tiến trình dùng RAM
+nhiều nhất cập nhật khoảng 2 giây khi ở trang này; có giờ lấy mẫu.
+Tạm dừng/rời trang/thu nhỏ sẽ dừng lấy mẫu mới. Bảo mật, TPM và lỗi driver
+có nút Kiểm tra ngay với giải thích. Không tự thay đổi tiến trình.
+
+TÙY CHỈNH WINDOWS
+1. Tick từng mục hoặc dùng Chọn nhanh ngay trên bảng.
+2. Với mục có ô chọn, chọn kiểu bạn muốn dùng.
+3. Xem tên trong vùng Đang chọn; × bỏ từng mục. Có lọc Chỉ hiện mục đã chọn.
+4. Nhấn Xem trước và áp dụng, đọc tác động rồi xác nhận.
+Chọn nhanh/tick chưa thay đổi Windows. Nút ⓘ đọc giải thích từng mục.
+Tìm kiếm nhận chữ có dấu hoặc không dấu. Đọc lại đọc trạng thái thật.
+Nếu nút áp dụng bị khóa, đọc thông báo trên bảng; không xóa nhật ký để bỏ khóa.
+
+CÀI ỨNG DỤNG
+17 gợi ý trong 4 nhóm: hằng ngày, game/trò chuyện, livestream/nội dung,
+công việc/tiện ích. Ô có cùng kích thước và công dụng tiếng Việt.
+Tìm/lọc giữ lựa chọn. Không cần cài hết, không chọn sẵn.
+Xem thông tin và điều khoản, đánh dấu đồng ý, rồi Xem trước và cài ứng dụng.
+Nút cài luôn hiện dưới bảng. Hủy màn hình xác nhận sẽ không chạy trình cài.
+UniKey dùng bản x64 4.6.230919 từ unikey.org; bản ARM64 không phù hợp máy x64.
+WinGet kiểm tra đúng ID, báo output/mã lỗi. Thiếu WinGet thì cập nhật
+App Installer qua Microsoft Store. Không tải/chạy script Internet.
+
+GỠ ỨNG DỤNG VÀ CÔNG CỤ
+Gỡ ứng dụng: tìm, đọc công dụng/phân loại màu, chọn đúng app cần gỡ.
+Không coi mọi app là rác. Store/Edge/bảo mật/game runtime/hệ thống được bảo vệ.
+Ứng dụng khởi động: phạm vi HKCU Run, không bao gồm mọi nguồn tự khởi động.
+Dọn dẹp: quét trước, chọn file TEMP cũ; Thùng rác có xác nhận riêng.
+Sửa lỗi: SFC/DISM/kiểm tra ổ từng lệnh, kết luận tiếng Việt theo dữ liệu thật.
+Chế độ nguồn: đọc chế độ có sẵn trước khi đổi. Không hứa tăng FPS hoặc RAM.
+Tác vụ dài chạy riêng; đợi kết quả trước khi đóng ứng dụng hoặc tắt máy.
+
+HOÀN TÁC VÀ KHÔI PHỤC
+Hoàn tác tùy chỉnh khác với điểm khôi phục Windows, cài lại app hay lấy lại file.
+Registry/startup/power plan lưu giá trị gốc, chỉ hoàn tác khi không xung đột.
+App đã gỡ chỉ cài lại khi có nguồn đáng tin cậy; dữ liệu app có thể đã mất.
+TEMP/Thùng rác xóa vĩnh viễn. Điểm khôi phục không sao lưu file cá nhân.
+Giữ %LOCALAPPDATA%\WinTuneVI\v2 khi cần lịch sử/phục hồi. Bản mới dùng
+cùng dữ liệu; không cần xóa bản sao lưu cũ. Nhật ký mã hóa thuộc tài khoản này.
+
+GIAO DIỆN VÀ KIỂM THỬ
+Chọn Tối/Sáng/Theo hệ thống ở cuối thanh trái, chỉ đổi màu WinTune.
+Tại CMD trong thư mục ứng dụng: wintune / wintune demo / wintune test.
+Kiểm thử tự động dùng mock cho mọi thao tác thay đổi Windows.
+Không tự gỡ/cài/xóa/sửa Windows thật để thử, kể cả trong máy ảo.
+Không tắt Defender/Firewall/Update/UAC/Memory Integrity hoặc hàng loạt dịch vụ.
+
+README.md: hướng dẫn đầy đủ. FEATURE_MATRIX.md: nguồn và quyết định chọn lọc.
+CHANGELOG-v0.15.md: thay đổi, file sửa và giới hạn.
+KIEM-THU.md, TIEN-DO.md và evidence: kết quả kiểm tra thực tế.
+MỞ NHANH VÀ CẬP NHẬT
+WinTune và cập nhật: kiểm tra khi bấm, xác nhận trước tải, không tự mở bản mới.
+Đăng ký lệnh wintune chép bản vào thư mục user, chỉ sửa User PATH/App Paths.
+Mở lại CMD/PowerShell rồi gõ wintune; Win + R cũng dùng được sau đăng ký.
+Nguồn phát hành dinhluxury/WinTune-VI và khóa công khai đã ghim. Bộ ký local
+chỉ tải được online sau khi tác giả phát hành stable. Xem DISTRIBUTION.md;
+PUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.
+Không chạy đăng ký/cài đặt thật để kiểm thử tự động.

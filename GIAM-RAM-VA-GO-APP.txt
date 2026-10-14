@@ -1,0 +1,82 @@
+﻿WINTUNE VI 0.5 — GIẢM APP NỀN VÀ THỬ TRONG MÁY ẢO
+
+Mục tiêu là bớt phần mềm tự mở/không dùng, không ép Windows dùng một số RAM
+cố định. App không chạy thường không chiếm RAM; gỡ app đó có thể chỉ tiết kiệm
+dung lượng. Windows còn dùng RAM cho cache. Không có nút xóa cache để tạo số đẹp.
+
+CÁCH DÙNG
+1. Mở WinTune-VI.exe TRONG MÁY ẢO. Bấm Đo RAM và số tiến trình ở cột trái,
+   ghi lại kết quả. Nên đợi máy ổn định và giữ cùng các ứng dụng đang mở.
+2. Bấm Tắt app tự khởi động. Chỉ hiện các mục phổ biến trong HKCU Run.
+   Đọc chi tiết và lệnh gốc, đánh dấu app bạn không cần tự mở, xem trước rồi
+   xác nhận. Không đóng app đang chạy. Có thể phục hồi đợt gần nhất trong cửa sổ
+   này; app kiểm tra xung đột và không tự chạy lệnh vừa phục hồi.
+3. Bấm Gỡ app cài sẵn đã chọn. Chỉ hiện những app thuộc danh mục có trên máy.
+   Nhấp tên để đọc mất chức năng gì. Chọn nhiều app thật sự không dùng, xem
+   trước đúng tên gói rồi xác nhận một lần để WinTune gỡ tuần tự và kiểm tra lại.
+   KHÔNG chọn sẵn và không tự quyết định app nào là vô dụng với bạn.
+4. Trong Hoạt động nền & khởi động, đọc hai mục Edge: tắt Startup Boost và
+   tắt tiếp tục chạy nền sau khi đóng. Có thể cần quyền quản trị/chính sách
+   cho phép và tự mở lại Edge. Có thể làm Edge mở chậm hơn hoặc mất thông báo
+   nền. Không tắt WebView2 của ứng dụng khác. Kiểm tra edge://policy trong Edge.
+5. Tự đăng xuất/đăng nhập lại CHỈ MÁY ẢO nếu cần, đợi máy ổn định, đo lại với
+   cùng khối lượng công việc. So sánh số thực tế, không suy ra mức giảm RAM chỉ
+   từ việc registry báo đã ghi. WinTune không tự đăng xuất/khởi động lại.
+
+DANH MỤC GỠ
+Feedback Hub, Get Help, Teams, Clipchamp, Phone Link, News, Weather, Xbox app
+và Xbox Game Bar (9 loại, chỉ hiện loại đang cài cho tài khoản hiện tại).
+Không gỡ Store, App Installer, framework, Defender, Windows Update hay thành
+phần bảo mật. Không gỡ gói cho mọi tài khoản hoặc gói cấp sẵn cho tài khoản mới.
+Weather app khác ô thời tiết trên taskbar: muốn ẩn ô đó, chọn mục Ẩn thời tiết
+và Widgets trên thanh tác vụ. Ẩn nút không đồng nghĩa nền Widgets đã dừng.
+
+Gỡ Game Bar ảnh hưởng Win+G/quay clip Game Bar, không gỡ OBS. Gỡ Phone Link làm
+mất kết nối/thông báo điện thoại. Giữ Teams/Xbox/Clipchamp nếu bạn dùng chúng.
+Tự sao lưu/xuất dự án hoặc dữ liệu cần giữ. Tự lưu/đóng app trước khi gỡ;
+WinTune kiểm tra app đang chạy nhưng không bảo đảm phát hiện mọi tiến trình.
+
+SAO LƯU / LỖI / CÀI LẠI
+- Registry: dùng Hoàn tác đợt gần nhất ở cửa sổ chính.
+- Tự khởi động: lưu nguyên lệnh/kiểu dữ liệu, dùng Phục hồi trong cửa sổ riêng.
+- Gỡ app: lưu tên gói, phiên bản, kết quả và mã Store, KHÔNG sao lưu dữ liệu
+  app. Dùng Cài lại app đã gỡ để mở đúng trang Store rồi tự cài. Có thể cần
+  mạng/tài khoản/giấy phép. Không hứa dữ liệu hoặc phiên bản cũ sẽ trở lại.
+- Lỗi giữa đợt: dừng, ghi rõ mục đã làm, mục lỗi có thể đã làm một phần và
+  mục chưa làm. Đọc Lịch sử và cách cài lại; không báo cả đợt thành công.
+- Lịch sử quản lý app/khởi động: %LOCALAPPDATA%\WinTuneVI\v2\actions, mã hóa
+  cho tài khoản hiện tại. Giữ thư mục này để phục hồi; không chép nhật ký sang
+  tài khoản khác. Đây không phải System Restore hoặc sao lưu toàn máy.
+
+THỬ NHANH, KHÔNG PHẢI TICK LẠI MỌI MỤC
+Mở WinTune-Demo.exe, thử hai cửa sổ mới và hoàn tác khởi động: hoàn toàn giả.
+Trong CMD tại thư mục app, wintune test chạy toàn bộ kiểm tra mô phỏng.
+Bộ Kiem-Thu-May-Ao.cmd kiểm tra registry thật trong VM đúng tên/tài khoản/UUID;
+CHƯA tự kiểm tra gỡ app hoặc thay đổi khởi động thật. Không chạy nó trên máy chính.
+
+Để thử chức năng mới thật: chụp snapshot VM trước, gỡ riêng Feedback Hub nếu
+không dùng, đối chiếu bằng Windows Settings > Apps và thử cài lại Store.
+Thử riêng một mục khởi động có trong danh sách, xem lệnh biến mất rồi phục hồi
+và kiểm tra lệnh gốc trở lại. Không cần cố tạo app/mục giả khi danh sách trống.
+Đừng gỡ mọi app để thử: gỡ không có hoàn tác dữ liệu. Snapshot VM mới là cách
+quay lại toàn bộ máy ảo sau thử nghiệm; snapshot cũ không tự được phục hồi.
+
+ĐÃ KIỂM TRA / CHƯA KIỂM TRA
+200 kiểm tra mô phỏng (18 Core + 71 mở rộng + 33 quản lý app/khởi động + 78 WPF).
+Máy chính chỉ đọc danh sách: 3 app và 4 mục khởi động thuộc phạm vi, không sửa.
+Đã dựng/xem ảnh hai cửa sổ WPF; chưa có thao tác chuột desktop cho cửa sổ mới.
+CHƯA gỡ/cài lại app, sửa khởi động, kiểm tra hiệu lực Edge hoặc đo mức giảm RAM
+thật trong VM. Kết quả registry thật trước đây thuộc 0.3, không chứng minh
+các chức năng mới của 0.5. Xem KIEM-THU.md và TIEN-DO.md để biết bằng chứng.
+
+NGUỒN
+Win11Debloat: 47cc891547192d228475e8e69bb196d7d20abe1e
+WinUtil: 07ccd8e2e755a706f31569808b31f5b77acad6a9
+Danh mục app tham khảo WinUtil; phần chọn/ghi/lịch sử của WinTune viết riêng.
+Không tải/chạy script WinUtil hoặc Win11Debloat khi mở app. Giấy phép MIT ở
+LICENSE-WinUtil.txt, LICENSE-Win11Debloat.txt; nguồn ghim trong sources.
+
+TỪ 0.6: hướng dẫn này ghi kết quả lịch sử của 0.5. Dùng README.md cho bản
+hiện tại. Theo yêu cầu mới, mọi kiểm thử tự động thay đổi hệ thống phải mock;
+Kiem-Thu-May-Ao.cmd nay gọi Run-Tests.ps1, không ghi registry thật. Không chạy
+bộ thử thật cũ để chứng minh tính năng mới. Phục hồi đợt thử cũ vẫn có guard.

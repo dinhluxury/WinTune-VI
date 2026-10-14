@@ -1,0 +1,3296 @@
+{
+  "sha": "07ccd8e2e755a706f31569808b31f5b77acad6a9",
+  "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/07ccd8e2e755a706f31569808b31f5b77acad6a9",
+  "tree": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da0b45d5a2676aa897aa0fc0f062d13f19bc599e",
+      "size": 158,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/da0b45d5a2676aa897aa0fc0f062d13f19bc599e"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c54433ddda0b6c13742d880acb10952237f3c44c",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/c54433ddda0b6c13742d880acb10952237f3c44c"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4267d7b6a2ee0d0735e4ee5bc1733a27484ab4f",
+      "size": 297,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a4267d7b6a2ee0d0735e4ee5bc1733a27484ab4f"
+    },
+    {
+      "path": ".github/CODE_OF_CONDUCT.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b6db6ca00e1374045481c2f9db5bb031836e1c3",
+      "size": 5225,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2b6db6ca00e1374045481c2f9db5bb031836e1c3"
+    },
+    {
+      "path": ".github/CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06733b93470ad0efba49aa7639ff35285de8959b",
+      "size": 6233,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/06733b93470ad0efba49aa7639ff35285de8959b"
+    },
+    {
+      "path": ".github/DISCUSSION_TEMPLATE",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8f3c9610320e08111a29b37393c8b7d0cb8dc4f6",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/8f3c9610320e08111a29b37393c8b7d0cb8dc4f6"
+    },
+    {
+      "path": ".github/DISCUSSION_TEMPLATE/app-suggestion.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9839281cfaf1a8e82626147233ee8451dba990a",
+      "size": 1095,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e9839281cfaf1a8e82626147233ee8451dba990a"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f78fabade956b9b8ed8ef79d4d6f378b8e4728be",
+      "size": 72,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f78fabade956b9b8ed8ef79d4d6f378b8e4728be"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e6f54d95733087183529bc549b1dfd34476f2a59",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/e6f54d95733087183529bc549b1dfd34476f2a59"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91132df5d52b973aa7683c3c772a2e48964b464b",
+      "size": 2098,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/91132df5d52b973aa7683c3c772a2e48964b464b"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47cf3129ad230627840bfdbfe83a3ac3792135cb",
+      "size": 449,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/47cf3129ad230627840bfdbfe83a3ac3792135cb"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "205fe58c348ca92e08d70909e9bc1ead0a2952ba",
+      "size": 934,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/205fe58c348ca92e08d70909e9bc1ead0a2952ba"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab4759b3fbf4442ae081b2ba960243d651108b15",
+      "size": 593,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ab4759b3fbf4442ae081b2ba960243d651108b15"
+    },
+    {
+      "path": ".github/READMEITALIAN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d89d0799fd6ea26e97cccea5f6cfbbacda2aa5c",
+      "size": 6882,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8d89d0799fd6ea26e97cccea5f6cfbbacda2aa5c"
+    },
+    {
+      "path": ".github/SECURITY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79918bab395b86c498e6859fce1bab2b9edddfff",
+      "size": 366,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/79918bab395b86c498e6859fce1bab2b9edddfff"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5b78374885bbdd488f218614e09a31fc4af401c",
+      "size": 119,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e5b78374885bbdd488f218614e09a31fc4af401c"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b097d7b47bad0fdb7e3472e9886c17df633d3e15",
+      "size": 196,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b097d7b47bad0fdb7e3472e9886c17df633d3e15"
+    },
+    {
+      "path": ".github/release-drafter.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46aa268f5d8da0415d83d70556f0607be4962689",
+      "size": 929,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/46aa268f5d8da0415d83d70556f0607be4962689"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8256687eb70824713c6cf7994e91321462f43ec4",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/8256687eb70824713c6cf7994e91321462f43ec4"
+    },
+    {
+      "path": ".github/workflows/auto-merge-docs.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "defc7c66f545dee1d343a029081c5898e5cfd9fd",
+      "size": 1057,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/defc7c66f545dee1d343a029081c5898e5cfd9fd"
+    },
+    {
+      "path": ".github/workflows/close-discussion-on-pr.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f383e7c203d5c91e3149cdab2e2924e79b28e3b3",
+      "size": 1736,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f383e7c203d5c91e3149cdab2e2924e79b28e3b3"
+    },
+    {
+      "path": ".github/workflows/close-old-issues.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b44017126db14e4adfabd0c968751e13cddc7a4b",
+      "size": 1748,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b44017126db14e4adfabd0c968751e13cddc7a4b"
+    },
+    {
+      "path": ".github/workflows/compile-check.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2953316ea1dc9a9748c293ee0904ea21217c4c3",
+      "size": 587,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f2953316ea1dc9a9748c293ee0904ea21217c4c3"
+    },
+    {
+      "path": ".github/workflows/docs.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1f1c2654586d217d02e0e78ba5f2886ae03e195",
+      "size": 955,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c1f1c2654586d217d02e0e78ba5f2886ae03e195"
+    },
+    {
+      "path": ".github/workflows/generate-title-screen.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "622e2290bdb2b68d082eb33c8d9026106e6c8970",
+      "size": 6999,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/622e2290bdb2b68d082eb33c8d9026106e6c8970"
+    },
+    {
+      "path": ".github/workflows/label-pr.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bf60fe9e637d4f7de9b66599358ecac6c6dfc83",
+      "size": 1391,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5bf60fe9e637d4f7de9b66599358ecac6c6dfc83"
+    },
+    {
+      "path": ".github/workflows/pre-release.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26ca4deee2eaf771ba8734dbd7ec1a070246e774",
+      "size": 4571,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/26ca4deee2eaf771ba8734dbd7ec1a070246e774"
+    },
+    {
+      "path": ".github/workflows/remove-winutil.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a3a958188aac0b3d36c52a49feef33dfb3f5c20",
+      "size": 921,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7a3a958188aac0b3d36c52a49feef33dfb3f5c20"
+    },
+    {
+      "path": ".github/workflows/sponsors.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c75c7cdbdb4549054138db12c23440ee55fb5d42",
+      "size": 1278,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c75c7cdbdb4549054138db12c23440ee55fb5d42"
+    },
+    {
+      "path": ".github/workflows/triage-tools.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99cd5d4bad0e1797d89f29e9613f0b62d73fd6aa",
+      "size": 7704,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/99cd5d4bad0e1797d89f29e9613f0b62d73fd6aa"
+    },
+    {
+      "path": ".github/workflows/unittests.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a805041f1712e4a06be175ea4b628095e810d838",
+      "size": 1633,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a805041f1712e4a06be175ea4b628095e810d838"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f54dc4f46c67efc1fc1bb579b54f07c05efdfa1a",
+      "size": 233,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f54dc4f46c67efc1fc1bb579b54f07c05efdfa1a"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9aa011b56f1c3afb34f8900dd31824d01cef44d8",
+      "size": 17278,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9aa011b56f1c3afb34f8900dd31824d01cef44d8"
+    },
+    {
+      "path": "CLAUDE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57cf80f2de7984a949989b35f6f9defaa8af1873",
+      "size": 23,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/57cf80f2de7984a949989b35f6f9defaa8af1873"
+    },
+    {
+      "path": "Compile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82e85ea0463e7d5391a0ec9573f49db5967a0a41",
+      "size": 1434,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/82e85ea0463e7d5391a0ec9573f49db5967a0a41"
+    },
+    {
+      "path": "GEMINI.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f43b145b738dc64e5b46fb6e3fe21086a25057e",
+      "size": 108,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3f43b145b738dc64e5b46fb6e3fe21086a25057e"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be8a1a82bcf58357213f359d91e363ed8de33c11",
+      "size": 1074,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/be8a1a82bcf58357213f359d91e363ed8de33c11"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13767955e3430af7ac47905508bf09abfd4e0bb1",
+      "size": 4873,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/13767955e3430af7ac47905508bf09abfd4e0bb1"
+    },
+    {
+      "path": "SPEC.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30289b4d73eb9bcb15bfa4c3e25255f333e05502",
+      "size": 8208,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/30289b4d73eb9bcb15bfa4c3e25255f333e05502"
+    },
+    {
+      "path": "config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6ebd2bd97ebc3cc18aaca8ac3bdc92e9e9ae9dcd",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/6ebd2bd97ebc3cc18aaca8ac3bdc92e9e9ae9dcd"
+    },
+    {
+      "path": "config/applications.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08fc8c463a7aea767cbfebdcaaf08e50ce6b000b",
+      "size": 91109,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/08fc8c463a7aea767cbfebdcaaf08e50ce6b000b"
+    },
+    {
+      "path": "config/appnavigation.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ccf396b0535f8c5f0940d557887bae5643a1a98",
+      "size": 2621,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5ccf396b0535f8c5f0940d557887bae5643a1a98"
+    },
+    {
+      "path": "config/appx.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c6f81c1eadf32dbec1dabc532d192f6e7fc46a8",
+      "size": 11422,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2c6f81c1eadf32dbec1dabc532d192f6e7fc46a8"
+    },
+    {
+      "path": "config/dns.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da5349437b94266633d516dc3f13dc2508607995",
+      "size": 2046,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/da5349437b94266633d516dc3f13dc2508607995"
+    },
+    {
+      "path": "config/feature.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c32d2992bd27015a5259340accad5d8e7471306",
+      "size": 12900,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2c32d2992bd27015a5259340accad5d8e7471306"
+    },
+    {
+      "path": "config/preset.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "852f0c7dfdfc5caf715b213926edd495be7a5988",
+      "size": 1776,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/852f0c7dfdfc5caf715b213926edd495be7a5988"
+    },
+    {
+      "path": "config/themes.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "426da696e4ea2404576bc3f31d3d2dd60608200b",
+      "size": 4909,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/426da696e4ea2404576bc3f31d3d2dd60608200b"
+    },
+    {
+      "path": "config/tweaks.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b46930de8867eda368efde8d12ad2fb089127da8",
+      "size": 66548,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b46930de8867eda368efde8d12ad2fb089127da8"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "37d1b823c90d382024d26bd0f83b5f1112d74a5b",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/37d1b823c90d382024d26bd0f83b5f1112d74a5b"
+    },
+    {
+      "path": "docs/.dockerignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4a7692b42ef78f72b5e734aefac140dc7d2e922",
+      "size": 48,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e4a7692b42ef78f72b5e734aefac140dc7d2e922"
+    },
+    {
+      "path": "docs/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60ee29e3ce4b6c3811e64ea1c80483c41c6d4f0c",
+      "size": 253,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/60ee29e3ce4b6c3811e64ea1c80483c41c6d4f0c"
+    },
+    {
+      "path": "docs/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cb7c850214d6441e7f4ead1c42c422202401c95",
+      "size": 216,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4cb7c850214d6441e7f4ead1c42c422202401c95"
+    },
+    {
+      "path": "docs/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b6e8234e0008916be9811c799a9cc48c5d773bc",
+      "size": 3959,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9b6e8234e0008916be9811c799a9cc48c5d773bc"
+    },
+    {
+      "path": "docs/astro.config.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "942e17b201b00c3c11e73afa6e7562c5cf49cce1",
+      "size": 3122,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/942e17b201b00c3c11e73afa6e7562c5cf49cce1"
+    },
+    {
+      "path": "docs/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad068b0c0858bc3a2828bfd2be634f50989b0e39",
+      "size": 302,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ad068b0c0858bc3a2828bfd2be634f50989b0e39"
+    },
+    {
+      "path": "docs/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad89058339840b0e85a75c62b3c662abbb043e21",
+      "size": 259183,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ad89058339840b0e85a75c62b3c662abbb043e21"
+    },
+    {
+      "path": "docs/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5aee605f2a0bdae0048507918644456f3173b03",
+      "size": 421,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b5aee605f2a0bdae0048507918644456f3173b03"
+    },
+    {
+      "path": "docs/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "119649170086b3229e29f8e81b2e6842d41fcc79",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/119649170086b3229e29f8e81b2e6842d41fcc79"
+    },
+    {
+      "path": "docs/public/favicon.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "791ca18c769110118d6826c9cc88d79da32d5382",
+      "size": 3242,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/791ca18c769110118d6826c9cc88d79da32d5382"
+    },
+    {
+      "path": "docs/public/robots.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b092e62cb0be6c821e40ec94671d3d53bf82462",
+      "size": 82,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4b092e62cb0be6c821e40ec94671d3d53bf82462"
+    },
+    {
+      "path": "docs/public/social-preview.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d80f4eb52515d6d048945f654630ca2d77a5aa18",
+      "size": 71479,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d80f4eb52515d6d048945f654630ca2d77a5aa18"
+    },
+    {
+      "path": "docs/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0a42ebc2fe8bad60a190e14660b85ea50ff7551a",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/0a42ebc2fe8bad60a190e14660b85ea50ff7551a"
+    },
+    {
+      "path": "docs/src/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1c7013eaa2e671e70ac994704a544536d64fc37f",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/1c7013eaa2e671e70ac994704a544536d64fc37f"
+    },
+    {
+      "path": "docs/src/assets/branding",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0da8be1420263a967a5a8667eac0c08c219592cf",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/0da8be1420263a967a5a8667eac0c08c219592cf"
+    },
+    {
+      "path": "docs/src/assets/branding/navlogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ae83be0760b377491c4d06f8c48f7806dd56419",
+      "size": 7987,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1ae83be0760b377491c4d06f8c48f7806dd56419"
+    },
+    {
+      "path": "docs/src/assets/branding/title-screen.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a15a8f39fc18604754ef34fc87862a5605759bf",
+      "size": 175344,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1a15a8f39fc18604754ef34fc87862a5605759bf"
+    },
+    {
+      "path": "docs/src/assets/contributing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ddc0e4fa5a5ea950fcf6609419edd4d9595e9c90",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/ddc0e4fa5a5ea950fcf6609419edd4d9595e9c90"
+    },
+    {
+      "path": "docs/src/assets/contributing/Commit-GHD.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea11d851df6f6ffd8b95f65a5c7d60e4de85615d",
+      "size": 198236,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ea11d851df6f6ffd8b95f65a5c7d60e4de85615d"
+    },
+    {
+      "path": "docs/src/assets/contributing/Compile.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "464ac62198e7d8d89940af7598df1976cb04e644",
+      "size": 12140,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/464ac62198e7d8d89940af7598df1976cb04e644"
+    },
+    {
+      "path": "docs/src/assets/contributing/Discard-GHD.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "42c12c3c3be0e70c51d600ba95770c6e90b15f63",
+      "size": 6968,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/42c12c3c3be0e70c51d600ba95770c6e90b15f63"
+    },
+    {
+      "path": "docs/src/assets/contributing/Fork-Button-Dark.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5cd63ec600f0fffee9585ed9a9645ff96a8b5db",
+      "size": 14063,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f5cd63ec600f0fffee9585ed9a9645ff96a8b5db"
+    },
+    {
+      "path": "docs/src/assets/contributing/Push-Commit.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8395373fa354e41cd87bd9ae0b0c9e1194dc8d8",
+      "size": 79066,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d8395373fa354e41cd87bd9ae0b0c9e1194dc8d8"
+    },
+    {
+      "path": "docs/src/assets/screenshots",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "647d3e4d0b56d8f7ea2b499ade155ee4ccea11bd",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/647d3e4d0b56d8f7ea2b499ade155ee4ccea11bd"
+    },
+    {
+      "path": "docs/src/assets/screenshots/config-tab-new.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc551727dd44309ac69057972f30f190f6166a89",
+      "size": 68294,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/bc551727dd44309ac69057972f30f190f6166a89"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc1b9e04ac8487a16860e9ca96d829ba8dd29012",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/fc1b9e04ac8487a16860e9ca96d829ba8dd29012"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics/Collapse&ExpandCat.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9756ea2494e1d46fa15aacbcaad03fceea6ae073",
+      "size": 197520,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9756ea2494e1d46fa15aacbcaad03fceea6ae073"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics/Selected-Apps.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22d6d3a6de5d698dd6c052ae873e55993ac70cdf",
+      "size": 197343,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/22d6d3a6de5d698dd6c052ae873e55993ac70cdf"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics/clear-selected-apps.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "249c96f8930b45f1a61405063747b0e124fdc989",
+      "size": 197297,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/249c96f8930b45f1a61405063747b0e124fdc989"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics/installation&upgrade.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94f2e96e057d11fcf030be1df09230e476ed0325",
+      "size": 197437,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/94f2e96e057d11fcf030be1df09230e476ed0325"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics/show-installed-apps.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff51daae9079170475fed549a0894fac80ec6256",
+      "size": 197347,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ff51daae9079170475fed549a0894fac80ec6256"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics/uninstall-apps.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7080f2d03e880158956e30c2866ceee794016f02",
+      "size": 197277,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7080f2d03e880158956e30c2866ceee794016f02"
+    },
+    {
+      "path": "docs/src/assets/screenshots/install-pics/upgrade-all.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af5a262bf4ccb2bc11414874b6fdcb085dcd27ed",
+      "size": 197311,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/af5a262bf4ccb2bc11414874b6fdcb085dcd27ed"
+    },
+    {
+      "path": "docs/src/assets/screenshots/tweaks-tab-new.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d3858ffe5715db13c240d3d8934f442cc82be5a",
+      "size": 152171,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9d3858ffe5715db13c240d3d8934f442cc82be5a"
+    },
+    {
+      "path": "docs/src/assets/screenshots/updates-tab-new.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45568da005e3033daec9144cec87576e9a6ffdde",
+      "size": 96652,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/45568da005e3033daec9144cec87576e9a6ffdde"
+    },
+    {
+      "path": "docs/src/assets/screenshots/win11creator-tab-new.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75486f891113e393497f9065bee8a556c8fd38bf",
+      "size": 79490,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/75486f891113e393497f9065bee8a556c8fd38bf"
+    },
+    {
+      "path": "docs/src/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c9bfc5356c321f49d30743b2dfa6248c55f5ecbb",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/c9bfc5356c321f49d30743b2dfa6248c55f5ecbb"
+    },
+    {
+      "path": "docs/src/components/CornerCard.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "951c5f03d83e829ce73159b02a63573ee0cd2a8e",
+      "size": 2752,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/951c5f03d83e829ce73159b02a63573ee0cd2a8e"
+    },
+    {
+      "path": "docs/src/components/Footer.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09c8eb0d26f52be89a18da0834edcca101697b62",
+      "size": 2394,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/09c8eb0d26f52be89a18da0834edcca101697b62"
+    },
+    {
+      "path": "docs/src/components/Header.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "faf02ea027316aeeb89f5b99578938779a692ac3",
+      "size": 9778,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/faf02ea027316aeeb89f5b99578938779a692ac3"
+    },
+    {
+      "path": "docs/src/components/Hero.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "182400319613f8920ed75001fcd5a6ff6be9ce8b",
+      "size": 7653,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/182400319613f8920ed75001fcd5a6ff6be9ce8b"
+    },
+    {
+      "path": "docs/src/components/ThemeProvider.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61a9180a98d871b0f5aaf756ba89adbb5a18e775",
+      "size": 1468,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/61a9180a98d871b0f5aaf756ba89adbb5a18e775"
+    },
+    {
+      "path": "docs/src/components/YouTubeEmbed.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b1ed563a5e88c091fe86e6bafd11a3e51857987",
+      "size": 911,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/0b1ed563a5e88c091fe86e6bafd11a3e51857987"
+    },
+    {
+      "path": "docs/src/content.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2139691b42e1db822a3e517e8245113c2d57f93f",
+      "size": 900,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2139691b42e1db822a3e517e8245113c2d57f93f"
+    },
+    {
+      "path": "docs/src/content",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a4eaf5b4154172a8e3b6db340e2c77a2b0d1b22e",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/a4eaf5b4154172a8e3b6db340e2c77a2b0d1b22e"
+    },
+    {
+      "path": "docs/src/content/docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7f3d8c1cacda23826e6d7f77f42b312b18901733",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/7f3d8c1cacda23826e6d7f77f42b312b18901733"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ee994eaa4e6770db03b80d2c511b8b4db1632531",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/ee994eaa4e6770db03b80d2c511b8b4db1632531"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/architecture.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e11d54cb2d9942d62b352a29549ec73eaadf652",
+      "size": 25030,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7e11d54cb2d9942d62b352a29549ec73eaadf652"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f4cc9ecf05f0272f2c2b1101adf0428db9e380c7",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/f4cc9ecf05f0272f2c2b1101adf0428db9e380c7"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7116291d3ae34d2ed750effa74320d3bd2aa45ef",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/7116291d3ae34d2ed750effa74320d3bd2aa45ef"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/DisableLegacyRecovery.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68e6c9412689adf57d1f2ad46fa5cb03d40ee8b4",
+      "size": 751,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/68e6c9412689adf57d1f2ad46fa5cb03d40ee8b4"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/EnableLegacyRecovery.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49d5b2d0050d1b83ee3d858ff416472db2fe0788",
+      "size": 744,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/49d5b2d0050d1b83ee3d858ff416472db2fe0788"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/RegBackup.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "290adf3418c7e99340fa1c40813a98a7e1352759",
+      "size": 1374,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/290adf3418c7e99340fa1c40813a98a7e1352759"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/Sandbox.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "224b9a9568bb825b0a58d9baccd4e0023cd9d7d2",
+      "size": 785,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/224b9a9568bb825b0a58d9baccd4e0023cd9d7d2"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/dotnet.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccf0b7b206438477bd84bdb1e9429a3d6ce60061",
+      "size": 855,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ccf0b7b206438477bd84bdb1e9429a3d6ce60061"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/hyperv.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8d35b42724ef134a72a7ca25353329b39dd0394",
+      "size": 712,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a8d35b42724ef134a72a7ca25353329b39dd0394"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/legacymedia.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c5438682f98db826948575059d0a90146ee902e",
+      "size": 743,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3c5438682f98db826948575059d0a90146ee902e"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/nfs.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e3ad8d950666d18beae197059353e27b736e04a",
+      "size": 1168,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/0e3ad8d950666d18beae197059353e27b736e04a"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Features/wsl.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ea94ed1505a923975776f0f079bf0fb56059122",
+      "size": 940,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8ea94ed1505a923975776f0f079bf0fb56059122"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Fixes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9df69597cf7fab1013ce728e257390dfca5a3c8b",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/9df69597cf7fab1013ce728e257390dfca5a3c8b"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Fixes/Autologin.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "013cc78540bdf7dd8bbfa4081c51c0e5a0cf4daa",
+      "size": 626,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/013cc78540bdf7dd8bbfa4081c51c0e5a0cf4daa"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Fixes/DISM.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb4a6f98522bc7e9ccbceb4e7a893319e4780b2c",
+      "size": 3106,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/fb4a6f98522bc7e9ccbceb4e7a893319e4780b2c"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Fixes/NTPPool.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "909afb08497438a90e90750d6fbb8972be8ae7da",
+      "size": 958,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/909afb08497438a90e90750d6fbb8972be8ae7da"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Fixes/Network.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a67a459ddf07b2a58ff6abf6be25628a741c4869",
+      "size": 522,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a67a459ddf07b2a58ff6abf6be25628a741c4869"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Fixes/Update.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ac0ee2f93a8bfa88d20173f1a209a6992f06eaa",
+      "size": 16259,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2ac0ee2f93a8bfa88d20173f1a209a6992f06eaa"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Fixes/Winget.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8f5fec7062b8ee9e00bd9e5239aae5aca6281a5",
+      "size": 670,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d8f5fec7062b8ee9e00bd9e5239aae5aca6281a5"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "45d726efad9066fdae611caba0325c6b3fe2e410",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/45d726efad9066fdae611caba0325c6b3fe2e410"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Computer.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a60b3d4998f4fa14bb1894a511f2f0f0c1e7d660",
+      "size": 503,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a60b3d4998f4fa14bb1894a511f2f0f0c1e7d660"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Control.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dde9abb7c03da2c190e7c7ec840bce74acf3b0e",
+      "size": 485,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8dde9abb7c03da2c190e7c7ec840bce74acf3b0e"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Firewall.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62475fe88d59e38c31e94534f3ec97b9798042ec",
+      "size": 515,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/62475fe88d59e38c31e94534f3ec97b9798042ec"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Mouse.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd047ace9020a7b6c656909461ef7f7422aa100",
+      "size": 490,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ddd047ace9020a7b6c656909461ef7f7422aa100"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Network.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "585449236328d69b1b47cea9845c54f45e5a5eec",
+      "size": 498,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/585449236328d69b1b47cea9845c54f45e5a5eec"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Power.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5c3b9ebace5426d671f03cb454eefffd676dc67",
+      "size": 484,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e5c3b9ebace5426d671f03cb454eefffd676dc67"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Printer.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2df2dcbc7697b58942bf04c569ed9f930212a20d",
+      "size": 540,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2df2dcbc7697b58942bf04c569ed9f930212a20d"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Programs.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eaf7c19f5d1f3e354353896b07657f42d5aa3325",
+      "size": 505,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/eaf7c19f5d1f3e354353896b07657f42d5aa3325"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Region.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8c83d8278b9f16a804ff2efe47cd42f8da5009a",
+      "size": 471,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f8c83d8278b9f16a804ff2efe47cd42f8da5009a"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Restore.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4aceefe6a646d06762fceb346e3edb328f25b732",
+      "size": 492,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4aceefe6a646d06762fceb346e3edb328f25b732"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Security.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79bc7204e8f1155b09ee9792c5fc990dea3e3c01",
+      "size": 510,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/79bc7204e8f1155b09ee9792c5fc990dea3e3c01"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Sound.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "089c3f1d8f6060a8acfc75d02d062c0c6e28bd66",
+      "size": 487,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/089c3f1d8f6060a8acfc75d02d062c0c6e28bd66"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/System.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28897bb799ad5c296d870b55bff3a5498ed16474",
+      "size": 494,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/28897bb799ad5c296d870b55bff3a5498ed16474"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Legacy-Windows-Panels/Timedate.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca83011427ef0e9817bd415008990e654ccbfba6",
+      "size": 491,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ca83011427ef0e9817bd415008990e654ccbfba6"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Powershell-Profile-Powershell-7--Only",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "645d8e2c421380a47d20bba42ce4d489cbdf80d9",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/645d8e2c421380a47d20bba42ce4d489cbdf80d9"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Powershell-Profile-Powershell-7--Only/InstallPSProfile.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae2a9882a2462b2d26a37b5beb52d35cce44db44",
+      "size": 3205,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ae2a9882a2462b2d26a37b5beb52d35cce44db44"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Powershell-Profile-Powershell-7--Only/UninstallPSProfile.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b44ce1a5f5ff12168d6db50a8ce3487a4f0c965e",
+      "size": 1792,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b44ce1a5f5ff12168d6db50a8ce3487a4f0c965e"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Remote-Access",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b453878f0e3f067d91ae520caeda70e673bb24f1",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/b453878f0e3f067d91ae520caeda70e673bb24f1"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/features/Remote-Access/SSHServer.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15187b3574bf638011f8c99f2a74c05ea54c3f25",
+      "size": 490,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/15187b3574bf638011f8c99f2a74c05ea54c3f25"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/issue-triage.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "060c3698e90288fac354684dfb5b27c8eeb98c21",
+      "size": 1864,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/060c3698e90288fac354684dfb5b27c8eeb98c21"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f59bcdc0c8615243a5da72c035c24848ea062e5",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/3f59bcdc0c8615243a5da72c035c24848ea062e5"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8db31b90625aa05fb5185832e02553df6911d393",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/8db31b90625aa05fb5185832e02553df6911d393"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/BatteryPercentage.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0e9026deb8f01a17ec5919f0788afa5fd7e1ffe",
+      "size": 1321,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e0e9026deb8f01a17ec5919f0788afa5fd7e1ffe"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/BingSearch.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5b20add6e0d340d74d06188da708dedeb08898e",
+      "size": 1210,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b5b20add6e0d340d74d06188da708dedeb08898e"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/DarkMode.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32c9129a143fba591bb4ec90a509a4eabb0ccee9",
+      "size": 1850,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/32c9129a143fba591bb4ec90a509a4eabb0ccee9"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/DetailedBSoD.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff4dce9cbecc4518cfda95b778d6af87ec91460d",
+      "size": 1423,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ff4dce9cbecc4518cfda95b778d6af87ec91460d"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/DisableLockscreen.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a3ba6085a2bf1e1b441243c6b36d4486c4d3aea",
+      "size": 1269,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9a3ba6085a2bf1e1b441243c6b36d4486c4d3aea"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/GameMode.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3751cf8cdd7e242fc8c05e4941b631b9f720418",
+      "size": 1451,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b3751cf8cdd7e242fc8c05e4941b631b9f720418"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/HiddenFiles.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b0c681d2e65378ab13723ad2f3bffdf40828af4",
+      "size": 1385,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9b0c681d2e65378ab13723ad2f3bffdf40828af4"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/HideSettingsHome.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92bf38b9eb9607c9a1f725757c76599c13e60438",
+      "size": 1242,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/92bf38b9eb9607c9a1f725757c76599c13e60438"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/LoginBlur.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d657bb77110b6782bd8182d9dc1009ba40b0ac9",
+      "size": 1241,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3d657bb77110b6782bd8182d9dc1009ba40b0ac9"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/LongPaths.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "053b0392fefb79157b668f527719dae751292358",
+      "size": 1233,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/053b0392fefb79157b668f527719dae751292358"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/MouseAcceleration.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7130b39da9e32c7b785d483a8da6387d73561d7",
+      "size": 1657,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f7130b39da9e32c7b785d483a8da6387d73561d7"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/MultiplaneOverlay.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f9e33c6db6d9a7f5f39f128f1a6b81c39703843",
+      "size": 2218,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1f9e33c6db6d9a7f5f39f128f1a6b81c39703843"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/NewOutlook.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf0fdd40a72588d27dddc6b8e065a461493c1fa4",
+      "size": 2028,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/cf0fdd40a72588d27dddc6b8e065a461493c1fa4"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/NumLock.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "995e3dfc3fc15ea19b3f53067e47c45a7001146e",
+      "size": 1425,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/995e3dfc3fc15ea19b3f53067e47c45a7001146e"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/S3Sleep.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f3b22b0e25f2837b3e305447bad86aa5e55d4cf",
+      "size": 1316,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9f3b22b0e25f2837b3e305447bad86aa5e55d4cf"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/Scrollbars.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "afd83ea352ebefb4e2fc300301e3e5c74de1563a",
+      "size": 1333,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/afd83ea352ebefb4e2fc300301e3e5c74de1563a"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/ShowExt.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c10012f099366c8f03a8be8e5a66161592225b44",
+      "size": 1432,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c10012f099366c8f03a8be8e5a66161592225b44"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/StandbyFix.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5245183b57872c7cb362566d963894dd25de2b52",
+      "size": 1332,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5245183b57872c7cb362566d963894dd25de2b52"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/StartMenuRecommendations.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70e9a434bc194174f57fcb2368159e8710ce8398",
+      "size": 2123,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/70e9a434bc194174f57fcb2368159e8710ce8398"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/StickyKeys.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5eb1ede3bb7f1f854b4c47b23650497abd34dce5",
+      "size": 1203,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5eb1ede3bb7f1f854b4c47b23650497abd34dce5"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/TaskView.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a614d8a98b4bc8009ace10e396398c629b4695a4",
+      "size": 1209,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a614d8a98b4bc8009ace10e396398c629b4695a4"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/TaskbarAlignment.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "485c22a93fa4b1880ca3277894f662ebe413084b",
+      "size": 1436,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/485c22a93fa4b1880ca3277894f662ebe413084b"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/TaskbarSearch.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27aab398e881795bbd8fdf3108c6c4635bf000ae",
+      "size": 1192,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/27aab398e881795bbd8fdf3108c6c4635bf000ae"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/VerboseLogon.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fea88392bf2bb08ff6643ace32a7957471e86bd",
+      "size": 1205,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/0fea88392bf2bb08ff6643ace32a7957471e86bd"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Customize-Preferences/WindowSnapping.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccd584b27238c7ba8d698fe93338f98f2d7c4f35",
+      "size": 1193,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ccd584b27238c7ba8d698fe93338f98f2d7c4f35"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d544e5eaeb74ffd0b8814d84f318d5922eca94d6",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/d544e5eaeb74ffd0b8814d84f318d5922eca94d6"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/Activity.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3dd43cc26d47c8b82e45211ff0e78d4fe081f1c1",
+      "size": 1689,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3dd43cc26d47c8b82e45211ff0e78d4fe081f1c1"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/ConsumerFeatures.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27e023092dea8d723e95ef53f942f6f7b78e3d6b",
+      "size": 1260,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/27e023092dea8d723e95ef53f942f6f7b78e3d6b"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/DeleteTempFiles.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19d64cc456364fc7d662970bdd740dc6d1265524",
+      "size": 861,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/19d64cc456364fc7d662970bdd740dc6d1265524"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/DeliveryOptimization.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3474c9f27feb5830063de215d0e16880d734ad28",
+      "size": 1304,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3474c9f27feb5830063de215d0e16880d734ad28"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/DisableBitLocker.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c4d550b82dc3944ed82e8bbf171ed0adbc04330",
+      "size": 632,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1c4d550b82dc3944ed82e8bbf171ed0adbc04330"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/DisableExplorerAutoDiscovery.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ceea9ce1a5dbaba4d50b749ee927ea9675ea01db",
+      "size": 2566,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ceea9ce1a5dbaba4d50b749ee927ea9675ea01db"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/DisableStoreSearch.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2df4cd2323a82fdbd927e7f61294d22be1630d73",
+      "size": 986,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2df4cd2323a82fdbd927e7f61294d22be1630d73"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/DiskCleanup.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e64c73be507157184831b26d3bf3218c1face95",
+      "size": 701,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9e64c73be507157184831b26d3bf3218c1face95"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/EndTaskOnTaskbar.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "249032b666d1b13885beac0c4ebb2c32597a5da0",
+      "size": 1272,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/249032b666d1b13885beac0c4ebb2c32597a5da0"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/Hiber.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1c2edfd5d01a7294bc0f04ee7fa055e78969a20",
+      "size": 1663,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c1c2edfd5d01a7294bc0f04ee7fa055e78969a20"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/Location.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c736f4a69bd0ffdedc54c66fbc63856b0273326",
+      "size": 1719,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2c736f4a69bd0ffdedc54c66fbc63856b0273326"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/PreventDeviceMetadataFromNetwork.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f406bc711928cc864e56667fc28bab7bb29b9e78",
+      "size": 1405,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f406bc711928cc864e56667fc28bab7bb29b9e78"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/RestorePoint.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56bacadaebc9af807176a544bf14b8f266f3d864",
+      "size": 1645,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/56bacadaebc9af807176a544bf14b8f266f3d864"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/RevertStartMenu.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e0be33336784ad2463cbd9311f165de4cf7e8e3",
+      "size": 1411,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6e0be33336784ad2463cbd9311f165de4cf7e8e3"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/Services.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59548e0687015c5bef9151b82c4b59c83bb54d89",
+      "size": 1682,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/59548e0687015c5bef9151b82c4b59c83bb54d89"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/Telemetry.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebf7ac8e318889e1e2e69215d62a3f3ac0f8871c",
+      "size": 4675,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ebf7ac8e318889e1e2e69215d62a3f3ac0f8871c"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/WPBT.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7633f43e33c4b00b6504068ce49f2178ff7622c",
+      "size": 1531,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f7633f43e33c4b00b6504068ce49f2178ff7622c"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/Essential-Tweaks/Widget.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74771a28407b665f4fdb32fbd784642fe954eff7",
+      "size": 993,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/74771a28407b665f4fdb32fbd784642fe954eff7"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "21811240c8211a44a1205ff591689431fee61e2d",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/21811240c8211a44a1205ff591689431fee61e2d"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/BlockAdobeNet.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dce1965a21216b30279fbbabe0613800c76a0701",
+      "size": 1413,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/dce1965a21216b30279fbbabe0613800c76a0701"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/BraveDebloat.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "747de7105b1072c00db301e4bd38a1eb4df13309",
+      "size": 3570,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/747de7105b1072c00db301e4bd38a1eb4df13309"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/DisableBGapps.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74b0215bab70db9cf810db053cabb67209c38732",
+      "size": 1329,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/74b0215bab70db9cf810db053cabb67209c38732"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/DisableIPv6.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f31d411e65b169c750ae029ec501a52cb95dcec1",
+      "size": 1267,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f31d411e65b169c750ae029ec501a52cb95dcec1"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/DisableNotifications.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53f77c36afbf95103208766d51b8df17ab5cf3cb",
+      "size": 1444,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/53f77c36afbf95103208766d51b8df17ab5cf3cb"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/DisableWarningForUnsignedRdp.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2717a103512674607c6d89967632923984720fa2",
+      "size": 1592,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2717a103512674607c6d89967632923984720fa2"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/Display.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ef7d3874462e3b250a347cca8cc1934609a358d",
+      "size": 3816,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1ef7d3874462e3b250a347cca8cc1934609a358d"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/EdgeDebloat.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b83e7a47de75c66662268bd14a4e09f2281818cf",
+      "size": 4646,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b83e7a47de75c66662268bd14a4e09f2281818cf"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/IPv46.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04d27f28c767e88db444b0b1fe48f73d70006f5d",
+      "size": 1307,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/04d27f28c767e88db444b0b1fe48f73d70006f5d"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/LogiBlock.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74be075350690dc022422ce217c83e0bddd6612b",
+      "size": 1828,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/74be075350690dc022422ce217c83e0bddd6612b"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/OOSUbutton.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "229e2c610e51b3e3b459e1afda0af33b52918bcc",
+      "size": 1131,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/229e2c610e51b3e3b459e1afda0af33b52918bcc"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/RazerBlock.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66a288dc5eb1532f6fb6c5e24c047ffa030ee33a",
+      "size": 1920,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/66a288dc5eb1532f6fb6c5e24c047ffa030ee33a"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/RemoveEdge.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b634667e15168d5b7d28208d643c3ee04a29462c",
+      "size": 1573,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b634667e15168d5b7d28208d643c3ee04a29462c"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/RemoveHomeAndGallery.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24b50556d81a3b0d905606d857328be35d889bed",
+      "size": 1758,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/24b50556d81a3b0d905606d857328be35d889bed"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/RemoveOneDrive.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7eddf1e2bc223ec35a9b3e571473c53152a459dc",
+      "size": 2003,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7eddf1e2bc223ec35a9b3e571473c53152a459dc"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/ReservedStorage.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78ec5b615dc13c3746dd0bde847b851b00fe3b10",
+      "size": 1001,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/78ec5b615dc13c3746dd0bde847b851b00fe3b10"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/RightClickMenu.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9118dfac9f9330b1f4dfa63406b7ef839de89dad",
+      "size": 1069,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9118dfac9f9330b1f4dfa63406b7ef839de89dad"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/Storage.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f47a5a299a6108195d0052c3d45ae48028d508f",
+      "size": 1174,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5f47a5a299a6108195d0052c3d45ae48028d508f"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/Teredo.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "529d15277d0924e9ec28c941069d91ab16959545",
+      "size": 1442,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/529d15277d0924e9ec28c941069d91ab16959545"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/UTC.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "358c58a12c33ee2d6d10dabdec5c06a2dd55747a",
+      "size": 1247,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/358c58a12c33ee2d6d10dabdec5c06a2dd55747a"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/WindowsAI.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0569514b971d9a544a50610e62afbd23557f76e6",
+      "size": 2232,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/0569514b971d9a544a50610e62afbd23557f76e6"
+    },
+    {
+      "path": "docs/src/content/docs/code-reference/tweaks/z--Advanced-Tweaks---CAUTION/changedns.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5020c70662f819c4a189185d4549cce2982a3c37",
+      "size": 592,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5020c70662f819c4a189185d4549cce2982a3c37"
+    },
+    {
+      "path": "docs/src/content/docs/contributing.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbc3e0be8eb0f10bf787fd2635162f6e6aae8b9a",
+      "size": 6301,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/cbc3e0be8eb0f10bf787fd2635162f6e6aae8b9a"
+    },
+    {
+      "path": "docs/src/content/docs/faq.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c04e78f30a0423e15e89ae299b581f007dc3ab51",
+      "size": 10691,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c04e78f30a0423e15e89ae299b581f007dc3ab51"
+    },
+    {
+      "path": "docs/src/content/docs/guides",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "688c1a9aed25a474eea9b7a2e2fdcbb326cce8cd",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/688c1a9aed25a474eea9b7a2e2fdcbb326cce8cd"
+    },
+    {
+      "path": "docs/src/content/docs/guides/application.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd6497a2310d8f939089252cc22cfe92c8b59d9c",
+      "size": 3664,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/cd6497a2310d8f939089252cc22cfe92c8b59d9c"
+    },
+    {
+      "path": "docs/src/content/docs/guides/automation.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8b8b939c467d5d7e7da2b240d0648c7b5c2f2c1",
+      "size": 3073,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f8b8b939c467d5d7e7da2b240d0648c7b5c2f2c1"
+    },
+    {
+      "path": "docs/src/content/docs/guides/features.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81c1ec958b615aa7627d3f02a36f45c30045a482",
+      "size": 2468,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/81c1ec958b615aa7627d3f02a36f45c30045a482"
+    },
+    {
+      "path": "docs/src/content/docs/guides/getting-started.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6293c7c63f330b8e4aa77e392b02e9a17831435",
+      "size": 9118,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b6293c7c63f330b8e4aa77e392b02e9a17831435"
+    },
+    {
+      "path": "docs/src/content/docs/guides/index.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "180e2db03e6be3b9c6d53581982507d401701d50",
+      "size": 5417,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/180e2db03e6be3b9c6d53581982507d401701d50"
+    },
+    {
+      "path": "docs/src/content/docs/guides/tweaks.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20209f0b14fdf97a53d8c426dbc97b3bbec6ed0d",
+      "size": 6229,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/20209f0b14fdf97a53d8c426dbc97b3bbec6ed0d"
+    },
+    {
+      "path": "docs/src/content/docs/guides/updates.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c02c2b134f187a1b5f60fb960ec5b1a66e2aea1f",
+      "size": 2722,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c02c2b134f187a1b5f60fb960ec5b1a66e2aea1f"
+    },
+    {
+      "path": "docs/src/content/docs/guides/win11creator.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9139f240619e6fc4e4b308b75ff22eae8c142179",
+      "size": 9473,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9139f240619e6fc4e4b308b75ff22eae8c142179"
+    },
+    {
+      "path": "docs/src/content/docs/index.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdded475895af5694b68c67cdede152ba2f2ef99",
+      "size": 10377,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/fdded475895af5694b68c67cdede152ba2f2ef99"
+    },
+    {
+      "path": "docs/src/content/docs/knownissues.mdx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cc59455a591579513a007c5b14e2c45395b155d",
+      "size": 2021,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5cc59455a591579513a007c5b14e2c45395b155d"
+    },
+    {
+      "path": "docs/src/site-links.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc2f31aa64e0f12ae14248e0df166101b63485cf",
+      "size": 267,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/dc2f31aa64e0f12ae14248e0df166101b63485cf"
+    },
+    {
+      "path": "docs/src/styles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2fbb78a4344223df8f461deecce0ee59936c0fce",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/2fbb78a4344223df8f461deecce0ee59936c0fce"
+    },
+    {
+      "path": "docs/src/styles/fonts.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c3bbf2a3c6f2a459b4f9c07950d02c23875ce74",
+      "size": 321,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5c3bbf2a3c6f2a459b4f9c07950d02c23875ce74"
+    },
+    {
+      "path": "docs/src/styles/theme.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a716a2e0a5a9b357ff192c39e7a77a1265ce4d5",
+      "size": 11449,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4a716a2e0a5a9b357ff192c39e7a77a1265ce4d5"
+    },
+    {
+      "path": "docs/tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bf91d3bb997dfb0ea4a592b849545656f0fcebe",
+      "size": 109,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8bf91d3bb997dfb0ea4a592b849545656f0fcebe"
+    },
+    {
+      "path": "functions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3709645ddfb3b82100671bed797a17e503053734",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/3709645ddfb3b82100671bed797a17e503053734"
+    },
+    {
+      "path": "functions/private",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e6fa3beae4f5ed568a356e2f9678e82b09a3ef73",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/e6fa3beae4f5ed568a356e2f9678e82b09a3ef73"
+    },
+    {
+      "path": "functions/private/Add-SelectedAppsMenuItem.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b6b6335c6d26d442b12719d18dbfba9347a18fe",
+      "size": 2854,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6b6b6335c6d26d442b12719d18dbfba9347a18fe"
+    },
+    {
+      "path": "functions/private/Close-WinUtilRunspacePool.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dce6106644c92c51db17226f6654f6464b0d04d2",
+      "size": 4984,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/dce6106644c92c51db17226f6654f6464b0d04d2"
+    },
+    {
+      "path": "functions/private/Complete-WinUtilPackageRun.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fa535a85c5aa264d63c2ed91eb3068ee8bda035",
+      "size": 2548,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8fa535a85c5aa264d63c2ed91eb3068ee8bda035"
+    },
+    {
+      "path": "functions/private/Find-AppsByNameOrDescription.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c94fc4512601b2d8e86a0166dbfbbf1458082f33",
+      "size": 6924,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c94fc4512601b2d8e86a0166dbfbbf1458082f33"
+    },
+    {
+      "path": "functions/private/Find-TweaksByNameOrDescription.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8dd52efe68e8324f61a38b71795cb89e926e203",
+      "size": 15731,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a8dd52efe68e8324f61a38b71795cb89e926e203"
+    },
+    {
+      "path": "functions/private/Get-WinUtilAppEntryHandlers.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "999a2a38cd3f7d452e8acf9366256954a9ab457a",
+      "size": 2634,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/999a2a38cd3f7d452e8acf9366256954a9ab457a"
+    },
+    {
+      "path": "functions/private/Get-WinUtilDNSBenchmark.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1e4a936cc82b89217409a9a4a5d006cf24ffdf0",
+      "size": 2837,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d1e4a936cc82b89217409a9a4a5d006cf24ffdf0"
+    },
+    {
+      "path": "functions/private/Get-WinUtilEntryToolTip.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cde230d424fc37b327b1c5458dcd994099568b4",
+      "size": 702,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6cde230d424fc37b327b1c5458dcd994099568b4"
+    },
+    {
+      "path": "functions/private/Get-WinUtilEnvironmentReport.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "038d460b996fad36c2644ab348ff8d5a7d3ddfe4",
+      "size": 6809,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/038d460b996fad36c2644ab348ff8d5a7d3ddfe4"
+    },
+    {
+      "path": "functions/private/Get-WinUtilEnvironmentReportLogsPath.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef7a166425774f3823af9a65825d1a5e09668705",
+      "size": 596,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ef7a166425774f3823af9a65825d1a5e09668705"
+    },
+    {
+      "path": "functions/private/Get-WinUtilInstalledAPPX.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f74ff8c27d478f5aec58d0dc5197f680431b430",
+      "size": 853,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6f74ff8c27d478f5aec58d0dc5197f680431b430"
+    },
+    {
+      "path": "functions/private/Get-WinUtilPackageLogSummary.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd138cd0a4c049f3a9af35a2bda740b127beddd4",
+      "size": 1030,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/bd138cd0a4c049f3a9af35a2bda740b127beddd4"
+    },
+    {
+      "path": "functions/private/Get-WinUtilRecentLogs.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ae53db8cf528b4523e4ed2f727a7fa12426b694",
+      "size": 1300,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4ae53db8cf528b4523e4ed2f727a7fa12426b694"
+    },
+    {
+      "path": "functions/private/Get-WinUtilRegistryComboState.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91e1fb2190c663a91a2fcb205fb46fa58cec939a",
+      "size": 1333,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/91e1fb2190c663a91a2fcb205fb46fa58cec939a"
+    },
+    {
+      "path": "functions/private/Get-WinUtilRegistryComboValue.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc2a280c50a269cb193c632aff697d6679f8fa16",
+      "size": 907,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/bc2a280c50a269cb193c632aff697d6679f8fa16"
+    },
+    {
+      "path": "functions/private/Get-WinUtilRunspacePoolLock.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca38071934dc2bac7011e12c10c00015f8828a21",
+      "size": 445,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ca38071934dc2bac7011e12c10c00015f8828a21"
+    },
+    {
+      "path": "functions/private/Get-WinUtilSelectedPackages.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36f17e24d90d77f9cff5c7b5d1bd30a3a7cf3a2d",
+      "size": 1500,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/36f17e24d90d77f9cff5c7b5d1bd30a3a7cf3a2d"
+    },
+    {
+      "path": "functions/private/Get-WinUtilToggleStatus.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efb581fe740d04bec4d912f38b9be351d4db569a",
+      "size": 1581,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/efb581fe740d04bec4d912f38b9be351d4db569a"
+    },
+    {
+      "path": "functions/private/Get-WinUtilTweaksStateReport.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a51884c85ab054e35b19c42f4e24c6c5dbae7b62",
+      "size": 2704,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a51884c85ab054e35b19c42f4e24c6c5dbae7b62"
+    },
+    {
+      "path": "functions/private/Get-WinUtilVariables.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a41666136942cef755e124031af1d4ce6584835",
+      "size": 686,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8a41666136942cef755e124031af1d4ce6584835"
+    },
+    {
+      "path": "functions/private/Initialize-InstallAppArea.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67e8a3dbd29c6c00dac52571652f2fcaf06a8087",
+      "size": 2433,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/67e8a3dbd29c6c00dac52571652f2fcaf06a8087"
+    },
+    {
+      "path": "functions/private/Initialize-InstallAppEntry.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddf009cd408a2b3d8a270a2c58c661351aa6d49b",
+      "size": 4571,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ddf009cd408a2b3d8a270a2c58c661351aa6d49b"
+    },
+    {
+      "path": "functions/private/Initialize-InstallCategoryAppList.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "272c031fa327c07c100bb6a9122328339366d1e0",
+      "size": 5687,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/272c031fa327c07c100bb6a9122328339366d1e0"
+    },
+    {
+      "path": "functions/private/Initialize-WinUtilInstallTabControls.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2acc68c666a73fdd2b93cb953454fa8a054b64be",
+      "size": 1317,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2acc68c666a73fdd2b93cb953454fa8a054b64be"
+    },
+    {
+      "path": "functions/private/Initialize-WinUtilRunspacePool.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cd52ea2e48ea843daef76f5c19c48cb23a789e5",
+      "size": 1244,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3cd52ea2e48ea843daef76f5c19c48cb23a789e5"
+    },
+    {
+      "path": "functions/private/Initialize-WinUtilTabContent.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51cabcf5d2361840334f7a1ce17b0a780f4fd21d",
+      "size": 2330,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/51cabcf5d2361840334f7a1ce17b0a780f4fd21d"
+    },
+    {
+      "path": "functions/private/Initialize-WinUtilTaskbarOverlayAssets.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5aa7b6d6e34218a628e5a7da119a2fda60ac1ad0",
+      "size": 1107,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5aa7b6d6e34218a628e5a7da119a2fda60ac1ad0"
+    },
+    {
+      "path": "functions/private/Install-WinUtilAPPX.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3622e62f5dcb37c0a81eaff4d9183b700b33ae3",
+      "size": 3526,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e3622e62f5dcb37c0a81eaff4d9183b700b33ae3"
+    },
+    {
+      "path": "functions/private/Install-WinUtilChoco.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c9d603db84b850dc5efa7b0b58b07d80e5a146b",
+      "size": 1789,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6c9d603db84b850dc5efa7b0b58b07d80e5a146b"
+    },
+    {
+      "path": "functions/private/Install-WinUtilProgramChoco.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cc182494c4ff44f4e3a4565fc5da8e7bdf00dbf",
+      "size": 4413,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1cc182494c4ff44f4e3a4565fc5da8e7bdf00dbf"
+    },
+    {
+      "path": "functions/private/Install-WinUtilProgramWinget.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7cb25d9c9004ac4f7b1f942a8e98f2c8c0f6a7ec",
+      "size": 5361,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7cb25d9c9004ac4f7b1f942a8e98f2c8c0f6a7ec"
+    },
+    {
+      "path": "functions/private/Install-WinUtilWinget.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f23a05ed01f4afadff2372b761351fd27de6760",
+      "size": 810,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8f23a05ed01f4afadff2372b761351fd27de6760"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilAppCategoryChip.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e08a5d65109fff36c60a84a28f5a31fb5a1f17ba",
+      "size": 652,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e08a5d65109fff36c60a84a28f5a31fb5a1f17ba"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilAssets.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "819b414e73bfc7667c85a74ac35814687548df46",
+      "size": 8914,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/819b414e73bfc7667c85a74ac35814687548df46"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilCloseRequest.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32f6eee802c96bdf987c91435471506642756438",
+      "size": 4528,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/32f6eee802c96bdf987c91435471506642756438"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilCurrentSystem.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a66a95947d3bbda54bd9de1fd08094ab9146af35",
+      "size": 6055,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a66a95947d3bbda54bd9de1fd08094ab9146af35"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilExplorerUpdate.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a4b17041b20caa135a0af39c7d93243dad74953",
+      "size": 1370,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7a4b17041b20caa135a0af39c7d93243dad74953"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilFeatureInstall.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "560bde65e2da524c011045adce7c070ca3479213",
+      "size": 1225,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/560bde65e2da524c011045adce7c070ca3479213"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilFontScaling.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daa5872aa78de7b5bc1d4f356224cdc2afee9c88",
+      "size": 2655,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/daa5872aa78de7b5bc1d4f356224cdc2afee9c88"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilISO.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb2904e6ae98ff833f0ca69ab8e4b8b26e0a99f8",
+      "size": 37406,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/cb2904e6ae98ff833f0ca69ab8e4b8b26e0a99f8"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilISOScript.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2dc46d5689d885c35649160dd77ce142be972d9d",
+      "size": 43770,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2dc46d5689d885c35649160dd77ce142be972d9d"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilISOUSB.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea3654c57675d5aa0943aa8edc12d2042cb2fc63",
+      "size": 13953,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ea3654c57675d5aa0943aa8edc12d2042cb2fc63"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilInstallPSProfile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50168de21c76156adefe9c286d46155bbb1cf9d8",
+      "size": 2807,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/50168de21c76156adefe9c286d46155bbb1cf9d8"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilSSHServer.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d46207b8ca2a64f02e3db65799141bc2f81b11a",
+      "size": 4611,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2d46207b8ca2a64f02e3db65799141bc2f81b11a"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilScript.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59a98541318f093dab33747e4391c7a89d024414",
+      "size": 2484,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/59a98541318f093dab33747e4391c7a89d024414"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilSponsors.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9ee94135f39faa14cabb81f4fc7d65c6926da81",
+      "size": 294,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f9ee94135f39faa14cabb81f4fc7d65c6926da81"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilTweaks.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "284ba8d38e79cb8564c7fb473d7c94243dbf9171",
+      "size": 3940,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/284ba8d38e79cb8564c7fb473d7c94243dbf9171"
+    },
+    {
+      "path": "functions/private/Invoke-WinUtilUninstallPSProfile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c8720b3f87fa1ad35e1ef584bad836e605f97fc",
+      "size": 1389,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4c8720b3f87fa1ad35e1ef584bad836e605f97fc"
+    },
+    {
+      "path": "functions/private/Invoke-WinutilThemeChange.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adeba9fb0dd167a043480ac4f8ae631e4e66ec46",
+      "size": 7323,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/adeba9fb0dd167a043480ac4f8ae631e4e66ec46"
+    },
+    {
+      "path": "functions/private/Measure-WinUtilStep.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6487a5d93e46e9a62ff7ce10b76e86b7f0cd2fc8",
+      "size": 3520,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6487a5d93e46e9a62ff7ce10b76e86b7f0cd2fc8"
+    },
+    {
+      "path": "functions/private/New-WinUtilFossBadge.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adff2eb5cd77a70643b7babd5b1ea04dcca6fa95",
+      "size": 2316,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/adff2eb5cd77a70643b7babd5b1ea04dcca6fa95"
+    },
+    {
+      "path": "functions/private/New-WinUtilSessionState.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5eb24e1b2cb70116e1de9fe59b055dd2e863ff48",
+      "size": 2164,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5eb24e1b2cb70116e1de9fe59b055dd2e863ff48"
+    },
+    {
+      "path": "functions/private/Register-WinUtilRunspaceCleanup.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f499bc54d8f909609f45f9d44808badf293808ac",
+      "size": 3919,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f499bc54d8f909609f45f9d44808badf293808ac"
+    },
+    {
+      "path": "functions/private/Remove-WinUtilAPPX.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8efffea89e4834b908acb95dd84464db6c6a3f3d",
+      "size": 1243,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8efffea89e4834b908acb95dd84464db6c6a3f3d"
+    },
+    {
+      "path": "functions/private/Remove-WinUtilProvisionedAPPX.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ad67735877bfb0e73600b049d762c90e2ace304",
+      "size": 2472,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6ad67735877bfb0e73600b049d762c90e2ace304"
+    },
+    {
+      "path": "functions/private/Reset-WPFCheckBoxes.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9a40c9fd39ec21c182396b3327bfcb909c14b3a",
+      "size": 3455,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e9a40c9fd39ec21c182396b3327bfcb909c14b3a"
+    },
+    {
+      "path": "functions/private/Save-WinUtilFile.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "726a008c2080985fe6e61a48b735c69fbb2653f5",
+      "size": 1634,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/726a008c2080985fe6e61a48b735c69fbb2653f5"
+    },
+    {
+      "path": "functions/private/Set-WinUtilAppCategoryFilter.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b01475c938a8db8cf53cf62da2bb12c4a2696526",
+      "size": 1755,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b01475c938a8db8cf53cf62da2bb12c4a2696526"
+    },
+    {
+      "path": "functions/private/Set-WinUtilDNS.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12159c9e63b5484739ec45b31cbf04ea8f5993b8",
+      "size": 8166,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/12159c9e63b5484739ec45b31cbf04ea8f5993b8"
+    },
+    {
+      "path": "functions/private/Set-WinUtilRegistry.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3b63d330563e48eece1a4ff25fb9795dca9514e",
+      "size": 2633,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d3b63d330563e48eece1a4ff25fb9795dca9514e"
+    },
+    {
+      "path": "functions/private/Set-WinUtilRegistryComboState.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "544b8c1edaf1f09d9af3ba4c687c2129cba46a85",
+      "size": 3437,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/544b8c1edaf1f09d9af3ba4c687c2129cba46a85"
+    },
+    {
+      "path": "functions/private/Set-WinUtilService.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46d9232abdfe6c1d630a8edeacf1592b4b44b59c",
+      "size": 2193,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/46d9232abdfe6c1d630a8edeacf1592b4b44b59c"
+    },
+    {
+      "path": "functions/private/Set-WinUtilTaskbarItem.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea2b6d43cb495ea40fa655b608300154efe0bd40",
+      "size": 3607,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ea2b6d43cb495ea40fa655b608300154efe0bd40"
+    },
+    {
+      "path": "functions/private/Show-CustomDialog.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ae289e6e05c9efbd98d21a4dca3285151d74ca0",
+      "size": 13276,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/9ae289e6e05c9efbd98d21a4dca3285151d74ca0"
+    },
+    {
+      "path": "functions/private/Show-WinUtilMessage.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ed8f4ae8ab152d79a40551f7ae5a2a2fd7ed774",
+      "size": 1538,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4ed8f4ae8ab152d79a40551f7ae5a2a2fd7ed774"
+    },
+    {
+      "path": "functions/private/Start-WinUtilAssetRendering.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17157126036039a461429a76bae086fb901eacd6",
+      "size": 1571,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/17157126036039a461429a76bae086fb901eacd6"
+    },
+    {
+      "path": "functions/private/Start-WinUtilBackgroundQueue.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb6b9fec6b046be1a3336fc25014d0bc88854067",
+      "size": 4729,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/eb6b9fec6b046be1a3336fc25014d0bc88854067"
+    },
+    {
+      "path": "functions/private/Start-WinUtilInstallAppRendering.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f36e613d5120208875fffa1e4c192fd907989d39",
+      "size": 2803,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f36e613d5120208875fffa1e4c192fd907989d39"
+    },
+    {
+      "path": "functions/private/Start-WinUtilJob.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a33d476c87c07e0f173b74ca4eaa495cdc59e40c",
+      "size": 12026,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a33d476c87c07e0f173b74ca4eaa495cdc59e40c"
+    },
+    {
+      "path": "functions/private/Start-WinUtilTabWarmup.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d42b6415ad3df657ad76d54f880253739de619e6",
+      "size": 1435,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d42b6415ad3df657ad76d54f880253739de619e6"
+    },
+    {
+      "path": "functions/private/Start-WinUtilUserInterface.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f51c23411f9fac5902aaf157da5acb06c0c2443",
+      "size": 23672,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2f51c23411f9fac5902aaf157da5acb06c0c2443"
+    },
+    {
+      "path": "functions/private/Step-WinUtilJob.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b78f6df4733edc0e64cc50d6ef78ca8316c1b4b6",
+      "size": 4260,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b78f6df4733edc0e64cc50d6ef78ca8316c1b4b6"
+    },
+    {
+      "path": "functions/private/Stop-WinUtilActiveWork.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73924d356942aea6378da8b99abe9192cc42f640",
+      "size": 4783,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/73924d356942aea6378da8b99abe9192cc42f640"
+    },
+    {
+      "path": "functions/private/Test-WinUtilDeferBackgroundWork.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa3a3f7209566ad76151553098cfb13cc387b2e4",
+      "size": 3260,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/fa3a3f7209566ad76151553098cfb13cc387b2e4"
+    },
+    {
+      "path": "functions/private/Test-WinUtilPackageManager.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c54d86e7be7ff92b4d68eb605281d980ac03bf8b",
+      "size": 783,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c54d86e7be7ff92b4d68eb605281d980ac03bf8b"
+    },
+    {
+      "path": "functions/private/Update-WinUtilAppCategoryChip.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8248f8d4fa41a0d573ee52d4996108abb6271331",
+      "size": 741,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8248f8d4fa41a0d573ee52d4996108abb6271331"
+    },
+    {
+      "path": "functions/private/Update-WinUtilSelections.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6bae2313b1651cc439ec2f80b14f1f6cea652e4",
+      "size": 2735,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f6bae2313b1651cc439ec2f80b14f1f6cea652e4"
+    },
+    {
+      "path": "functions/private/Write-WinUtilConsoleProgress.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e45effddf9ae7ebdc0387dbdef73c140c2d28070",
+      "size": 3013,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e45effddf9ae7ebdc0387dbdef73c140c2d28070"
+    },
+    {
+      "path": "functions/private/Write-WinUtilEnvironmentReportExport.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "938d8a6d6abfa1ece43237bcecc7b79d1ffcedad",
+      "size": 5124,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/938d8a6d6abfa1ece43237bcecc7b79d1ffcedad"
+    },
+    {
+      "path": "functions/private/Write-WinUtilErrorRecord.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5aeb99f1b136b5f148fd7ca0113d0c730e602dd0",
+      "size": 2338,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5aeb99f1b136b5f148fd7ca0113d0c730e602dd0"
+    },
+    {
+      "path": "functions/private/Write-WinUtilJobBanner.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c3fcf779f2b0370382fb7ba7aa629f4c23e99a2",
+      "size": 1916,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6c3fcf779f2b0370382fb7ba7aa629f4c23e99a2"
+    },
+    {
+      "path": "functions/private/Write-WinUtilLog.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1f129e5b9b5c8ba5bec6ac2465b5b785b5c11bc",
+      "size": 4510,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e1f129e5b9b5c8ba5bec6ac2465b5b785b5c11bc"
+    },
+    {
+      "path": "functions/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "75881373e005120b13605d1b90c041b4ed8afbc3",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/75881373e005120b13605d1b90c041b4ed8afbc3"
+    },
+    {
+      "path": "functions/public/Initialize-WPFUI.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17bdad03a647dd792efed68fd37f27459c59164d",
+      "size": 5958,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/17bdad03a647dd792efed68fd37f27459c59164d"
+    },
+    {
+      "path": "functions/public/Invoke-WPFAppxInstall.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "321ce0ac73d151a653cdbf71d071e11226d45d7f",
+      "size": 1648,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/321ce0ac73d151a653cdbf71d071e11226d45d7f"
+    },
+    {
+      "path": "functions/public/Invoke-WPFAppxRemoval.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d15e0312c6f853e05f17d4684cb04f727b4e2b4d",
+      "size": 2980,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d15e0312c6f853e05f17d4684cb04f727b4e2b4d"
+    },
+    {
+      "path": "functions/public/Invoke-WPFButton.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "161d9146ad414d7ebd994cb5d1ed86d61266868f",
+      "size": 8748,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/161d9146ad414d7ebd994cb5d1ed86d61266868f"
+    },
+    {
+      "path": "functions/public/Invoke-WPFExportEnvironmentReport.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2f4e165eee40602ddfd60448288b22057cbd71e",
+      "size": 3760,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c2f4e165eee40602ddfd60448288b22057cbd71e"
+    },
+    {
+      "path": "functions/public/Invoke-WPFFeatureInstall.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69242c2df42728e4f378595a5cb530109bcfdd41",
+      "size": 1110,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/69242c2df42728e4f378595a5cb530109bcfdd41"
+    },
+    {
+      "path": "functions/public/Invoke-WPFFixesNTPPool.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "610ff0741ea517d805b4a8b0746898800ef4f4f6",
+      "size": 464,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/610ff0741ea517d805b4a8b0746898800ef4f4f6"
+    },
+    {
+      "path": "functions/public/Invoke-WPFFixesNetwork.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52781a09d614f93081688207c9ba228f3c3451b6",
+      "size": 168,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/52781a09d614f93081688207c9ba228f3c3451b6"
+    },
+    {
+      "path": "functions/public/Invoke-WPFFixesUpdate.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7b899e6b447ca04ad3b413bec70e3a987358a14",
+      "size": 15901,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c7b899e6b447ca04ad3b413bec70e3a987358a14"
+    },
+    {
+      "path": "functions/public/Invoke-WPFFixesWinget.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a4ed462443616bd5e5626cc6a81a35544441c70",
+      "size": 316,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6a4ed462443616bd5e5626cc6a81a35544441c70"
+    },
+    {
+      "path": "functions/public/Invoke-WPFGetInstalled.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b71f85e80d8c68d37c3b93e731c04184bc7878b7",
+      "size": 1974,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b71f85e80d8c68d37c3b93e731c04184bc7878b7"
+    },
+    {
+      "path": "functions/public/Invoke-WPFImpex.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57ec1a3fb968b85c63c8941658440c465d758428",
+      "size": 7941,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/57ec1a3fb968b85c63c8941658440c465d758428"
+    },
+    {
+      "path": "functions/public/Invoke-WPFInstall.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "604689a7a90a32d9253e0252e668b7e8537f3177",
+      "size": 3714,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/604689a7a90a32d9253e0252e668b7e8537f3177"
+    },
+    {
+      "path": "functions/public/Invoke-WPFInstallUpgrade.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34bcca53d9a92188aa80c0b7e6f9c23684d46998",
+      "size": 1863,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/34bcca53d9a92188aa80c0b7e6f9c23684d46998"
+    },
+    {
+      "path": "functions/public/Invoke-WPFOOSU.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e6ef74909273ca4a5923238c47f341f9941224e",
+      "size": 796,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3e6ef74909273ca4a5923238c47f341f9941224e"
+    },
+    {
+      "path": "functions/public/Invoke-WPFPanelAutologin.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c37642e681a0fa7f6c65cfce45693edbf9394ad4",
+      "size": 266,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c37642e681a0fa7f6c65cfce45693edbf9394ad4"
+    },
+    {
+      "path": "functions/public/Invoke-WPFPopup.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46cdc2159cb714e9d248825c13a1f841bdcd3d05",
+      "size": 1758,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/46cdc2159cb714e9d248825c13a1f841bdcd3d05"
+    },
+    {
+      "path": "functions/public/Invoke-WPFPresets.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5019d339a2375fed054fc591f4e828e2a40a24fe",
+      "size": 1612,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5019d339a2375fed054fc591f4e828e2a40a24fe"
+    },
+    {
+      "path": "functions/public/Invoke-WPFRunspace.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f18d04acb6d870ac255009a4173e41b1200d7e71",
+      "size": 3645,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f18d04acb6d870ac255009a4173e41b1200d7e71"
+    },
+    {
+      "path": "functions/public/Invoke-WPFSSHServer.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3702248bd677bccf3267fe61c77a3791f7a858e9",
+      "size": 137,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/3702248bd677bccf3267fe61c77a3791f7a858e9"
+    },
+    {
+      "path": "functions/public/Invoke-WPFSelectedCheckboxesUpdate.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0a951d3275d0d434a5f20656934a6fe851ea956",
+      "size": 1021,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b0a951d3275d0d434a5f20656934a6fe851ea956"
+    },
+    {
+      "path": "functions/public/Invoke-WPFSystemRepair.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11298b570a4108ac7bb4a8a5e027755af189c7ff",
+      "size": 2739,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/11298b570a4108ac7bb4a8a5e027755af189c7ff"
+    },
+    {
+      "path": "functions/public/Invoke-WPFTab.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75bff077a7ba9c921620776aea4dfe1abdb1f346",
+      "size": 2759,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/75bff077a7ba9c921620776aea4dfe1abdb1f346"
+    },
+    {
+      "path": "functions/public/Invoke-WPFToggleAllCategories.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b0745d1756c718505b312fe5d3736271ed0340e",
+      "size": 1990,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6b0745d1756c718505b312fe5d3736271ed0340e"
+    },
+    {
+      "path": "functions/public/Invoke-WPFToggleSelections.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f89a8b53e593e760dd12ce8f82355067afeb41c",
+      "size": 1358,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6f89a8b53e593e760dd12ce8f82355067afeb41c"
+    },
+    {
+      "path": "functions/public/Invoke-WPFUIElements.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc0507adc4bac346adb4df993b78be0f69e9c430",
+      "size": 31689,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/cc0507adc4bac346adb4df993b78be0f69e9c430"
+    },
+    {
+      "path": "functions/public/Invoke-WPFUIThread.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37ee021cf4b14a2cd6afd8a734635f0e4a35e25c",
+      "size": 5438,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/37ee021cf4b14a2cd6afd8a734635f0e4a35e25c"
+    },
+    {
+      "path": "functions/public/Invoke-WPFUltimatePerformance.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41b6487716cb69452d4912e4e0db6b6b3a3364ff",
+      "size": 1605,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/41b6487716cb69452d4912e4e0db6b6b3a3364ff"
+    },
+    {
+      "path": "functions/public/Invoke-WPFUnInstall.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b37440ffe31f8703fe8c5b8b921c0eb49a72ac05",
+      "size": 4101,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b37440ffe31f8703fe8c5b8b921c0eb49a72ac05"
+    },
+    {
+      "path": "functions/public/Invoke-WPFUpdatesdefault.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0374ebcbc39caf6965bcdca85a65895db7838c8c",
+      "size": 4199,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/0374ebcbc39caf6965bcdca85a65895db7838c8c"
+    },
+    {
+      "path": "functions/public/Invoke-WPFUpdatesdisable.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49030a233fc95a33f282b1b3c8fa52672e97e6aa",
+      "size": 3283,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/49030a233fc95a33f282b1b3c8fa52672e97e6aa"
+    },
+    {
+      "path": "functions/public/Invoke-WPFUpdatessecurity.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90862a5501921092d363880e7c6a89d69d2e34f5",
+      "size": 4709,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/90862a5501921092d363880e7c6a89d69d2e34f5"
+    },
+    {
+      "path": "functions/public/Invoke-WPFtweaksbutton.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a64983b48cda3387417e1d09e679c2e5a14b1dc9",
+      "size": 2366,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a64983b48cda3387417e1d09e679c2e5a14b1dc9"
+    },
+    {
+      "path": "functions/public/Invoke-WPFundoall.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7658c12f93bd95f1bc6b1b66dc59aa5d238770b",
+      "size": 1024,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/d7658c12f93bd95f1bc6b1b66dc59aa5d238770b"
+    },
+    {
+      "path": "functions/public/Invoke-WinUtilAutoRun.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72e324a1d6896c545660727d1a3d3945659ccb9e",
+      "size": 6996,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/72e324a1d6896c545660727d1a3d3945659ccb9e"
+    },
+    {
+      "path": "lint",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ac3a4842743da574b4b86eabfe882af1ddeddb02",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/ac3a4842743da574b4b86eabfe882af1ddeddb02"
+    },
+    {
+      "path": "lint/PSScriptAnalyser.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47feae83c8fda1539b414110e1e794a4b495f678",
+      "size": 1115,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/47feae83c8fda1539b414110e1e794a4b495f678"
+    },
+    {
+      "path": "pester",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b78fe3e5a21bb2132653e69e64304b1d833faf3",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/6b78fe3e5a21bb2132653e69e64304b1d833faf3"
+    },
+    {
+      "path": "pester/activity-history.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4e7595783514dc31667640ff2fd15d5ce8f5f51",
+      "size": 854,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a4e7595783514dc31667640ff2fd15d5ce8f5f51"
+    },
+    {
+      "path": "pester/appx.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "302780798c0ca6172990fda5f127eeb9269d0a6c",
+      "size": 27864,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/302780798c0ca6172990fda5f127eeb9269d0a6c"
+    },
+    {
+      "path": "pester/assets.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c58a237a84be1a823b7452954c1f940ccead3c4e",
+      "size": 2648,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c58a237a84be1a823b7452954c1f940ccead3c4e"
+    },
+    {
+      "path": "pester/background-deferral.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "959882153f489c77219d1707cfd8dea255a0adc1",
+      "size": 4080,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/959882153f489c77219d1707cfd8dea255a0adc1"
+    },
+    {
+      "path": "pester/button-routing.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db8d802aa2d4f4c4858aecc11bcc343f21b60bb7",
+      "size": 3202,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/db8d802aa2d4f4c4858aecc11bcc343f21b60bb7"
+    },
+    {
+      "path": "pester/configs.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f780ebc17e350e0229edfb750ac217dfeeac34df",
+      "size": 26886,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f780ebc17e350e0229edfb750ac217dfeeac34df"
+    },
+    {
+      "path": "pester/dns-benchmark.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c28a1f489a8bb4abce0f0b795885e60ea6b17a12",
+      "size": 3339,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c28a1f489a8bb4abce0f0b795885e60ea6b17a12"
+    },
+    {
+      "path": "pester/dns.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a558d765821c99870a205019293e08f771ab5906",
+      "size": 13431,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a558d765821c99870a205019293e08f771ab5906"
+    },
+    {
+      "path": "pester/environment-report-logs.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31cf21456af9ff7e8ee2e0786b56e0a4ab06181b",
+      "size": 3068,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/31cf21456af9ff7e8ee2e0786b56e0a4ab06181b"
+    },
+    {
+      "path": "pester/environment-report.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "402053295c46618e63ed30c1b0f1fa8a454935bd",
+      "size": 20255,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/402053295c46618e63ed30c1b0f1fa8a454935bd"
+    },
+    {
+      "path": "pester/fixtures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f7f334f9413fc500a0d362d99fbdba16b95d93c",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/9f7f334f9413fc500a0d362d99fbdba16b95d93c"
+    },
+    {
+      "path": "pester/fixtures/legacy-config.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca911eccf8865278475d0c51f959ef06b9745367",
+      "size": 318,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ca911eccf8865278475d0c51f959ef06b9745367"
+    },
+    {
+      "path": "pester/functions.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be12144c494a9bc7bf05b8776e7479dfa6aa2431",
+      "size": 2677,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/be12144c494a9bc7bf05b8776e7479dfa6aa2431"
+    },
+    {
+      "path": "pester/generated-controls.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62d7d12d7cb9c3af288cbb5b2d78351e0c44cdb8",
+      "size": 1852,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/62d7d12d7cb9c3af288cbb5b2d78351e0c44cdb8"
+    },
+    {
+      "path": "pester/headless-ui.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5db15f6bc5147bf4e8576c3bdc00176e5256fa6e",
+      "size": 2621,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5db15f6bc5147bf4e8576c3bdc00176e5256fa6e"
+    },
+    {
+      "path": "pester/headless.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dab23d80f6828a2897bf5d35615057386545084",
+      "size": 20921,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1dab23d80f6828a2897bf5d35615057386545084"
+    },
+    {
+      "path": "pester/install-rendering.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ba90dafad3eaf21ebd5fe76ee35de4a07fac88e",
+      "size": 4493,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7ba90dafad3eaf21ebd5fe76ee35de4a07fac88e"
+    },
+    {
+      "path": "pester/install-workflow.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85f71d18d7bed4e0a385b659c6af5e778fb3e3e9",
+      "size": 13824,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/85f71d18d7bed4e0a385b659c6af5e778fb3e3e9"
+    },
+    {
+      "path": "pester/job-layer.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf91b0aec4fdf9a83215e52f4474c1dab229ba19",
+      "size": 22584,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/bf91b0aec4fdf9a83215e52f4474c1dab229ba19"
+    },
+    {
+      "path": "pester/job-routing.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "470783d9de977041c52bf4baf9cc4aa0a0c02bb8",
+      "size": 2667,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/470783d9de977041c52bf4baf9cc4aa0a0c02bb8"
+    },
+    {
+      "path": "pester/lazy-tabs.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54baf495cb1e94b99de02c6a08fe83140839dc5f",
+      "size": 9273,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/54baf495cb1e94b99de02c6a08fe83140839dc5f"
+    },
+    {
+      "path": "pester/logging.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ea24d6466706dadf71c7c066454e98a68392261",
+      "size": 8474,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/6ea24d6466706dadf71c7c066454e98a68392261"
+    },
+    {
+      "path": "pester/multiplane-overlay.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1d0ed021b079915d01aab4f5b09f72f7bf9c4ff",
+      "size": 7333,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f1d0ed021b079915d01aab4f5b09f72f7bf9c4ff"
+    },
+    {
+      "path": "pester/oosu.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65eb8406018027affc6f21f24d241ed8e6ee4cb9",
+      "size": 4204,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/65eb8406018027affc6f21f24d241ed8e6ee4cb9"
+    },
+    {
+      "path": "pester/package-outcome.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17170b66ef162b0de2fe2c3be190c179c79148e5",
+      "size": 9771,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/17170b66ef162b0de2fe2c3be190c179c79148e5"
+    },
+    {
+      "path": "pester/package.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e22ebac8d38149cfa6b057e89d72517b9007fda",
+      "size": 8891,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1e22ebac8d38149cfa6b057e89d72517b9007fda"
+    },
+    {
+      "path": "pester/preferences-theme.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffe6e6db122256b4af25ad14a9f721e45fca5ac3",
+      "size": 8443,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ffe6e6db122256b4af25ad14a9f721e45fca5ac3"
+    },
+    {
+      "path": "pester/progress-state.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b24e7815520e4b5f99c48b0273e86b9ef48b41b",
+      "size": 3162,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5b24e7815520e4b5f99c48b0273e86b9ef48b41b"
+    },
+    {
+      "path": "pester/runspace-lifecycle.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b09ab6e7bd28fdf521fb815f1a75499d88d6d10c",
+      "size": 4254,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b09ab6e7bd28fdf521fb815f1a75499d88d6d10c"
+    },
+    {
+      "path": "pester/runspace.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b6cbb8f9963a266fbbdd5b46c7b895545552ed0",
+      "size": 13093,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7b6cbb8f9963a266fbbdd5b46c7b895545552ed0"
+    },
+    {
+      "path": "pester/sanity.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "877a6c7b41301275f5a8d5af2202f45bbd64fe13",
+      "size": 9993,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/877a6c7b41301275f5a8d5af2202f45bbd64fe13"
+    },
+    {
+      "path": "pester/search-filter.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c7bb6b16cbce240b4768d9d001052de68128dcb",
+      "size": 21632,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/4c7bb6b16cbce240b4768d9d001052de68128dcb"
+    },
+    {
+      "path": "pester/shutdown.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "282b83d23daff9a941a86fbb81222be2aa189379",
+      "size": 8611,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/282b83d23daff9a941a86fbb81222be2aa189379"
+    },
+    {
+      "path": "pester/slider.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "036a265ec0d1ca629ec99a77d9907ace4eaa0ae7",
+      "size": 2772,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/036a265ec0d1ca629ec99a77d9907ace4eaa0ae7"
+    },
+    {
+      "path": "pester/ssh-server.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "134575b8d53a43f2a6cf4cfe337043564ff5fabe",
+      "size": 9178,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/134575b8d53a43f2a6cf4cfe337043564ff5fabe"
+    },
+    {
+      "path": "pester/system-helpers.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dfdbdd30913864427502fb22e839fd97ac8e4c2",
+      "size": 10614,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8dfdbdd30913864427502fb22e839fd97ac8e4c2"
+    },
+    {
+      "path": "pester/system-repair.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "feedb51503edb3c3d89737b947c31ad16a3fa230",
+      "size": 3750,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/feedb51503edb3c3d89737b947c31ad16a3fa230"
+    },
+    {
+      "path": "pester/toggle-status.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1777c72ba39644803971c23c32a0168c184cc0d5",
+      "size": 3337,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/1777c72ba39644803971c23c32a0168c184cc0d5"
+    },
+    {
+      "path": "pester/tooltip-key.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "595839fd1be9b65ce444585700931eb72f6d42b9",
+      "size": 5889,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/595839fd1be9b65ce444585700931eb72f6d42b9"
+    },
+    {
+      "path": "pester/triage-tools.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae8bd88ebd0669c06a47d0d9d17af3e6f7fce6b0",
+      "size": 3956,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ae8bd88ebd0669c06a47d0d9d17af3e6f7fce6b0"
+    },
+    {
+      "path": "pester/tweaks.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46241be64017d139f82277e65ee77754b1320ca4",
+      "size": 20942,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/46241be64017d139f82277e65ee77754b1320ca4"
+    },
+    {
+      "path": "pester/ui-state.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0927d7c926755bbc2637d1ee81047bf8bb8363f",
+      "size": 22369,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/f0927d7c926755bbc2637d1ee81047bf8bb8363f"
+    },
+    {
+      "path": "pester/update-profiles.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd2a987354852041b84ce8f0a7b6685906660279",
+      "size": 16291,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/cd2a987354852041b84ce8f0a7b6685906660279"
+    },
+    {
+      "path": "pester/variables.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80da5c99626ab00d480f611930d74c368ae4bdf6",
+      "size": 2282,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/80da5c99626ab00d480f611930d74c368ae4bdf6"
+    },
+    {
+      "path": "pester/win11creator.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "626317574dc8eba54f5a9ff6289a8a36ba9258da",
+      "size": 74092,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/626317574dc8eba54f5a9ff6289a8a36ba9258da"
+    },
+    {
+      "path": "pester/winoneshot-compat.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7486225d70570600db074a3a7534785ef13cd68",
+      "size": 11263,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b7486225d70570600db074a3a7534785ef13cd68"
+    },
+    {
+      "path": "pester/xaml.Tests.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c351dadc9d9967727c7ab1f76a6c112031a8529f",
+      "size": 23911,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/c351dadc9d9967727c7ab1f76a6c112031a8529f"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1b2b83ad1287c4ee29068b365472bc52120d1964",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/1b2b83ad1287c4ee29068b365472bc52120d1964"
+    },
+    {
+      "path": "scripts/main.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce9b2136521850c940f301f3bf4c385b4e97fdfb",
+      "size": 6743,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ce9b2136521850c940f301f3bf4c385b4e97fdfb"
+    },
+    {
+      "path": "scripts/start.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d0a5525a130976d9b25fe0a584b35d62a7d183f",
+      "size": 10911,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/0d0a5525a130976d9b25fe0a584b35d62a7d183f"
+    },
+    {
+      "path": "sign.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "134f1a35083597a28f44066de23c0522791c4bfd",
+      "size": 111,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/134f1a35083597a28f44066de23c0522791c4bfd"
+    },
+    {
+      "path": "tools",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "37bafdc40a0861e051c5de11cffdf570f72b6a3b",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/37bafdc40a0861e051c5de11cffdf570f72b6a3b"
+    },
+    {
+      "path": "tools/autounattend.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dde53ae7513bb7f3f2e6d9ceaf9ebb555e63c304",
+      "size": 28342,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/dde53ae7513bb7f3f2e6d9ceaf9ebb555e63c304"
+    },
+    {
+      "path": "tools/devdocs-generator.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "168a1ec19426aeb858a349113d4442a567d5c829",
+      "size": 5129,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/168a1ec19426aeb858a349113d4442a567d5c829"
+    },
+    {
+      "path": "tools/devdocs-generator.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "219d9f9bb9ac9139e64371a38714737b591988e1",
+      "size": 17243,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/219d9f9bb9ac9139e64371a38714737b591988e1"
+    },
+    {
+      "path": "tools/title-screen",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b3dbe9e147da7b5559a2db18aa63526cf99de24c",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/b3dbe9e147da7b5559a2db18aa63526cf99de24c"
+    },
+    {
+      "path": "tools/title-screen/.python-version",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24ee5b1be9961e38a503c8e764b7385dbb6ba124",
+      "size": 5,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/24ee5b1be9961e38a503c8e764b7385dbb6ba124"
+    },
+    {
+      "path": "tools/title-screen/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1ae7662d8fac0a2811580b803cc44223fc974b2",
+      "size": 2344,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/e1ae7662d8fac0a2811580b803cc44223fc974b2"
+    },
+    {
+      "path": "tools/title-screen/automate_title_screen.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68af380530da11d4e57d2e8eae37c5dc2cbbf816",
+      "size": 8172,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/68af380530da11d4e57d2e8eae37c5dc2cbbf816"
+    },
+    {
+      "path": "tools/title-screen/capture_winutil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba3ddae28334de6a17764a6420089fd74227286e",
+      "size": 16594,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/ba3ddae28334de6a17764a6420089fd74227286e"
+    },
+    {
+      "path": "tools/title-screen/create_composite.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2df78aa56b8a506509a81b769d8b8ffa3bb1eaa",
+      "size": 5870,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/b2df78aa56b8a506509a81b769d8b8ffa3bb1eaa"
+    },
+    {
+      "path": "tools/title-screen/inspect_winutil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fd9f83cfce0b18390c6c8d1634defe0995a69e3",
+      "size": 4627,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/8fd9f83cfce0b18390c6c8d1634defe0995a69e3"
+    },
+    {
+      "path": "tools/title-screen/pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e55dc4d214945869b41de51a0448fa2f8600742",
+      "size": 235,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/0e55dc4d214945869b41de51a0448fa2f8600742"
+    },
+    {
+      "path": "tools/title-screen/test_automate_title_screen.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5737a92ad4d0bfbb05a31621a40e384f88fa3c74",
+      "size": 547,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/5737a92ad4d0bfbb05a31621a40e384f88fa3c74"
+    },
+    {
+      "path": "tools/title-screen/test_capture_winutil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bc2443bb6530b37b8997c5b79b0b421efb1814b",
+      "size": 1776,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/7bc2443bb6530b37b8997c5b79b0b421efb1814b"
+    },
+    {
+      "path": "tools/title-screen/test_create_composite.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68d16f3337f32f3eae76378dcc929c7f0b4f54f7",
+      "size": 1708,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/68d16f3337f32f3eae76378dcc929c7f0b4f54f7"
+    },
+    {
+      "path": "tools/title-screen/uv.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9badc0b1e4afd05c5adc17d90df217b9ed6a393",
+      "size": 23715,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/a9badc0b1e4afd05c5adc17d90df217b9ed6a393"
+    },
+    {
+      "path": "windev.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99ff2fabac1bcdfa668ec6dd50cc79400d0e59ae",
+      "size": 622,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/99ff2fabac1bcdfa668ec6dd50cc79400d0e59ae"
+    },
+    {
+      "path": "xaml",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "da66be0f8838310059a23576012c55ed50bf9f79",
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/trees/da66be0f8838310059a23576012c55ed50bf9f79"
+    },
+    {
+      "path": "xaml/inputXML.xaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2eec27962e887740a73cac906ab7c8079a821112",
+      "size": 159077,
+      "url": "https://api.github.com/repos/ChrisTitusTech/winutil/git/blobs/2eec27962e887740a73cac906ab7c8079a821112"
+    }
+  ],
+  "truncated": false
+}

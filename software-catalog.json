@@ -1,0 +1,157 @@
+﻿[
+    {
+        "Id":  "7zip.7zip",
+        "Title":  "7-Zip",
+        "Group":  "Hằng ngày",
+        "Description":  "Giải nén ZIP, RAR, 7z và nén file.",
+        "Official":  "https://www.7-zip.org/",
+        "UpstreamTitle":  "7-Zip",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Google.Chrome",
+        "Title":  "Google Chrome",
+        "Group":  "Hằng ngày",
+        "Description":  "Duyệt web và đồng bộ tài khoản Google.",
+        "Official":  "https://www.google.com/chrome/",
+        "UpstreamTitle":  "Chrome",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Mozilla.Firefox",
+        "Title":  "Firefox",
+        "Group":  "Hằng ngày",
+        "Description":  "Trình duyệt web của Mozilla.",
+        "Official":  "https://www.mozilla.org/firefox/",
+        "UpstreamTitle":  "Firefox",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "VideoLAN.VLC",
+        "Title":  "VLC",
+        "Group":  "Hằng ngày",
+        "Description":  "Xem video và nghe nhạc nhiều định dạng.",
+        "Official":  "https://www.videolan.org/vlc/",
+        "UpstreamTitle":  "VLC (Video Player)",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "SumatraPDF.SumatraPDF",
+        "Title":  "Sumatra PDF",
+        "Group":  "Hằng ngày",
+        "Description":  "Đọc PDF và sách điện tử.",
+        "Official":  "https://www.sumatrapdfreader.org/free-pdf-reader",
+        "UpstreamTitle":  "Sumatra PDF",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "UniKey.UniKey",
+        "Title":  "UniKey",
+        "Group":  "Hằng ngày",
+        "Description":  "Gõ tiếng Việt bằng Telex hoặc VNI · bản x64.",
+        "Official":  "https://www.unikey.org/",
+        "UpstreamTitle":  "UniKey",
+        "Source":  "https://github.com/microsoft/winget-pkgs/tree/2266f556516ee3159b4f2ac38a3e38e04ba6af3c/manifests/u/UniKey/UniKey/4.6.230919",
+        "Version":  "4.6.230919",
+        "Architecture":  "x64"
+    },
+    {
+        "Id":  "Valve.Steam",
+        "Title":  "Steam",
+        "Group":  "Chơi game \u0026 trò chuyện",
+        "Description":  "Cài và quản lý trò chơi trên Steam.",
+        "Official":  "https://store.steampowered.com/about/",
+        "UpstreamTitle":  "Steam",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "EpicGames.EpicGamesLauncher",
+        "Title":  "Epic Games",
+        "Group":  "Chơi game \u0026 trò chuyện",
+        "Description":  "Cài trò chơi từ Epic Games Store.",
+        "Official":  "https://store.epicgames.com/download",
+        "UpstreamTitle":  "Epic Games Launcher",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Discord.Discord",
+        "Title":  "Discord",
+        "Group":  "Chơi game \u0026 trò chuyện",
+        "Description":  "Chat và gọi thoại cùng bạn bè.",
+        "Official":  "https://discord.com/download",
+        "UpstreamTitle":  "Discord",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "OBSProject.OBSStudio",
+        "Title":  "OBS Studio",
+        "Group":  "Livestream \u0026 nội dung",
+        "Description":  "Livestream và ghi hình màn hình.",
+        "Official":  "https://obsproject.com/download",
+        "UpstreamTitle":  "OBS Studio",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Audacity.Audacity",
+        "Title":  "Audacity",
+        "Group":  "Livestream \u0026 nội dung",
+        "Description":  "Thu âm và chỉnh sửa âm thanh.",
+        "Official":  "https://www.audacityteam.org/",
+        "UpstreamTitle":  "Audacity",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "HandBrake.HandBrake",
+        "Title":  "HandBrake",
+        "Group":  "Livestream \u0026 nội dung",
+        "Description":  "Chuyển định dạng và nén video.",
+        "Official":  "https://handbrake.fr/",
+        "UpstreamTitle":  "HandBrake",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "TheDocumentFoundation.LibreOffice",
+        "Title":  "LibreOffice",
+        "Group":  "Công việc \u0026 tiện ích",
+        "Description":  "Soạn văn bản, bảng tính và trình chiếu.",
+        "Official":  "https://www.libreoffice.org/",
+        "UpstreamTitle":  "LibreOffice",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Zoom.Zoom",
+        "Title":  "Zoom",
+        "Group":  "Công việc \u0026 tiện ích",
+        "Description":  "Họp và học trực tuyến.",
+        "Official":  "https://www.zoom.com/",
+        "UpstreamTitle":  "Zoom",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Notepad++.Notepad++",
+        "Title":  "Notepad++",
+        "Group":  "Công việc \u0026 tiện ích",
+        "Description":  "Soạn văn bản và chỉnh sửa mã nguồn.",
+        "Official":  "https://notepad-plus-plus.org/",
+        "UpstreamTitle":  "Notepad++",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Microsoft.PowerToys",
+        "Title":  "PowerToys",
+        "Group":  "Công việc \u0026 tiện ích",
+        "Description":  "Tiện ích Windows của Microsoft.",
+        "Official":  "https://learn.microsoft.com/windows/powertoys/",
+        "UpstreamTitle":  "PowerToys",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    },
+    {
+        "Id":  "Microsoft.VisualStudioCode",
+        "Title":  "Visual Studio Code",
+        "Group":  "Công việc \u0026 tiện ích",
+        "Description":  "Viết mã và làm việc với dự án lập trình.",
+        "Official":  "https://code.visualstudio.com/",
+        "UpstreamTitle":  "VS Code",
+        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/applications.json"
+    }
+]

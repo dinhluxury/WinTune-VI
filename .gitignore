@@ -1,0 +1,28 @@
+# Build output, historical snapshots and local/private data
+/baseline-*/
+/.test-runs/
+/.codex-remote-attachments/
+/evidence/
+/simulation-data/
+/vm-test-runs/
+/vm-kit/
+/Sandbox-TroGiup/
+/release/
+/release-assets/
+/github-ready/
+/*.exe
+/*.zip
+/*.iso
+/*.log
+/THU-THUC-TE.txt
+/SHA256.txt
+# Never commit signing material or local credentials
+**/private.dpapi
+**/*.pfx
+**/*.p12
+**/*.pem
+**/*.key
+**/release-keys/
+**/.secrets/
+/.env
+/.env.*

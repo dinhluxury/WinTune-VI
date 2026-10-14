@@ -1,0 +1,6 @@
+﻿{
+    "Schema":  1,
+    "Repository":  "dinhluxury/WinTune-VI",
+    "PublicKeyXml":  "\u003cRSAKeyValue\u003e\u003cModulus\u003e7hUmxTcf8/qVl+TymeRCDOhnJPCEOmsf9cIrQomjDPAgkQsqL2RIEViOmRYkz+WMPExfgqrEpXVG+CM1MxYqrntRXJhzlSXzyirL6YXizrfz0VA6kQU3R6oaWIezhHyqBp/ItNOKNtjcvBqTyT96QxaLd02K7GODYBKwf8YiKnznX+rqHykM8nJlads6pTOs33/pR8cWljJ0Zqooo37YAyuEW6DemCpAhgNL8eei7pwYsU908ab8EX6O+Hm1PLLGqJOFbC2XYXSbfewD9Nd0uHi2ZOOHEwuttGa5vLOKnhWJV+U5SN9M02SFXUyT8rE4mCBfRNcY2kroyK2tIlZt1Pr2tH5Ti/U47brsRGyJfwO8WMbp0Nc9RA6Riv08IAM672wZIclBqpEPh3V8Jblf/tvJkU+jCqmIhMW0FUZ1j0T1AWboMaStR4Ys+G/SCY9KheMrErEQ4yJWv3E/kkniz+Zu+SLEyAWBxBW55+l0OWGRwxMd8RVlilJvum0Bdifd\u003c/Modulus\u003e\u003cExponent\u003eAQAB\u003c/Exponent\u003e\u003c/RSAKeyValue\u003e",
+    "Channel":  "stable"
+}
