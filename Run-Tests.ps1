@@ -39,7 +39,7 @@ $statusOutput=& $hostExe -NoProfile -STA -ExecutionPolicy RemoteSigned -File "$P
 $statusCode=$LASTEXITCODE;$statusOutput | Set-Content "$evidence/UpdateStatus.Tests.ps1.log" -Encoding UTF8
 if ($statusCode -ne 0) {throw 'Failed update status fixtures. See evidence/UpdateStatus.Tests.ps1.log.'}
 Write-Output ($statusOutput | Select-Object -Last 1)
-foreach ($name in @('Environment.Check.ps1','Core.Tests.ps1','Core.ExtendedTests.ps1','Catalog.Verify.ps1','Actions.Tests.ps1','Tools.Tests.ps1','Tools.Worker.Tests.ps1','Monitor.Tests.ps1','Theme.Tests.ps1','Usability.Core.Tests.ps1','Registry.Typed.Tests.ps1','Coverage.Tests.ps1','Distribution.Tests.ps1','Release.Author.Tests.ps1','SourceCommand.Tests.ps1','Setup.Tests.ps1','QuickLauncher.Tests.ps1','Launcher.Tests.ps1')) {
+foreach ($name in @('FullTweaks.Profiles.Tests.ps1','Environment.Check.ps1','Core.Tests.ps1','Core.ExtendedTests.ps1','Catalog.Verify.ps1','Actions.Tests.ps1','Tools.Tests.ps1','Tools.Worker.Tests.ps1','Monitor.Tests.ps1','Theme.Tests.ps1','Usability.Core.Tests.ps1','Registry.Typed.Tests.ps1','Coverage.Tests.ps1','Distribution.Tests.ps1','Release.Author.Tests.ps1','SourceCommand.Tests.ps1','Setup.Tests.ps1','QuickLauncher.Tests.ps1','Launcher.Tests.ps1')) {
     $output=& $hostExe -NoProfile -STA -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot $name) 2>&1
     $code=$LASTEXITCODE
     $output | Set-Content (Join-Path $evidence ($name+'.log')) -Encoding UTF8

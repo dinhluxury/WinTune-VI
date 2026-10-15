@@ -1,11 +1,11 @@
-# Bảng tùy chỉnh đầy đủ
+﻿# Bảng tùy chỉnh đầy đủ
 
-Mở **Tùy chỉnh Windows → Xem toàn bộ tùy chỉnh**. Danh mục lưu 110 mục và ánh xạ 67 ID WinUtil; hiện 108 mục sau khi bỏ hai mục dọn tệp theo yêu cầu mới. Bảng đối chiếu 88 lựa chọn/checkbox Win11Debloat nằm trong `FullTweaks.json → Win11FeatureMap`; các lựa chọn cùng chức năng được gom chung. Những tùy chỉnh riêng đã có của WinTune vẫn ở bảng ban đầu.
+Mở **Tùy chỉnh Windows**. Danh sách đầy đủ hiện trực tiếp trong trang, không cần mở cửa sổ phụ. Danh mục lưu 113 mục và ánh xạ 67 ID WinUtil; hiện 111 mục sau khi bỏ hai mục dọn tệp theo yêu cầu mới. Bảng đối chiếu 88 lựa chọn/checkbox Win11Debloat nằm trong `FullTweaks.json → Win11FeatureMap`; các lựa chọn cùng chức năng được gom chung. Giữ cả ba tùy chọn riêng về ẩn Widgets và Edge chạy nền/khởi chạy sẵn. Nhật ký cũ vẫn đọc và hoàn tác được qua Lịch sử bản cũ/Hoàn tác bản cũ.
 
 ## Cách dùng
 
-1. Tìm tên tính năng hoặc chọn nhóm. Mỗi hàng đã có một câu giải thích; bấm **Chi tiết** để xem ảnh hưởng và cách hoàn tác.
-2. Với mục có nhiều lựa chọn, bấm **Chi tiết**, chọn giá trị mong muốn rồi đánh dấu mục. Danh sách đang chọn ghi cả tên và giá trị. Chọn nhanh chỉ chuẩn bị danh sách; chưa đổi Windows. Các mục ảnh hưởng nhiều không được tự đưa vào nhóm chọn nhanh.
+1. Tìm tên tính năng hoặc chọn nhóm. Mỗi hàng đã có một câu giải thích; bấm tên hoặc khoảng trống của dòng để xem ảnh hưởng và cách hoàn tác. Ô đánh dấu chỉ chọn/bỏ chọn.
+2. Với mục có nhiều lựa chọn, bấm dòng để mở phần giải thích, chọn giá trị mong muốn rồi đánh dấu mục. Danh sách đang chọn ghi cả tên và giá trị. Chọn nhanh chỉ chuẩn bị danh sách; chưa đổi Windows. Tối thiểu (8 mục), Tiêu chuẩn (19 mục), Nâng cao (31 mục) có mô tả ngay dưới bộ chọn; máy dùng Windows cũ bỏ qua mục chưa hỗ trợ. Tự chuyển sang **Tùy chỉnh** khi đánh dấu thêm, bỏ chọn hoặc đổi giá trị. Chọn một bộ khác thay danh sách chờ, còn chọn Tùy chỉnh giữ nguyên các lựa chọn. Các thao tác gỡ ứng dụng, giải mã ổ, đổi DNS hoặc cần xử lý riêng không được chọn sẵn.
 3. Bấm **Xem trước các mục đã chọn**, đọc lại rồi xác nhận. Tác vụ chạy riêng nên cửa sổ vẫn phản hồi. Lưu công việc trước; ứng dụng không tự khởi động lại hoặc ép đóng chương trình.
 
 **Hiệu năng và chế độ ngủ** là nhóm thiết lập về cách máy hoạt động và dùng điện: ngủ/ngủ đông, kết nối khi ngủ, cấu hình ưu tiên hiệu năng. Ví dụ, ngủ đông lưu phiên làm việc xuống ổ đĩa; chế độ hiệu năng cao có thể tăng điện, nhiệt và tiếng quạt. Đây không phải các thao tác cần bật cho mọi máy.
@@ -26,7 +26,7 @@ Mở **Tùy chỉnh Windows → Xem toàn bộ tùy chỉnh**. Danh mục lưu 1
 - **Widgets/AI:** chỉ gói được nêu tên của tài khoản hiện tại; không AllUsers/provisioned. AI gồm Copilot, CoreAI và Microsoft 365 Hub khi cho gỡ, chính sách Notepad, dịch vụ AI và optional feature Recall khi có. Gói hệ thống bị bảo vệ có thể khiến tác vụ chỉ làm được một phần; không tự xóa cưỡng bức. Cài lại app không khôi phục dữ liệu đã mất.
 - **Giảm dữ liệu chẩn đoán:** có các chính sách và dịch vụ liên quan, nhưng không tắt Defender/gửi mẫu chống virus. Home/Pro có thể vẫn gửi dữ liệu bắt buộc; không tuyên bố tắt mọi telemetry.
 - **Dịch vụ:** danh sách cố định của WinUtil, gồm CscService, DiagTrack, MapsBroker, StorSvc và SharedAccess. Lưu cấu hình trước, bỏ mục không tồn tại, không tự dừng dịch vụ. Các thiết lập này có thể ảnh hưởng tệp ngoại tuyến, báo lỗi, bản đồ và chia sẻ mạng.
-- **Dung lượng ổ đĩa:** thay các lối vào dọn tệp bằng trình xem dung lượng chỉ đọc. Chọn ổ/thư mục rồi quét, xem tỷ lệ của từng thư mục hoặc 100 tệp lớn nhất, nhấp đúp thư mục để xem sâu hơn. Bỏ qua liên kết, tệp đám mây chưa tải và mục không có quyền đọc; kích thước đọc được có thể khác số đã dùng của ổ. Không tự xóa. Bộ xử lý dọn cũ chỉ được giữ để tương thích mã/nhật ký, không còn trong danh sách công cụ.
+- **Dung lượng ổ đĩa:** bấm ở thanh bên để tự cài WizTree nếu chưa có, mở trực tiếp C: và tự quét. Không mở báo cáo CSV. Xem cây thư mục và bản đồ màu trong WizTree; muốn xem ổ khác dùng Select/Scan. Không tự xóa tệp.
 - **Quyền Store/Razer/Logitech:** có thể làm lỗi Store hoặc chặn cài tiện ích; lưu ACL cũ và kiểm tra đường dẫn không qua liên kết. Không xóa dữ liệu/thư mục có sẵn chỉ để đặt quyền chặn.
 - **Adobe:** danh sách tên miền có thể ảnh hưởng kích hoạt, đăng nhập, đồng bộ và cập nhật. Chỉ thêm dữ liệu tên miền đã chốt vào hosts, không tải/chạy script ở ngoài. Hoàn tác chỉ ghi lại tệp cũ khi chưa bị sửa bên ngoài.
 - **DNS:** chọn đúng một card mạng đang có và nhà cung cấp. Hiện đổi IPv4; không tự thiết lập IPv6 hoặc DNS-over-HTTPS. Tùy chọn nhanh nhất chỉ là phép đo ngắn trên máy lúc chạy, không cam kết tốc độ luôn nhanh nhất. Hoàn tác giữ phân biệt DNS thủ công và tự động từ DHCP.

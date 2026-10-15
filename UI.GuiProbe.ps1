@@ -12,6 +12,9 @@ $script:Window.Add_ContentRendered({
         Title=$script:Window.Title
         Visible=$script:Window.IsVisible
         Features=$script:List.Items.Count
+        UnifiedFeatures=@($script:FullWindow.FindName('FullCards').Children | Where-Object {$_ -is [Windows.Controls.Border]}).Count
+        UnifiedPage=$script:UnifiedTweaksPageActive
+        UnifiedSelected=$script:FullSelection.Count
         Selected=$script:Selected.Count
         SimulatedWrites=$script:SimWriteCount
         RealWritesBlocked=$script:WriteBlocked
@@ -36,6 +39,8 @@ $script:Window.Add_ContentRendered({
     $record | ConvertTo-Json | Set-Content "$PSScriptRoot/evidence/gui-lifecycle.json" -Encoding UTF8
     $script:ProbeTimer.Start()
 })
+Set-MainPage Features
 $null=$script:Window.ShowDialog()
 if (-not $script:ProbeRendered -or $script:SimWriteCount -ne 0 -or $script:Selected.Count -ne 0) { throw 'GUI lifecycle probe failed.' }
+if(-not $script:UnifiedTweaksPageActive -or @($script:FullWindow.FindName('FullCards').Children | Where-Object {$_ -is [Windows.Controls.Border]}).Count -ne 111 -or $script:FullSelection.Count -ne 0 -or $script:FullMockWrites -ne 0){throw 'Unified feature page lifecycle failed.'}
 Write-Output 'GUI LIFECYCLE PASSED: main window and owned dialog rendered and closed, no selections and no writes. External interaction remains unverified.'

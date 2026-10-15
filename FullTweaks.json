@@ -5465,6 +5465,78 @@
       "AllProfiles": true,
       "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Config/Features.json",
       "Undo": "Khôi phục bố cục đã sao lưu nếu tệp chưa bị Windows hay ứng dụng khác thay đổi. Những tài khoản khác nên đăng xuất trong khi áp dụng và hoàn tác."
+    },
+    {
+      "Id": "WTwidgets",
+      "Title": "Ẩn thời tiết và Widgets trên thanh tác vụ",
+      "Group": "Start và thanh tác vụ",
+      "Explanation": "Ẩn nút Widgets và thông tin thời tiết, tin tức hoặc thông báo đi kèm trên thanh tác vụ của tài khoản hiện tại.",
+      "Impact": "Mất cách mở Widgets bằng nhấp hoặc rê chuột trên thanh tác vụ. Vẫn có thể mở bảng Widgets bằng Win + W. Không gỡ ứng dụng Thời tiết, không tắt toàn bộ nền tảng Widgets và không cam kết giảm RAM hoặc tăng FPS. Có thể cần đăng xuất rồi đăng nhập lại hoặc khởi động lại riêng máy ảo khi thử. WinTune không tự đóng Explorer, đăng xuất hoặc khởi động lại Windows.",
+      "Risk": false,
+      "MinBuild": 22000,
+      "Handler": "Registry",
+      "Route": "",
+      "Changes": [
+        {
+          "Hive": "HKCU",
+          "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+          "Name": "TaskbarDa",
+          "Type": "DWord",
+          "Value": 0,
+          "Exists": true
+        }
+      ],
+      "Services": [],
+      "Source": "https://github.com/microsoft/winget-dsc/blob/b4b1867fe8ef748198fb56476d15f435a66eca46/resources/Microsoft.Windows.Developer/Microsoft.Windows.Developer.psm1",
+      "Undo": "Phục hồi chính xác TaskbarDa trước đó, kể cả khi giá trị chưa tồn tại. Có thể cần nạp lại phiên để thấy nút trở lại. Không phục hồi dữ liệu của ứng dụng; mục này không gỡ ứng dụng."
+    },
+    {
+      "Id": "WTedgestartupboost",
+      "Title": "Tắt khởi chạy sẵn Microsoft Edge",
+      "Group": "Ứng dụng nền",
+      "Explanation": "Tắt Startup Boost: Edge không được chính sách này cho khởi chạy sẵn khi đăng nhập hoặc tự khởi động lại nền sau khi đóng cửa sổ cuối.",
+      "Impact": "Lần mở Edge có thể chậm hơn. Không gỡ Edge, không tắt Windows Search hoặc WebView2 của các ứng dụng khác. Nếu Edge chưa cài hoặc chính sách máy ưu tiên khác, giá trị có thể chưa có hiệu lực. Edge hỗ trợ đọc lại chính sách; bạn có thể tự mở edge://policy để kiểm tra hoặc tự đóng/mở lại sau khi lưu dữ liệu. WinTune không đóng trình duyệt, đăng xuất hoặc khởi động lại.",
+      "Risk": false,
+      "MinBuild": 22000,
+      "Handler": "Registry",
+      "Route": "",
+      "Changes": [
+        {
+          "Hive": "HKCU",
+          "Path": "Software\\Policies\\Microsoft\\Edge",
+          "Name": "StartupBoostEnabled",
+          "Type": "DWord",
+          "Value": 0,
+          "Exists": true
+        }
+      ],
+      "Services": [],
+      "Source": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/startupboostenabled",
+      "Undo": "Phục hồi đúng giá trị chính sách cũ, kể cả chưa tồn tại. Không phục hồi dữ liệu duyệt web; mục này không xóa dữ liệu."
+    },
+    {
+      "Id": "WTedgebackground",
+      "Title": "Tắt Edge chạy nền sau khi đóng",
+      "Group": "Ứng dụng nền",
+      "Explanation": "Tắt chế độ Edge giữ ứng dụng và phiên duyệt nền sau khi bạn tự đóng cửa sổ cuối. Có thể giảm tiến trình msedge nếu chế độ này đang bật.",
+      "Impact": "Tiện ích hoặc ứng dụng web phụ thuộc chạy nền có thể không nhận thông báo khi Edge đã đóng. Không chặn WebView2 của Teams, Widgets hay app khác. Không tự đóng tab hoặc tiến trình đang có dữ liệu. Chính sách hỗ trợ cập nhật động. Tự lưu dữ liệu rồi đóng/mở Edge khi cần; kiểm tra edge://policy. Không tự đóng trình duyệt hoặc khởi động lại Windows.",
+      "Risk": false,
+      "MinBuild": 22000,
+      "Handler": "Registry",
+      "Route": "",
+      "Changes": [
+        {
+          "Hive": "HKCU",
+          "Path": "Software\\Policies\\Microsoft\\Edge",
+          "Name": "BackgroundModeEnabled",
+          "Type": "DWord",
+          "Value": 0,
+          "Exists": true
+        }
+      ],
+      "Services": [],
+      "Source": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/backgroundmodeenabled",
+      "Undo": "Khôi phục chính xác chính sách trước đó hoặc xóa giá trị mới nếu trước chưa tồn tại. Không thay đổi dữ liệu duyệt web."
     }
   ],
   "Win11DebloatCommit": "4079b276e9e93aa8698a9f70f5aa228ba11f8265",

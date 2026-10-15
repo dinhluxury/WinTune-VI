@@ -109,7 +109,7 @@ function Set-MainPage([ValidateSet('Dashboard','Features')][string]$Page) {
     $state=$script:MonitorState;$changed=$state.Page -ne $Page;$state.Page=$Page
     $Window.FindName('DashboardPage').Visibility=if ($Page -eq 'Dashboard') {'Visible'} else {'Collapsed'}
     $Window.FindName('FeaturesPage').Visibility=if ($Page -eq 'Features') {'Visible'} else {'Collapsed'}
-    $Window.FindName('FeatureFooter').Visibility=if ($Page -eq 'Features') {'Visible'} else {'Collapsed'}
+    $Window.FindName('FeatureFooter').Visibility=if ($Page -eq 'Features' -and -not $script:UnifiedTweaksPageActive) {'Visible'} else {'Collapsed'}
     $Window.FindName('PageTitle').Text=if ($Page -eq 'Dashboard') {'Tổng quan máy tính'} else {'Tùy chỉnh Windows'}
     Set-ThemeResource ($Window.FindName('Overview')) Background $(if ($Page -eq 'Dashboard') {'Selected'} else {'Button'})
     Set-ThemeResource ($Window.FindName('FeaturesNav')) Background $(if ($Page -eq 'Features') {'Selected'} else {'Button'})

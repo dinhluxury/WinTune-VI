@@ -10,7 +10,7 @@ $beforeFullWrites=$SimWriteCount
 $full=New-FullTweaksWindow
 Assert-UI (@($full.FindName('FullCards').Children | Where-Object {$_ -is [Windows.Controls.Border]}).Count -eq ($FullCatalog.Count-2) -and $FullCatalog.Count -ge 110) 'Full board exposes the WinUtil and Win11Debloat screenshot features'
 $firstCard=@($full.FindName('FullCards').Children | Where-Object {$_ -is [Windows.Controls.Border]})[0]
-Assert-UI ($firstCard.Child.Children[2] -is [Windows.Controls.StackPanel] -and $firstCard.Child.Children[2].Children[0].Text.Contains('lịch sử hoạt động') -and $firstCard.Child.Children[1].Content -eq 'Chi tiết') 'Feature names render as text, never a StackPanel type name in the shared button template'
+Assert-UI ($firstCard.Child.Children[1] -is [Windows.Controls.StackPanel] -and $firstCard.Child.Children[1].Children[0].Text.Contains('lịch sử hoạt động') -and $firstCard.Child.Children.Count -eq 2) 'Feature names render directly as text with no redundant details button'
 Assert-UI ('Hiệu năng và chế độ ngủ' -in $FullCatalog.Group -and 'Nguồn điện' -notin $FullCatalog.Group) 'Power settings use the clarified Vietnamese category name'
 Assert-UI ($FullMockWrites -eq 0 -and $SimWriteCount -eq $beforeFullWrites) 'Opening full board never applies tweaks'
 $full.FindName('FullSearch').Text='duong dan tep dai'
@@ -19,9 +19,9 @@ $full.FindName('FullSearch').Text='';$full.FindName('FullGroup').SelectedItem='M
 Assert-UI (@($full.FindName('FullCards').Children | Where-Object {$_ -is [Windows.Controls.Border]}).Count -eq 6) 'Category filter keeps related network choices together'
 $full.FindName('FullGroup').SelectedItem='Tất cả'
 Set-FullPreset standard
-Assert-UI ($FullSelection.Count -eq 6 -and $full.FindName('FullChosen').Text.Contains('menu chuột phải')) 'Preset lists the actual chosen feature names without applying them'
+Assert-UI ($FullSelection.Count -eq @(Get-FullPresetRows standard).Count -and $full.FindName('FullChosen').Text.Contains('đường dẫn')) 'Preset lists the actual chosen feature names without applying them'
 $full.FindName('FullOnlySelected').IsChecked=$true;Render-FullTweaks
-Assert-UI (@($full.FindName('FullCards').Children | Where-Object {$_ -is [Windows.Controls.Border]}).Count -eq 6) 'Only-selected filter is distinct from installed-state selection'
+Assert-UI (@($full.FindName('FullCards').Children | Where-Object {$_ -is [Windows.Controls.Border]}).Count -eq @(Get-FullPresetRows standard).Count) 'Only-selected filter is distinct from installed-state selection'
 Show-FullDetail (Get-FullFeature WPFTweaksWindowsAI)
 Assert-UI ($full.FindName('FullDetailImpact').Text.Contains('Recall') -and $full.FindName('FullSource').Inlines.Count -eq 2) 'AI explanation includes data-loss impact and a labelled clickable source'
 Show-FullDetail (Get-FullFeature WPFchangedns)

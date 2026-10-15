@@ -45,7 +45,7 @@ try {
     $script:LogsWindow=$null
     $script:ToolJob=$null
     $script:DistributionWindow=$null;$script:DistributionJob=$null;$script:DistributionTimer=$null
-    $script:FullWindow=$null;$script:FullJob=$null;$script:MainActionBusy=$false
+    $script:FullWindow=$null;$script:FullJob=$null;$script:FullTimer=$null;$script:MainActionBusy=$false;$script:UnifiedTweaksPageActive=$false
     . (Join-Path $PSScriptRoot 'Theme.UI.ps1')
     Initialize-ThemeUI
     . (Join-Path $PSScriptRoot 'Links.UI.ps1')
@@ -253,6 +253,7 @@ try {
         if ($null -ne $script:Current) { Show-Detail $script:Current }
         if ($script:PendingBatch) { $Window.FindName('Status').Text='Đợt trước chưa hoàn tất: xem lịch sử và Hoàn tác trước khi tiếp tục.' }
         if ($script:HistoryError) { $Window.FindName('Status').Text='Lịch sử lỗi; đã khóa áp dụng/hoàn tác. '+$script:HistoryError }
+        if($script:UnifiedTweaksPageActive){Update-UnifiedRecovery}
         Update-Selection
     }
     $Search.Add_TextChanged({if (-not $script:Rendering) {Render-List}})
@@ -417,6 +418,7 @@ try {
     Initialize-MonitorUI
     Render-List
     Refresh-UI
+    if(-not $SelfTest){Initialize-UnifiedTweaksPage}
     if ($MonitorProbe) { . (Join-Path $PSScriptRoot 'UI.MonitorReadProbe.ps1') }
     elseif ($GuiProbe) { . (Join-Path $PSScriptRoot 'UI.GuiProbe.ps1') }
     elseif ($SelfTest) { . (Join-Path $PSScriptRoot 'UI.SelfTests.ps1') }
@@ -428,4 +430,4 @@ try {
     if ($SelfTest -or $GuiProbe) { Write-Output "Khởi động / kiểm thử WPF thất bại: $reason. $log"; exit 1 }
     $null=[Windows.MessageBox]::Show("Không mở được app: $reason`n`nChi tiết: $log",'WinTune VI'); exit 1
 }
-finally { if (Get-Command Stop-DistributionUI -ErrorAction SilentlyContinue) {Stop-DistributionUI}; if (Get-Command Stop-ThemeUI -ErrorAction SilentlyContinue) {Stop-ThemeUI}; if (Get-Command Stop-Monitor -ErrorAction SilentlyContinue) {Stop-Monitor}; $mutex.ReleaseMutex(); $mutex.Dispose() }
+finally { if (Get-Command Stop-FullTweaksUI -ErrorAction SilentlyContinue) {Stop-FullTweaksUI}; if (Get-Command Stop-DistributionUI -ErrorAction SilentlyContinue) {Stop-DistributionUI}; if (Get-Command Stop-ThemeUI -ErrorAction SilentlyContinue) {Stop-ThemeUI}; if (Get-Command Stop-Monitor -ErrorAction SilentlyContinue) {Stop-Monitor}; $mutex.ReleaseMutex(); $mutex.Dispose() }

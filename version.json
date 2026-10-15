@@ -1,6 +1,6 @@
-{
+﻿{
   "Schema": 1,
-  "Version": "0.16.0",
+  "Version": "0.16.1",
   "MinimumBuild": 22000,
   "Architecture": "x64"
 }

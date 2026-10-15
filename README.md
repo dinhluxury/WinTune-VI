@@ -1,8 +1,8 @@
-﻿> WinTune VI 0.16.0: danh mục lưu 110 mục (108 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở Tùy chỉnh Windows → Xem toàn bộ tùy chỉnh. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
+﻿> WinTune VI 0.16.1: danh mục lưu 113 mục (111 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở **Tùy chỉnh Windows** để xem ngay toàn bộ danh sách. Bấm tên hoặc khoảng trống của từng dòng để đọc chi tiết; không cần nút Chi tiết. Các bộ Tối thiểu/Tiêu chuẩn/Nâng cao có 8/19/31 mục trên Windows hiện tại. Chọn thêm, bỏ chọn hoặc đổi giá trị sẽ tự chuyển sang **Tùy chỉnh**. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
 
 **Dung lượng ổ đĩa** tự cài WizTree nếu chưa có, mở trực tiếp **ổ C:** và tự quét. WizTree hiển thị tổng dung lượng, đã dùng và còn trống; không mở CSV. Đã bỏ trình xem cơ bản. Xem [cách dùng](WIZTREE.md). Khôi phục và Công cụ Windows hiện trực tiếp; cuối thanh bên có cập nhật và trạng thái phiên bản, đã bỏ phần đăng ký lệnh.
 
-# WinTune VI 0.16.0
+# WinTune VI 0.16.1
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
@@ -77,8 +77,8 @@ Trong CMD tại thư mục app: `wintune`, `wintune demo`, `wintune test`.
 
 | Phần | Cách dùng và giới hạn |
 |---|---|
-| Tùy chỉnh/Privacy/UI | 43 mục registry, 51 DWORD và 5 REG_SZ; 31 lựa chọn trong 10 ô chọn, giữ ID/backup cũ. Search, Bing, Task View, Widgets, Explorer, giao diện, Game DVR, gợi ý/quảng cáo; không hứa telemetry = 0 |
-| Hồ sơ | Tự chọn / Tối thiểu / Tiêu chuẩn / Nâng cao: tập con theo cách tổ chức WinUtil, 5/10/13 thiết lập. Không gỡ app/tắt dịch vụ; chỉ chuẩn bị những mục đọc được và đúng build |
+| Tùy chỉnh/Privacy/UI | Hiện trực tiếp 111 mục và 32 mục nhiều lựa chọn, kèm tác dụng/ảnh hưởng/hoàn tác. Giữ các đích registry của 43 mục cũ và lịch sử cũ; không hứa telemetry = 0 |
+| Chọn nhanh | Tùy chỉnh / Tối thiểu / Tiêu chuẩn / Nâng cao: 8/19/31 thiết lập trên Windows hiện tại, bỏ qua mục chưa hỗ trợ. Chỉ chuẩn bị danh sách; đổi lựa chọn tự chuyển sang Tùy chỉnh. Không tự gỡ app, giải mã ổ hoặc đổi DNS |
 | Dọn ứng dụng Windows | Appx/MSIX của user: đề xuất xem xét, thông thường, hệ thống/được bảo vệ. Tìm/lọc không mất lựa chọn. Gỡ đúng PackageFullName, không AllUsers/provisioned. Tên chưa giải mã thì hiện tên gói thật |
 | Startup | Các lệnh phổ biến HKCU Run, giữ nguyên String/ExpandString, phục hồi khi không xung đột. Không bao gồm mọi nguồn tự chạy, không đóng app đang chạy |
 | WinGet | 17 ứng dụng thông dụng trong 4 nhóm, ô có cùng kích thước và mô tả công dụng. Tìm tên/mã, giữ lựa chọn khi lọc; nút cài và ô đồng ý luôn nhìn thấy. Kiểm tra WinGet/ID/nguồn bên trong; không có menu cập nhật/check/list |

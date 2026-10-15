@@ -4,7 +4,7 @@ $ErrorActionPreference='Stop'
 Add-Type -AssemblyName System.Security
 function Initialize-FullTweaks([string]$Root,[bool]$Simulation=$false,[int]$Build=22000) {
     $script:FullCatalog=@((Get-Content -LiteralPath "$PSScriptRoot/FullTweaks.json" -Raw -Encoding UTF8 | ConvertFrom-Json).Features)
-    if ((Get-FileHash -LiteralPath "$PSScriptRoot/FullTweaks.json" -Algorithm SHA256).Hash -cne '284C2B1CD80BF01D8C6861CEFD90EAF65ED4C9029DBBAEDC590E93B6E48EFBB2') {throw 'Danh mục tinh chỉnh đã đổi; cần dùng bộ WinTune đầy đủ, đã kiểm tra.'}
+    if ((Get-FileHash -LiteralPath "$PSScriptRoot/FullTweaks.json" -Algorithm SHA256).Hash -cne '6B1B88C5B071383AFC5532154933508ED84100E2123DBEA76C9B52298657167A') {throw 'Danh mục tinh chỉnh đã đổi; cần dùng bộ WinTune đầy đủ, đã kiểm tra.'}
     if ($FullCatalog.Count -lt 67 -or @($FullCatalog.Id | Select-Object -Unique).Count -ne $FullCatalog.Count) {throw 'Danh mục thiếu hoặc trùng mục.'}
     $script:FullCatalogById=[Collections.Generic.Dictionary[string,object]]::new([StringComparer]::Ordinal)
     foreach ($feature in $FullCatalog) {$script:FullCatalogById.Add($feature.Id,$feature)}

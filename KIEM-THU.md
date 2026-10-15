@@ -1,4 +1,6 @@
-﻿# Bằng chứng và kiểm tra còn lại
+﻿> Bản 0.16.1: xem [kiểm tra trang tùy chỉnh thống nhất và bộ chọn sẵn](KIEM-THU-v0.16.1.md). Các kết quả cũ bên dưới được giữ làm lịch sử.
+
+# Bằng chứng và kiểm tra còn lại
 
 Ngày 14/10/2026: Windows 26300.9550 Professional 26H2; Windows PowerShell
 5.1.26100.9549 x64 STA; WPF .NET Framework 4.
