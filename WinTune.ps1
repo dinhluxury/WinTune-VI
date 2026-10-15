@@ -45,7 +45,7 @@ try {
     $script:LogsWindow=$null
     $script:ToolJob=$null
     $script:DistributionWindow=$null;$script:DistributionJob=$null;$script:DistributionTimer=$null
-    $script:FullWindow=$null;$script:FullJob=$null;$script:FullTimer=$null;$script:MainActionBusy=$false;$script:UnifiedTweaksPageActive=$false
+    $script:CareWindow=$null;$script:CareState=$null;$script:FullWindow=$null;$script:FullJob=$null;$script:FullTimer=$null;$script:MainActionBusy=$false;$script:UnifiedTweaksPageActive=$false
     . (Join-Path $PSScriptRoot 'Theme.UI.ps1')
     Initialize-ThemeUI
     . (Join-Path $PSScriptRoot 'Links.UI.ps1')
@@ -210,7 +210,8 @@ try {
         $dialog=New-Object Windows.Window
         $dialog.Title=$Title; $dialog.Width=740; $dialog.Height=600
         $dialog.MinWidth=520; $dialog.MinHeight=400
-        if ($null -ne $script:FullWindow -and $script:FullWindow.IsVisible) { $dialog.Owner=$script:FullWindow; $dialog.WindowStartupLocation='CenterOwner' }
+        if ($null -ne $script:CareWindow -and $script:CareWindow.IsVisible) { $dialog.Owner=$script:CareWindow; $dialog.WindowStartupLocation='CenterOwner' }
+        elseif ($null -ne $script:FullWindow -and $script:FullWindow.IsVisible) { $dialog.Owner=$script:FullWindow; $dialog.WindowStartupLocation='CenterOwner' }
         elseif ($null -ne $script:LogsWindow -and $script:LogsWindow.IsVisible) { $dialog.Owner=$script:LogsWindow; $dialog.WindowStartupLocation='CenterOwner' }
         elseif ($null -ne $script:RestoreWindow -and $script:RestoreWindow.IsVisible) { $dialog.Owner=$script:RestoreWindow; $dialog.WindowStartupLocation='CenterOwner' }
         elseif ($null -ne $script:ToolsWindow -and $script:ToolsWindow.IsVisible) { $dialog.Owner=$script:ToolsWindow; $dialog.WindowStartupLocation='CenterOwner' }
@@ -394,11 +395,10 @@ try {
     . "$PSScriptRoot/Tools.UI.ps1"
     . "$PSScriptRoot/WizTree.UI.ps1"
     Initialize-Tools (Join-Path $script:DataRoot 'tools') ([bool]($script:IsSimulation -or $script:WriteBlocked)) $script:UserId
-    foreach ($pair in @(@('Software','Phần mềm'),@('Repair','Sửa lỗi'),@('Power','Tối ưu'))) {
+    foreach ($pair in @(@('Software','Phần mềm'),@('Repair','Sửa lỗi'))) {
         $button=$Window.FindName($pair[0]);$button.Tag=$pair[1];$button.Add_Click({param($sender,$args) Open-Tools $sender.Tag})
     }
     $Window.FindName('Cleanup').Content='Dung lượng ổ đĩa';$Window.FindName('Cleanup').ToolTip='Tự cài WizTree nếu chưa có, mở ổ C: thật và tự quét để xem tổng dung lượng, đã dùng và còn trống.';$Window.FindName('Cleanup').Add_Click({Open-Storage})
-    $Window.FindName('Power').Content='Hiệu năng và pin'
     $Window.FindName('DeviceManager').Add_Click({if ($script:IsSimulation -or $script:WriteBlocked) {Message 'Mô phỏng/chỉ đọc: không mở công cụ hệ thống thật.'} else {Start-Process -FilePath (Join-Path $env:WINDIR 'System32/devmgmt.msc')}})
     . "$PSScriptRoot/Diagnostics.UI.ps1"
     . "$PSScriptRoot/Restore.UI.ps1"
@@ -412,9 +412,7 @@ try {
     Initialize-MainCopilot
     $Window.FindName('ManageApps').Add_Click({Open-Management 'Appx'})
     $Window.FindName('ManageStartup').Add_Click({Open-Management 'Startup'})
-    . "$PSScriptRoot/Distribution.UI.ps1"
-    $Window.FindName('Distribution').Add_Click({Open-DistributionCenter})
-    $Window.Add_Closing({param($sender,$eventArgs) if ($null -ne $script:DistributionJob) {$eventArgs.Cancel=$true;$script:DistributionWindow.Activate() | Out-Null;$script:DistributionWindow.FindName('DistributionStatus').Text='Hủy hoặc đợi tác vụ khởi chạy/cập nhật trước khi đóng WinTune.'}})
+    . "$PSScriptRoot/Care.UI.ps1"
     Initialize-MonitorUI
     Render-List
     Refresh-UI
@@ -422,7 +420,7 @@ try {
     if ($MonitorProbe) { . (Join-Path $PSScriptRoot 'UI.MonitorReadProbe.ps1') }
     elseif ($GuiProbe) { . (Join-Path $PSScriptRoot 'UI.GuiProbe.ps1') }
     elseif ($SelfTest) { . (Join-Path $PSScriptRoot 'UI.SelfTests.ps1') }
-    else { if ($Updates) {$Window.Add_ContentRendered({Open-DistributionCenter})}; $null=$Window.ShowDialog() }
+    else { $null=$Window.ShowDialog() }
 } catch {
     $reason=$_.Exception.Message
     $log=Join-Path $PSScriptRoot 'startup-error.log'

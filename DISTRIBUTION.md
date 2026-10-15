@@ -60,7 +60,7 @@ process cha cũ và cần mở lại ứng dụng terminal hoặc đăng xuất/
 
 - `wintune`: mở ứng dụng đang được chọn trong `current.txt`.
 - `wintune demo`: mở mô phỏng.
-- `wintune update`: mở cửa sổ cập nhật; chưa kết nối hoặc tải gì.
+- `wintune update`: tên gọi cũ được giữ tương thích và chỉ mở ứng dụng; không còn cửa sổ cập nhật.
 - `wintune.cmd` trong portable vẫn hỗ trợ demo/test/probe/help; có thêm
   update/register/unregister cho người đang dùng bản portable.
 
@@ -69,24 +69,9 @@ giữ ứng dụng, bản cũ và lịch sử. Nếu đợt đăng ký cũ bị 
 có điều kiện: `Register-WinTune.ps1 -Remove` hoặc `-Recover`.
 `-Confirmed` chỉ dành cho người chủ động chấp thuận phạm vi đó; không là mặc định.
 
-## Cập nhật trong ứng dụng
+## Dùng bản WinTune mới
 
-Trang **Cập nhật WinTune** hiển thị phiên bản đang chạy, trạng thái và thời điểm
-kiểm tra. Phân biệt đang dùng bản mới nhất, có bản mới, bản mới đã tải nhưng
-chưa mở và bản local mới hơn bản public. Không kiểm tra mạng lúc mở app.
-Bấm **Kiểm tra cập nhật** mới đọc GitHub
-Releases stable và xác minh RSA-SHA256 của `release.json` bằng khóa công
-khai đã ghim. Metadata được đọc trước; ZIP chưa được tải. Chỉ sau khi xem
-phiên bản/dung lượng/nguồn và xác nhận mới tải ZIP, kiểm tra SHA256 và kích
-thước, kiểm tra đường dẫn ZIP và toàn bộ thành phần bất biến.
-
-Bản mới đặt cạnh bản cũ, đổi `current.txt` nguyên tử và giữ pointer trước.
-Không ghi đè file đang chạy, không tự mở bản mới, không restart, không đổi
-`v2` chứa sao lưu/hoàn tác. Nếu chưa đăng ký lệnh, kết quả cho biết đường
-dẫn EXE mới; người dùng tự mở sau khi đóng bản cũ. Có lịch sử riêng
-`distribution-history.jsonl`; receipt đăng ký là `command-registration.json`.
-Không hạ bản mới hơn đã được chuẩn bị. Tác vụ dùng runspace riêng, có hủy
-tải/kiểm tra, dọn tài nguyên sau khi xong; không có timer cập nhật chạy nền.
+Từ 0.16.2 đã bỏ giao diện cập nhật trong ứng dụng. Đóng bản cũ rồi mở lại bằng lệnh online để bộ tải kiểm tra bản stable, chữ ký và checksum. Bản portable dùng gói ZIP mới khi người dùng tải lại. Các thư viện phân phối/xác minh vẫn được giữ cho bộ tải.
 
 ## Tác giả: chuẩn bị nguồn tin cậy
 
@@ -238,7 +223,7 @@ Gói portable có Cai-WinTune.cmd: giải nén và chạy một lần; xác nh�
 
 ## Online một dòng — yêu cầu cập nhật
 
-Người dùng đã yêu cầu dùng cách irm URL | iex giống WinUtil; hạn chế IEX trước đó được thay cho entry chính thức này. get.ps1 nằm trên main, sinh từ QuickLauncher.template cùng SHA launcher của bộ Release. Dùng lệnh ngắn PowerShell hoặc CMD trong ONLINE-COMMAND.txt. Không truyền -Setup/-RegisterCommand; dán lệnh chủ động tải/mở với -Confirmed. Entry đầu tin cậy HTTPS/repository, không được hash-check trước IEX; những bước sau kiểm SHA launcher/RSA manifest/ZIP/resource. Lệnh dài hash-check vẫn giữ, installer offline tùy chọn. Gói app cache theo tài khoản, không cài thêm dependency/PATH/service. Màn hình cập nhật vẫn xác nhận riêng. get.ps1 được sinh sau ZIP và chỉ thêm vào Source qua Prepare-GitHub có kiểm template/hash; không phải runtime cần chép trong portable. Source/get.ps1 và Release0.15.2 chưa công khai.
+Người dùng đã yêu cầu dùng cách irm URL | iex giống WinUtil; hạn chế IEX trước đó được thay cho entry chính thức này. get.ps1 nằm trên main, sinh từ QuickLauncher.template cùng SHA launcher của bộ Release. Dùng lệnh ngắn PowerShell hoặc CMD trong ONLINE-COMMAND.txt. Không truyền -Setup/-RegisterCommand; dán lệnh chủ động tải/mở với -Confirmed. Entry đầu tin cậy HTTPS/repository, không được hash-check trước IEX; những bước sau kiểm SHA launcher/RSA manifest/ZIP/resource. Lệnh dài hash-check vẫn giữ, installer offline tùy chọn. Gói app cache theo tài khoản, không cài thêm dependency/PATH/service. Không còn màn hình cập nhật riêng trong app. get.ps1 được sinh sau ZIP và chỉ thêm vào Source qua Prepare-GitHub có kiểm template/hash; không phải runtime cần chép trong portable. Source/get.ps1 và Release0.15.2 chưa công khai.
 
 ## URL ngắn GitHub Pages
 

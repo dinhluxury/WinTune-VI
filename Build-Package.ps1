@@ -31,7 +31,7 @@ if (-not $PublicRelease) {
     foreach ($file in @('VM.Check.ps1','VM.JournalReload.ps1','VM.Verify.ps1','Kiem-Thu-May-Ao.cmd','Phuc-Hoi-Kiem-Thu.cmd','KIEM-THU-TU-DONG.txt')) { Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination (Join-Path $portable $file) -Force }
 }
 Copy-Item -LiteralPath "$PSScriptRoot/LICENSE-Microsoft-winget-dsc.txt" -Destination $portable -Force
-foreach ($file in @('Distribution.Core.ps1','Distribution.Runtime.psm1','Distribution.UI.ps1','Distribution.Tests.ps1','Launcher.Tests.ps1','Distribution.UI.Tests.ps1','CommandRegistration.ps1','CommandRouter.cs','Wintune.Command.exe','Register-WinTune.ps1','version.json','release-config.json','DISTRIBUTION.md','CHANGELOG-v0.15.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
+foreach ($file in @('Distribution.Core.ps1','Distribution.Runtime.psm1','Distribution.Tests.ps1','Launcher.Tests.ps1','CommandRegistration.ps1','CommandRouter.cs','Wintune.Command.exe','Register-WinTune.ps1','version.json','release-config.json','DISTRIBUTION.md','CHANGELOG-v0.15.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 foreach ($file in @('New-ReleaseSigningKey.ps1','Configure-Release.ps1','Sign-Release.ps1','Build-Distribution.ps1','Bootstrapper.template.ps1','Release.Author.Tests.ps1','Prepare-GitHub.ps1','PUBLISHING.md','.gitignore','.gitattributes')) {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force
 }
@@ -40,7 +40,7 @@ foreach ($file in @('Setup.Core.ps1','Install-WinTune.ps1','Cai-WinTune.cmd','Se
 foreach ($file in @('QuickLauncher.template.ps1','QuickLauncher.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 foreach ($file in @('CmdLauncher.template.cmd','Build-CmdLauncher.ps1','CmdLauncher.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'Pages.Serving.Tests.ps1') -Destination $portable -Force
-foreach ($file in @('FullTweaks.Profiles.ps1','FullTweaks.Profiles.Tests.ps1','UnifiedTweaks.UI.ps1','UnifiedTweaks.UI.Tests.ps1','CHANGELOG-v0.16.1.md','KIEM-THU-v0.16.1.md','FullTweaks.json','FullTweaks.Core.ps1','FullTweaks.Native.ps1','FullTweaks.UI.ps1','FullTweaks.Worker.ps1','FullTweaks.Tests.ps1','FullTweaks.UI.Tests.ps1','TINH-CHINH-DAY-DU.md','CHANGELOG-v0.16.0.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
+foreach ($file in @('Care.Core.ps1','Care.UI.ps1','Care.Core.Tests.ps1','Care.UI.Tests.ps1','CHANGELOG-v0.16.2.md','KIEM-THU-v0.16.2.md','FullTweaks.Profiles.ps1','FullTweaks.Profiles.Tests.ps1','UnifiedTweaks.UI.ps1','UnifiedTweaks.UI.Tests.ps1','CHANGELOG-v0.16.1.md','KIEM-THU-v0.16.1.md','FullTweaks.json','FullTweaks.Core.ps1','FullTweaks.Native.ps1','FullTweaks.UI.ps1','FullTweaks.Worker.ps1','FullTweaks.Tests.ps1','FullTweaks.UI.Tests.ps1','TINH-CHINH-DAY-DU.md','CHANGELOG-v0.16.0.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 Copy-Item -LiteralPath "$PSScriptRoot/FullTweaks.Native.Tests.ps1" -Destination $portable -Force
 foreach ($file in @('FullTweaks.Debloat.ps1','FullTweaks.Debloat.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 Copy-Item -LiteralPath "$PSScriptRoot/KIEM-THU-v0.16.0.md" -Destination $portable -Force

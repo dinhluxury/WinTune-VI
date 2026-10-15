@@ -1,8 +1,8 @@
-﻿> WinTune VI 0.16.1: danh mục lưu 113 mục (111 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở **Tùy chỉnh Windows** để xem ngay toàn bộ danh sách. Bấm tên hoặc khoảng trống của từng dòng để đọc chi tiết; không cần nút Chi tiết. Các bộ Tối thiểu/Tiêu chuẩn/Nâng cao có 8/19/31 mục trên Windows hiện tại. Chọn thêm, bỏ chọn hoặc đổi giá trị sẽ tự chuyển sang **Tùy chỉnh**. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
+﻿> WinTune VI 0.16.2: danh mục lưu 113 mục (111 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở **Tùy chỉnh Windows** để xem ngay toàn bộ danh sách. Bấm tên hoặc khoảng trống của từng dòng để đọc chi tiết; không cần nút Chi tiết. Các bộ Tối thiểu/Tiêu chuẩn/Nâng cao có 8/19/31 mục trên Windows hiện tại. Chọn thêm, bỏ chọn hoặc đổi giá trị sẽ tự chuyển sang **Tùy chỉnh**. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
 
-**Dung lượng ổ đĩa** tự cài WizTree nếu chưa có, mở trực tiếp **ổ C:** và tự quét. WizTree hiển thị tổng dung lượng, đã dùng và còn trống; không mở CSV. Đã bỏ trình xem cơ bản. Xem [cách dùng](WIZTREE.md). Khôi phục và Công cụ Windows hiện trực tiếp; cuối thanh bên có cập nhật và trạng thái phiên bản, đã bỏ phần đăng ký lệnh.
+**Dung lượng ổ đĩa** tự cài WizTree nếu chưa có, mở trực tiếp **ổ C:** và tự quét. WizTree hiển thị tổng dung lượng, đã dùng và còn trống; không mở CSV. Đã bỏ trình xem cơ bản. Xem [cách dùng](WIZTREE.md). Khôi phục và Công cụ Windows hiện trực tiếp; đã bỏ mục Hiệu năng và pin cùng trang cập nhật WinTune. Mở lại bằng lệnh để tải bản stable mới nhất đã xác minh.
 
-# WinTune VI 0.16.1
+# WinTune VI 0.16.2
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
@@ -16,6 +16,8 @@ Win11Debloat. Không có preset tăng FPS/RAM hoặc thay bảo mật để gi�
 ## Mở ứng dụng
 
 **Online — mở bằng một dòng trên máy mới:**
+
+Sao chép cả dòng, gồm **| iex** ở cuối. Chỉ nhập irm kèm địa chỉ sẽ hiện mã nguồn và chưa mở ứng dụng.
 
 PowerShell:
 
@@ -49,7 +51,7 @@ khi chạy để tự chọn; không đồng nhất hai mức xác minh.
 **Tùy chọn mở offline bằng tên wintune:** chạy Cai-WinTune.cmd một lần,
 xác nhận thêm User PATH rồi mở CMD/PowerShell mới từ Start. Đăng ký lệnh
 là tùy chọn riêng, không bắt buộc khi dùng online. Không tự tải cập nhật
-trong app; màn hình cập nhật vẫn cần xác nhận của người dùng.
+trong app; đã bỏ màn hình cập nhật riêng. Mở lại bằng lệnh online khi muốn dùng bản mới.
 
 **Muốn dùng portable ngay:**
 
@@ -83,8 +85,7 @@ Trong CMD tại thư mục app: `wintune`, `wintune demo`, `wintune test`.
 | Startup | Các lệnh phổ biến HKCU Run, giữ nguyên String/ExpandString, phục hồi khi không xung đột. Không bao gồm mọi nguồn tự chạy, không đóng app đang chạy |
 | WinGet | 17 ứng dụng thông dụng trong 4 nhóm, ô có cùng kích thước và mô tả công dụng. Tìm tên/mã, giữ lựa chọn khi lọc; nút cài và ô đồng ý luôn nhìn thấy. Kiểm tra WinGet/ID/nguồn bên trong; không có menu cập nhật/check/list |
 | Dung lượng ổ đĩa | Tự chuẩn bị WizTree và mở/quét trực tiếp ổ C:. Xem tổng/đã dùng/còn trống, cây thư mục, bản đồ màu và tệp lớn; không tự xóa tệp |
-| Repair | SFC /scannow, DISM CheckHealth/ScanHealth/RestoreHealth từng lệnh riêng, chkdsk chỉ đọc ổ Windows. Không /f /r /scan, không hẹn boot, không tự chạy chuỗi hoặc restart |
-| Power Plan | Đọc GUID thực có; đổi plan đã chọn và hoàn tác có điều kiện. Không thêm Ultimate, không sửa tham số sâu; thay đổi điện/nhiệt/pin tùy plan |
+| Sửa lỗi Windows | Ba thẻ dễ đọc: bước 1 chuẩn bị tệp để sửa Windows (DISM RestoreHealth), bước 2 kiểm tra/sửa tệp đang dùng (SFC), kiểm tra ổ Windows chỉ đọc khi cần. Mỗi bước có khi nên dùng, tác động, kết quả và việc nên làm tiếp. Không tự chạy chuỗi hoặc khởi động lại |
 | Thông tin máy | CPU/GPU/RAM/bo mạch/Windows/ổ/thiết bị lỗi/Defender/Firewall/TPM/Secure Boot do Windows cung cấp; lỗi/quyền/thiếu dữ liệu hiển thị rõ. Không chỉ số sức khỏe giả |
 | Restore Point | Checkpoint-Computer theo yêu cầu; điều kiện System Protection/tần suất của Windows. Không tự bật Protection, không bảo đảm file cá nhân. Mở System Restore riêng |
 | Mở công cụ Windows | Chỉ giữ công cụ cần thiết như Quản lý thiết bị, nhật ký Windows có bản tóm tắt. Các đường tắt có sẵn trong Settings đã bỏ khỏi thanh trái |

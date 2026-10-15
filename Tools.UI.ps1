@@ -62,7 +62,7 @@ function Format-SystemOverview($Data) {
 }
 function Get-VisibleTools {
  # Retain internal readers for validated installation/history, not extra menu items.
- Get-ToolDefinitions | Where-Object {$_.Id -notin @('tempscan','tempdelete','recycle','restorepoint','wingetcheck','wingetsearch','wingetlist','wingetupdates','wingetshow','wingetupgrade')}
+ Get-ToolDefinitions | Where-Object {$_.Id -notin @('tempscan','tempdelete','recycle','restorepoint','wingetcheck','wingetsearch','wingetlist','wingetupdates','wingetshow','wingetupgrade','powerlist','powerset','powerundo','sfc','dismcheck','dismscan','dismrestore','diskcheck')}
 }
 function New-ToolsWindow([string]$Group) {
  Initialize-Tools (Join-Path $script:DataRoot 'tools') ([bool]($script:IsSimulation -or $script:WriteBlocked)) $script:UserId
@@ -78,7 +78,6 @@ function New-ToolsWindow([string]$Group) {
  <ScrollViewer x:Name="ToolSetup" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" MaxHeight="320"><StackPanel Margin="0,0,10,0"><TextBlock x:Name="ToolTitle" FontSize="22" FontWeight="Bold"/><TextBlock x:Name="ToolDescription" Margin="0,12,0,12"/><TextBlock x:Name="ToolSource" Foreground="{DynamicResource Theme.MutedBrush}" Margin="0,0,0,12"/>
  <StackPanel x:Name="SoftwareOptions"><TextBlock Text="Chọn ứng dụng bạn muốn cài. Không có ứng dụng nào được chọn hoặc cài sẵn."/><TextBlock Text="Tìm phần mềm" FontSize="12" Margin="0,12,0,0" Foreground="{DynamicResource Theme.MutedBrush}"/><Grid Margin="0,6,0,8"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="190"/></Grid.ColumnDefinitions><TextBox x:Name="SoftwareSearch" ToolTip="Tìm theo tên hoặc mã ứng dụng" Margin="0,0,12,0"/><ComboBox x:Name="SoftwareCategory" Grid.Column="1"/></Grid><TextBlock x:Name="SoftwareSelected" FontSize="12" Foreground="{DynamicResource Theme.MutedBrush}" Margin="0,4,0,12"/><ScrollViewer x:Name="SoftwareGallery" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" MaxHeight="280"><UniformGrid x:Name="SoftwareSuggestions" Columns="3" Margin="-5,6,-5,12"/></ScrollViewer><TextBox x:Name="ToolInput" Visibility="Collapsed" Foreground="{DynamicResource Theme.TextBrush}" Background="{DynamicResource Theme.ButtonBrush}"/><CheckBox x:Name="SourceConsent" Content="Tôi đồng ý điều khoản của kho ứng dụng WinGet" Foreground="{DynamicResource Theme.TextBrush}" Margin="0,0,0,8"/><CheckBox x:Name="PackageConsent" Content="Tôi đã xem và đồng ý điều khoản của ứng dụng đã chọn" Foreground="{DynamicResource Theme.TextBrush}"/><CheckBox x:Name="SilentConsent" Visibility="Collapsed"/><WrapPanel Margin="0,12,0,0"><Button x:Name="AppTerms" Content="Xem thông tin ứng dụng đã chọn"/><Button x:Name="SourceTerms" Content="Điều khoản kho ứng dụng"/></WrapPanel></StackPanel>
  <StackPanel x:Name="TempOptions"><TextBlock Text="Chọn file từ lần quét mới nhất; không chọn sẵn. Quét giới hạn 10.000 file, hiển thị 200 file mỗi trang."/><ListBox x:Name="TempFiles" Background="{DynamicResource Theme.WindowBrush}" BorderThickness="0" MaxHeight="160" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/><WrapPanel><Button x:Name="TempPrev" Content="Trang trước"/><Button x:Name="TempNext" Content="Trang sau"/><TextBlock x:Name="TempPageLabel" VerticalAlignment="Center"/></WrapPanel></StackPanel>
- <StackPanel x:Name="PowerOptions"><TextBlock Text="Bấm Xem chế độ đang dùng ở bên trái và đọc danh sách trước. Sau đó chọn chế độ muốn dùng ở đây." TextWrapping="Wrap"/><ComboBox x:Name="PowerPlans" Margin="0,8,0,0"/><TextBlock x:Name="PowerEffect" TextWrapping="Wrap" Foreground="{DynamicResource Theme.MutedBrush}" Margin="0,8,0,0"/></StackPanel>
  <Button x:Name="RunTool" Content="Xem trước và thực hiện" Margin="0,12,0,0"/>
  </StackPanel></ScrollViewer>
  <Expander Foreground="{DynamicResource Theme.TextBrush}" x:Name="ToolProgress" Grid.Row="1" Header="Kết quả thực hiện" IsExpanded="True" Margin="0,8,0,0"><Expander.HeaderTemplate><DataTemplate><TextBlock Text="{Binding}" Foreground="{DynamicResource Theme.TextBrush}"/></DataTemplate></Expander.HeaderTemplate><TextBox x:Name="ToolOutput" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Background="{DynamicResource Theme.InputBrush}" Foreground="{DynamicResource Theme.TextBrush}" Padding="12"/></Expander>
@@ -98,7 +97,6 @@ function New-ToolsWindow([string]$Group) {
  $w.FindName('ToolGroup').Add_SelectionChanged({Render-ToolsList})
  $w.FindName('ToolList').Add_SelectionChanged({param($sender,$args) if ($null -ne $sender.SelectedItem) {Show-ToolDetail $sender.SelectedItem.Tag}})
  $w.FindName('RunTool').Add_Click({Invoke-ToolsSelection})
- $w.FindName('PowerPlans').Add_SelectionChanged({$item=$script:ToolsWindow.FindName('PowerPlans').SelectedItem;if ($item) {$script:ToolsWindow.FindName('PowerEffect').Text=$item.ToolTip}})
  $catalogData=Get-Content "$PSScriptRoot/software-catalog.json" -Raw -Encoding UTF8 | ConvertFrom-Json
  Initialize-SoftwarePicker $w $catalogData
  $w.FindName('ToolInput').Add_TextChanged({$script:ToolsWindow.FindName('PackageConsent').IsChecked=$false;$script:ToolsWindow.FindName('SilentConsent').IsChecked=$false})
@@ -133,7 +131,6 @@ function New-ToolsWindow([string]$Group) {
   $w.FindName('ToolStatus').Text='Chọn ứng dụng ở trên. Chưa cài gì.'
   Pin-SoftwareActions $w
  }
- if ($Group -eq 'Tối ưu') {$w.Title='WinTune VI — Hiệu năng và pin';$w.FindName('ToolsHeading').Text='Hiệu năng và pin';$w.FindName('ToolsIntro').Text=$(if ($ToolSimulation) {'MÔ PHỎNG — '} else {''})+'Chọn cách Windows cân đối tốc độ xử lý và điện tiêu thụ. Xem chế độ đang dùng trước; chỉ đổi khi bạn xác nhận.'}
  return $w
 }
 function Render-ToolsList {
@@ -149,7 +146,6 @@ function Show-ToolDetail($Tool) {
  if ($Tool.Id -eq 'wingetinstall') {$w.FindName('ToolTitle').Text='Chọn ứng dụng để cài';$w.FindName('ToolDescription').Text='Cài từ kho WinGet của Microsoft. Ứng dụng có thể mở trình cài đặt riêng. Lưu công việc trước khi cài; không tự cài khi mở WinTune.'}
  $w.FindName('SoftwareOptions').Visibility=if ($Tool.Id -like 'winget*' -and $Tool.Id -ne 'wingetcheck') {'Visible'} else {'Collapsed'}
  $w.FindName('TempOptions').Visibility=if ($Tool.Id -eq 'tempdelete') {'Visible'} else {'Collapsed'}
- $w.FindName('PowerOptions').Visibility=if ($Tool.Id -eq 'powerset') {'Visible'} else {'Collapsed'}
  $w.FindName('RunTool').IsEnabled=$null -eq $script:ToolJob -or $script:ToolJob.Process.HasExited
  $w.FindName('RunTool').Content=if ($Tool.Id -eq 'wingetinstall') {'Xem trước và cài ứng dụng'} else {'Xem trước và thực hiện'}
  if ($Tool.Id -eq 'wingetinstall') {
@@ -164,7 +160,6 @@ function Get-ToolsParameters {
  $ids=@($inputText -split '[,\r\n]+' | ForEach-Object {$_.Trim()} | Where-Object {$_});$ids+=@($s.Packages.Keys);$ids=@($ids | Select-Object -Unique)
  $p=[pscustomobject]@{Query=$inputText;PackageId=$(if ($ids.Count) {$ids[0]} else {''});PackageIds=$ids;SourceAgreed=[bool]$w.FindName('SourceConsent').IsChecked;PackageAgreed=[bool]$w.FindName('PackageConsent').IsChecked;SilentAgreed=[bool]$w.FindName('SilentConsent').IsChecked;Files=@($s.TempInventory | Where-Object {$s.TempSelection.ContainsKey($_.Path)});Guid='';Before=$s.PowerState}
  if ($t.Id -in @('wingetinstall','wingetupgrade','wingetshow')) {if (-not $ids.Count -or $ids.Count -gt 20) {throw 'Chọn 1–20 package ID. Không tìm mơ hồ để cài.'};foreach ($id in $ids) {if ($id -notmatch '^[A-Za-z0-9][A-Za-z0-9._+-]{2,127}$') {throw 'Package ID không hợp lệ.'}}}
- if ($t.Id -eq 'powerset') {$selected=$w.FindName('PowerPlans').SelectedItem;if ($null -eq $selected) {throw 'Đọc chế độ nguồn, chọn plan trước.'};$p.Guid=$selected.Tag}
  if ($t.Id -eq 'tempdelete' -and -not $p.Files.Count) {throw 'Quét trước và chọn file cụ thể.'}
  return $p
 }
@@ -178,7 +173,7 @@ function Invoke-ToolsSelection {
    $names=@($script:ToolsState.Software | Where-Object {$_.Id -in $p.PackageIds} | Select-Object -ExpandProperty Title)
    $text+="`n`nỨng dụng sẽ cài:`n• "+($names -join "`n• ")+"`n`nBạn đã đồng ý điều khoản. Trình cài đặt có thể hỏi thêm thông tin. Không tự cập nhật các ứng dụng khác hoặc khởi động lại Windows."
    if ('UniKey.UniKey' -cin $p.PackageIds) {$text+="`n`nUniKey: bản x64 4.6.230919 từ unikey.org, chạy dạng portable. Bản mới hơn trong kho chỉ hỗ trợ ARM64. Nếu kho không còn bản này, WinTune báo lỗi và không đổi sang bản khác."}
-  } elseif ($t.Id -eq 'powerset') {$item=$script:ToolsWindow.FindName('PowerPlans').SelectedItem;$text+="`n`nSẽ chuyển sang: "+$item.Content+"`n"+$item.ToolTip+"`nCó lưu chế độ cũ để quay lại. Không tự sửa thời gian ngủ hoặc cài thêm chế độ mới."} else {$text+="`n`nTham số sẽ thực hiện:`n"+($p | ConvertTo-Json -Depth 6)}
+  } else {$text+="`n`nTham số sẽ thực hiện:`n"+($p | ConvertTo-Json -Depth 6)}
   if ($t.Id -eq 'recycle') {$bytes=Get-RecycleBytes;$text+="`nDung lượng Thùng rác ước tính: $bytes byte. Xóa vĩnh viễn; không hoàn tác."}
   if ($t.Id -eq 'tempdelete') {$text+="`nDung lượng file đã chọn ước tính: $((($p.Files | Measure-Object Bytes -Sum).Sum)) byte. Không khôi phục dữ liệu."}
   if ($t.Mutates -or $t.Admin) {if (-not (Show-TextDialog 'Xem trước công cụ' $text $true 'Tôi xác nhận thao tác này')) {return}}
@@ -201,7 +196,6 @@ function Poll-ToolsJob {
    $script:ToolsState.TempInventory=@($r.Result.Files);$script:ToolsState.TempSelection.Clear();$script:ToolsState.TempPage=0;Render-TempPage
    $w.FindName('ToolOutput').Text="Đã quét $($script:ToolsState.TempInventory.Count) file; ước tính $((($script:ToolsState.TempInventory | Measure-Object Bytes -Sum).Sum)) byte. Không tự chọn/xóa. Lỗi đọc: $($r.Result.Errors); giới hạn quét: $($r.Result.Limited)."
   }
-  if ($script:ToolJob.Id -eq 'powerlist') {$script:ToolsState.PowerState=$r.Result.Active;$list=$w.FindName('PowerPlans');$list.Items.Clear();foreach ($p in @($r.Result.Plans)) {$info=Get-PowerExplanation $p.Guid $p.Title;$entry=New-Object Windows.Controls.ComboBoxItem;$entry.Content=$info.Name+$(if ($p.Guid -eq $r.Result.Active) {' — đang dùng'} else {''});$entry.ToolTip=$info.Effect;$entry.Tag=$p.Guid;$null=$list.Items.Add($entry);if ($p.Guid -eq $r.Result.Active) {$list.SelectedItem=$entry}}}
  }
  if ($script:ToolJob.Id -in @('sfc','dismcheck','dismscan','dismrestore','diskcheck')) {$conclusion=Get-RepairConclusion $r;$w.FindName('ToolStatus').Text=$conclusion;$w.FindName('ToolOutput').Text="KẾT LUẬN`n$conclusion`n`nCHI TIẾT DO WINDOWS TRẢ VỀ`n"+(Format-ToolResult $r)}
  if ($script:ToolJob.Id -eq 'wingetinstall' -and $r.PSObject.Properties['Result'] -and $r.Result.PSObject.Properties['Rows']) {
@@ -220,5 +214,6 @@ function Render-TempPage {
  $w.FindName('TempPrev').IsEnabled=$s.TempPage -gt 0;$w.FindName('TempNext').IsEnabled=($s.TempPage+1)*200 -lt $s.TempInventory.Count
 }
 function Open-Tools([string]$Group) {
+ if ($Group -eq 'Sửa lỗi') {Open-CareRepair;return}
  try {$w=New-ToolsWindow $Group;$null=$w.ShowDialog()} catch {Message $_.Exception.Message} finally {$script:ToolsWindow=$null}
 }

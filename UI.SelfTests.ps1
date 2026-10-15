@@ -142,9 +142,9 @@ $Window.FindName('Profile').SelectedIndex=0
 . "$PSScriptRoot/Coverage.UI.Tests.ps1"
 . "$PSScriptRoot/FullTweaks.UI.Tests.ps1"
 . "$PSScriptRoot/Software.Layout.Tests.ps1"
-. "$PSScriptRoot/Distribution.UI.Tests.ps1"
 . "$PSScriptRoot/UX.UI.Tests.ps1"
 . "$PSScriptRoot/Storage.Navigation.Tests.ps1"
+. "$PSScriptRoot/Care.UI.Tests.ps1"
 . "$PSScriptRoot/UnifiedTweaks.UI.Tests.ps1"
 Write-Output "UI SELF TESTS PASSED: $script:UiPass (WPF controls, isolated providers; not a substitute for screen observation)."
 $Window.Close()

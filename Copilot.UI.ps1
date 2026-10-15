@@ -1,6 +1,6 @@
 ﻿function Set-MainActionBusy([bool]$Busy) {
     $script:MainActionBusy=$Busy
-    $names=@('FullFeatures','ManageApps','ManageStartup','Software','Cleanup','Repair','Power','Profile','Clear','Refresh','BackupTools','RestoreWindows','Distribution','Undo')
+    $names=@('FullFeatures','ManageApps','ManageStartup','Software','Cleanup','Repair','Profile','Clear','Refresh','BackupTools','RestoreWindows','Undo')
     if ($Busy) {
         $script:MainActionControls=@{}
         foreach ($name in $names) {$control=$Window.FindName($name);$script:MainActionControls[$name]=$control.IsEnabled;$control.IsEnabled=$false}

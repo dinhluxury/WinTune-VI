@@ -43,9 +43,9 @@ GỠ ỨNG DỤNG VÀ CÔNG CỤ
 Gỡ ứng dụng: tìm, đọc công dụng/phân loại màu, chọn đúng app cần gỡ.
 Không coi mọi app là rác. Store/Edge/bảo mật/game runtime/hệ thống được bảo vệ.
 Ứng dụng khởi động: phạm vi HKCU Run, không bao gồm mọi nguồn tự khởi động.
-Dọn dẹp: quét trước, chọn file TEMP cũ; Thùng rác có xác nhận riêng.
-Sửa lỗi: SFC/DISM/kiểm tra ổ từng lệnh, kết luận tiếng Việt theo dữ liệu thật.
-Chế độ nguồn: đọc chế độ có sẵn trước khi đổi. Không hứa tăng FPS hoặc RAM.
+Dung lượng ổ đĩa: tự mở WizTree để quét trực tiếp ổ C:, xem cây thư mục và bản đồ màu.
+Sửa lỗi: bắt đầu bước 1 rồi làm bước 2. Mỗi bước ghi khi nên dùng, việc sẽ thực hiện, kết quả và việc nên làm tiếp. Kiểm tra ổ chỉ đọc là việc thêm khi cần.
+Đã bỏ mục Hiệu năng và pin. Các tùy chọn nguồn có sẵn trong Windows.
 Tác vụ dài chạy riêng; đợi kết quả trước khi đóng ứng dụng hoặc tắt máy.
 
 HOÀN TÁC VÀ KHÔI PHỤC
@@ -67,17 +67,6 @@ README.md: hướng dẫn đầy đủ. FEATURE_MATRIX.md: nguồn và quyết �
 CHANGELOG-v0.15.md: thay đổi, file sửa và giới hạn.
 KIEM-THU.md, TIEN-DO.md và evidence: kết quả kiểm tra thực tế.
 CẬP NHẬT VÀ DUNG LƯỢNG Ổ ĐĨA
-Cuối thanh bên có Cập nhật WinTune: kiểm tra phiên bản khi bấm, cho biết
-đang dùng bản mới nhất hay có bản mới. Xác nhận trước tải, không tự mở bản mới.
-Đã bỏ phần đăng ký lệnh wintune khỏi giao diện. Dùng lệnh online trong README.
-Dung lượng ổ đĩa tự cài WizTree nếu chưa có, mở trực tiếp ổ C: để WizTree
-tự quét. Ô Select hiện C:, không hiện CSV. Phía trên có tổng dung lượng,
-đã dùng và còn trống. Có thể cần chấp nhận UAC bình thường của Windows.
-Nguồn phát hành dinhluxury/WinTune-VI và khóa công khai đã ghim. Bộ ký local
-chỉ tải được online sau khi tác giả phát hành stable. Xem DISTRIBUTION.md;
-PUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.
-Không chạy đăng ký/cài đặt thật để kiểm thử tự động.
-
-0.15.1 dùng PowerShell/WPF cho lối mở chính và wintune.cmd.
-Đăng ký mới chỉ User PATH, không tạo App Paths; đăng ký EXE cũ cần bỏ trước.
-Không tắt Application Control. EXE chưa ký chỉ dùng khi Windows cho phép.
+Không có trang cập nhật WinTune riêng. Đóng bản cũ rồi chạy lại nguyên dòng:
+irm https://dinhluxury.github.io/WinTune-VI | iex
+Lệnh kiểm tra và mở bản stable mới nhất đã xác minh. Không bỏ phần | iex.

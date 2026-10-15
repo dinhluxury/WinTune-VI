@@ -30,7 +30,7 @@ function Update-FullRowHighlight {
 }
 function Set-FullJobBusy([bool]$Busy) {
  foreach($name in @('FullApply','FullUndo','FullInstalled','FullRunOne')){$script:FullWindow.FindName($name).IsEnabled=-not $Busy}
- if($Busy){$script:FullMainControls=@{};foreach($name in @('ManageApps','ManageStartup','Software','Cleanup','Repair','Power','BackupTools','RestoreWindows','Distribution','Undo','Preview','FullFeatures')){$control=$script:Window.FindName($name);$script:FullMainControls[$name]=$control.IsEnabled;$control.IsEnabled=$false}}
+ if($Busy){$script:FullMainControls=@{};foreach($name in @('ManageApps','ManageStartup','Software','Cleanup','Repair','BackupTools','RestoreWindows','Undo','Preview','FullFeatures')){$control=$script:Window.FindName($name);$script:FullMainControls[$name]=$control.IsEnabled;$control.IsEnabled=$false}}
  elseif($script:FullMainControls){foreach($name in $script:FullMainControls.Keys){$script:Window.FindName($name).IsEnabled=$script:FullMainControls[$name]}}
 }
 function Stop-FullTweaksUI {

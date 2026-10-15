@@ -6,9 +6,7 @@ $event=Convert-WindowsEventSummary $fixture;$rows=@(Group-WindowsEventSummaries 
 $lw=New-WindowsLogsWindow;$lw.FindName('LogRows').ItemsSource=$rows;$lw.FindName('LogRows').SelectedIndex=0;$lw.FindName('LogsStatus').Text='DỮ LIỆU KIỂM THỬ — 2 bản ghi mẫu, không phải lỗi của máy';$lw.Show();$lw.UpdateLayout()
 Assert-UI ($lw.FindName('LogMeaning').Text.Contains('ExampleEditor.exe') -and $lw.FindName('LogSubject').Text.Contains('2 bản ghi') -and $lw.FindName('LogAdvice').Parent -is [Windows.Controls.StackPanel]) 'Selected log immediately shows app, repeated records and advice without expanding details'
 Save-SoftwareRendering $lw 'logs-actionable';$lw.Close();$script:LogsWindow=$null
-$pw=New-ToolsWindow 'Tối ưu';$pw.Show();$pw.FindName('ToolOutput').Text=Format-PowerList (Get-PowerList);$pw.UpdateLayout()
-Assert-UI ($pw.FindName('ToolsHeading').Text -eq 'Hiệu năng và pin' -and $pw.FindName('ToolOutput').Text.Contains('Cân bằng') -and $null -eq $ToolJob) 'Power explanation shows concrete effects before any mode change'
-Save-SoftwareRendering $pw 'power-explained';$pw.Close();$script:ToolsWindow=$null
+Assert-UI ($null -eq $Window.FindName('Power')) 'The redundant performance and battery menu is removed'
 $sw=New-ToolsWindow 'Phần mềm';$sw.Show();$sw.UpdateLayout()
 Assert-UI ($sw.FindName('ToolProgress').Visibility -eq 'Collapsed' -and $sw.FindName('ToolSetup').ActualHeight -gt 250) 'Empty progress area leaves room for the software catalog'
 Show-SoftwareOutput;$sw.FindName('ToolOutput').Text='DỮ LIỆU KIỂM THỬ — tiến trình cài đặt';$sw.UpdateLayout();$expanded=$sw.FindName('ToolSetup').ActualHeight;$sw.FindName('ToolProgress').IsExpanded=$false;$sw.UpdateLayout()

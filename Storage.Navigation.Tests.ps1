@@ -1,7 +1,7 @@
 ﻿# Sidebar click -> automatic simulated install/scan/import, without another action.
 function Has-CollapsibleAncestor($Control) {for ($p=$Control.Parent;$null -ne $p;$p=$p.Parent) {if ($p -is [Windows.Controls.Expander]) {return $true}};return $false}
 foreach ($name in @('BackupTools','RestoreWindows','DeviceManager','EventViewer')) {Assert-UI (-not (Has-CollapsibleAncestor $Window.FindName($name))) "$name stays outside a collapsible sidebar section"}
-Assert-UI ($Window.FindName('Distribution').Parent -eq $Window.FindName('ThemeChoice').Parent) 'WinTune information and update entry lives with appearance settings in the footer'
+Assert-UI ($null -eq $Window.FindName('Distribution') -and $null -eq (Get-Command Open-DistributionCenter -ErrorAction SilentlyContinue)) 'The app has no manual WinTune update page or sidebar entry'
 Assert-UI ($null -eq (Get-Command New-StorageWindow -ErrorAction SilentlyContinue)) 'Basic storage viewer is no longer loaded by the app'
 $savedToolRoot=$ToolRoot;$savedDataRoot=$DataRoot
 $script:DataRoot=Join-Path $savedDataRoot 'automatic-wiztree';$null=New-Item -ItemType Directory -Path $DataRoot -Force

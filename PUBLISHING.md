@@ -1,4 +1,4 @@
-﻿> Bản tiếp theo là v0.16.1. Kiểm thử bằng Run-Tests.ps1, đóng gói với -PublicRelease, chuẩn bị/ký đủ sáu asset, đưa mã nguồn và tag mới lên GitHub. Không thay asset hoặc tag của v0.16.0 đã phát hành.
+﻿> Bản tiếp theo là v0.16.2. Kiểm thử bằng Run-Tests.ps1, đóng gói với -PublicRelease, chuẩn bị/ký đủ sáu asset, đưa mã nguồn và tag mới lên GitHub. Không thay asset hoặc tag của v0.16.0 đã phát hành.
 
 # Đưa WinTune VI lên GitHub
 
