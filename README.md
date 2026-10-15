@@ -1,8 +1,8 @@
-﻿> WinTune VI 0.16.2: danh mục lưu 113 mục (111 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở **Tùy chỉnh Windows** để xem ngay toàn bộ danh sách. Bấm tên hoặc khoảng trống của từng dòng để đọc chi tiết; không cần nút Chi tiết. Các bộ Tối thiểu/Tiêu chuẩn/Nâng cao có 8/19/31 mục trên Windows hiện tại. Chọn thêm, bỏ chọn hoặc đổi giá trị sẽ tự chuyển sang **Tùy chỉnh**. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
+﻿> WinTune VI 0.16.3: danh mục lưu 113 mục (111 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở **Tùy chỉnh Windows** để xem ngay toàn bộ danh sách. Bấm tên hoặc khoảng trống của từng dòng để đọc chi tiết; không cần nút Chi tiết. Các bộ Tối thiểu/Tiêu chuẩn/Nâng cao có 8/19/31 mục trên Windows hiện tại. Chọn thêm, bỏ chọn hoặc đổi giá trị sẽ tự chuyển sang **Tùy chỉnh**. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
 
 **Dung lượng ổ đĩa** tự cài WizTree nếu chưa có, mở trực tiếp **ổ C:** và tự quét. WizTree hiển thị tổng dung lượng, đã dùng và còn trống; không mở CSV. Đã bỏ trình xem cơ bản. Xem [cách dùng](WIZTREE.md). Khôi phục và Công cụ Windows hiện trực tiếp; đã bỏ mục Hiệu năng và pin cùng trang cập nhật WinTune. Mở lại bằng lệnh để tải bản stable mới nhất đã xác minh.
 
-# WinTune VI 0.16.2
+# WinTune VI 0.16.3
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).

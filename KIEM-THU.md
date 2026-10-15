@@ -1,4 +1,6 @@
-﻿> Bản 0.16.2: xem [kiểm tra màn hình sửa lỗi và việc bỏ menu trùng lặp](KIEM-THU-v0.16.2.md). Các kết quả cũ bên dưới được giữ làm lịch sử.
+﻿> Bản 0.16.3: xem [kiểm tra việc thu gọn Tổng quan](KIEM-THU-v0.16.3.md).
+
+> Bản 0.16.2: xem [kiểm tra màn hình sửa lỗi và việc bỏ menu trùng lặp](KIEM-THU-v0.16.2.md). Các kết quả cũ bên dưới được giữ làm lịch sử.
 
 # Bằng chứng và kiểm tra còn lại
 

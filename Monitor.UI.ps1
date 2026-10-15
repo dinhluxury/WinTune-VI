@@ -103,7 +103,6 @@ function Show-MonitorSample($Sample) {
     $time=$Sample.Timestamp.ToLocalTime().ToString('HH:mm:ss')
     $mode=if ($script:IsSimulation) {'MÔ PHỎNG • '} else {''}
     Set-MonitorText 'MonitorStatus' ($mode+"Đã lấy mẫu lúc $time • Chu kỳ mục tiêu 2 giây")
-    Set-MonitorText 'MonitorIssues' ($Sample.Issues -join "`n")
 }
 function Set-MainPage([ValidateSet('Dashboard','Features')][string]$Page) {
     $state=$script:MonitorState;$changed=$state.Page -ne $Page;$state.Page=$Page

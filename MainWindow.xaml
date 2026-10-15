@@ -461,9 +461,6 @@
               </StackPanel>
             </StackPanel>
           </Border>
-          <Expander Header="Thông tin bộ đếm chưa khả dụng" Foreground="{DynamicResource Theme.MutedBrush}" Margin="0,10,0,8">
-            <TextBlock x:Name="MonitorIssues" Margin="0,10,0,0" FontSize="12" />
-          </Expander>
         </StackPanel>
       </ScrollViewer>
       <Grid x:Name="FeaturesPage" Grid.Row="1">
