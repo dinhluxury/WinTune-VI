@@ -10,8 +10,22 @@ if ($null -eq $script:DistributionConfig) {
 } else {
     Assert-UI ($dw.FindName('DistributionCheck').IsEnabled -and $dw.FindName('DistributionSource').Text.Contains($script:DistributionConfig.Repository) -and $null -eq $script:DistributionJob) 'Configured publisher enables an explicit check without starting a network task'
 }
-$script:DialogResponse=$false;$dw.FindName('DistributionUnregister').RaiseEvent([Windows.RoutedEventArgs]::new([Windows.Controls.Primitives.ButtonBase]::ClickEvent))
-Assert-UI ($null -eq $script:DistributionJob -and $LastDialogText.Contains('Giữ ứng dụng')) 'Canceling command removal starts no action'
+Assert-UI ($null -eq $dw.FindName('DistributionRegister') -and $null -eq $dw.FindName('DistributionUnregister') -and $null -eq $dw.FindName('DistributionRecover') -and $null -eq $dw.FindName('DistributionFolder')) 'Update page has no command registration or PATH controls'
+Assert-UI ($dw.FindName('DistributionState').Text -eq 'Chưa kiểm tra cập nhật' -and $dw.Height -le 500) 'Update page starts with an honest unchecked status and compact layout'
+$running=$script:DistributionRunningVersion
+$latest=[pscustomobject]@{Status='Current';Manifest=[pscustomobject]@{Version=$running};CurrentVersion=$running}
+Set-DistributionCheckResult $latest
+Assert-UI ($dw.FindName('DistributionState').Text.Contains('mới nhất') -and -not $dw.FindName('DistributionInstall').IsEnabled -and $dw.FindName('DistributionChecked').Text.Contains('Đã kiểm tra')) 'Verified matching running version shows latest with a check time'
+foreach ($mode in @('Dark','Light')) {Set-AppThemeMode $mode $false;Save-SoftwareRendering $dw ('update-latest-'+$mode.ToLowerInvariant())}
+$next=([version]$running).Major.ToString()+'.'+(([version]$running).Minor+1).ToString()+'.0'
+$available=[pscustomobject]@{Status='Available';Manifest=[pscustomobject]@{Version=$next;Size=1};CurrentVersion=$running;ReleaseUrl='https://github.com/fixture/WinTune/releases/tag/v'+$next}
+Set-DistributionCheckResult $available
+$script:DialogResponse=$false;$dw.FindName('DistributionInstall').RaiseEvent([Windows.RoutedEventArgs]::new([Windows.Controls.Primitives.ButtonBase]::ClickEvent))
+Assert-UI ($dw.FindName('DistributionInstall').IsEnabled -and $LastDialogText.Contains($next) -and $null -eq $DistributionJob) 'Canceling an available update starts no download or install'
+$prepared=[pscustomobject]@{Status='Current';Manifest=[pscustomobject]@{Version=$next};CurrentVersion=$next;PreparedPath='C:\Fixture\Prepared'}
+Set-DistributionCheckResult $prepared
+Assert-UI ($dw.FindName('DistributionState').Text -eq 'Bản cập nhật đã sẵn sàng' -and -not $dw.FindName('DistributionInstall').IsEnabled -and $dw.FindName('DistributionOpenFolder').Visibility -eq 'Visible') 'Prepared newer app is presented as ready, not as the currently running version'
+Set-DistributionCheckResult $latest
 Start-DistributionJob Check
 Assert-UI ($null -ne $script:DistributionJob -and $dw.FindName('DistributionCancel').IsEnabled) 'Distribution work runs in a separate PowerShell pipeline'
 $frame=New-Object Windows.Threading.DispatcherFrame;$pulse=New-Object Windows.Threading.DispatcherTimer;$pulse.Interval=[TimeSpan]::FromMilliseconds(50);$script:DistPulse=0

@@ -203,7 +203,7 @@ function Get-LatestJournal {
 function Get-FeatureState($Feature) {
     if (-not (Test-FeatureSupported $Feature)) { return 'Không hỗ trợ bản Windows này' }
     if ($Feature.Kind -eq 'Settings') { return 'Mở cài đặt — ứng dụng không tự áp dụng' }
-    if ($Feature.Kind -eq 'Action') {return 'Xem ứng dụng đang cài và chọn gỡ riêng; không tự áp dụng'}
+    if ($Feature.Kind -eq 'Action') {return 'Chưa kiểm tra ứng dụng. Đánh dấu rồi xem trước và chạy để gỡ trực tiếp.'}
     $matches=0; $missing=0
     foreach ($c in @(Get-FeatureChanges $Feature)) {
         $current = Read-RegistryValue $c

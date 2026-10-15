@@ -1,8 +1,8 @@
 ﻿# Tiến độ bản public
 
-WinTune VI 0.15.2. Mã nguồn và manifest ký đã được chuẩn bị local cho
+WinTune VI 0.16.0. Mã nguồn và manifest ký đã được chuẩn bị local cho
 repository dinhluxury/WinTune-VI. Không tự upload hoặc phát hành.
 
-Xem CHANGELOG-v0.15.2.md và KIEM-THU.md về kiểm thử/giới hạn;
+Xem CHANGELOG-v0.16.0.md và KIEM-THU.md về kiểm thử/giới hạn;
 PUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.
 Nhật ký/ảnh kiểm thử riêng của máy không được phân phối trong gói public.

@@ -14,18 +14,7 @@ Assert-UI ($ToolsState.Packages.Count -eq 0 -and $ToolJob -eq $null -and $tw.Fin
 $tw.FindName('PackageConsent').IsChecked=$true;$tw.FindName('SilentConsent').IsChecked=$true;$tw.FindName('ToolInput').Text='7zip.7zip'
 Assert-UI (-not $tw.FindName('PackageConsent').IsChecked -and -not $tw.FindName('SilentConsent').IsChecked) 'Changing package input clears previous package/silent consent'
 $tw.FindName('ToolInput').Text=''
-$ToolsWindow.FindName('ToolGroup').SelectedItem='Dọn dẹp'
-($ToolsWindow.FindName('ToolList').Items | Where-Object {$_.Tag.Id -eq 'tempdelete'}).IsSelected=$true
-$script:DialogResponse=$false
-$ToolsState.TempInventory=@($ToolMockFiles);$ToolsState.TempSelection[$ToolMockFiles[0].Path]=$true
-Invoke-ToolsSelection
-Assert-UI ($null -eq $ToolJob -and $LastDialogText -match 'Không (hoàn tác|khôi phục)' -and $ToolMockWrites -eq 0) 'Cancel cleanup preview starts no worker and deletes nothing'
-$script:ToolsState.TempInventory=@(1..401 | ForEach-Object {[pscustomobject]@{Path=('C:\Demo\'+$_+'.tmp');Bytes=1;Modified='2026-01-01'}})
-Render-TempPage
-$first=$tw.FindName('TempFiles').Items[0];$first.IsChecked=$true;$first.RaiseEvent([Windows.RoutedEventArgs]::new([Windows.Controls.Primitives.ButtonBase]::ClickEvent))
-$tw.FindName('TempNext').RaiseEvent([Windows.RoutedEventArgs]::new([Windows.Controls.Primitives.ButtonBase]::ClickEvent))
-Assert-UI ($tw.FindName('TempFiles').Items.Count -eq 200 -and $ToolsState.TempPage -eq 1 -and $ToolsState.TempSelection.ContainsKey('C:\Demo\1.tmp')) 'Large cleanup scan is paged and changing pages preserves selected files'
-$script:ToolsState.TempInventory=@();$script:ToolsState.TempSelection.Clear();$script:ToolsState.TempPage=0;Render-TempPage
+Assert-UI (@(Get-VisibleTools | Where-Object {$_.Id -in @('tempscan','tempdelete','recycle')}).Count -eq 0) 'Cleanup shortcuts are replaced by read-only storage analysis'
 # Render the new view, not a claim of desktop mouse testing.
 Save-ManagerRendering $tw 'tools-manager-render'
 $p=[pscustomobject]@{MockDelayMs=2200;SourceAgreed=$false}

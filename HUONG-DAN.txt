@@ -66,10 +66,13 @@ Không tắt Defender/Firewall/Update/UAC/Memory Integrity hoặc hàng loạt d
 README.md: hướng dẫn đầy đủ. FEATURE_MATRIX.md: nguồn và quyết định chọn lọc.
 CHANGELOG-v0.15.md: thay đổi, file sửa và giới hạn.
 KIEM-THU.md, TIEN-DO.md và evidence: kết quả kiểm tra thực tế.
-MỞ NHANH VÀ CẬP NHẬT
-WinTune và cập nhật: kiểm tra khi bấm, xác nhận trước tải, không tự mở bản mới.
-Đăng ký lệnh wintune chép bản vào thư mục user, đăng ký mới chỉ sửa User PATH.
-Mở lại CMD/PowerShell rồi gõ wintune; Win + R cũng dùng được sau đăng ký.
+CẬP NHẬT VÀ DUNG LƯỢNG Ổ ĐĨA
+Cuối thanh bên có Cập nhật WinTune: kiểm tra phiên bản khi bấm, cho biết
+đang dùng bản mới nhất hay có bản mới. Xác nhận trước tải, không tự mở bản mới.
+Đã bỏ phần đăng ký lệnh wintune khỏi giao diện. Dùng lệnh online trong README.
+Dung lượng ổ đĩa tự cài WizTree nếu chưa có, mở trực tiếp ổ C: để WizTree
+tự quét. Ô Select hiện C:, không hiện CSV. Phía trên có tổng dung lượng,
+đã dùng và còn trống. Có thể cần chấp nhận UAC bình thường của Windows.
 Nguồn phát hành dinhluxury/WinTune-VI và khóa công khai đã ghim. Bộ ký local
 chỉ tải được online sau khi tác giả phát hành stable. Xem DISTRIBUTION.md;
 PUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.

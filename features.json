@@ -1,1433 +1,1406 @@
 ﻿[
-    {
-        "Id":  "ads",
-        "Title":  "Tắt mã quảng cáo của Windows",
-        "Group":  "Quyền riêng tư",
-        "Benefit":  "Tắt Advertising ID mà ứng dụng Windows có thể dùng để cá nhân hóa quảng cáo.",
-        "Cost":  "Quảng cáo vẫn có thể xuất hiện; mục này không chặn quảng cáo trên web và không tắt toàn bộ telemetry.",
-        "Who":  "Phù hợp nếu bạn không cần quảng cáo được cá nhân hóa.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Telemetry.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
-                            "Name":  "Enabled",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn cần các ứng dụng dùng mã quảng cáo để cá nhân hóa nội dung.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "tailored",
-        "Title":  "Tắt trải nghiệm dựa trên dữ liệu chẩn đoán",
-        "Group":  "Quyền riêng tư",
-        "Benefit":  "Yêu cầu Windows không dùng dữ liệu chẩn đoán cho gợi ý và trải nghiệm được cá nhân hóa.",
-        "Cost":  "Không ngăn thu thập dữ liệu chẩn đoán bắt buộc. Gợi ý có thể kém phù hợp hơn.",
-        "Who":  "Phù hợp nếu ưu tiên giảm cá nhân hóa hơn các gợi ý của Windows.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Telemetry.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Privacy",
-                            "Name":  "TailoredExperiencesWithDiagnosticDataEnabled",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn thích mẹo và đề xuất cá nhân hóa của Windows.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "tracking",
-        "Title":  "Tắt theo dõi số lần mở ứng dụng",
-        "Group":  "Quyền riêng tư",
-        "Benefit":  "Tắt theo dõi lượt mở ứng dụng phục vụ cá nhân hóa Start và tìm kiếm.",
-        "Cost":  "Danh sách ứng dụng thường dùng và thứ tự gợi ý có thể kém tiện lợi hơn.",
-        "Who":  "Chọn nếu bạn thường ghim hoặc tìm ứng dụng theo tên.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Telemetry.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "Start_TrackProgs",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn dùng danh sách ứng dụng thường mở trong Start.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "tips",
-        "Title":  "Giảm mẹo và gợi ý Windows",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Giảm nội dung chào mừng sau cập nhật, mẹo sử dụng và một số gợi ý trong Start/Settings.",
-        "Cost":  "Bạn có thể bỏ lỡ giới thiệu tính năng mới. Không tắt mọi thông báo hay mọi loại quảng cáo.",
-        "Who":  "Phù hợp nếu đã quen Windows và muốn bớt nội dung gợi ý.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SubscribedContent-310093Enabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SubscribedContent-338388Enabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SystemPaneSuggestionsEnabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SubscribedContent-338389Enabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SoftLandingEnabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SubscribedContent-338393Enabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SubscribedContent-353694Enabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SubscribedContent-353696Enabled",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn mới dùng Windows và cần hướng dẫn, giới thiệu tính năng.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "explorerads",
-        "Title":  "Ẩn gợi ý nhà cung cấp đồng bộ",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Ẩn một số thông báo gợi ý của nhà cung cấp đồng bộ trong File Explorer.",
-        "Cost":  "Có thể không còn thấy lời nhắc liên quan dịch vụ đồng bộ tại Explorer. Không gỡ OneDrive.",
-        "Who":  "Chọn nếu không cần các lời giới thiệu dịch vụ trong trình quản lý tệp.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "ShowSyncProviderNotifications",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn cần lời nhắc từ dịch vụ đồng bộ trong File Explorer.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "locktips",
-        "Title":  "Giảm mẹo trên màn hình khóa",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Tắt nội dung mẹo và lớp thông tin gợi ý của màn hình khóa.",
-        "Cost":  "Không phải mọi thành phần màn hình khóa đều được ẩn; kết quả tùy nền và bản Windows.",
-        "Who":  "Chọn nếu muốn màn hình khóa gọn hơn.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Lockscreen_Tips.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SubscribedContent-338387Enabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "RotatingLockScreenOverlayEnabled",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn thích thông tin và mẹo hiện trên màn hình khóa.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "bing",
-        "Title":  "Tắt gợi ý tìm kiếm Bing trong Start",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Yêu cầu Windows không đưa gợi ý web Bing vào giao diện tìm kiếm; vẫn tìm ứng dụng và tệp cục bộ.",
-        "Cost":  "Bạn mất kết quả web tích hợp và có thể mất gợi ý tìm kiếm gần đây trong Explorer. Hiệu lực chính sách tùy bản Windows.",
-        "Who":  "Phù hợp nếu bạn luôn tìm web trong Edge hoặc trình duyệt khác.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Bing_Cortana_In_Search.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Policies\\Microsoft\\Windows\\Explorer",
-                            "Name":  "DisableSearchBoxSuggestions",
-                            "Value":  1
-                        }
-                    ],
-        "Keep":  "Bạn muốn tìm web và xem gợi ý ngay trong Windows Search.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "search",
-        "Title":  "Tìm kiếm trên thanh tác vụ",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Chọn cách hiện tìm kiếm trên thanh tác vụ; không tắt dịch vụ Windows Search.",
-        "Cost":  "Không tắt dịch vụ Windows Search, không giảm lập chỉ mục. Vẫn tìm bằng Win + S.",
-        "Who":  "Chọn nếu bạn quen dùng bàn phím để tìm kiếm.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Hide_Search_Taskbar.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-                            "Name":  "SearchboxTaskbarMode",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn thường bấm ô Search bằng chuột; ẩn nút không tăng hiệu năng.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0,
-        "Choices":  [
-                        {
-                            "Id":  "hidden",
-                            "Title":  "Ẩn",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Search_Taskbar.reg"
-                        },
-                        {
-                            "Id":  "icon",
-                            "Title":  "Biểu tượng",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Search_Icon.reg"
-                        },
-                        {
-                            "Id":  "label",
-                            "Title":  "Biểu tượng và chữ",
-                            "Values":  [
-                                           3
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Search_Icon_And_Label.reg"
-                        },
-                        {
-                            "Id":  "box",
-                            "Title":  "Ô tìm kiếm",
-                            "Values":  [
-                                           2
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Search_Box.reg"
-                        }
-                    ]
-    },
-    {
-        "Id":  "taskview",
-        "Title":  "Nút Task View",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Chọn hiển thị nút Task View; phím Win + Tab vẫn hoạt động.",
-        "Cost":  "Vẫn có desktop ảo và Win + Tab. Đây là tùy chỉnh giao diện, không phải tăng FPS.",
-        "Who":  "Chọn nếu bạn ít bấm nút Task View.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Hide_Taskview_Taskbar.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "ShowTaskViewButton",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn thường dùng nút này để quản lý cửa sổ và desktop ảo.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0,
-        "Choices":  [
-                        {
-                            "Id":  "hidden",
-                            "Title":  "Ẩn",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Taskview_Taskbar.reg"
-                        },
-                        {
-                            "Id":  "shown",
-                            "Title":  "Hiện",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json"
-                        }
-                    ]
-    },
-    {
-        "Id":  "align",
-        "Title":  "Vị trí nút trên thanh tác vụ",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Chọn nút Start và biểu tượng ứng dụng nằm bên trái hoặc chính giữa.",
-        "Cost":  "Thay đổi vị trí quen tay; không làm máy nhanh hơn.",
-        "Who":  "Phù hợp nếu thích bố cục gần với Windows 10.",
-        "MinBuild":  22000,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Align_Taskbar_Left.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "TaskbarAl",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn quen bố cục ở giữa của Windows 11.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0,
-        "Choices":  [
-                        {
-                            "Id":  "left",
-                            "Title":  "Bên trái",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Align_Taskbar_Left.reg"
-                        },
-                        {
-                            "Id":  "center",
-                            "Title":  "Chính giữa",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json"
-                        }
-                    ]
-    },
-    {
-        "Id":  "endtask",
-        "Title":  "Thêm Kết thúc tác vụ vào taskbar",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Bật tùy chọn End task trong menu chuột phải ứng dụng trên các bản Windows 11 hỗ trợ.",
-        "Cost":  "Dùng End task sẽ ép đóng ứng dụng và có thể mất nội dung chưa lưu. Việc bật tùy chọn không đóng app nào.",
-        "Who":  "Hữu ích nếu thường xử lý ứng dụng bị treo.",
-        "MinBuild":  22631,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Enable_End_Task.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings",
-                            "Name":  "TaskbarEndTask",
-                            "Value":  1
-                        }
-                    ],
-        "Keep":  "Bạn muốn tránh tùy chọn ép đóng dễ làm mất dữ liệu chưa lưu.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "alttab",
-        "Title":  "Thẻ ứng dụng trong Alt + Tab",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Chọn số thẻ của ứng dụng hỗ trợ được hiển thị cùng cửa sổ khi nhấn Alt + Tab.",
-        "Cost":  "Không chuyển trực tiếp đến tab trình duyệt qua Alt + Tab; vẫn dùng Ctrl + Tab trong trình duyệt.",
-        "Who":  "Phù hợp nếu mở nhiều tab và muốn danh sách chuyển cửa sổ ngắn hơn.",
-        "MinBuild":  19042,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Hide_Tabs_In_Alt_Tab.reg",
-        "Changes":  [
-                        {
-                            "Path":  "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "MultiTaskingAltTabFilter",
-                            "Value":  3
-                        }
-                    ],
-        "Keep":  "Bạn dùng Alt + Tab để chuyển trực tiếp giữa tab trình duyệt.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0,
-        "Choices":  [
-                        {
-                            "Id":  "windows",
-                            "Title":  "Chỉ cửa sổ",
-                            "Values":  [
-                                           3
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Tabs_In_Alt_Tab.reg"
-                        },
-                        {
-                            "Id":  "three",
-                            "Title":  "Thêm 3 thẻ",
-                            "Values":  [
-                                           2
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_3_Tabs_In_Alt_Tab.reg"
-                        },
-                        {
-                            "Id":  "five",
-                            "Title":  "Thêm 5 thẻ",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_5_Tabs_In_Alt_Tab.reg"
-                        },
-                        {
-                            "Id":  "twenty",
-                            "Title":  "Thêm tối đa 20 thẻ",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_20_Tabs_In_Alt_Tab.reg"
-                        }
-                    ]
-    },
-    {
-        "Id":  "extensions",
-        "Title":  "Hiện phần mở rộng của tệp",
-        "Group":  "File Explorer",
-        "Benefit":  "Hiện đuôi như .exe, .jpg, .zip để dễ nhận biết loại tệp.",
-        "Cost":  "Khi đổi tên, cần giữ nguyên đuôi nếu không chủ định đổi loại tệp. Không tăng hiệu năng.",
-        "Who":  "Hữu ích để phân biệt file cài đặt, ảnh, tài liệu và kiểm tra tên tệp.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Show_Extensions_For_Known_File_Types.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "HideFileExt",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn muốn tên tệp ngắn; khi đổi tên nên giữ nguyên đuôi.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "thispc",
-        "Title":  "Thư mục mở khi vào File Explorer",
-        "Group":  "File Explorer",
-        "Benefit":  "Chọn thư mục mặc định mở khi vào File Explorer.",
-        "Cost":  "Downloads hoặc OneDrive chỉ hữu ích nếu thư mục đó khả dụng. Không di chuyển dữ liệu hoặc bật đồng bộ OneDrive.",
-        "Who":  "Phù hợp nếu thường truy cập ổ đĩa và thư mục dự án.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Launch_File_Explorer_To_This_PC.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "LaunchTo",
-                            "Value":  1
-                        }
-                    ],
-        "Keep":  "Bạn muốn vào ngay Home và danh sách tệp gần đây.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0,
-        "Choices":  [
-                        {
-                            "Id":  "thispc",
-                            "Title":  "This PC",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_This_PC.reg"
-                        },
-                        {
-                            "Id":  "home",
-                            "Title":  "Home",
-                            "Values":  [
-                                           2
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_Home.reg"
-                        },
-                        {
-                            "Id":  "downloads",
-                            "Title":  "Downloads",
-                            "Values":  [
-                                           3
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_Downloads.reg"
-                        },
-                        {
-                            "Id":  "onedrive",
-                            "Title":  "OneDrive",
-                            "Values":  [
-                                           4
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_OneDrive.reg"
-                        }
-                    ]
-    },
-    {
-        "Id":  "transparency",
-        "Title":  "Tắt hiệu ứng trong suốt",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Chuyển các bề mặt Windows hỗ trợ sang nền đặc, giảm hiệu ứng giao diện.",
-        "Cost":  "Giao diện bớt trong suốt; không bảo đảm tăng FPS hoặc giảm mức dùng RAM đáng kể.",
-        "Who":  "Chọn nếu thích nền đặc hoặc muốn giảm hiệu ứng trên desktop.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Transparency.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-                            "Name":  "EnableTransparency",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn thích hiệu ứng trong suốt và máy đang hoạt động ổn định.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "dvr",
-        "Title":  "Tắt ghi hình bằng Xbox Game Bar",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Tắt hai thiết lập ghi hình Game DVR của tài khoản hiện tại. Có thể giảm công việc ghi hình nếu chức năng này đang hoạt động; không bảo đảm tăng FPS.",
-        "Cost":  "Có thể không quay/lưu clip bằng Game Bar và Win + Alt + R. Không chỉnh cấu hình OBS, TikFinity hay NVIDIA recording. Không áp chính sách toàn máy.",
-        "Who":  "Chỉ chọn nếu không dùng chức năng quay hoặc lưu clip của Xbox Game Bar.",
-        "MinBuild":  19041,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_DVR.reg",
-        "Changes":  [
-                        {
-                            "Path":  "System\\GameConfigStore",
-                            "Name":  "GameDVR_Enabled",
-                            "Value":  0
-                        },
-                        {
-                            "Path":  "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
-                            "Name":  "AppCaptureEnabled",
-                            "Value":  0
-                        }
-                    ],
-        "Keep":  "Bạn dùng Game Bar để quay video hoặc lưu clip trò chơi.",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MaxBuild":  0
-    },
-    {
-        "Id":  "darkmode",
-        "Title":  "Màu giao diện Windows và ứng dụng",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Chọn màu sáng hoặc tối cho Windows và các ứng dụng hỗ trợ.",
-        "Cost":  "Chỉ đổi màu Windows và ứng dụng hỗ trợ; giao diện WinTune có lựa chọn riêng ở thanh trái.",
-        "Who":  "Bạn thích màu tối và ứng dụng hỗ trợ chủ đề Windows.",
-        "Keep":  "Bạn thích nền sáng hoặc ứng dụng không hiển thị rõ với màu tối.",
-        "MinBuild":  19041,
-        "MaxBuild":  0,
-        "Admin":  false,
-        "Kind":  "Registry",
-        "Timing":  "Có thể cần mở lại ứng dụng hoặc đăng xuất rồi đăng nhập để thấy hiệu lực. WinTune không tự đóng ứng dụng.",
-        "Undo":  "Phục hồi chính xác giá trị trước đó, kể cả giá trị chưa tồn tại. Chỉ hoàn tác thiết lập; không phục hồi dữ liệu mất khi sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Enable_Dark_Mode.reg",
-        "Changes":  [
-                        {
-                            "Value":  0,
-                            "Name":  "AppsUseLightTheme",
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize"
-                        },
-                        {
-                            "Value":  0,
-                            "Name":  "SystemUsesLightTheme",
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize"
-                        }
-                    ],
-        "Choices":  [
-                        {
-                            "Id":  "dark",
-                            "Title":  "Tối",
-                            "Values":  [
-                                           0,
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Enable_Dark_Mode.reg"
-                        },
-                        {
-                            "Id":  "light",
-                            "Title":  "Sáng",
-                            "Values":  [
-                                           1,
-                                           1
-                                       ],
-                            "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json"
-                        }
-                    ]
-    },
-    {
-        "Id":  "lastactive",
-        "Title":  "Nhấp biểu tượng taskbar để chuyển cửa sổ gần nhất",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Đổi cách nhấp biểu tượng của ứng dụng có nhiều cửa sổ: chuyển thẳng đến cửa sổ thay vì phải chọn từ hình xem trước.",
-        "Cost":  "Đổi thói quen chọn cửa sổ. Không tăng tốc ứng dụng; hiệu lực có thể tùy phiên bản Explorer.",
-        "Who":  "Bạn thường chuyển giữa nhiều cửa sổ cùng ứng dụng.",
-        "Keep":  "Bạn muốn luôn xem hình thu nhỏ để chọn đúng cửa sổ.",
-        "MinBuild":  19041,
-        "MaxBuild":  0,
-        "Admin":  false,
-        "Kind":  "Registry",
-        "Timing":  "Có thể cần mở lại ứng dụng hoặc đăng xuất rồi đăng nhập để thấy hiệu lực. WinTune không tự đóng ứng dụng.",
-        "Undo":  "Phục hồi chính xác giá trị trước đó, kể cả giá trị chưa tồn tại. Chỉ hoàn tác thiết lập; không phục hồi dữ liệu mất khi sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Enable_Last_Active_Click.reg",
-        "Changes":  [
-                        {
-                            "Value":  1,
-                            "Name":  "LastActiveClick",
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced"
-                        }
-                    ]
-    },
-    {
-        "Id":  "hiddenfiles",
-        "Title":  "Hiện tệp và thư mục ẩn trong Explorer",
-        "Group":  "File Explorer",
-        "Benefit":  "Hiện các mục có thuộc tính Hidden để dễ tìm dữ liệu hoặc cấu hình.",
-        "Cost":  "Không hiện tệp hệ thống được bảo vệ. Đừng xóa tệp lạ chỉ vì nó xuất hiện; đây không phải dọn rác.",
-        "Who":  "Bạn cần truy cập thư mục cấu hình ẩn và biết tệp cần tìm.",
-        "Keep":  "Bạn muốn Explorer gọn và tránh vô tình sửa tệp cấu hình.",
-        "MinBuild":  19041,
-        "MaxBuild":  0,
-        "Admin":  false,
-        "Kind":  "Registry",
-        "Timing":  "Có thể cần mở lại ứng dụng hoặc đăng xuất rồi đăng nhập để thấy hiệu lực. WinTune không tự đóng ứng dụng.",
-        "Undo":  "Phục hồi chính xác giá trị trước đó, kể cả giá trị chưa tồn tại. Chỉ hoàn tác thiết lập; không phục hồi dữ liệu mất khi sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Show_Hidden_Folders.reg",
-        "Changes":  [
-                        {
-                            "Value":  1,
-                            "Name":  "Hidden",
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced"
-                        }
-                    ]
-    },
-    {
-        "Id":  "widgets",
-        "Title":  "Ẩn thời tiết và Widgets trên thanh tác vụ",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Ẩn nút Widgets và thông tin thời tiết, tin tức hoặc thông báo đi kèm trên thanh tác vụ của tài khoản hiện tại.",
-        "Cost":  "Mất cách mở Widgets bằng nhấp hoặc rê chuột trên thanh tác vụ. Vẫn có thể mở bảng Widgets bằng Win + W. Không gỡ ứng dụng Thời tiết, không tắt toàn bộ nền tảng Widgets và không cam kết giảm RAM hoặc tăng FPS.",
-        "Who":  "Chọn nếu bạn muốn thanh tác vụ gọn, không cần thời tiết hay tin tức xuất hiện ở đó.",
-        "Keep":  "Bạn muốn xem nhanh thời tiết và mở Widgets bằng chuột trên thanh tác vụ.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Admin":  false,
-        "Kind":  "Registry",
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại hoặc khởi động lại riêng máy ảo khi thử. WinTune không tự đóng Explorer, đăng xuất hoặc khởi động lại Windows.",
-        "Undo":  "Phục hồi chính xác TaskbarDa trước đó, kể cả khi giá trị chưa tồn tại. Có thể cần nạp lại phiên để thấy nút trở lại. Không phục hồi dữ liệu của ứng dụng; mục này không gỡ ứng dụng.",
-        "Source":  "https://github.com/microsoft/winget-dsc/blob/b4b1867fe8ef748198fb56476d15f435a66eca46/resources/Microsoft.Windows.Developer/Microsoft.Windows.Developer.psm1",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "TaskbarDa",
-                            "Value":  0
-                        }
-                    ]
-    },
-    {
-        "Id":  "edgestartupboost",
-        "Title":  "Tắt khởi chạy sẵn Microsoft Edge",
-        "Group":  "Hoạt động nền \u0026 khởi động",
-        "Benefit":  "Tắt Startup Boost: Edge không được chính sách này cho khởi chạy sẵn khi đăng nhập hoặc tự khởi động lại nền sau khi đóng cửa sổ cuối.",
-        "Cost":  "Lần mở Edge có thể chậm hơn. Không gỡ Edge, không tắt Windows Search hoặc WebView2 của các ứng dụng khác. Nếu Edge chưa cài hoặc chính sách máy ưu tiên khác, giá trị có thể chưa có hiệu lực.",
-        "Who":  "Chọn nếu ít dùng Edge hoặc không cần Edge mở nhanh ngay sau đăng nhập.",
-        "Keep":  "Bạn dùng Edge thường xuyên và muốn trình duyệt mở nhanh.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Admin":  false,
-        "Kind":  "Registry",
-        "Timing":  "Edge hỗ trợ đọc lại chính sách; bạn có thể tự mở edge://policy để kiểm tra hoặc tự đóng/mở lại sau khi lưu dữ liệu. WinTune không đóng trình duyệt, đăng xuất hoặc khởi động lại.",
-        "Undo":  "Phục hồi đúng giá trị chính sách cũ, kể cả chưa tồn tại. Không phục hồi dữ liệu duyệt web; mục này không xóa dữ liệu.",
-        "Source":  "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/startupboostenabled",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Policies\\Microsoft\\Edge",
-                            "Name":  "StartupBoostEnabled",
-                            "Value":  0
-                        }
-                    ]
-    },
-    {
-        "Id":  "edgebackground",
-        "Title":  "Tắt Edge chạy nền sau khi đóng",
-        "Group":  "Hoạt động nền \u0026 khởi động",
-        "Benefit":  "Tắt chế độ Edge giữ ứng dụng và phiên duyệt nền sau khi bạn tự đóng cửa sổ cuối. Có thể giảm tiến trình msedge nếu chế độ này đang bật.",
-        "Cost":  "Tiện ích hoặc ứng dụng web phụ thuộc chạy nền có thể không nhận thông báo khi Edge đã đóng. Không chặn WebView2 của Teams, Widgets hay app khác. Không tự đóng tab hoặc tiến trình đang có dữ liệu.",
-        "Who":  "Chọn nếu muốn Edge dừng chế độ nền khi đã đóng các cửa sổ.",
-        "Keep":  "Bạn cần tiện ích/app web và thông báo tiếp tục hoạt động khi không mở cửa sổ Edge.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Admin":  false,
-        "Kind":  "Registry",
-        "Timing":  "Chính sách hỗ trợ cập nhật động. Tự lưu dữ liệu rồi đóng/mở Edge khi cần; kiểm tra edge://policy. Không tự đóng trình duyệt hoặc khởi động lại Windows.",
-        "Undo":  "Khôi phục chính xác chính sách trước đó hoặc xóa giá trị mới nếu trước chưa tồn tại. Không thay đổi dữ liệu duyệt web.",
-        "Source":  "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/backgroundmodeenabled",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Policies\\Microsoft\\Edge",
-                            "Name":  "BackgroundModeEnabled",
-                            "Value":  0
-                        }
-                    ]
-    },
-    {
-        "Id":  "startupsettings",
-        "Title":  "Quản lý ứng dụng khởi động",
-        "Group":  "Quản lý ứng dụng",
-        "Kind":  "Settings",
-        "Admin":  false,
-        "MinBuild":  19041,
-        "MaxBuild":  0,
-        "Benefit":  "Mở danh sách ứng dụng khởi động trong Windows Settings để bạn tự xem mức ảnh hưởng và bật/tắt từng ứng dụng.",
-        "Cost":  "Không bao gồm mọi dịch vụ, tác vụ theo lịch hoặc mọi cách khởi động. Tắt ứng dụng có thể làm mất đồng bộ, thông báo hoặc tiện ích phần cứng.",
-        "Who":  "Dùng để xem và tự quyết định tại Windows Settings.",
-        "Keep":  "Bạn cần ứng dụng tự đồng bộ hoặc phục vụ phần cứng ngay sau đăng nhập.",
-        "Timing":  "WinTune chỉ mở trang cài đặt; bạn tự chọn thay đổi trong Windows.",
-        "Undo":  "WinTune không sao lưu hay hoàn tác thao tác bạn thực hiện trong Windows Settings. Chỉ đổi thiết lập hoặc gỡ ứng dụng sau khi tự đọc xác nhận của Windows.",
-        "Source":  "https://learn.microsoft.com/en-us/windows/apps/develop/launch/launch-settings-app",
-        "SettingsUri":  "ms-settings:startupapps",
-        "Changes":  [
-
-                    ]
-    },
-    {
-        "Id":  "appsettings",
-        "Title":  "Xem và gỡ ứng dụng đã cài",
-        "Group":  "Quản lý ứng dụng",
-        "Kind":  "Settings",
-        "Admin":  false,
-        "MinBuild":  19041,
-        "MaxBuild":  0,
-        "Benefit":  "Mở danh sách ứng dụng đã cài của Windows. Bạn chọn đúng ứng dụng và xác nhận gỡ tại Windows Settings.",
-        "Cost":  "Gỡ có thể mất dữ liệu và thiết lập ứng dụng. Một số ứng dụng hệ thống không cho gỡ. Cài lại từ Microsoft Store hoặc nhà phát hành, dữ liệu không bảo đảm khôi phục.",
-        "Who":  "Dùng để xem và tự quyết định tại Windows Settings.",
-        "Keep":  "Bạn chưa rõ chức năng ứng dụng hoặc vẫn cần dữ liệu của nó.",
-        "Timing":  "WinTune chỉ mở trang cài đặt; bạn tự chọn thay đổi trong Windows.",
-        "Undo":  "WinTune không sao lưu hay hoàn tác thao tác bạn thực hiện trong Windows Settings. Chỉ đổi thiết lập hoặc gỡ ứng dụng sau khi tự đọc xác nhận của Windows.",
-        "Source":  "https://learn.microsoft.com/en-us/windows/apps/develop/launch/launch-settings-app",
-        "SettingsUri":  "ms-settings:appsfeatures",
-        "Changes":  [
-
-                    ]
-    },
-    {
-        "Id":  "classicmenu",
-        "Title":  "Menu chuột phải kiểu Windows 10",
-        "Group":  "File Explorer",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Benefit":  "Mở menu đầy đủ khi nhấp chuột phải, giảm việc bấm Hiển thị thêm tùy chọn.",
-        "Cost":  "Đây là tùy chỉnh tương thích của Explorer, không phải tùy chọn chính thức trong Settings. Bản cập nhật Windows có thể đổi hiệu lực; một số lệnh mới có thể không xuất hiện trong menu cũ.",
-        "Who":  "Bạn quen menu đầy đủ của Windows 10.",
-        "Keep":  "Bạn thích menu Windows 11 hoặc tính năng mới cần menu hiện đại.",
-        "Timing":  "Có thể cần tự đăng xuất rồi đăng nhập. WinTune không đóng Explorer hoặc tự khởi động lại máy.",
-        "Undo":  "Hoàn tác trả về đúng giá trị trước khi áp dụng, kể cả trạng thái chưa tồn tại. Không phục hồi dữ liệu đã bị Windows xóa.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Show_More_Options_Context_Menu.reg",
-        "Changes":  [
-                        {
-                            "Hive":  "HKCU",
-                            "Type":  "String",
-                            "Path":  "Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32",
-                            "Name":  "",
-                            "Value":  ""
-                        }
-                    ]
-    },
-    {
-        "Id":  "notepadai",
-        "Title":  "Tắt AI trong Notepad",
-        "Group":  "AI và Copilot",
-        "Kind":  "Registry",
-        "Admin":  true,
-        "MinBuild":  26100,
-        "MaxBuild":  0,
-        "Benefit":  "Tắt tính năng AI trong Notepad bằng chính sách Microsoft hỗ trợ, giữ khả năng soạn thảo văn bản bình thường.",
-        "Cost":  "Áp dụng cho máy này và các tài khoản dùng Notepad. Chỉ có tác dụng với phiên bản Notepad hỗ trợ AI; không tắt AI trong Adobe, trình duyệt hoặc ứng dụng khác.",
-        "Who":  "Bạn chỉ dùng Notepad để đọc và sửa văn bản.",
-        "Keep":  "Bạn dùng các chức năng viết lại hoặc tạo nội dung AI của Notepad.",
-        "Timing":  "Tự đóng và mở lại Notepad sau khi lưu công việc. Không tự đóng ứng dụng.",
-        "Undo":  "Hoàn tác trả về đúng giá trị trước khi áp dụng, kể cả trạng thái chưa tồn tại. Không phục hồi dữ liệu đã bị Windows xóa.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Notepad_AI_Features.reg",
-        "Changes":  [
-                        {
-                            "Hive":  "HKLM",
-                            "Type":  "DWord",
-                            "Path":  "Software\\Policies\\WindowsNotepad",
-                            "Name":  "DisableAIFeatures",
-                            "Value":  1
-                        }
-                    ]
-    },
-    {
-        "Id":  "recall",
-        "Title":  "Tắt lưu ảnh màn hình cho Recall",
-        "Group":  "AI và Copilot",
-        "Kind":  "Registry",
-        "Admin":  false,
-        "MinBuild":  26200,
-        "MaxBuild":  0,
-        "Benefit":  "Ngăn Recall lưu ảnh màn hình cho tài khoản hiện tại trên máy Copilot+ có hỗ trợ Recall.",
-        "Cost":  "Windows có thể xóa các ảnh Recall đã lưu khi bật chính sách này. Hoàn tác chỉ trả lại thiết lập, không khôi phục những ảnh đó. Máy không có Recall không có lợi ích từ mục này; không bảo đảm giảm RAM.",
-        "Who":  "Bạn có máy Copilot+ nhưng không muốn dùng lịch sử ảnh Recall.",
-        "Keep":  "Bạn cần tìm lại nội dung qua Recall và chấp nhận lưu ảnh màn hình.",
-        "Timing":  "Hiệu lực do Windows quản lý; có thể cần đăng xuất. Không gỡ thành phần Windows AI hoặc tắt dịch vụ.",
-        "Undo":  "Hoàn tác trả về đúng giá trị trước khi áp dụng, kể cả trạng thái chưa tồn tại. Không phục hồi dữ liệu đã bị Windows xóa.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_AI_Recall.reg",
-        "Changes":  [
-                        {
-                            "Hive":  "HKCU",
-                            "Type":  "DWord",
-                            "Path":  "Software\\Policies\\Microsoft\\Windows\\WindowsAI",
-                            "Name":  "DisableAIDataAnalysis",
-                            "Value":  1
-                        }
-                    ]
-    },
-    {
-        "Id":  "copilotapp",
-        "Title":  "Gỡ ứng dụng Microsoft Copilot",
-        "Group":  "AI và Copilot",
-        "Kind":  "Action",
-        "Admin":  false,
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Benefit":  "Mở danh sách Copilot của tài khoản này để bạn chọn đúng ứng dụng rồi xác nhận gỡ.",
-        "Cost":  "Gỡ ứng dụng sẽ mất khả năng mở Copilot qua ứng dụng đó. Không chặn Copilot trên web, Edge hoặc trong Office. Windows có thể cài lại qua cập nhật hoặc theo yêu cầu của bạn.",
-        "Who":  "Bạn không dùng ứng dụng Copilot độc lập.",
-        "Keep":  "Bạn đang dùng Copilot hoặc dữ liệu của ứng dụng.",
-        "Timing":  "Chỉ gỡ sau xem trước và xác nhận. Không gỡ cho tài khoản khác hoặc các gói cấp sẵn.",
-        "Undo":  "Cài lại từ Microsoft Store nếu có ID được xác minh; không bảo đảm khôi phục dữ liệu ứng dụng.",
-        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/appx.json",
-        "Changes":  [
-
-                    ]
-    },
-    {
-        "Id":  "starttips",
-        "Title":  "Giảm đề xuất và mẹo trong Start",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Tắt đề xuất mẹo, ứng dụng mới và nội dung gợi ý trong Start.",
-        "Cost":  "Không hứa xóa toàn bộ vùng Recommended; ứng dụng ghim và file gần đây vẫn có thể hiện.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22621,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "Start_IrisRecommendations",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "startaccount",
-        "Title":  "Ẩn nhắc tài khoản trong Start",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Giảm thông báo gợi ý tài khoản Microsoft trong Start.",
-        "Cost":  "Có thể bỏ lỡ nhắc về tài khoản/đồng bộ; không đăng xuất hoặc xóa tài khoản.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22621,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "Start_AccountNotifications",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "accountnotices",
-        "Title":  "Giảm gợi ý tài khoản trong Settings",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Tắt gợi ý tài khoản ở giao diện Settings.",
-        "Cost":  "Không thay bảo mật tài khoản và không chặn mọi quảng cáo Microsoft 365.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\SystemSettings\\AccountNotifications",
-                            "Name":  "EnableAccountNotifications",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "setupoffers",
-        "Title":  "Tắt lời mời hoàn tất thiết lập Windows",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Giảm màn hình mời hoàn tất thiết lập, kết nối dịch vụ và trải nghiệm bổ sung.",
-        "Cost":  "Có thể bỏ lỡ hướng dẫn tính năng mới; không vô hiệu hóa Windows Update.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\UserProfileEngagement",
-                            "Name":  "ScoobeSystemSettingEnabled",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "suggestedapps",
-        "Title":  "Hạn chế tự cài ứng dụng được gợi ý",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Yêu cầu Windows không tự cài các ứng dụng quảng bá qua Content Delivery Manager.",
-        "Cost":  "Không gỡ ứng dụng đã cài; chính sách và thay đổi của Windows có thể giới hạn hiệu lực.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-                            "Name":  "SilentInstalledAppsEnabled",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "suggestiontoast",
-        "Title":  "Tắt thông báo gợi ý Windows",
-        "Group":  "Gợi ý \u0026 quảng cáo",
-        "Benefit":  "Tắt nhóm thông báo Windows.SystemToast.Suggested.",
-        "Cost":  "Không tắt thông báo của mọi ứng dụng hoặc cảnh báo bảo mật.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings\\Windows.SystemToast.Suggested",
-                            "Name":  "Enabled",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "phonelinkstart",
-        "Title":  "Ẩn Phone Link bên cạnh Start",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Ẩn phần điện thoại liên kết trong Start.",
-        "Cost":  "Không gỡ Phone Link; liên kết điện thoại trong ứng dụng vẫn còn.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22621,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Phone_Link_In_Start.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Start\\Companions\\Microsoft.YourPhone_8wekyb3d8bbwe",
-                            "Name":  "IsEnabled",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "dragtray",
-        "Title":  "Ẩn khay chia sẻ khi kéo tệp",
-        "Group":  "File Explorer",
-        "Benefit":  "Tắt khay Drag Tray xuất hiện khi kéo tệp tới phía trên màn hình.",
-        "Cost":  "Không còn gợi ý chia sẻ nhanh ở khay này; kéo thả thông thường vẫn dùng được.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  26200,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Share_Drag_Tray.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\CDP",
-                            "Name":  "DragTrayEnabled",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "snapassist",
-        "Title":  "Tắt gợi ý cửa sổ khi chia màn hình",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Không gợi ý các cửa sổ còn lại khi sắp xếp cửa sổ cạnh nhau.",
-        "Cost":  "Bạn phải chọn cửa sổ còn lại thủ công; không tăng FPS.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Snap_Assist.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "SnapAssist",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "snaplayouts",
-        "Title":  "Ẩn bảng bố cục khi kéo hoặc rê nút phóng to",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Ẩn gợi ý Snap Layouts ở phía trên màn hình và trên nút phóng to.",
-        "Cost":  "Mất thao tác chọn bố cục nhanh; không tăng tốc ứng dụng.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Snap_Layouts.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "EnableSnapBar",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        },
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "EnableSnapAssistFlyout",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "scrollbars",
-        "Title":  "Luôn hiện thanh cuộn của Windows",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Yêu cầu Windows không tự ẩn các thanh cuộn được hỗ trợ.",
-        "Cost":  "Ứng dụng có thanh cuộn riêng có thể không dùng thiết lập này.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json",
-        "Changes":  [
-                        {
-                            "Path":  "Control Panel\\Accessibility",
-                            "Name":  "DynamicScrollbars",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "pointerprecision",
-        "Title":  "Tắt tăng độ chính xác con trỏ",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Tắt tăng tốc con trỏ Enhance Pointer Precision của Windows.",
-        "Cost":  "Chuột có thể cho cảm giác khác; game dùng raw input có thể không chịu tác động. Không hứa tăng FPS.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Enhance_Pointer_Precision.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Control Panel\\Mouse",
-                            "Name":  "MouseSpeed",
-                            "Value":  "0",
-                            "Type":  "String",
-                            "Hive":  "HKCU"
-                        },
-                        {
-                            "Path":  "Control Panel\\Mouse",
-                            "Name":  "MouseThreshold1",
-                            "Value":  "0",
-                            "Type":  "String",
-                            "Hive":  "HKCU"
-                        },
-                        {
-                            "Path":  "Control Panel\\Mouse",
-                            "Name":  "MouseThreshold2",
-                            "Value":  "0",
-                            "Type":  "String",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "windowsnapping",
-        "Title":  "Tắt tự chia cửa sổ khi kéo tới cạnh",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Tắt tự sắp xếp cửa sổ khi kéo tới cạnh màn hình.",
-        "Cost":  "Mất tiện ích chia màn hình bằng kéo; chỉ chọn khi bạn không dùng.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Window_Snapping.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Control Panel\\Desktop",
-                            "Name":  "WindowArrangementActive",
-                            "Value":  "0",
-                            "Type":  "String",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "notifications",
-        "Title":  "Tắt thông báo ứng dụng Windows",
-        "Group":  "Giao diện \u0026 trò chơi",
-        "Benefit":  "Tắt thông báo toast của các ứng dụng dùng cơ chế Windows.",
-        "Cost":  "Có thể bỏ lỡ email, lịch và thông báo công việc; không mặc định chọn, không tắt Defender hay Firewall.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Notifications.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\PushNotifications",
-                            "Name":  "ToastEnabled",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ]
-    },
-    {
-        "Id":  "taskbarcombine",
-        "Title":  "Gộp nút trên thanh tác vụ chính",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Chọn cách gộp cửa sổ và hiển thị nhãn ứng dụng trên màn hình chính.",
-        "Cost":  "Nhãn có thể chiếm nhiều chỗ; không làm giảm số tiến trình.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22621,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_Always.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "TaskbarGlomLevel",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ],
-        "Choices":  [
-                        {
-                            "Id":  "always",
-                            "Title":  "Luôn gộp",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_Always.reg"
-                        },
-                        {
-                            "Id":  "full",
-                            "Title":  "Khi taskbar đầy",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_When_Full.reg"
-                        },
-                        {
-                            "Id":  "never",
-                            "Title":  "Không gộp, hiện nhãn",
-                            "Values":  [
-                                           2
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_Never.reg"
-                        }
-                    ]
-    },
-    {
-        "Id":  "multicombine",
-        "Title":  "Gộp nút trên các màn hình phụ",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Chọn cách gộp cửa sổ trên các thanh tác vụ phụ.",
-        "Cost":  "Chỉ có tác dụng khi bạn dùng nhiều màn hình và có taskbar phụ.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22621,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_Always.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "MMTaskbarGlomLevel",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ],
-        "Choices":  [
-                        {
-                            "Id":  "always",
-                            "Title":  "Luôn gộp",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_Always.reg"
-                        },
-                        {
-                            "Id":  "full",
-                            "Title":  "Khi taskbar đầy",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_When_Full.reg"
-                        },
-                        {
-                            "Id":  "never",
-                            "Title":  "Không gộp, hiện nhãn",
-                            "Values":  [
-                                           2
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_Never.reg"
-                        }
-                    ]
-    },
-    {
-        "Id":  "multitaskbar",
-        "Title":  "Hiện ứng dụng trên nhiều thanh tác vụ",
-        "Group":  "Tìm kiếm \u0026 tác vụ",
-        "Benefit":  "Chọn màn hình nào hiển thị nút của một ứng dụng đang mở.",
-        "Cost":  "Chỉ có tác dụng khi taskbar phụ được bật; không thay đổi màn hình của cửa sổ.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_All.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-                            "Name":  "MMTaskbarMode",
-                            "Value":  0,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ],
-        "Choices":  [
-                        {
-                            "Id":  "all",
-                            "Title":  "Mọi taskbar",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_All.reg"
-                        },
-                        {
-                            "Id":  "main",
-                            "Title":  "Màn hình chính và nơi cửa sổ mở",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_Main_Active.reg"
-                        },
-                        {
-                            "Id":  "active",
-                            "Title":  "Chỉ nơi cửa sổ mở",
-                            "Values":  [
-                                           2
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_Active.reg"
-                        }
-                    ]
-    },
-    {
-        "Id":  "driveletters",
-        "Title":  "Cách hiển thị ký tự ổ đĩa",
-        "Group":  "File Explorer",
-        "Benefit":  "Chọn vị trí của ký tự C:, D: bên cạnh tên ổ trong Explorer.",
-        "Cost":  "Ẩn ký tự có thể khó phân biệt ổ; không đổi ký tự hoặc dữ liệu của ổ.",
-        "Who":  "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
-        "Keep":  "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
-        "MinBuild":  22000,
-        "MaxBuild":  0,
-        "Kind":  "Registry",
-        "Admin":  false,
-        "Timing":  "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
-        "Undo":  "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
-        "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Drive_Letters_First.reg",
-        "Changes":  [
-                        {
-                            "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer",
-                            "Name":  "ShowDriveLettersFirst",
-                            "Value":  4,
-                            "Type":  "DWord",
-                            "Hive":  "HKCU"
-                        }
-                    ],
-        "Choices":  [
-                        {
-                            "Id":  "first",
-                            "Title":  "Ký tự trước tên",
-                            "Values":  [
-                                           4
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Drive_Letters_First.reg"
-                        },
-                        {
-                            "Id":  "last",
-                            "Title":  "Ký tự sau tên",
-                            "Values":  [
-                                           0
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Drive_Letters_Last.reg"
-                        },
-                        {
-                            "Id":  "network",
-                            "Title":  "Ổ mạng trước tên",
-                            "Values":  [
-                                           1
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Network_Drive_Letters_First.reg"
-                        },
-                        {
-                            "Id":  "hidden",
-                            "Title":  "Ẩn ký tự",
-                            "Values":  [
-                                           2
-                                       ],
-                            "Source":  "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Drive_Letters.reg"
-                        }
-                    ]
+  {
+    "Id": "ads",
+    "Title": "Tắt mã quảng cáo của Windows",
+    "Group": "Quyền riêng tư",
+    "Benefit": "Tắt Advertising ID mà ứng dụng Windows có thể dùng để cá nhân hóa quảng cáo.",
+    "Cost": "Quảng cáo vẫn có thể xuất hiện; mục này không chặn quảng cáo trên web và không tắt toàn bộ telemetry.",
+    "Who": "Phù hợp nếu bạn không cần quảng cáo được cá nhân hóa.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Telemetry.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
+        "Name": "Enabled",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn cần các ứng dụng dùng mã quảng cáo để cá nhân hóa nội dung.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "tailored",
+    "Title": "Tắt trải nghiệm dựa trên dữ liệu chẩn đoán",
+    "Group": "Quyền riêng tư",
+    "Benefit": "Yêu cầu Windows không dùng dữ liệu chẩn đoán cho gợi ý và trải nghiệm được cá nhân hóa.",
+    "Cost": "Không ngăn thu thập dữ liệu chẩn đoán bắt buộc. Gợi ý có thể kém phù hợp hơn.",
+    "Who": "Phù hợp nếu ưu tiên giảm cá nhân hóa hơn các gợi ý của Windows.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Telemetry.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Privacy",
+        "Name": "TailoredExperiencesWithDiagnosticDataEnabled",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn thích mẹo và đề xuất cá nhân hóa của Windows.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "tracking",
+    "Title": "Tắt theo dõi số lần mở ứng dụng",
+    "Group": "Quyền riêng tư",
+    "Benefit": "Tắt theo dõi lượt mở ứng dụng phục vụ cá nhân hóa Start và tìm kiếm.",
+    "Cost": "Danh sách ứng dụng thường dùng và thứ tự gợi ý có thể kém tiện lợi hơn.",
+    "Who": "Chọn nếu bạn thường ghim hoặc tìm ứng dụng theo tên.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Telemetry.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "Start_TrackProgs",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn dùng danh sách ứng dụng thường mở trong Start.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "tips",
+    "Title": "Giảm mẹo và gợi ý Windows",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Giảm nội dung chào mừng sau cập nhật, mẹo sử dụng và một số gợi ý trong Start/Settings.",
+    "Cost": "Bạn có thể bỏ lỡ giới thiệu tính năng mới. Không tắt mọi thông báo hay mọi loại quảng cáo.",
+    "Who": "Phù hợp nếu đã quen Windows và muốn bớt nội dung gợi ý.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SubscribedContent-310093Enabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SubscribedContent-338388Enabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SystemPaneSuggestionsEnabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SubscribedContent-338389Enabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SoftLandingEnabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SubscribedContent-338393Enabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SubscribedContent-353694Enabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SubscribedContent-353696Enabled",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn mới dùng Windows và cần hướng dẫn, giới thiệu tính năng.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "explorerads",
+    "Title": "Ẩn gợi ý nhà cung cấp đồng bộ",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Ẩn một số thông báo gợi ý của nhà cung cấp đồng bộ trong File Explorer.",
+    "Cost": "Có thể không còn thấy lời nhắc liên quan dịch vụ đồng bộ tại Explorer. Không gỡ OneDrive.",
+    "Who": "Chọn nếu không cần các lời giới thiệu dịch vụ trong trình quản lý tệp.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "ShowSyncProviderNotifications",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn cần lời nhắc từ dịch vụ đồng bộ trong File Explorer.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "locktips",
+    "Title": "Giảm mẹo trên màn hình khóa",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Tắt nội dung mẹo và lớp thông tin gợi ý của màn hình khóa.",
+    "Cost": "Không phải mọi thành phần màn hình khóa đều được ẩn; kết quả tùy nền và bản Windows.",
+    "Who": "Chọn nếu muốn màn hình khóa gọn hơn.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Lockscreen_Tips.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SubscribedContent-338387Enabled",
+        "Value": 0
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "RotatingLockScreenOverlayEnabled",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn thích thông tin và mẹo hiện trên màn hình khóa.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "bing",
+    "Title": "Tắt gợi ý tìm kiếm Bing trong Start",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Yêu cầu Windows không đưa gợi ý web Bing vào giao diện tìm kiếm; vẫn tìm ứng dụng và tệp cục bộ.",
+    "Cost": "Bạn mất kết quả web tích hợp và có thể mất gợi ý tìm kiếm gần đây trong Explorer. Hiệu lực chính sách tùy bản Windows.",
+    "Who": "Phù hợp nếu bạn luôn tìm web trong Edge hoặc trình duyệt khác.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Bing_Cortana_In_Search.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Policies\\Microsoft\\Windows\\Explorer",
+        "Name": "DisableSearchBoxSuggestions",
+        "Value": 1
+      }
+    ],
+    "Keep": "Bạn muốn tìm web và xem gợi ý ngay trong Windows Search.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "search",
+    "Title": "Tìm kiếm trên thanh tác vụ",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Chọn cách hiện tìm kiếm trên thanh tác vụ; không tắt dịch vụ Windows Search.",
+    "Cost": "Không tắt dịch vụ Windows Search, không giảm lập chỉ mục. Vẫn tìm bằng Win + S.",
+    "Who": "Chọn nếu bạn quen dùng bàn phím để tìm kiếm.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Hide_Search_Taskbar.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Search",
+        "Name": "SearchboxTaskbarMode",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn thường bấm ô Search bằng chuột; ẩn nút không tăng hiệu năng.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0,
+    "Choices": [
+      {
+        "Id": "hidden",
+        "Title": "Ẩn",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Search_Taskbar.reg"
+      },
+      {
+        "Id": "icon",
+        "Title": "Biểu tượng",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Search_Icon.reg"
+      },
+      {
+        "Id": "label",
+        "Title": "Biểu tượng và chữ",
+        "Values": [
+          3
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Search_Icon_And_Label.reg"
+      },
+      {
+        "Id": "box",
+        "Title": "Ô tìm kiếm",
+        "Values": [
+          2
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Search_Box.reg"
+      }
+    ]
+  },
+  {
+    "Id": "taskview",
+    "Title": "Nút Task View",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Chọn hiển thị nút Task View; phím Win + Tab vẫn hoạt động.",
+    "Cost": "Vẫn có desktop ảo và Win + Tab. Đây là tùy chỉnh giao diện, không phải tăng FPS.",
+    "Who": "Chọn nếu bạn ít bấm nút Task View.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Hide_Taskview_Taskbar.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "ShowTaskViewButton",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn thường dùng nút này để quản lý cửa sổ và desktop ảo.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0,
+    "Choices": [
+      {
+        "Id": "hidden",
+        "Title": "Ẩn",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Taskview_Taskbar.reg"
+      },
+      {
+        "Id": "shown",
+        "Title": "Hiện",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json"
+      }
+    ]
+  },
+  {
+    "Id": "align",
+    "Title": "Vị trí nút trên thanh tác vụ",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Chọn nút Start và biểu tượng ứng dụng nằm bên trái hoặc chính giữa.",
+    "Cost": "Thay đổi vị trí quen tay; không làm máy nhanh hơn.",
+    "Who": "Phù hợp nếu thích bố cục gần với Windows 10.",
+    "MinBuild": 22000,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Align_Taskbar_Left.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "TaskbarAl",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn quen bố cục ở giữa của Windows 11.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0,
+    "Choices": [
+      {
+        "Id": "left",
+        "Title": "Bên trái",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Align_Taskbar_Left.reg"
+      },
+      {
+        "Id": "center",
+        "Title": "Chính giữa",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json"
+      }
+    ]
+  },
+  {
+    "Id": "endtask",
+    "Title": "Thêm Kết thúc tác vụ vào taskbar",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Bật tùy chọn End task trong menu chuột phải ứng dụng trên các bản Windows 11 hỗ trợ.",
+    "Cost": "Dùng End task sẽ ép đóng ứng dụng và có thể mất nội dung chưa lưu. Việc bật tùy chọn không đóng app nào.",
+    "Who": "Hữu ích nếu thường xử lý ứng dụng bị treo.",
+    "MinBuild": 22631,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Enable_End_Task.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings",
+        "Name": "TaskbarEndTask",
+        "Value": 1
+      }
+    ],
+    "Keep": "Bạn muốn tránh tùy chọn ép đóng dễ làm mất dữ liệu chưa lưu.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "alttab",
+    "Title": "Thẻ ứng dụng trong Alt + Tab",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Chọn số thẻ của ứng dụng hỗ trợ được hiển thị cùng cửa sổ khi nhấn Alt + Tab.",
+    "Cost": "Không chuyển trực tiếp đến tab trình duyệt qua Alt + Tab; vẫn dùng Ctrl + Tab trong trình duyệt.",
+    "Who": "Phù hợp nếu mở nhiều tab và muốn danh sách chuyển cửa sổ ngắn hơn.",
+    "MinBuild": 19042,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Hide_Tabs_In_Alt_Tab.reg",
+    "Changes": [
+      {
+        "Path": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "MultiTaskingAltTabFilter",
+        "Value": 3
+      }
+    ],
+    "Keep": "Bạn dùng Alt + Tab để chuyển trực tiếp giữa tab trình duyệt.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0,
+    "Choices": [
+      {
+        "Id": "windows",
+        "Title": "Chỉ cửa sổ",
+        "Values": [
+          3
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Tabs_In_Alt_Tab.reg"
+      },
+      {
+        "Id": "three",
+        "Title": "Thêm 3 thẻ",
+        "Values": [
+          2
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_3_Tabs_In_Alt_Tab.reg"
+      },
+      {
+        "Id": "five",
+        "Title": "Thêm 5 thẻ",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_5_Tabs_In_Alt_Tab.reg"
+      },
+      {
+        "Id": "twenty",
+        "Title": "Thêm tối đa 20 thẻ",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_20_Tabs_In_Alt_Tab.reg"
+      }
+    ]
+  },
+  {
+    "Id": "extensions",
+    "Title": "Hiện phần mở rộng của tệp",
+    "Group": "File Explorer",
+    "Benefit": "Hiện đuôi như .exe, .jpg, .zip để dễ nhận biết loại tệp.",
+    "Cost": "Khi đổi tên, cần giữ nguyên đuôi nếu không chủ định đổi loại tệp. Không tăng hiệu năng.",
+    "Who": "Hữu ích để phân biệt file cài đặt, ảnh, tài liệu và kiểm tra tên tệp.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Show_Extensions_For_Known_File_Types.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "HideFileExt",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn muốn tên tệp ngắn; khi đổi tên nên giữ nguyên đuôi.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "thispc",
+    "Title": "Thư mục mở khi vào File Explorer",
+    "Group": "File Explorer",
+    "Benefit": "Chọn thư mục mặc định mở khi vào File Explorer.",
+    "Cost": "Downloads hoặc OneDrive chỉ hữu ích nếu thư mục đó khả dụng. Không di chuyển dữ liệu hoặc bật đồng bộ OneDrive.",
+    "Who": "Phù hợp nếu thường truy cập ổ đĩa và thư mục dự án.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Launch_File_Explorer_To_This_PC.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "LaunchTo",
+        "Value": 1
+      }
+    ],
+    "Keep": "Bạn muốn vào ngay Home và danh sách tệp gần đây.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0,
+    "Choices": [
+      {
+        "Id": "thispc",
+        "Title": "This PC",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_This_PC.reg"
+      },
+      {
+        "Id": "home",
+        "Title": "Home",
+        "Values": [
+          2
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_Home.reg"
+      },
+      {
+        "Id": "downloads",
+        "Title": "Downloads",
+        "Values": [
+          3
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_Downloads.reg"
+      },
+      {
+        "Id": "onedrive",
+        "Title": "OneDrive",
+        "Values": [
+          4
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Launch_File_Explorer_To_OneDrive.reg"
+      }
+    ]
+  },
+  {
+    "Id": "transparency",
+    "Title": "Tắt hiệu ứng trong suốt",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Chuyển các bề mặt Windows hỗ trợ sang nền đặc, giảm hiệu ứng giao diện.",
+    "Cost": "Giao diện bớt trong suốt; không bảo đảm tăng FPS hoặc giảm mức dùng RAM đáng kể.",
+    "Who": "Chọn nếu thích nền đặc hoặc muốn giảm hiệu ứng trên desktop.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_Transparency.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+        "Name": "EnableTransparency",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn thích hiệu ứng trong suốt và máy đang hoạt động ổn định.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "dvr",
+    "Title": "Tắt ghi hình bằng Xbox Game Bar",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Tắt hai thiết lập ghi hình Game DVR của tài khoản hiện tại. Có thể giảm công việc ghi hình nếu chức năng này đang hoạt động; không bảo đảm tăng FPS.",
+    "Cost": "Có thể không quay/lưu clip bằng Game Bar và Win + Alt + R. Không chỉnh cấu hình OBS, TikFinity hay NVIDIA recording. Không áp chính sách toàn máy.",
+    "Who": "Chỉ chọn nếu không dùng chức năng quay hoặc lưu clip của Xbox Game Bar.",
+    "MinBuild": 19041,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. App không tự đóng Explorer hoặc khởi động lại máy.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Disable_DVR.reg",
+    "Changes": [
+      {
+        "Path": "System\\GameConfigStore",
+        "Name": "GameDVR_Enabled",
+        "Value": 0
+      },
+      {
+        "Path": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+        "Name": "AppCaptureEnabled",
+        "Value": 0
+      }
+    ],
+    "Keep": "Bạn dùng Game Bar để quay video hoặc lưu clip trò chơi.",
+    "Kind": "Registry",
+    "Admin": false,
+    "MaxBuild": 0
+  },
+  {
+    "Id": "darkmode",
+    "Title": "Màu giao diện Windows và ứng dụng",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Chọn màu sáng hoặc tối cho Windows và các ứng dụng hỗ trợ.",
+    "Cost": "Chỉ đổi màu Windows và ứng dụng hỗ trợ; giao diện WinTune có lựa chọn riêng ở thanh trái.",
+    "Who": "Bạn thích màu tối và ứng dụng hỗ trợ chủ đề Windows.",
+    "Keep": "Bạn thích nền sáng hoặc ứng dụng không hiển thị rõ với màu tối.",
+    "MinBuild": 19041,
+    "MaxBuild": 0,
+    "Admin": false,
+    "Kind": "Registry",
+    "Timing": "Có thể cần mở lại ứng dụng hoặc đăng xuất rồi đăng nhập để thấy hiệu lực. WinTune không tự đóng ứng dụng.",
+    "Undo": "Phục hồi chính xác giá trị trước đó, kể cả giá trị chưa tồn tại. Chỉ hoàn tác thiết lập; không phục hồi dữ liệu mất khi sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Enable_Dark_Mode.reg",
+    "Changes": [
+      {
+        "Value": 0,
+        "Name": "AppsUseLightTheme",
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize"
+      },
+      {
+        "Value": 0,
+        "Name": "SystemUsesLightTheme",
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize"
+      }
+    ],
+    "Choices": [
+      {
+        "Id": "dark",
+        "Title": "Tối",
+        "Values": [
+          0,
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Enable_Dark_Mode.reg"
+      },
+      {
+        "Id": "light",
+        "Title": "Sáng",
+        "Values": [
+          1,
+          1
+        ],
+        "Source": "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json"
+      }
+    ]
+  },
+  {
+    "Id": "lastactive",
+    "Title": "Nhấp biểu tượng taskbar để chuyển cửa sổ gần nhất",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Đổi cách nhấp biểu tượng của ứng dụng có nhiều cửa sổ: chuyển thẳng đến cửa sổ thay vì phải chọn từ hình xem trước.",
+    "Cost": "Đổi thói quen chọn cửa sổ. Không tăng tốc ứng dụng; hiệu lực có thể tùy phiên bản Explorer.",
+    "Who": "Bạn thường chuyển giữa nhiều cửa sổ cùng ứng dụng.",
+    "Keep": "Bạn muốn luôn xem hình thu nhỏ để chọn đúng cửa sổ.",
+    "MinBuild": 19041,
+    "MaxBuild": 0,
+    "Admin": false,
+    "Kind": "Registry",
+    "Timing": "Có thể cần mở lại ứng dụng hoặc đăng xuất rồi đăng nhập để thấy hiệu lực. WinTune không tự đóng ứng dụng.",
+    "Undo": "Phục hồi chính xác giá trị trước đó, kể cả giá trị chưa tồn tại. Chỉ hoàn tác thiết lập; không phục hồi dữ liệu mất khi sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Enable_Last_Active_Click.reg",
+    "Changes": [
+      {
+        "Value": 1,
+        "Name": "LastActiveClick",
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced"
+      }
+    ]
+  },
+  {
+    "Id": "hiddenfiles",
+    "Title": "Hiện tệp và thư mục ẩn trong Explorer",
+    "Group": "File Explorer",
+    "Benefit": "Hiện các mục có thuộc tính Hidden để dễ tìm dữ liệu hoặc cấu hình.",
+    "Cost": "Không hiện tệp hệ thống được bảo vệ. Đừng xóa tệp lạ chỉ vì nó xuất hiện; đây không phải dọn rác.",
+    "Who": "Bạn cần truy cập thư mục cấu hình ẩn và biết tệp cần tìm.",
+    "Keep": "Bạn muốn Explorer gọn và tránh vô tình sửa tệp cấu hình.",
+    "MinBuild": 19041,
+    "MaxBuild": 0,
+    "Admin": false,
+    "Kind": "Registry",
+    "Timing": "Có thể cần mở lại ứng dụng hoặc đăng xuất rồi đăng nhập để thấy hiệu lực. WinTune không tự đóng ứng dụng.",
+    "Undo": "Phục hồi chính xác giá trị trước đó, kể cả giá trị chưa tồn tại. Chỉ hoàn tác thiết lập; không phục hồi dữ liệu mất khi sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/47cc891547192d228475e8e69bb196d7d20abe1e/Regfiles/Show_Hidden_Folders.reg",
+    "Changes": [
+      {
+        "Value": 1,
+        "Name": "Hidden",
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced"
+      }
+    ]
+  },
+  {
+    "Id": "widgets",
+    "Title": "Ẩn thời tiết và Widgets trên thanh tác vụ",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Ẩn nút Widgets và thông tin thời tiết, tin tức hoặc thông báo đi kèm trên thanh tác vụ của tài khoản hiện tại.",
+    "Cost": "Mất cách mở Widgets bằng nhấp hoặc rê chuột trên thanh tác vụ. Vẫn có thể mở bảng Widgets bằng Win + W. Không gỡ ứng dụng Thời tiết, không tắt toàn bộ nền tảng Widgets và không cam kết giảm RAM hoặc tăng FPS.",
+    "Who": "Chọn nếu bạn muốn thanh tác vụ gọn, không cần thời tiết hay tin tức xuất hiện ở đó.",
+    "Keep": "Bạn muốn xem nhanh thời tiết và mở Widgets bằng chuột trên thanh tác vụ.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Admin": false,
+    "Kind": "Registry",
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại hoặc khởi động lại riêng máy ảo khi thử. WinTune không tự đóng Explorer, đăng xuất hoặc khởi động lại Windows.",
+    "Undo": "Phục hồi chính xác TaskbarDa trước đó, kể cả khi giá trị chưa tồn tại. Có thể cần nạp lại phiên để thấy nút trở lại. Không phục hồi dữ liệu của ứng dụng; mục này không gỡ ứng dụng.",
+    "Source": "https://github.com/microsoft/winget-dsc/blob/b4b1867fe8ef748198fb56476d15f435a66eca46/resources/Microsoft.Windows.Developer/Microsoft.Windows.Developer.psm1",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "TaskbarDa",
+        "Value": 0
+      }
+    ]
+  },
+  {
+    "Id": "edgestartupboost",
+    "Title": "Tắt khởi chạy sẵn Microsoft Edge",
+    "Group": "Hoạt động nền & khởi động",
+    "Benefit": "Tắt Startup Boost: Edge không được chính sách này cho khởi chạy sẵn khi đăng nhập hoặc tự khởi động lại nền sau khi đóng cửa sổ cuối.",
+    "Cost": "Lần mở Edge có thể chậm hơn. Không gỡ Edge, không tắt Windows Search hoặc WebView2 của các ứng dụng khác. Nếu Edge chưa cài hoặc chính sách máy ưu tiên khác, giá trị có thể chưa có hiệu lực.",
+    "Who": "Chọn nếu ít dùng Edge hoặc không cần Edge mở nhanh ngay sau đăng nhập.",
+    "Keep": "Bạn dùng Edge thường xuyên và muốn trình duyệt mở nhanh.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Admin": false,
+    "Kind": "Registry",
+    "Timing": "Edge hỗ trợ đọc lại chính sách; bạn có thể tự mở edge://policy để kiểm tra hoặc tự đóng/mở lại sau khi lưu dữ liệu. WinTune không đóng trình duyệt, đăng xuất hoặc khởi động lại.",
+    "Undo": "Phục hồi đúng giá trị chính sách cũ, kể cả chưa tồn tại. Không phục hồi dữ liệu duyệt web; mục này không xóa dữ liệu.",
+    "Source": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/startupboostenabled",
+    "Changes": [
+      {
+        "Path": "Software\\Policies\\Microsoft\\Edge",
+        "Name": "StartupBoostEnabled",
+        "Value": 0
+      }
+    ]
+  },
+  {
+    "Id": "edgebackground",
+    "Title": "Tắt Edge chạy nền sau khi đóng",
+    "Group": "Hoạt động nền & khởi động",
+    "Benefit": "Tắt chế độ Edge giữ ứng dụng và phiên duyệt nền sau khi bạn tự đóng cửa sổ cuối. Có thể giảm tiến trình msedge nếu chế độ này đang bật.",
+    "Cost": "Tiện ích hoặc ứng dụng web phụ thuộc chạy nền có thể không nhận thông báo khi Edge đã đóng. Không chặn WebView2 của Teams, Widgets hay app khác. Không tự đóng tab hoặc tiến trình đang có dữ liệu.",
+    "Who": "Chọn nếu muốn Edge dừng chế độ nền khi đã đóng các cửa sổ.",
+    "Keep": "Bạn cần tiện ích/app web và thông báo tiếp tục hoạt động khi không mở cửa sổ Edge.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Admin": false,
+    "Kind": "Registry",
+    "Timing": "Chính sách hỗ trợ cập nhật động. Tự lưu dữ liệu rồi đóng/mở Edge khi cần; kiểm tra edge://policy. Không tự đóng trình duyệt hoặc khởi động lại Windows.",
+    "Undo": "Khôi phục chính xác chính sách trước đó hoặc xóa giá trị mới nếu trước chưa tồn tại. Không thay đổi dữ liệu duyệt web.",
+    "Source": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/backgroundmodeenabled",
+    "Changes": [
+      {
+        "Path": "Software\\Policies\\Microsoft\\Edge",
+        "Name": "BackgroundModeEnabled",
+        "Value": 0
+      }
+    ]
+  },
+  {
+    "Id": "classicmenu",
+    "Title": "Menu chuột phải kiểu Windows 10",
+    "Group": "File Explorer",
+    "Kind": "Registry",
+    "Admin": false,
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Benefit": "Mở menu đầy đủ khi nhấp chuột phải, giảm việc bấm Hiển thị thêm tùy chọn.",
+    "Cost": "Đây là tùy chỉnh tương thích của Explorer, không phải tùy chọn chính thức trong Settings. Bản cập nhật Windows có thể đổi hiệu lực; một số lệnh mới có thể không xuất hiện trong menu cũ.",
+    "Who": "Bạn quen menu đầy đủ của Windows 10.",
+    "Keep": "Bạn thích menu Windows 11 hoặc tính năng mới cần menu hiện đại.",
+    "Timing": "Có thể cần tự đăng xuất rồi đăng nhập. WinTune không đóng Explorer hoặc tự khởi động lại máy.",
+    "Undo": "Hoàn tác trả về đúng giá trị trước khi áp dụng, kể cả trạng thái chưa tồn tại. Không phục hồi dữ liệu đã bị Windows xóa.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Show_More_Options_Context_Menu.reg",
+    "Changes": [
+      {
+        "Hive": "HKCU",
+        "Type": "String",
+        "Path": "Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32",
+        "Name": "",
+        "Value": ""
+      }
+    ]
+  },
+  {
+    "Id": "notepadai",
+    "Title": "Tắt AI trong Notepad",
+    "Group": "AI và Copilot",
+    "Kind": "Registry",
+    "Admin": true,
+    "MinBuild": 26100,
+    "MaxBuild": 0,
+    "Benefit": "Tắt tính năng AI trong Notepad bằng chính sách Microsoft hỗ trợ, giữ khả năng soạn thảo văn bản bình thường.",
+    "Cost": "Áp dụng cho máy này và các tài khoản dùng Notepad. Chỉ có tác dụng với phiên bản Notepad hỗ trợ AI; không tắt AI trong Adobe, trình duyệt hoặc ứng dụng khác.",
+    "Who": "Bạn chỉ dùng Notepad để đọc và sửa văn bản.",
+    "Keep": "Bạn dùng các chức năng viết lại hoặc tạo nội dung AI của Notepad.",
+    "Timing": "Tự đóng và mở lại Notepad sau khi lưu công việc. Không tự đóng ứng dụng.",
+    "Undo": "Hoàn tác trả về đúng giá trị trước khi áp dụng, kể cả trạng thái chưa tồn tại. Không phục hồi dữ liệu đã bị Windows xóa.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Notepad_AI_Features.reg",
+    "Changes": [
+      {
+        "Hive": "HKLM",
+        "Type": "DWord",
+        "Path": "Software\\Policies\\WindowsNotepad",
+        "Name": "DisableAIFeatures",
+        "Value": 1
+      }
+    ]
+  },
+  {
+    "Id": "recall",
+    "Title": "Tắt lưu ảnh màn hình cho Recall",
+    "Group": "AI và Copilot",
+    "Kind": "Registry",
+    "Admin": false,
+    "MinBuild": 26200,
+    "MaxBuild": 0,
+    "Benefit": "Ngăn Recall lưu ảnh màn hình cho tài khoản hiện tại trên máy Copilot+ có hỗ trợ Recall.",
+    "Cost": "Windows có thể xóa các ảnh Recall đã lưu khi bật chính sách này. Hoàn tác chỉ trả lại thiết lập, không khôi phục những ảnh đó. Máy không có Recall không có lợi ích từ mục này; không bảo đảm giảm RAM.",
+    "Who": "Bạn có máy Copilot+ nhưng không muốn dùng lịch sử ảnh Recall.",
+    "Keep": "Bạn cần tìm lại nội dung qua Recall và chấp nhận lưu ảnh màn hình.",
+    "Timing": "Hiệu lực do Windows quản lý; có thể cần đăng xuất. Không gỡ thành phần Windows AI hoặc tắt dịch vụ.",
+    "Undo": "Hoàn tác trả về đúng giá trị trước khi áp dụng, kể cả trạng thái chưa tồn tại. Không phục hồi dữ liệu đã bị Windows xóa.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_AI_Recall.reg",
+    "Changes": [
+      {
+        "Hive": "HKCU",
+        "Type": "DWord",
+        "Path": "Software\\Policies\\Microsoft\\Windows\\WindowsAI",
+        "Name": "DisableAIDataAnalysis",
+        "Value": 1
+      }
+    ]
+  },
+  {
+    "Id": "copilotapp",
+    "Title": "Gỡ ứng dụng Microsoft Copilot",
+    "Group": "AI và Copilot",
+    "Kind": "Action",
+    "Admin": false,
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Benefit": "Gỡ trực tiếp ứng dụng Microsoft Copilot của tài khoản hiện tại: đánh dấu mục này, xem trước rồi chạy. Không cần mở danh sách gỡ ứng dụng.",
+    "Cost": "Gỡ ứng dụng sẽ mất khả năng mở Copilot qua ứng dụng đó. Không chặn Copilot trên web, Edge hoặc trong Office. Windows có thể cài lại qua cập nhật hoặc theo yêu cầu của bạn.",
+    "Who": "Bạn không dùng ứng dụng Copilot độc lập.",
+    "Keep": "Bạn đang dùng Copilot hoặc dữ liệu của ứng dụng.",
+    "Timing": "Chỉ gỡ sau xem trước và xác nhận. Không gỡ cho tài khoản khác hoặc các gói cấp sẵn.",
+    "Undo": "Cài lại từ Microsoft Store nếu có ID được xác minh; không bảo đảm khôi phục dữ liệu ứng dụng.",
+    "Source": "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/appx.json",
+    "Changes": []
+  },
+  {
+    "Id": "starttips",
+    "Title": "Giảm đề xuất và mẹo trong Start",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Tắt đề xuất mẹo, ứng dụng mới và nội dung gợi ý trong Start.",
+    "Cost": "Không hứa xóa toàn bộ vùng Recommended; ứng dụng ghim và file gần đây vẫn có thể hiện.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22621,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "Start_IrisRecommendations",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "startaccount",
+    "Title": "Ẩn nhắc tài khoản trong Start",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Giảm thông báo gợi ý tài khoản Microsoft trong Start.",
+    "Cost": "Có thể bỏ lỡ nhắc về tài khoản/đồng bộ; không đăng xuất hoặc xóa tài khoản.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22621,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "Start_AccountNotifications",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "accountnotices",
+    "Title": "Giảm gợi ý tài khoản trong Settings",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Tắt gợi ý tài khoản ở giao diện Settings.",
+    "Cost": "Không thay bảo mật tài khoản và không chặn mọi quảng cáo Microsoft 365.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\SystemSettings\\AccountNotifications",
+        "Name": "EnableAccountNotifications",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "setupoffers",
+    "Title": "Tắt lời mời hoàn tất thiết lập Windows",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Giảm màn hình mời hoàn tất thiết lập, kết nối dịch vụ và trải nghiệm bổ sung.",
+    "Cost": "Có thể bỏ lỡ hướng dẫn tính năng mới; không vô hiệu hóa Windows Update.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\UserProfileEngagement",
+        "Name": "ScoobeSystemSettingEnabled",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "suggestedapps",
+    "Title": "Hạn chế tự cài ứng dụng được gợi ý",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Yêu cầu Windows không tự cài các ứng dụng quảng bá qua Content Delivery Manager.",
+    "Cost": "Không gỡ ứng dụng đã cài; chính sách và thay đổi của Windows có thể giới hạn hiệu lực.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+        "Name": "SilentInstalledAppsEnabled",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "suggestiontoast",
+    "Title": "Tắt thông báo gợi ý Windows",
+    "Group": "Gợi ý & quảng cáo",
+    "Benefit": "Tắt nhóm thông báo Windows.SystemToast.Suggested.",
+    "Cost": "Không tắt thông báo của mọi ứng dụng hoặc cảnh báo bảo mật.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Windows_Suggestions.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings\\Windows.SystemToast.Suggested",
+        "Name": "Enabled",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "phonelinkstart",
+    "Title": "Ẩn Phone Link bên cạnh Start",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Ẩn phần điện thoại liên kết trong Start.",
+    "Cost": "Không gỡ Phone Link; liên kết điện thoại trong ứng dụng vẫn còn.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22621,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Phone_Link_In_Start.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Start\\Companions\\Microsoft.YourPhone_8wekyb3d8bbwe",
+        "Name": "IsEnabled",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "dragtray",
+    "Title": "Ẩn khay chia sẻ khi kéo tệp",
+    "Group": "File Explorer",
+    "Benefit": "Tắt khay Drag Tray xuất hiện khi kéo tệp tới phía trên màn hình.",
+    "Cost": "Không còn gợi ý chia sẻ nhanh ở khay này; kéo thả thông thường vẫn dùng được.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 26200,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Share_Drag_Tray.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\CDP",
+        "Name": "DragTrayEnabled",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "snapassist",
+    "Title": "Tắt gợi ý cửa sổ khi chia màn hình",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Không gợi ý các cửa sổ còn lại khi sắp xếp cửa sổ cạnh nhau.",
+    "Cost": "Bạn phải chọn cửa sổ còn lại thủ công; không tăng FPS.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Snap_Assist.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "SnapAssist",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "snaplayouts",
+    "Title": "Ẩn bảng bố cục khi kéo hoặc rê nút phóng to",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Ẩn gợi ý Snap Layouts ở phía trên màn hình và trên nút phóng to.",
+    "Cost": "Mất thao tác chọn bố cục nhanh; không tăng tốc ứng dụng.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Snap_Layouts.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "EnableSnapBar",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      },
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "EnableSnapAssistFlyout",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "scrollbars",
+    "Title": "Luôn hiện thanh cuộn của Windows",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Yêu cầu Windows không tự ẩn các thanh cuộn được hỗ trợ.",
+    "Cost": "Ứng dụng có thanh cuộn riêng có thể không dùng thiết lập này.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/ChrisTitusTech/winutil/blob/07ccd8e2e755a706f31569808b31f5b77acad6a9/config/tweaks.json",
+    "Changes": [
+      {
+        "Path": "Control Panel\\Accessibility",
+        "Name": "DynamicScrollbars",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "pointerprecision",
+    "Title": "Tắt tăng độ chính xác con trỏ",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Tắt tăng tốc con trỏ Enhance Pointer Precision của Windows.",
+    "Cost": "Chuột có thể cho cảm giác khác; game dùng raw input có thể không chịu tác động. Không hứa tăng FPS.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Enhance_Pointer_Precision.reg",
+    "Changes": [
+      {
+        "Path": "Control Panel\\Mouse",
+        "Name": "MouseSpeed",
+        "Value": "0",
+        "Type": "String",
+        "Hive": "HKCU"
+      },
+      {
+        "Path": "Control Panel\\Mouse",
+        "Name": "MouseThreshold1",
+        "Value": "0",
+        "Type": "String",
+        "Hive": "HKCU"
+      },
+      {
+        "Path": "Control Panel\\Mouse",
+        "Name": "MouseThreshold2",
+        "Value": "0",
+        "Type": "String",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "windowsnapping",
+    "Title": "Tắt tự chia cửa sổ khi kéo tới cạnh",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Tắt tự sắp xếp cửa sổ khi kéo tới cạnh màn hình.",
+    "Cost": "Mất tiện ích chia màn hình bằng kéo; chỉ chọn khi bạn không dùng.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Window_Snapping.reg",
+    "Changes": [
+      {
+        "Path": "Control Panel\\Desktop",
+        "Name": "WindowArrangementActive",
+        "Value": "0",
+        "Type": "String",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "notifications",
+    "Title": "Tắt thông báo ứng dụng Windows",
+    "Group": "Giao diện & trò chơi",
+    "Benefit": "Tắt thông báo toast của các ứng dụng dùng cơ chế Windows.",
+    "Cost": "Có thể bỏ lỡ email, lịch và thông báo công việc; không mặc định chọn, không tắt Defender hay Firewall.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Disable_Notifications.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\PushNotifications",
+        "Name": "ToastEnabled",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ]
+  },
+  {
+    "Id": "taskbarcombine",
+    "Title": "Gộp cửa sổ cùng ứng dụng — màn hình chính",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Ví dụ mở 3 cửa sổ Chrome: luôn gộp sẽ hiện chung 1 biểu tượng; không gộp sẽ hiện 3 nút riêng. Gộp khi đầy chỉ gom lại khi thanh tác vụ chật.",
+    "Cost": "Chỉ đổi cách hiện biểu tượng và tên cửa sổ; không đóng cửa sổ hay giảm số tiến trình. Mục màn hình phụ chỉ có tác dụng khi dùng nhiều màn hình.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22621,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_Always.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "TaskbarGlomLevel",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ],
+    "Choices": [
+      {
+        "Id": "always",
+        "Title": "Luôn gộp — 1 nút mỗi ứng dụng",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_Always.reg"
+      },
+      {
+        "Id": "full",
+        "Title": "Chỉ gộp khi thanh tác vụ đầy",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_When_Full.reg"
+      },
+      {
+        "Id": "never",
+        "Title": "Không gộp — mỗi cửa sổ 1 nút",
+        "Values": [
+          2
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_Taskbar_Never.reg"
+      }
+    ],
+    "InlineHelp": {
+      "always": "Ví dụ: 3 cửa sổ Chrome → chung 1 biểu tượng.",
+      "full": "Để các nút riêng; chỉ gom lại khi hết chỗ.",
+      "never": "Ví dụ: 3 cửa sổ Chrome → 3 nút có tên riêng."
     }
+  },
+  {
+    "Id": "multicombine",
+    "Title": "Gộp cửa sổ cùng ứng dụng — màn hình phụ",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Ví dụ mở 3 cửa sổ Chrome: luôn gộp sẽ hiện chung 1 biểu tượng; không gộp sẽ hiện 3 nút riêng. Gộp khi đầy chỉ gom lại khi thanh tác vụ chật.",
+    "Cost": "Chỉ đổi cách hiện biểu tượng và tên cửa sổ; không đóng cửa sổ hay giảm số tiến trình. Mục màn hình phụ chỉ có tác dụng khi dùng nhiều màn hình.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22621,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_Always.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "MMTaskbarGlomLevel",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ],
+    "Choices": [
+      {
+        "Id": "always",
+        "Title": "Luôn gộp — 1 nút mỗi ứng dụng",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_Always.reg"
+      },
+      {
+        "Id": "full",
+        "Title": "Chỉ gộp khi thanh tác vụ đầy",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_When_Full.reg"
+      },
+      {
+        "Id": "never",
+        "Title": "Không gộp — mỗi cửa sổ 1 nút",
+        "Values": [
+          2
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Combine_MMTaskbar_Never.reg"
+      }
+    ],
+    "InlineHelp": {
+      "always": "Ví dụ: 3 cửa sổ Chrome → chung 1 biểu tượng.",
+      "full": "Để các nút riêng; chỉ gom lại khi hết chỗ.",
+      "never": "Ví dụ: 3 cửa sổ Chrome → 3 nút có tên riêng."
+    }
+  },
+  {
+    "Id": "multitaskbar",
+    "Title": "Màn hình nào hiện nút ứng dụng đang mở?",
+    "Group": "Tìm kiếm & tác vụ",
+    "Benefit": "Khi có nhiều màn hình, chọn nơi hiện nút ứng dụng: mọi màn hình, màn hình chính và nơi có cửa sổ, hoặc chỉ nơi có cửa sổ.",
+    "Cost": "Không di chuyển hoặc nhân đôi cửa sổ. Dùng một màn hình thì không cần đổi mục này.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_All.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "MMTaskbarMode",
+        "Value": 0,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ],
+    "Choices": [
+      {
+        "Id": "all",
+        "Title": "Mọi màn hình",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_All.reg"
+      },
+      {
+        "Id": "main",
+        "Title": "Màn hình chính + nơi có cửa sổ",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_Main_Active.reg"
+      },
+      {
+        "Id": "active",
+        "Title": "Chỉ màn hình có cửa sổ",
+        "Values": [
+          2
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/MMTaskbarMode_Active.reg"
+      }
+    ],
+    "InlineHelp": {
+      "all": "Ví dụ: Chrome ở màn hình 2, nút Chrome hiện trên cả hai.",
+      "main": "Nút hiện ở màn hình chính và màn hình chứa cửa sổ.",
+      "active": "Ví dụ: Chrome ở màn hình 2, nút chỉ hiện tại màn hình 2."
+    }
+  },
+  {
+    "Id": "driveletters",
+    "Title": "Cách hiển thị ký tự ổ đĩa",
+    "Group": "File Explorer",
+    "Benefit": "Chọn vị trí của ký tự C:, D: bên cạnh tên ổ trong Explorer.",
+    "Cost": "Ẩn ký tự có thể khó phân biệt ổ; không đổi ký tự hoặc dữ liệu của ổ.",
+    "Who": "Chọn khi bạn cần thay đổi này; không được chọn hoặc áp dụng tự động.",
+    "Keep": "Bạn đang dùng chức năng này hoặc chưa rõ tác động.",
+    "MinBuild": 22000,
+    "MaxBuild": 0,
+    "Kind": "Registry",
+    "Admin": false,
+    "Timing": "Có thể cần đăng xuất rồi đăng nhập lại. WinTune không tự đóng Explorer hoặc khởi động lại Windows.",
+    "Undo": "Hoàn tác đợt gần nhất sẽ trả từng giá trị về đúng trạng thái trước khi áp dụng, kể cả khi giá trị ban đầu chưa tồn tại. Chỉ phục hồi thiết lập, không khôi phục nội dung hoặc dữ liệu đã mất trong thời gian sử dụng.",
+    "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Drive_Letters_First.reg",
+    "Changes": [
+      {
+        "Path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer",
+        "Name": "ShowDriveLettersFirst",
+        "Value": 4,
+        "Type": "DWord",
+        "Hive": "HKCU"
+      }
+    ],
+    "Choices": [
+      {
+        "Id": "first",
+        "Title": "Ký tự trước tên",
+        "Values": [
+          4
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Drive_Letters_First.reg"
+      },
+      {
+        "Id": "last",
+        "Title": "Ký tự sau tên",
+        "Values": [
+          0
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Drive_Letters_Last.reg"
+      },
+      {
+        "Id": "network",
+        "Title": "Ổ mạng trước tên",
+        "Values": [
+          1
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Show_Network_Drive_Letters_First.reg"
+      },
+      {
+        "Id": "hidden",
+        "Title": "Ẩn ký tự",
+        "Values": [
+          2
+        ],
+        "Source": "https://github.com/Raphire/Win11Debloat/blob/4079b276e9e93aa8698a9f70f5aa228ba11f8265/Regfiles/Hide_Drive_Letters.reg"
+      }
+    ]
+  }
 ]

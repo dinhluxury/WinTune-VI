@@ -40,6 +40,11 @@ foreach ($file in @('Setup.Core.ps1','Install-WinTune.ps1','Cai-WinTune.cmd','Se
 foreach ($file in @('QuickLauncher.template.ps1','QuickLauncher.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 foreach ($file in @('CmdLauncher.template.cmd','Build-CmdLauncher.ps1','CmdLauncher.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'Pages.Serving.Tests.ps1') -Destination $portable -Force
+foreach ($file in @('FullTweaks.json','FullTweaks.Core.ps1','FullTweaks.Native.ps1','FullTweaks.UI.ps1','FullTweaks.Worker.ps1','FullTweaks.Tests.ps1','FullTweaks.UI.Tests.ps1','TINH-CHINH-DAY-DU.md','CHANGELOG-v0.16.0.md')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
+Copy-Item -LiteralPath "$PSScriptRoot/FullTweaks.Native.Tests.ps1" -Destination $portable -Force
+foreach ($file in @('FullTweaks.Debloat.ps1','FullTweaks.Debloat.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
+Copy-Item -LiteralPath "$PSScriptRoot/KIEM-THU-v0.16.0.md" -Destination $portable -Force
+foreach ($file in @('CompactGroupsPanel.cs','Copilot.Core.ps1','Copilot.UI.ps1','Power.Explanations.ps1','UX.Core.Tests.ps1','UX.UI.Tests.ps1','WizTree.Core.ps1','WizTree.Launch.ps1','WizTree.UI.ps1','WizTree.Tests.ps1','WizTree.Launch.Tests.ps1','Storage.Navigation.Tests.ps1','WIZTREE.md','UpdateStatus.Core.ps1','UpdateStatus.Tests.ps1')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file) -Destination $portable -Force}
 if ($PublicRelease) {
     $publicProgress="# Tiến độ bản public`r`n`r`nWinTune VI $packageVersion. Mã nguồn và manifest ký đã được chuẩn bị local cho`r`nrepository dinhluxury/WinTune-VI. Không tự upload hoặc phát hành.`r`n`r`nXem CHANGELOG-v$packageVersion.md và KIEM-THU.md về kiểm thử/giới hạn;`r`nPUBLISHING.md hướng dẫn đưa mã và bộ tải lên GitHub.`r`nNhật ký/ảnh kiểm thử riêng của máy không được phân phối trong gói public.`r`n"
     [IO.File]::WriteAllText((Join-Path $portable 'TIEN-DO.md'),$publicProgress,[Text.UTF8Encoding]::new($true))
@@ -56,6 +61,7 @@ foreach ($file in @('microsoft-taskbar-reference.psm1.txt','microsoft-taskbar-re
 Copy-Item -LiteralPath "$PSScriptRoot/sources/winutil" -Destination $sourceDest -Recurse -Force
 Copy-Item -LiteralPath "$PSScriptRoot/sources/review-20261014" -Destination $sourceDest -Recurse -Force
 Copy-Item -LiteralPath "$PSScriptRoot/sources/curated-v014" -Destination $sourceDest -Recurse -Force
+Copy-Item -LiteralPath "$PSScriptRoot/sources/full-tweaks" -Destination $sourceDest -Recurse -Force
 Copy-Item -LiteralPath "$PSScriptRoot/sources/winget-package-ids.json" -Destination $sourceDest -Force
 if (-not $PublicRelease) {
 $proof=Join-Path $portable 'evidence'

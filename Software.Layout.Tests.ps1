@@ -19,6 +19,7 @@ Assert-UI ($sw.FindName('SoftwareSuggestions').Children.Count -eq 1 -and $sw.Fin
 $sw.FindName('SoftwareSearch').Text='';$sw.Width=1024;$sw.Height=800
 $ToolsState.Packages.Clear();$sw.FindName('SourceConsent').IsChecked=$false;$sw.FindName('PackageConsent').IsChecked=$false;Render-SoftwareSuggestions
 function Save-SoftwareRendering($W,[string]$Name) {
+    $W.UpdateLayout();$W.Dispatcher.Invoke([Action]{},[Windows.Threading.DispatcherPriority]::Render)
     Set-ThemeResource $W.Content Background Window
     # Capture the entire measured content; the older fixed-size fixture crop
     # omitted the bottom buttons when this window became taller.

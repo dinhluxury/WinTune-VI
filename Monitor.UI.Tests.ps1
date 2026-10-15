@@ -2,6 +2,7 @@
 $monitorWritesBefore=$SimWriteCount
 $fixture=[pscustomobject]@{CpuName='CPU thử nghiệm (mô phỏng)';Cores=6;Threads=12;MaxClockMHz=4000;InstalledBytes=32GB;Memory=$null;MemoryModules=@([pscustomobject]@{Capacity=32GB;ConfiguredClockSpeed=3200;Manufacturer='Mô phỏng';PartNumber='TEST'});Board='Bo mạch mô phỏng';Windows='Windows thử nghiệm';GpuName='GPU mô phỏng';GpuLuid='luid_0x00000000_0x12345678';GpuBytes=8GB;Adapters=@();VideoControllers=@();Disks=@([pscustomobject]@{DeviceID='C:';VolumeName='Mô phỏng';Size=1000GB;FreeSpace=600GB});DiskHealth=@();Issues=@();Timestamp=[DateTime]::UtcNow}
 Show-MonitorHardware $fixture
+Assert-UI ($Window.FindName('HardwareDetails').Parent -is [Windows.Controls.StackPanel] -and $Window.FindName('HardwareDetails').Visibility -eq 'Visible' -and $Window.FindName('HardwareDetails').TextWrapping -eq 'Wrap') 'Hardware details are always displayed without an expander and wrap long lines'
 Set-MainPage 'Dashboard'
 Assert-UI ($Window.FindName('DashboardPage').Visibility -eq 'Visible' -and $Window.FindName('FeatureFooter').Visibility -eq 'Collapsed') 'Dashboard navigation hides apply controls without discarding selections'
 Assert-UI ($Window.FindName('GpuSize').Text.Contains('8') -and $Window.FindName('HardwareDetails').Text.Contains('không phải xung nhịp tức thời')) 'Hardware details preserve true capacity and explain reported CPU clock'
@@ -33,6 +34,15 @@ foreach ($size in @(@(1280,860),@(1024,650),@(900,560))) {
         try {$encoder.Save($stream)} finally {$stream.Dispose()}
     }
 }
+# Render the actual always-visible card separately, using the explicitly labelled fixture above.
+$hardwareCard=$Window.FindName('HardwareDetails').Parent.Parent
+# Render a serialization of the real card without the dashboard viewport's off-screen clipping.
+$hardwareVisual=[Windows.Markup.XamlReader]::Parse([Windows.Markup.XamlWriter]::Save($hardwareCard));$hardwareVisual.Resources=$Window.Resources
+[Windows.Documents.TextElement]::SetForeground($hardwareVisual,$Window.Foreground);[Windows.Documents.TextElement]::SetFontSize($hardwareVisual,$Window.FontSize);[Windows.Documents.TextElement]::SetFontFamily($hardwareVisual,$Window.FontFamily)
+$hardwareVisual.Width=850;$hardwareVisual.Measure([Windows.Size]::new(850,[double]::PositiveInfinity));$hardwareVisual.Arrange([Windows.Rect]::new(0,0,850,$hardwareVisual.DesiredSize.Height));$hardwareVisual.UpdateLayout()
+$hardwareBitmap=New-Object Windows.Media.Imaging.RenderTargetBitmap 850,([int][Math]::Ceiling($hardwareVisual.ActualHeight)),96,96,([Windows.Media.PixelFormats]::Pbgra32)
+$hardwareBitmap.Render($hardwareVisual);$hardwareEncoder=New-Object Windows.Media.Imaging.PngBitmapEncoder;$hardwareEncoder.Frames.Add([Windows.Media.Imaging.BitmapFrame]::Create($hardwareBitmap))
+$hardwareStream=[IO.File]::Create((Join-Path $PSScriptRoot 'evidence/hardware-details-visible.png'));try {$hardwareEncoder.Save($hardwareStream)} finally {$hardwareStream.Dispose()}
 # Use the production asynchronous job wrapper with a mocked reader that sleeps
 # in its own runspace. No system reader or mutator is invoked here.
 $ps=[PowerShell]::Create();$null=$ps.AddScript('Start-Sleep -Milliseconds 1500; [pscustomobject]@{Completed=$true}')

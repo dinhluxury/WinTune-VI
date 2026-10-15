@@ -16,7 +16,14 @@ try {
  if ($ToolSimulation -and $r.Parameters.PSObject.Properties['MockDelayMs']) {
   $delay=[int]$r.Parameters.MockDelayMs;if ($delay -lt 0 -or $delay -gt 15000) {throw 'Thời gian mô phỏng không hợp lệ.'};Start-Sleep -Milliseconds $delay
  }
- if ($r.Id -in @('actionsapply','startupundo')) {
+ if ($r.Id -in @('wiztreecheck','wiztreeinstall','wiztreeopen')) {
+  . "$PSScriptRoot/WizTree.Core.ps1";. "$PSScriptRoot/WizTree.Launch.ps1"
+  if ($r.Id -eq 'wiztreeopen') {$result=Invoke-WizTreeOpen ([bool]$r.Confirmed)} elseif ($r.Id -eq 'wiztreeinstall') {$result=Install-WizTree ([bool]$r.Confirmed)} else {$result=Get-WizTreeInstallation}
+ } elseif ($r.Id -eq 'copilotpreview') {
+  . "$PSScriptRoot/Actions.Core.ps1"; . "$PSScriptRoot/Copilot.Core.ps1"
+  Initialize-Actions $r.Parameters.ActionRoot $ToolSimulation $user
+  $result=New-CopilotRemovalPreview
+ } elseif ($r.Id -in @('actionsapply','startupundo')) {
   if (-not $r.Confirmed) {throw 'Chưa xác nhận thao tác app/khởi động.'}
   . "$PSScriptRoot/Actions.Core.ps1";Initialize-Actions $r.Parameters.ActionRoot $ToolSimulation $user
   if ($r.Id -eq 'actionsapply') {$result=Invoke-ActionPlan @($r.Parameters.Rows)} else {$result=Undo-StartupAction}

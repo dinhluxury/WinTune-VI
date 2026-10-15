@@ -1,4 +1,8 @@
-﻿# WinTune VI 0.15.2
+﻿> WinTune VI 0.16.0: danh mục lưu 110 mục (108 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở Tùy chỉnh Windows → Xem toàn bộ tùy chỉnh. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
+
+**Dung lượng ổ đĩa** tự cài WizTree nếu chưa có, mở trực tiếp **ổ C:** và tự quét. WizTree hiển thị tổng dung lượng, đã dùng và còn trống; không mở CSV. Đã bỏ trình xem cơ bản. Xem [cách dùng](WIZTREE.md). Khôi phục và Công cụ Windows hiện trực tiếp; cuối thanh bên có cập nhật và trạng thái phiên bản, đã bỏ phần đăng ký lệnh.
+
+# WinTune VI 0.16.0
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
@@ -78,7 +82,7 @@ Trong CMD tại thư mục app: `wintune`, `wintune demo`, `wintune test`.
 | Dọn ứng dụng Windows | Appx/MSIX của user: đề xuất xem xét, thông thường, hệ thống/được bảo vệ. Tìm/lọc không mất lựa chọn. Gỡ đúng PackageFullName, không AllUsers/provisioned. Tên chưa giải mã thì hiện tên gói thật |
 | Startup | Các lệnh phổ biến HKCU Run, giữ nguyên String/ExpandString, phục hồi khi không xung đột. Không bao gồm mọi nguồn tự chạy, không đóng app đang chạy |
 | WinGet | 17 ứng dụng thông dụng trong 4 nhóm, ô có cùng kích thước và mô tả công dụng. Tìm tên/mã, giữ lựa chọn khi lọc; nút cài và ô đồng ý luôn nhìn thấy. Kiểm tra WinGet/ID/nguồn bên trong; không có menu cập nhật/check/list |
-| Cleanup | Quét TEMP user cũ hơn 7 ngày, chọn file, ước tính byte, kiểm tra lại trạng thái/handle/đường dẫn, báo byte thực xóa và file bỏ qua. Recycle Bin xác nhận riêng, không hoàn tác dữ liệu |
+| Dung lượng ổ đĩa | Tự chuẩn bị WizTree và mở/quét trực tiếp ổ C:. Xem tổng/đã dùng/còn trống, cây thư mục, bản đồ màu và tệp lớn; không tự xóa tệp |
 | Repair | SFC /scannow, DISM CheckHealth/ScanHealth/RestoreHealth từng lệnh riêng, chkdsk chỉ đọc ổ Windows. Không /f /r /scan, không hẹn boot, không tự chạy chuỗi hoặc restart |
 | Power Plan | Đọc GUID thực có; đổi plan đã chọn và hoàn tác có điều kiện. Không thêm Ultimate, không sửa tham số sâu; thay đổi điện/nhiệt/pin tùy plan |
 | Thông tin máy | CPU/GPU/RAM/bo mạch/Windows/ổ/thiết bị lỗi/Defender/Firewall/TPM/Secure Boot do Windows cung cấp; lỗi/quyền/thiếu dữ liệu hiển thị rõ. Không chỉ số sức khỏe giả |

@@ -45,10 +45,10 @@ try {
     Reject {New-ChangePlan @('dvr')} 'Corrupt backup still blocks new changes'
     Assert ([IO.File]::ReadAllText($unknown) -eq '{') 'Invalid backup is preserved for recovery'
     Fresh; Set-Item Function:Set-RegistryValue $writer
-    Assert ($Features.Count -eq 46) 'PowerShell 5.1 catalog is a flat array of 46 entries'
+    Assert ($Features.Count -eq 44) 'PowerShell 5.1 catalog has 44 entries after redundant Settings shortcuts were removed'
     Assert ((Get-Feature 'ads').Title -is [string]) 'Get-Feature returns one feature'
     Assert ((Get-FeatureState (Get-Feature 'ads')) -like 'Chưa đặt giá trị*') 'Missing value is distinct from disabled'
-    Reject { New-ChangePlan @('startupsettings') } 'Settings links cannot be queued as tweaks'
+    Reject { New-ChangePlan @('startupsettings') } 'Removed Settings shortcut cannot be queued'
     Assert (@(New-ChangePlan @('ads','ads')).Count -eq 1) 'Duplicate selected IDs produce one change'
     Reject { Invoke-ChangePlan @() } 'Empty plan rejected'
     Assert (@(Get-Journals).Count -eq 0) 'Empty plan never creates a batch'

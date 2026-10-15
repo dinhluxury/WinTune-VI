@@ -43,8 +43,9 @@ phát hiện loại CmdLine trên máy kiểm tra và được ngừng khuyến 
 Giải nén toàn bộ ZIP rồi mở `Mo-WinTune.cmd`. Windows 11 x64, PowerShell
 5.1 + WPF và .NET Framework có sẵn; không cài module/dependency âm thầm.
 
-Để dùng lệnh ở mọi nơi, mở **WinTune và cập nhật → Đăng ký lệnh wintune**,
-đọc phạm vi rồi xác nhận. Hoặc tự chạy tại thư mục portable:
+Từ 0.16.0, trang cập nhật đã bỏ đăng ký lệnh `wintune`. Để mở online,
+dùng lệnh PowerShell trong README. Công cụ CLI cũ vẫn được giữ để quản lý
+đăng ký từ bản trước; chỉ khi chủ động cần mới chạy tại thư mục portable:
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Register-WinTune.ps1
@@ -59,19 +60,21 @@ process cha cũ và cần mở lại ứng dụng terminal hoặc đăng xuất/
 
 - `wintune`: mở ứng dụng đang được chọn trong `current.txt`.
 - `wintune demo`: mở mô phỏng.
-- `wintune update`: mở cửa sổ khởi chạy/cập nhật; chưa kết nối hoặc tải gì.
+- `wintune update`: mở cửa sổ cập nhật; chưa kết nối hoặc tải gì.
 - `wintune.cmd` trong portable vẫn hỗ trợ demo/test/probe/help; có thêm
   update/register/unregister cho người đang dùng bản portable.
 
 **Bỏ đăng ký lệnh** chỉ loại bỏ mục WinTune đã thêm nếu chưa có xung đột;
-giữ ứng dụng, bản cũ và lịch sử. Nếu đợt đăng ký bị ngắt, nút **Khắc phục
-đăng ký lỗi** chỉ xuất hiện khi có receipt Pending; khôi phục có điều kiện.
-CLI tương ứng: `Register-WinTune.ps1 -Remove` hoặc `-Recover`.
+giữ ứng dụng, bản cũ và lịch sử. Nếu đợt đăng ký cũ bị ngắt, CLI phục hồi
+có điều kiện: `Register-WinTune.ps1 -Remove` hoặc `-Recover`.
 `-Confirmed` chỉ dành cho người chủ động chấp thuận phạm vi đó; không là mặc định.
 
 ## Cập nhật trong ứng dụng
 
-Không kiểm tra mạng lúc mở app. Bấm **Kiểm tra phiên bản** mới đọc GitHub
+Trang **Cập nhật WinTune** hiển thị phiên bản đang chạy, trạng thái và thời điểm
+kiểm tra. Phân biệt đang dùng bản mới nhất, có bản mới, bản mới đã tải nhưng
+chưa mở và bản local mới hơn bản public. Không kiểm tra mạng lúc mở app.
+Bấm **Kiểm tra cập nhật** mới đọc GitHub
 Releases stable và xác minh RSA-SHA256 của `release.json` bằng khóa công
 khai đã ghim. Metadata được đọc trước; ZIP chưa được tải. Chỉ sau khi xem
 phiên bản/dung lượng/nguồn và xác nhận mới tải ZIP, kiểm tra SHA256 và kích

@@ -1,4 +1,6 @@
-﻿# FEATURE MATRIX — WinTune VI 0.15.0
+﻿> Cập nhật 0.16.0: 67 mục cấu hình WinUtil trong ảnh đã có ở bảng Toàn bộ tùy chỉnh. Xem [phạm vi và giới hạn hiện tại](TINH-CHINH-DAY-DU.md). Các bảng bên dưới là bản rà soát lịch sử 0.15.0, không phản ánh đầy đủ phần triển khai 0.16.0.
+
+# FEATURE MATRIX — WinTune VI 0.15.0
 
 Rà soát ngày 14/10/2026. HEAD được đọc lại qua GitHub API, trùng snapshot: WinUtil 07ccd8e2e755a706f31569808b31f5b77acad6a9; Win11Debloat 4079b276e9e93aa8698a9f70f5aa228ba11f8265. Không chạy script upstream. Không có Git trong dự án; giữ baseline-v0.13.
 

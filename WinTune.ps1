@@ -45,6 +45,7 @@ try {
     $script:LogsWindow=$null
     $script:ToolJob=$null
     $script:DistributionWindow=$null;$script:DistributionJob=$null;$script:DistributionTimer=$null
+    $script:FullWindow=$null;$script:FullJob=$null;$script:MainActionBusy=$false
     . (Join-Path $PSScriptRoot 'Theme.UI.ps1')
     Initialize-ThemeUI
     . (Join-Path $PSScriptRoot 'Links.UI.ps1')
@@ -77,14 +78,15 @@ try {
     function Update-Selection {
         $Window.FindName('SelectionCount').Text="Đã chọn $($script:Selected.Count) tính năng"
         Update-SelectedFeatureSummary
-        $Window.FindName('Preview').IsEnabled=$script:Selected.Count -gt 0 -and -not $script:PendingBatch -and -not $script:HistoryError
+        $Window.FindName('Preview').IsEnabled=$script:Selected.Count -gt 0 -and -not $script:PendingBatch -and -not $script:HistoryError -and -not $script:MainActionBusy
         $reason=if ($script:HistoryError) {'Chưa thể áp dụng: không đọc được bản sao lưu. Bấm Lịch sử để xem lỗi. '+$script:HistoryError} elseif ($script:PendingBatch) {'Đợt trước chưa hoàn tất. Bấm Lịch sử để xem, rồi Hoàn tác trước khi áp dụng đợt mới.'} else {''}
         $Window.FindName('ApplyBlockReason').Text=$reason
         $Window.FindName('ApplyBlockReason').Visibility=if ($reason) {'Visible'} else {'Collapsed'}
         $Window.FindName('Preview').ToolTip=if ($reason) {$reason} elseif ($script:Selected.Count -eq 0) {'Chọn ít nhất một thiết lập trước.'} else {'Xem các thay đổi trước khi xác nhận áp dụng.'}
         if ($reason) {$Window.FindName('Status').Text=if ($script:HistoryError) {'Chưa thể áp dụng: không đọc được bản sao lưu.'} else {'Cần hoàn tác đợt trước trước khi áp dụng.'}}
         if ($null -ne $script:Current) {
-            $Window.FindName('Toggle').Content=if ($script:Current.Kind -eq 'Action') {'Xem ứng dụng Copilot để gỡ'} elseif ($script:Current.Kind -eq 'Settings') {'Mở cài đặt Windows →'} elseif ($script:Selected.ContainsKey($script:Current.Id)) {'Bỏ khỏi danh sách áp dụng'} else {'Thêm vào danh sách áp dụng'}
+            $Window.FindName('Toggle').Content=if ($script:Current.Kind -eq 'Settings') {'Mở cài đặt Windows →'} elseif ($script:Selected.ContainsKey($script:Current.Id)) {'Bỏ khỏi danh sách áp dụng'} else {'Thêm vào danh sách áp dụng'}
+            $Window.FindName('Toggle').IsEnabled=(Test-FeatureSupported $script:Current) -and -not $script:MainActionBusy
         }
     }
     function Get-PermissionDescription($Feature) {
@@ -135,14 +137,14 @@ try {
                 if ($query -and (Search-Text "$($f.Title) $($f.Benefit) $($f.Group)").IndexOf((Search-Text $query),[StringComparison]::OrdinalIgnoreCase) -lt 0) { continue }
                 $item=New-Object Windows.Controls.ListBoxItem
                 $item.Tag=$f
-                $item.Padding='8,9'
+                $item.Padding='6,6'
                 [Windows.Automation.AutomationProperties]::SetName($item,$f.Title)
                 $row=New-Object Windows.Controls.DockPanel
                 $check=New-Object Windows.Controls.CheckBox
                 $check.Tag=$f
                 [Windows.Automation.AutomationProperties]::SetName($check,"Chọn: $($f.Title)")
                 $check.IsChecked=$script:Selected.ContainsKey($f.Id)
-                $check.IsEnabled=(Test-FeatureSupported $f) -and $f.Kind -eq 'Registry'
+                $check.IsEnabled=(Test-FeatureSupported $f) -and ($f.Kind -eq 'Registry' -or $f.Id -eq 'copilotapp') -and -not $script:MainActionBusy
                 $check.Margin='0,3,10,0'
                 $check.VerticalAlignment='Top'
                 [Windows.Controls.DockPanel]::SetDock($check,'Left')
@@ -157,8 +159,10 @@ try {
                 [Windows.Controls.DockPanel]::SetDock($detail,'Right')
                 $detail.Add_Click({param($sender,$args) Open-FeatureDetail $sender.Tag})
                 $null=$row.Children.Add($detail)
+                $inlineHint=Get-FeatureInlineHint $f
+                if ($inlineHint) {$hint=New-Object Windows.Controls.TextBlock;$hint.Text=$inlineHint;$hint.TextWrapping='Wrap';$hint.FontSize=12;$hint.Margin='0,4,0,0';$hint.Tag='InlineHint';Set-ThemeResource $hint Foreground Muted;[Windows.Controls.DockPanel]::SetDock($hint,'Bottom');$null=$row.Children.Add($hint)}
                 if ($f.PSObject.Properties['Choices']) {
-                    $selector=New-Object Windows.Controls.ComboBox;$selector.Tag=$f.Id;$selector.Margin='0,8,0,0';$selector.FontSize=12;$selector.IsEnabled=Test-FeatureSupported $f
+                    $selector=New-Object Windows.Controls.ComboBox;$selector.Tag=$f.Id;$selector.Margin='0,5,0,0';$selector.FontSize=12;$selector.IsEnabled=Test-FeatureSupported $f
                     [Windows.Automation.AutomationProperties]::SetName($selector,('Lựa chọn: '+$f.Title))
                     [Windows.Controls.DockPanel]::SetDock($selector,'Bottom')
                     $chosen=Get-FeatureChoice $f
@@ -176,7 +180,7 @@ try {
                 }
                 $text=New-Object Windows.Controls.TextBlock
                 $text.Text=$f.Title
-                if ($f.Kind -eq 'Action') {$text.Text+='  • Chọn ứng dụng để gỡ'}
+                if ($f.Kind -eq 'Action') {$text.Text+='  • Gỡ trực tiếp'}
                 elseif ($f.Kind -eq 'Settings') { $text.Text+='  • Mở cài đặt' }
                 elseif (-not (Test-FeatureSupported $f)) { $text.Text+='  • Không tương thích' }
                 $text.TextWrapping='Wrap'
@@ -206,7 +210,8 @@ try {
         $dialog=New-Object Windows.Window
         $dialog.Title=$Title; $dialog.Width=740; $dialog.Height=600
         $dialog.MinWidth=520; $dialog.MinHeight=400
-        if ($null -ne $script:LogsWindow -and $script:LogsWindow.IsVisible) { $dialog.Owner=$script:LogsWindow; $dialog.WindowStartupLocation='CenterOwner' }
+        if ($null -ne $script:FullWindow -and $script:FullWindow.IsVisible) { $dialog.Owner=$script:FullWindow; $dialog.WindowStartupLocation='CenterOwner' }
+        elseif ($null -ne $script:LogsWindow -and $script:LogsWindow.IsVisible) { $dialog.Owner=$script:LogsWindow; $dialog.WindowStartupLocation='CenterOwner' }
         elseif ($null -ne $script:RestoreWindow -and $script:RestoreWindow.IsVisible) { $dialog.Owner=$script:RestoreWindow; $dialog.WindowStartupLocation='CenterOwner' }
         elseif ($null -ne $script:ToolsWindow -and $script:ToolsWindow.IsVisible) { $dialog.Owner=$script:ToolsWindow; $dialog.WindowStartupLocation='CenterOwner' }
         elseif ($null -ne $script:ManagementWindow -and $script:ManagementWindow.IsVisible) { $dialog.Owner=$script:ManagementWindow; $dialog.WindowStartupLocation='CenterOwner' }
@@ -244,7 +249,7 @@ try {
         try { $latest=Get-LatestJournal; $script:HistoryError='' }
         catch { $script:HistoryError=$_.Exception.Message; $latest=$null }
         $script:PendingBatch=$null -ne $latest -and $latest.Journal.Status -eq 'Pending'
-        $Window.FindName('Undo').IsEnabled=$null -ne $latest -and -not $script:HistoryError
+        $Window.FindName('Undo').IsEnabled=$null -ne $latest -and -not $script:HistoryError -and -not $script:MainActionBusy
         if ($null -ne $script:Current) { Show-Detail $script:Current }
         if ($script:PendingBatch) { $Window.FindName('Status').Text='Đợt trước chưa hoàn tất: xem lịch sử và Hoàn tác trước khi tiếp tục.' }
         if ($script:HistoryError) { $Window.FindName('Status').Text='Lịch sử lỗi; đã khóa áp dụng/hoàn tác. '+$script:HistoryError }
@@ -254,7 +259,7 @@ try {
     $List.Add_SelectionChanged({if (-not $script:Rendering -and $null -ne $script:List.SelectedItem) {Show-Detail $script:List.SelectedItem.Tag}})
     $Window.FindName('Toggle').Add_Click({
         if ($null -eq $script:Current) {return}
-        if ($script:Current.Kind -eq 'Action') {Open-CopilotManager;return}
+        if ($script:MainActionBusy) {return}
         if ($script:Current.Kind -eq 'Settings') {
             try { if ($script:IsSimulation) { Message 'Chế độ mô phỏng: không mở Settings thật.' } else { Start-Process $script:Current.SettingsUri } } catch { Message $_.Exception.Message }
             return
@@ -268,7 +273,9 @@ try {
     $Window.FindName('Preview').Add_Click({
         try {
             $ids=@($script:Features | Where-Object { $script:Selected.ContainsKey($_.Id) } | ForEach-Object Id)
-            $rows=@(New-ChangePlan $ids)
+            $registryIds=@($ids | Where-Object {(Get-Feature $_).Kind -eq 'Registry'})
+            $rows=@();if ($registryIds.Count) {$rows=@(New-ChangePlan $registryIds)}
+            if ($ids -ccontains 'copilotapp') {Start-MainCopilotReview $ids @($rows);return}
             if ($rows.Count -eq 0) {Message 'Các mục đã ở trạng thái yêu cầu. Không có thay đổi mới.';return}
             $sections=@('XEM TRƯỚC — Chưa thay đổi máy.','Lưu trạng thái gốc trước khi ghi; chỉ áp dụng cho tài khoản hiện tại.','')
             $sections+="Đã chọn $($ids.Count) tính năng; cần ghi $($rows.Count) giá trị."
@@ -361,6 +368,8 @@ try {
         } catch {Message $_.Exception.Message}
     })
     . "$PSScriptRoot/Profiles.ps1"
+    . "$PSScriptRoot/FullTweaks.UI.ps1"
+    $Window.FindName('FullFeatures').Add_Click({Open-FullTweaks})
     Initialize-Profiles
     $profileBox=$Window.FindName('Profile')
     foreach ($p in $Profiles) {$entry=New-Object Windows.Controls.ComboBoxItem;$entry.Content=$p.Title;$entry.Tag=$p.Id;$entry.ToolTip=$p.Description;$null=$profileBox.Items.Add($entry)}
@@ -382,10 +391,13 @@ try {
     . "$PSScriptRoot/Tools.Core.ps1"
     . "$PSScriptRoot/Software.UI.ps1"
     . "$PSScriptRoot/Tools.UI.ps1"
+    . "$PSScriptRoot/WizTree.UI.ps1"
     Initialize-Tools (Join-Path $script:DataRoot 'tools') ([bool]($script:IsSimulation -or $script:WriteBlocked)) $script:UserId
-    foreach ($pair in @(@('Software','Phần mềm'),@('Cleanup','Dọn dẹp'),@('Repair','Sửa lỗi'),@('Power','Tối ưu'))) {
+    foreach ($pair in @(@('Software','Phần mềm'),@('Repair','Sửa lỗi'),@('Power','Tối ưu'))) {
         $button=$Window.FindName($pair[0]);$button.Tag=$pair[1];$button.Add_Click({param($sender,$args) Open-Tools $sender.Tag})
     }
+    $Window.FindName('Cleanup').Content='Dung lượng ổ đĩa';$Window.FindName('Cleanup').ToolTip='Tự cài WizTree nếu chưa có, mở ổ C: thật và tự quét để xem tổng dung lượng, đã dùng và còn trống.';$Window.FindName('Cleanup').Add_Click({Open-Storage})
+    $Window.FindName('Power').Content='Hiệu năng và pin'
     $Window.FindName('DeviceManager').Add_Click({if ($script:IsSimulation -or $script:WriteBlocked) {Message 'Mô phỏng/chỉ đọc: không mở công cụ hệ thống thật.'} else {Start-Process -FilePath (Join-Path $env:WINDIR 'System32/devmgmt.msc')}})
     . "$PSScriptRoot/Diagnostics.UI.ps1"
     . "$PSScriptRoot/Restore.UI.ps1"
@@ -395,6 +407,8 @@ try {
     $Window.FindName('RestoreWindows').Add_Click({Open-RestoreCenter 'Restore'})
     . "$PSScriptRoot/Actions.Core.ps1"
     . "$PSScriptRoot/Actions.UI.ps1"
+    . "$PSScriptRoot/Copilot.UI.ps1"
+    Initialize-MainCopilot
     $Window.FindName('ManageApps').Add_Click({Open-Management 'Appx'})
     $Window.FindName('ManageStartup').Add_Click({Open-Management 'Startup'})
     . "$PSScriptRoot/Distribution.UI.ps1"

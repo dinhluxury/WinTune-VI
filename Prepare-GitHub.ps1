@@ -31,7 +31,8 @@ $listed=@(Get-Content (Join-Path $Package 'SHA256.txt') -Encoding UTF8 | ForEach
 })
 foreach ($file in @(Get-ChildItem -LiteralPath $Package -Recurse -File)) {
     $relative=$file.FullName.Substring($Package.Length+1)
-    if ($listed -notcontains $relative -or $file.Extension -notin $textExtensions -or $relative -eq 'SHA256.txt') {continue}
+    $isStartTemplate=$relative -ceq 'sources\full-tweaks\start2.bin'
+    if ($listed -notcontains $relative -or ($file.Extension -notin $textExtensions -and -not $isStartTemplate) -or $relative -eq 'SHA256.txt') {continue}
     $dest=Join-Path $source $relative;$null=New-Item -ItemType Directory -Path ([IO.Path]::GetDirectoryName($dest)) -Force
     Copy-Item -LiteralPath $file.FullName -Destination $dest
 }

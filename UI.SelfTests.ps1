@@ -28,8 +28,7 @@ Assert-UI (-not $Window.FindName('Toggle').IsEnabled) 'Unsupported feature canno
 Show-Detail (Get-Feature 'widgets')
 Assert-UI (-not $Window.FindName('Toggle').IsEnabled) 'Windows 10 cannot queue the Windows 11 Widgets feature'
 $script:Build=[int]$cv.CurrentBuild; Render-List
-Show-Detail (Get-Feature 'startupsettings')
-Assert-UI ($Window.FindName('Toggle').Content -eq 'Mở cài đặt Windows →') 'Settings action is clearly labelled'
+Assert-UI (@($List.Items | Where-Object {$_.Tag.Group -eq 'Quản lý ứng dụng' -or $_.Tag.Kind -eq 'Settings'}).Count -eq 0) 'Tweaks board omits the redundant app-management Settings group'
 $plan=@(New-ChangePlan @($Selected.Keys))
 Assert-UI ($plan.Count -eq 3 -and $SimWriteCount -eq 0) 'Preview matches selections without writes'
 $Selected.Clear(); Render-List
@@ -141,7 +140,10 @@ $Window.FindName('Profile').SelectedIndex=0
 . "$PSScriptRoot/Hover.UI.Tests.ps1"
 . "$PSScriptRoot/Usability.UI.Tests.ps1"
 . "$PSScriptRoot/Coverage.UI.Tests.ps1"
+. "$PSScriptRoot/FullTweaks.UI.Tests.ps1"
 . "$PSScriptRoot/Software.Layout.Tests.ps1"
 . "$PSScriptRoot/Distribution.UI.Tests.ps1"
+. "$PSScriptRoot/UX.UI.Tests.ps1"
+. "$PSScriptRoot/Storage.Navigation.Tests.ps1"
 Write-Output "UI SELF TESTS PASSED: $script:UiPass (WPF controls, isolated providers; not a substitute for screen observation)."
 $Window.Close()
