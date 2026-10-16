@@ -34,6 +34,11 @@ function Read-FullAcl([string]$Handler) {
 function Get-FullApps([string[]]$Names) {
     $result=@();foreach ($name in $Names) {foreach ($app in @(Get-AppxPackage -Name $name -ErrorAction Stop)) {$result+=[pscustomobject]@{Name=$app.Name;FullName=$app.PackageFullName;NonRemovable=[bool]$app.NonRemovable}}};return @($result | Sort-Object FullName)
 }
+function Get-FullRecallState {
+    # A failed servicing query is not evidence that Recall is absent.
+    $state=Get-FullOptionalState (Get-FullFeature 'DBDisableRecall')
+    return [string]$state.Features[0].State
+}
 function Get-FullUninstaller([string]$Handler) {
     $paths=@()
     if ($Handler -eq 'Edge') {
@@ -54,7 +59,7 @@ function Get-FullInstalledDesktop([string]$Handler) {
 }
 function Get-FullTree([string]$Path,[int]$Depth=0) {
     if ($Depth -gt 18) {throw 'Bố cục thư mục quá sâu; chưa xóa để tránh bản sao không đầy đủ.'}
-    $key=[Microsoft.Win32.Registry]::CurrentUser.OpenSubKey($Path)
+    $key=(Get-FullBase 'HKCU').OpenSubKey($Path)
     try {
         if (-not $key) {return [pscustomobject]@{Exists=$false;Values=@();Children=@()}}
         $values=@();foreach ($name in @($key.GetValueNames() | Sort-Object)) {$type=[string]$key.GetValueKind($name);$value=$key.GetValue($name,$null,[Microsoft.Win32.RegistryValueOptions]::DoNotExpandEnvironmentNames);if ($type -eq 'Binary') {$value=[Convert]::ToBase64String($value)};$values+=[pscustomobject]@{Name=$name;Type=$type;Value=$value}}
@@ -62,13 +67,28 @@ function Get-FullTree([string]$Path,[int]$Depth=0) {
         return [pscustomobject]@{Exists=$true;Values=$values;Children=$children}
     } finally {if ($key) {$key.Dispose()}}
 }
-function Set-FullTree([string]$Path,$Tree) {
-    if (-not $Path.StartsWith('Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags',[StringComparison]::Ordinal) -and -not $Path.StartsWith('Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU',[StringComparison]::Ordinal)) {throw 'Không xóa cây registry ngoài bố cục Explorer.'}
-    [Microsoft.Win32.Registry]::CurrentUser.DeleteSubKeyTree($Path,$false)
+function Assert-FullExplorerTree($Tree,[int]$Depth=0) {
+    if ($Depth -gt 18) {throw 'Bản sao bố cục Explorer quá sâu.'}
     if (-not $Tree.Exists) {return}
-    $key=[Microsoft.Win32.Registry]::CurrentUser.CreateSubKey($Path);$key.Dispose()
-    foreach ($value in $Tree.Values) {Set-FullRegistry ([pscustomobject]@{Hive='HKCU';Path=$Path;Name=$value.Name}) ([pscustomobject]@{Exists=$true;Type=$value.Type;Value=$value.Value})}
-    foreach ($child in $Tree.Children) {Set-FullTree ($Path+'\'+$child.Name) $child.Data}
+    foreach ($value in $Tree.Values) {
+        if ($value.Name -match '\x00' -or $value.Type -notin @('String','ExpandString','MultiString','DWord','QWord','Binary')) {throw 'Giá trị bố cục Explorer không hợp lệ.'}
+        switch ($value.Type) {'Binary' {$null=[Convert]::FromBase64String($value.Value)} 'DWord' {$null=[int]$value.Value} 'QWord' {$null=[long]$value.Value}}
+    }
+    foreach ($child in $Tree.Children) {
+        if (-not $child.Name -or $child.Name -match '[\\/\x00]') {throw 'Tên khóa bố cục Explorer không hợp lệ.'}
+        Assert-FullExplorerTree $child.Data ($Depth+1)
+    }
+}
+function Set-FullTree([string]$Path,$Tree,[int]$Depth=0) {
+    $roots=@('Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags','Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU')
+    if (-not @($roots | Where-Object {$Path -ceq $_ -or $Path.StartsWith($_+'\',[StringComparison]::Ordinal)}).Count) {throw 'Không xóa cây registry ngoài bố cục Explorer.'}
+    # Validate the complete snapshot before deleting any part of the live tree.
+    if ($Depth -eq 0) {Assert-FullExplorerTree $Tree}
+    (Get-FullBase 'HKCU').DeleteSubKeyTree($Path,$false)
+    if (-not $Tree.Exists) {return}
+    $key=(Get-FullBase 'HKCU').CreateSubKey($Path);$key.Dispose()
+    foreach ($value in $Tree.Values) {Set-FullRegistry ([pscustomobject]@{Hive='HKCU';Path=$Path;Name=$value.Name;Type=$value.Type}) ([pscustomobject]@{Exists=$true;Type=$value.Type;Value=$value.Value})}
+    foreach ($child in $Tree.Children) {Set-FullTree ($Path+'\'+$child.Name) $child.Data ($Depth+1)}
 }
 function Get-FullDnsProviders {
     return @(
@@ -137,7 +157,7 @@ function Read-FullNative($Feature,$Parameters) {
         {$_ -in @('Edge','OneDrive')} {return [pscustomobject]@{Installed=(Get-FullInstalledDesktop $Feature.Handler)}}
         'BitLocker' {if ($Parameters.MountPoint -notmatch '^[A-Z]:$') {throw 'Chọn đúng ổ đĩa cần giải mã.'};$b=Get-BitLockerVolume -MountPoint $Parameters.MountPoint -ErrorAction Stop;return [pscustomobject]@{MountPoint=$b.MountPoint;Status=[string]$b.VolumeStatus}}
         'ReservedStorage' {$text=Invoke-FullExe (Get-FullSystemExe 'dism.exe') @('/Online','/Get-ReservedStorageState','/English');if ($text -notmatch '(?im)(?:State|storage)\s*:\s*(Enabled|Disabled)') {throw 'Không đọc được trạng thái dung lượng dự trữ.'};return [pscustomobject]@{Enabled=($Matches[1] -eq 'Enabled')}}
-        'WindowsAI' {$recall=Get-WindowsOptionalFeature -Online -FeatureName Recall -ErrorAction SilentlyContinue;return [pscustomobject]@{Apps=@(Get-FullApps @('Microsoft.Copilot','MicrosoftWindows.Client.CoreAI','Microsoft.MicrosoftOfficeHub'));Recall=$(if ($recall) {[string]$recall.State} else {'Absent'})}}
+        'WindowsAI' {$recall=Get-FullRecallState;return [pscustomobject]@{Apps=@(Get-FullApps @('Microsoft.Copilot','MicrosoftWindows.Client.CoreAI','Microsoft.MicrosoftOfficeHub'));Recall=$recall}}
         'AdobeHosts' {$path=Join-Path $env:WINDIR 'System32\drivers\etc\hosts';Assert-FullPath $path;if ((Get-Item -LiteralPath $path).Length -gt 4MB) {throw 'Tệp hosts lớn hơn 4 MB; chưa thay đổi để tránh sao lưu không đầy đủ.'};return [pscustomobject]@{Bytes=[Convert]::ToBase64String([IO.File]::ReadAllBytes($path))}}
         'FolderDiscovery' {$base='Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\';return [pscustomobject]@{Bags=(Get-FullTree ($base+'Bags'));BagMRU=(Get-FullTree ($base+'BagMRU'))}}
         'OOSU' {return [pscustomobject]@{External='Không theo dõi thay đổi bên trong công cụ O&O'}}
@@ -153,6 +173,15 @@ function Get-FullNativeTarget($Feature,$Parameters,$Before) {
         'StartPins' {return Get-FullStartTarget $Before}
         'Telemetry' {return Get-FullTelemetryTarget $Before}
         'Hibernate' {return [pscustomobject]@{Enabled=$false}}
+        'WindowsAI' {
+            if ($Before.Recall -match 'Pending') {throw 'Windows Recall đang chờ khởi động lại; chưa thay đổi AI. Lưu công việc và khởi động lại trước khi thử lại.'}
+            if (@($Before.Apps | Where-Object NonRemovable).Count) {throw 'Windows đang bảo vệ một số ứng dụng AI; chưa thay đổi. Không ép gỡ gói được bảo vệ.'}
+            return [pscustomobject]@{Handler=$Feature.Handler;Requested=$true}
+        }
+        'FolderDiscovery' {
+            Assert-FullExplorerTree $Before.Bags;Assert-FullExplorerTree $Before.BagMRU
+            return [pscustomobject]@{Handler=$Feature.Handler;Requested=$true}
+        }
         'Temp' {return $Before}
         {$_ -in @('StoreAcl','RazerAcl','LogitechAcl')} {
             $path=Get-FullAclPath $Feature.Handler
@@ -213,14 +242,19 @@ function Write-FullNative($Feature,$Parameters,$State,[bool]$Undo) {
         'BitLocker' {Disable-BitLocker -MountPoint $Parameters.MountPoint -Confirm:$false -ErrorAction Stop | Out-Null}
         'ReservedStorage' {$null=Invoke-FullExe (Get-FullSystemExe 'dism.exe') @('/Online','/Set-ReservedStorageState',('/State:'+$(if ($State.PSObject.Properties['Enabled'] -and $State.Enabled) {'Enabled'} else {'Disabled'})),'/English')}
         'WindowsAI' {
-            foreach ($app in @(Get-FullApps @('Microsoft.Copilot','MicrosoftWindows.Client.CoreAI','Microsoft.MicrosoftOfficeHub'))) {if ($app.NonRemovable) {throw ('Windows bảo vệ gói '+$app.Name+'; không ép gỡ. Các bước trước có thể đã thực hiện.')};Remove-AppxPackage -Package $app.FullName -ErrorAction Stop}
-            $recall=Get-WindowsOptionalFeature -Online -FeatureName Recall -ErrorAction SilentlyContinue;if ($recall -and $recall.State -eq 'Enabled') {Disable-WindowsOptionalFeature -Online -FeatureName Recall -NoRestart -ErrorAction Stop | Out-Null}
+            $recall=Get-FullRecallState
+            if ($recall -match 'Pending') {throw 'Windows Recall đang chờ khởi động lại; chưa gỡ ứng dụng AI. Lưu công việc và khởi động lại trước khi thử lại.'}
+            $apps=@(Get-FullApps @('Microsoft.Copilot','MicrosoftWindows.Client.CoreAI','Microsoft.MicrosoftOfficeHub'))
+            $protected=@($apps | Where-Object NonRemovable)
+            if ($protected.Count) {throw ('Windows bảo vệ gói '+($protected.Name -join ', ')+'; chưa gỡ ứng dụng AI. Không ép gỡ gói được bảo vệ.')}
+            foreach ($app in $apps) {Remove-AppxPackage -Package $app.FullName -ErrorAction Stop}
+            if ($recall -eq 'Enabled') {Disable-WindowsOptionalFeature -Online -FeatureName Recall -NoRestart -ErrorAction Stop | Out-Null}
         }
         'AdobeHosts' {$path=Join-Path $env:WINDIR 'System32\drivers\etc\hosts';Assert-FullPath $path;[IO.File]::WriteAllBytes($path,[Convert]::FromBase64String($State.Bytes));$null=Invoke-FullExe (Get-FullSystemExe 'ipconfig.exe') @('/flushdns')}
         'FolderDiscovery' {
             $base='Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\'
             if ($Undo) {Set-FullTree ($base+'Bags') $State.Bags;Set-FullTree ($base+'BagMRU') $State.BagMRU}
-            else {[Microsoft.Win32.Registry]::CurrentUser.DeleteSubKeyTree($base+'Bags',$false);[Microsoft.Win32.Registry]::CurrentUser.DeleteSubKeyTree($base+'BagMRU',$false);Set-FullRegistry ([pscustomobject]@{Hive='HKCU';Path=($base+'Bags\AllFolders\Shell');Name='FolderType'}) ([pscustomobject]@{Exists=$true;Type='String';Value='NotSpecified'})}
+            else {(Get-FullBase 'HKCU').DeleteSubKeyTree($base+'Bags',$false);(Get-FullBase 'HKCU').DeleteSubKeyTree($base+'BagMRU',$false);Set-FullRegistry ([pscustomobject]@{Hive='HKCU';Path=($base+'Bags\AllFolders\Shell');Name='FolderType';Type='String'}) ([pscustomobject]@{Exists=$true;Type='String';Value='NotSpecified'})}
         }
         'OOSU' {
             $path=[IO.Path]::GetFullPath([string]$Parameters.Executable);Assert-FullPath $path;$sig=Get-AuthenticodeSignature -LiteralPath $path

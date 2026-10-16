@@ -1,5 +1,5 @@
 ﻿function Start-ToolJob([string]$Id,$Parameters,[bool]$Confirmed,[bool]$Admin=$false) {
- if ($null -ne $script:ToolJob -and -not $script:ToolJob.Process.HasExited) {throw 'Một công cụ đang chạy; đợi kết quả trước khi thực hiện tiếp.'}
+ if ($null -ne $script:ToolJob -and -not $script:ToolJob.Handled) {throw 'Một công cụ đang chạy; đợi kết quả trước khi thực hiện tiếp.'}
  $path=Join-Path $script:ToolRoot ('job-'+[guid]::NewGuid().ToString('N'))
  $null=New-Item -ItemType Directory -Path $path
  $request=[pscustomobject]@{Version=1;Id=$Id;User=$script:ToolUser;Mode=$(if ($script:ToolSimulation) {'Simulation'} else {'Native'});Confirmed=$Confirmed;Parameters=$Parameters;Created=(Get-Date).ToString('o')}
@@ -14,11 +14,27 @@
 }
 . (Join-Path $PSScriptRoot 'RepairSummary.Core.ps1')
 . (Join-Path $PSScriptRoot 'Power.Explanations.ps1')
+function Complete-ToolJob($Job) {
+ if ($null -ne $Job -and -not $Job.Handled) {$Job.Handled=$true;$Job.Process.Dispose()}
+}
 function Get-ToolJobResult($Job) {
- if (-not $Job.Process.HasExited) {return $null}
+ if (-not $Job.Handled -and -not $Job.Process.HasExited) {return $null}
  $path=Join-Path $Job.Path 'result.json'
  if (-not (Test-Path -LiteralPath $path)) {return [pscustomobject]@{Status='Failed';Message='Worker đã dừng nhưng chưa lưu kết quả; không coi là thành công. Giữ thư mục nhật ký.'}}
- try {return (Get-Content -LiteralPath $path -Raw -Encoding UTF8 | ConvertFrom-Json)}
+ try {
+  $result=Get-Content -LiteralPath $path -Raw -Encoding UTF8 | ConvertFrom-Json
+  if ($null -eq $result -or -not $result.PSObject.Properties['Status'] -or $result.Status -notin @('Completed','Failed','Partial','Cancelled') -or -not $result.PSObject.Properties['Message'] -or $result.Message -isnot [string] -or ($result.Status -eq 'Completed' -and -not $result.PSObject.Properties['Result'])) {throw 'Kết quả thiếu trạng thái hoặc nội dung bắt buộc.'}
+  if (($result.Status -eq 'Completed' -and -not $result.PSObject.Properties['Id']) -or ($result.PSObject.Properties['Id'] -and $result.Id -cne $Job.Id)) {throw 'Kết quả không khớp tác vụ đang chờ.'}
+  if ($result.PSObject.Properties['Result'] -and $null -ne $result.Result -and $result.Result.PSObject.Properties['ExitCode']) {
+   $code=$result.Result.ExitCode
+   if (($code -isnot [int] -and $code -isnot [long]) -or $code -lt [int]::MinValue -or $code -gt [int]::MaxValue) {throw 'Mã kết quả của chương trình không hợp lệ.'}
+   if (-not $result.Result.PSObject.Properties['Output'] -or $result.Result.Output -isnot [string]) {throw 'Thiếu nội dung kết quả của chương trình.'}
+  }
+  if ($result.Status -eq 'Completed' -and $Job.Id -eq 'wingetinstall' -and $result.Result.PSObject.Properties['Rows']) {
+   foreach ($row in $result.Result.Rows) {if (-not $row.PSObject.Properties['Id'] -or -not $row.PSObject.Properties['State'] -or $row.State -notin @('Completed','Failed','Skipped')) {throw 'Kết quả cài ứng dụng thiếu thông tin từng mục.'}}
+  }
+  return $result
+ }
  catch {return [pscustomobject]@{Status='Failed';Message='Không đọc được nhật ký kết quả; không báo thành công. Giữ tệp: '+$_.Exception.Message}}
 }
 function Get-ToolStatusLabel([string]$Status) {
@@ -113,7 +129,7 @@ function New-ToolsWindow([string]$Group) {
   $null=Show-TextDialog 'Nhật ký công cụ' ($lines -join "`n")
  })
  $w.FindName('ToolsClose').Add_Click({param($sender,$args) [Windows.Window]::GetWindow($sender).Close()})
- $w.Add_Closing({param($sender,$args) if ($null -ne $script:ToolJob -and -not $script:ToolJob.Process.HasExited) {$args.Cancel=$true;Message 'Công cụ đang chạy. Đợi kết quả, không tự kết thúc tiến trình hoặc khởi động lại.'}})
+ $w.Add_Closing({param($sender,$eventArgs) if ($null -ne $script:ToolJob -and -not $script:ToolJob.Handled) {$eventArgs.Cancel=$true;$sender.FindName('ToolStatus').Text='Công cụ đang chạy. Đợi kết quả trước khi đóng cửa sổ.'}})
  $timer=New-Object Windows.Threading.DispatcherTimer;$timer.Interval=[TimeSpan]::FromMilliseconds(500)
  $timer.Add_Tick({Poll-ToolsJob});$script:ToolsTimer=$timer
  $w.Add_Closed({$script:ToolsTimer.Stop();$script:ToolsWindow=$null})
@@ -146,7 +162,7 @@ function Show-ToolDetail($Tool) {
  if ($Tool.Id -eq 'wingetinstall') {$w.FindName('ToolTitle').Text='Chọn ứng dụng để cài';$w.FindName('ToolDescription').Text='Cài từ kho WinGet của Microsoft. Ứng dụng có thể mở trình cài đặt riêng. Lưu công việc trước khi cài; không tự cài khi mở WinTune.'}
  $w.FindName('SoftwareOptions').Visibility=if ($Tool.Id -like 'winget*' -and $Tool.Id -ne 'wingetcheck') {'Visible'} else {'Collapsed'}
  $w.FindName('TempOptions').Visibility=if ($Tool.Id -eq 'tempdelete') {'Visible'} else {'Collapsed'}
- $w.FindName('RunTool').IsEnabled=$null -eq $script:ToolJob -or $script:ToolJob.Process.HasExited
+ $w.FindName('RunTool').IsEnabled=$null -eq $script:ToolJob -or $script:ToolJob.Handled
  $w.FindName('RunTool').Content=if ($Tool.Id -eq 'wingetinstall') {'Xem trước và cài ứng dụng'} else {'Xem trước và thực hiện'}
  if ($Tool.Id -eq 'wingetinstall') {
   $w.FindName('ToolSetup').MaxHeight=[double]::PositiveInfinity
@@ -190,7 +206,7 @@ function Poll-ToolsJob {
  $w=$script:ToolsWindow;$seconds=[int]((Get-Date)-$script:ToolJob.Started).TotalSeconds
  $w.FindName('ToolStatus').Text="Đang chạy $($script:ToolJob.Id) • $seconds giây • Chưa có kết quả cuối."
  $r=Get-ToolJobResult $script:ToolJob;if ($null -eq $r) {return}
- $script:ToolJob.Handled=$true;$script:ToolsTimer.Stop();$w.FindName('RunTool').IsEnabled=$true;$w.FindName('ToolStatus').Text=(Get-ToolStatusLabel $r.Status)+' — '+$r.Message;$w.FindName('ToolOutput').Text=Format-ToolResult $r
+ Complete-ToolJob $script:ToolJob;$script:ToolsTimer.Stop();$w.FindName('RunTool').IsEnabled=$true;$w.FindName('ToolStatus').Text=(Get-ToolStatusLabel $r.Status)+' — '+$r.Message;$w.FindName('ToolOutput').Text=Format-ToolResult $r
  if ($r.Status -eq 'Completed' -and $r.PSObject.Properties['Result']) {
   if ($script:ToolJob.Id -eq 'tempscan') {
    $script:ToolsState.TempInventory=@($r.Result.Files);$script:ToolsState.TempSelection.Clear();$script:ToolsState.TempPage=0;Render-TempPage
@@ -202,6 +218,7 @@ function Poll-ToolsJob {
   $names=Get-Content "$PSScriptRoot/software-catalog.json" -Raw -Encoding UTF8 | ConvertFrom-Json
   $lines=@();foreach ($row in $r.Result.Rows) {$p=@($names | Where-Object Id -eq $row.Id);$title=if ($p.Count) {$p[0].Title} else {$row.Id};$state=switch ($row.State) {'Completed' {'Đã cài và được WinGet nhận diện'} 'Skipped' {'Chưa cài vì mục trước có lỗi'} default {'Chưa cài được — xem nhật ký để biết chi tiết'}};$lines+=$title+': '+$state}
   $w.FindName('ToolOutput').Text=$lines -join "`n";$w.FindName('ToolStatus').Text='Đã kết thúc yêu cầu cài ứng dụng. Kết quả từng ứng dụng ở phía trên.'
+  if ($r.PSObject.Properties['RestartRequired'] -and $r.RestartRequired) {$w.FindName('ToolStatus').Text+=' Windows yêu cầu khởi động lại để hoàn tất. Bạn tự lưu công việc rồi khởi động lại; WinTune không tự làm.'}
  }
 }
 function Render-TempPage {

@@ -28,8 +28,11 @@ function Write-FullData($Data,[string]$Path) {
     $bytes=[Text.Encoding]::UTF8.GetBytes(($Data | ConvertTo-Json -Depth 80 -Compress))
     $sealed=[Security.Cryptography.ProtectedData]::Protect($bytes,$null,[Security.Cryptography.DataProtectionScope]::CurrentUser)
     $temp=$full+'.'+[guid]::NewGuid().ToString('N')+'.tmp'
-    [IO.File]::WriteAllBytes($temp,$sealed)
-    if (Test-Path -LiteralPath $full) {$backup=$temp+'.previous';[IO.File]::Replace($temp,$full,$backup);[IO.File]::Delete($backup)} else {[IO.File]::Move($temp,$full)}
+    try {
+        $stream=[IO.File]::Open($temp,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+        try {$stream.Write($sealed,0,$sealed.Length);$stream.Flush($true)} finally {$stream.Dispose()}
+        if (Test-Path -LiteralPath $full) {$backup=$temp+'.previous';[IO.File]::Replace($temp,$full,$backup);[IO.File]::Delete($backup)} else {[IO.File]::Move($temp,$full)}
+    } finally {if ([IO.File]::Exists($temp)) {[IO.File]::Delete($temp)}}
 }
 function Read-FullData([string]$Path) {
     $full=[IO.Path]::GetFullPath($Path)
@@ -41,6 +44,14 @@ function Read-FullData([string]$Path) {
 function Get-FullFeature([string]$Id) {
     if (-not $script:FullCatalogById.ContainsKey($Id)) {throw 'Không nhận diện tính năng; chưa thực hiện.'};return $script:FullCatalogById[$Id]
 }
+function Enter-FullOperationLock {
+    $lock=New-Object Threading.Mutex($false,('Local\WinTuneVI-Full-'+$FullUser))
+    try {try {$owned=$lock.WaitOne(0)} catch [Threading.AbandonedMutexException] {$owned=$true}}
+    catch {$lock.Dispose();throw}
+    if (-not $owned) {$lock.Dispose();throw 'Một tác vụ tinh chỉnh khác đang chạy.'}
+    return $lock
+}
+function Exit-FullOperationLock($Lock) {try {$Lock.ReleaseMutex()} finally {$Lock.Dispose()}}
 function Get-FullBase([string]$Hive) {
     switch -CaseSensitive ($Hive) {'HKCU' {return [Microsoft.Win32.Registry]::CurrentUser} 'HKLM' {return [Microsoft.Win32.Registry]::LocalMachine} 'HKU' {return [Microsoft.Win32.Registry]::Users} default {throw 'Nhánh registry không được hỗ trợ.'}}
 }
@@ -65,11 +76,25 @@ function Get-FullMemoryKey($Row) {
     if ($Row.Kind -eq 'Service') {return 'Service:'+$f.Services[$Row.Index].Name.ToLowerInvariant()}
     return 'Native:'+$Row.Id
 }
+function Assert-FullRegistrySnapshot($State,[int]$Depth=0) {
+    if ($Depth -gt 16) {throw 'Bản sao cây registry quá sâu.'}
+    if (-not $State.Exists) {return}
+    if ($State.Type -eq 'Tree') {
+        foreach ($value in $State.Value.Values) {
+            if ($value.Name -match '[\\/\x00]' -or $value.Data.Type -eq 'Tree') {throw 'Giá trị sao lưu cây registry không hợp lệ.'}
+            Assert-FullRegistrySnapshot $value.Data $Depth
+        }
+        foreach ($child in $State.Value.Children) {
+            if (-not $child.Name -or $child.Name -match '[\\/\x00]' -or $child.Data.Type -ne 'Tree') {throw 'Khóa con sao lưu registry không hợp lệ.'}
+            Assert-FullRegistrySnapshot $child.Data ($Depth+1)
+        }
+    } elseif ($State.Type -notin @('String','ExpandString','MultiString','DWord','QWord','Binary')) {throw 'Kiểu registry gốc chưa hỗ trợ hoàn tác; chưa thay đổi giá trị này.'}
+}
 function Read-FullRegistry($Change) {
     if ($Change.Type -eq 'Tree') {return Read-FullRegistryTree $Change.Hive $Change.Path}
     $key=(Get-FullBase $Change.Hive).OpenSubKey($Change.Path)
     try {
-        if ($null -eq $key -or $Change.Name -cnotin $key.GetValueNames()) {return [pscustomobject]@{Exists=$false;KeyExisted=($null -ne $key);Type=$Change.Type;Value=$null}}
+        if ($null -eq $key -or $Change.Name -notin $key.GetValueNames()) {return [pscustomobject]@{Exists=$false;KeyExisted=($null -ne $key);Type=$Change.Type;Value=$null}}
         $type=[string]$key.GetValueKind($Change.Name)
         $value=$key.GetValue($Change.Name,$null,[Microsoft.Win32.RegistryValueOptions]::DoNotExpandEnvironmentNames)
         if ($type -eq 'Binary') {$value=[Convert]::ToBase64String($value)}
@@ -91,6 +116,7 @@ function Read-FullRegistryTree([string]$Hive,[string]$Path,[int]$Depth=0) {
 function Set-FullRegistryTree([string]$Hive,[string]$Path,$State,[int]$Depth=0) {
     if ($Depth -gt 16) {throw 'Bản sao cây registry quá sâu.'}
     if ($Depth -eq 0 -and ($Hive -cne 'HKLM' -or $Path -cne 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\DelegateFolders\{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}')) {throw 'Không xóa cây registry ngoài khóa ổ đĩa trùng đã cho phép.'}
+    if ($Depth -eq 0) {Assert-FullRegistrySnapshot $State}
     $base=Get-FullBase $Hive
     if ($Depth -eq 0) {$base.DeleteSubKeyTree($Path,$false)}
     if (-not $State.Exists) {return}
@@ -101,14 +127,29 @@ function Set-FullRegistryTree([string]$Hive,[string]$Path,$State,[int]$Depth=0) 
         $acl=New-Object Security.AccessControl.RegistrySecurity;$acl.SetSecurityDescriptorSddlForm($State.Value.Sddl,[Security.AccessControl.AccessControlSections]::Access);$key.SetAccessControl($acl)
     } finally {$key.Dispose()}
 }
-function Set-FullRegistry($Change,$State) {
+function Set-FullRegistry($Change,$State,[object[]]$OwnedSiblings=@()) {
     if ($Change.Type -eq 'Tree') {Set-FullRegistryTree $Change.Hive $Change.Path $State;return}
+    Assert-FullRegistrySnapshot $State
     $base=Get-FullBase $Change.Hive
     $key=if ($State.Exists) {$base.CreateSubKey($Change.Path)} else {$base.OpenSubKey($Change.Path,$true)}
     try {
         if (-not $State.Exists) {
-            if ($null -eq $key) {return};$key.DeleteValue($Change.Name,$false)
-            if ($State.PSObject.Properties['KeyExisted'] -and -not $State.KeyExisted) {if ($key.SubKeyCount -gt 0 -or $key.ValueCount -gt 0) {throw 'Khóa mới chứa dữ liệu khác; không xóa thêm để tránh mất dữ liệu.'};$key.Dispose();$key=$null;$base.DeleteSubKey($Change.Path,$false)}
+            if ($null -eq $key) {return}
+            if ($State.PSObject.Properties['KeyExisted'] -and -not $State.KeyExisted) {
+                if ($key.SubKeyCount -gt 0) {throw 'Khóa mới chứa dữ liệu khác; không xóa thêm để tránh mất dữ liệu.'}
+                foreach ($name in @($key.GetValueNames())) {
+                    if ($name -ieq $Change.Name) {continue}
+                    $owned=@($OwnedSiblings | Where-Object {$_.Name -ieq $name})
+                    if ($owned.Count -ne 1) {throw 'Khóa mới chứa dữ liệu khác; không xóa thêm để tránh mất dữ liệu.'}
+                    $type=[string]$key.GetValueKind($name)
+                    $value=$key.GetValue($name,$null,[Microsoft.Win32.RegistryValueOptions]::DoNotExpandEnvironmentNames)
+                    if ($type -eq 'Binary') {$value=[Convert]::ToBase64String($value)}
+                    $actual=[pscustomobject]@{Exists=$true;KeyExisted=$true;Type=$type;Value=$value}
+                    if (-not (Test-FullSame $actual $owned[0].After)) {throw 'Giá trị cùng đợt đã đổi bên ngoài; chưa xóa để tránh mất dữ liệu.'}
+                }
+            }
+            $key.DeleteValue($Change.Name,$false)
+            if ($State.PSObject.Properties['KeyExisted'] -and -not $State.KeyExisted -and $key.SubKeyCount -eq 0 -and $key.ValueCount -eq 0) {$key.Dispose();$key=$null;$base.DeleteSubKey($Change.Path,$false)}
             return
         }
         $kind=[Microsoft.Win32.RegistryValueKind][Enum]::Parse([Microsoft.Win32.RegistryValueKind],[string]$State.Type)
@@ -148,13 +189,30 @@ function Read-FullResource($Row) {
     if ($FullSimulation) { $key=Get-FullMemoryKey $Row;if ($FullMemory.ContainsKey($key)) {return $FullMemory[$key]};if ($Row.Kind -eq 'Service') {return [pscustomobject]@{Exists=$true;Start=2;Delayed=$null}};return [pscustomobject]@{Exists=$false;KeyExisted=$false;Type='DWord';Value=$null} }
     switch ($Row.Kind) {'Registry' {return Read-FullRegistry @(Get-FullChanges $feature $Row.Option)[$Row.Index]} 'Service' {return Read-FullService $feature.Services[$Row.Index].Name} 'Native' {return Read-FullNative $feature $Row.Parameters}}
 }
-function Write-FullResource($Row,$State,[bool]$Undo=$false) {
+function Write-FullResource($Row,$State,[bool]$Undo=$false,[object[]]$RelatedRows=@()) {
     $feature=Assert-FullRow $Row
     if ($FullSimulation) {
         if ($script:FullFailAfter -ge 0 -and $script:FullMockWrites -ge $script:FullFailAfter) {throw 'Lỗi mô phỏng khi ghi.'}
         $script:FullMockWrites++;$script:FullMemory[(Get-FullMemoryKey $Row)]=$State;return
     }
-    switch ($Row.Kind) {'Registry' {Set-FullRegistry @(Get-FullChanges $feature $Row.Option)[$Row.Index] $State} 'Service' {Set-FullService $feature.Services[$Row.Index].Name $State} 'Native' {Write-FullNative $feature $Row.Parameters $State $Undo}}
+    switch ($Row.Kind) {
+        'Registry' {
+            $change=@(Get-FullChanges $feature $Row.Option)[$Row.Index];$owned=@()
+            if ($Undo -and -not $State.Exists -and $State.PSObject.Properties['KeyExisted'] -and -not $State.KeyExisted) {
+                # Sibling ownership comes only from this journal, with an exact
+                # read-back of its recorded result. Names alone grant no access.
+                foreach ($sibling in $RelatedRows) {
+                    if ($sibling.Kind -ne 'Registry' -or $sibling.State -notin @('Applied','Writing','Failed') -or $null -eq $sibling.After -or -not $sibling.After.Exists -or $sibling.Before.Exists -or -not $sibling.Before.PSObject.Properties['KeyExisted'] -or $sibling.Before.KeyExisted) {continue}
+                    $siblingFeature=Assert-FullRow $sibling;$siblingChange=@(Get-FullChanges $siblingFeature $sibling.Option)[$sibling.Index]
+                    if ($siblingChange.Hive -ine $change.Hive -or $siblingChange.Path -ine $change.Path -or $siblingChange.Name -ieq $change.Name) {continue}
+                    if (Test-FullSame (Read-FullResource $sibling) $sibling.After) {$owned+=[pscustomobject]@{Name=$siblingChange.Name;After=$sibling.After}}
+                }
+            }
+            Set-FullRegistry $change $State $owned
+        }
+        'Service' {Set-FullService $feature.Services[$Row.Index].Name $State}
+        'Native' {Write-FullNative $feature $Row.Parameters $State $Undo}
+    }
 }
 function New-FullPlan([string[]]$Ids,$Parameters) {
     $rows=@();$seen=@{}
@@ -170,8 +228,9 @@ function New-FullPlan([string[]]$Ids,$Parameters) {
                 $row=[pscustomobject]@{Kind=$kind;Id=$id;Index=$i;Option=$option;Target=$target;Parameters=$Parameters;Before=[pscustomobject]@{Exists=$false};After=$null;State='Prepared';Error=''}
                 if ($kind -in @('Registry','Service')) {$key=if ($kind -eq 'Registry') {$c=$changes[$i];$c.Hive+'\'+$c.Path+'\'+$c.Name} else {'Service:'+$feature.Services[$i].Name};if ($seen.ContainsKey($key) -and -not (Test-FullSame $seen[$key] $target)) {throw 'Hai mục đang chọn đặt cùng thiết lập theo hai cách khác nhau. Hãy chọn một mục.'};if ($seen.ContainsKey($key)) {continue};$seen[$key]=$target}
                 $row.Before=Read-FullResource $row
+                if ($kind -eq 'Registry' -and -not $FullSimulation) {Assert-FullRegistrySnapshot $row.Before}
                 if ($kind -eq 'Registry' -and $changes[$i].Name -ceq 'SettingsPageVisibility' -and $row.Before.Exists -and [string]$row.Before.Value -cnotin @('','hide:home')) {throw 'Đang có chính sách ẩn/hiện trang Settings khác. WinTune không ghi đè chính sách đó.'}
-                if ($kind -eq 'Native' -and $feature.Handler -eq 'Optional' -and -not $FullSimulation) {$null=Get-FullOptionalTarget $feature $row.Before}
+                if ($kind -eq 'Native' -and $feature.Handler -in @('Optional','WindowsAI') -and -not $FullSimulation) {$null=Get-FullNativeTarget $feature $Parameters $row.Before}
                 if ($kind -eq 'Service' -and -not $row.Before.Exists) {continue}
                 if ($kind -eq 'Registry' -and (Test-FullSame $row.Before $target)) {continue}
                 $rows+=$row
@@ -192,7 +251,7 @@ function Get-FullJournals {
 }
 function Invoke-FullPlan([object[]]$Rows,[bool]$Confirmed=$false) {
     if (-not $Confirmed -or -not $Rows.Count -or $Rows.Count -gt 250) {throw 'Cần xem trước và xác nhận một kế hoạch hợp lệ.'}
-    if (@(Get-FullJournals | Where-Object {$_.Data.Status -eq 'Pending'}).Count) {throw 'Có đợt bị ngắt. Hoàn tác hoặc kiểm tra lịch sử trước.'}
+    if (@(Get-FullJournals | Where-Object {$_.Data.Status -eq 'Pending' -or ($_.Data.Status -eq 'Partial' -and @($_.Data.Rows | Where-Object State -in @('Writing','Failed')).Count)}).Count) {throw 'Có đợt bị ngắt. Hoàn tác hoặc kiểm tra lịch sử trước.'}
     $seen=@{}
     foreach ($row in $Rows) {
         $feature=Assert-FullRow $row;$key=$row.Kind+':'+$row.Id+':'+$row.Index
@@ -227,18 +286,22 @@ function Undo-FullSelection([string[]]$Ids,[bool]$Confirmed=$false) {
         $journal=$entry.Data;$rows=@($journal.Rows);[array]::Reverse($rows);$handled=@{}
         foreach ($row in $rows) {
             if (-not $remaining.ContainsKey($row.Id) -or $row.State -in @('Prepared','Restored')) {continue}
-            if ($null -eq $row.After) {throw 'Đợt bị ngắt trước khi lưu đích. Giữ nhật ký để kiểm tra.'}
-            if ($row.Kind -eq 'Native' -and (Get-FullFeature $row.Id).Handler -in @('Widgets','Copilot','Edge','OneDrive','WindowsAI','BitLocker','OOSU','UltimateRemove','Temp','DiskCleanup')) {$notes+='Không tự hoàn tác thao tác gỡ/xóa/giải mã/công cụ ngoài: '+(Get-FullFeature $row.Id).Title;$handled[$row.Id]=$true;continue}
             $current=Read-FullResource $row
-            if (Test-FullSame $current $row.Before) {$row.State='Restored';$handled[$row.Id]=$true;Write-FullData $journal $entry.Path;continue}
+            $opaqueNative=$row.Kind -eq 'Native' -and (Get-FullFeature $row.Id).Handler -in @('OOSU','DiskCleanup')
+            if (-not $opaqueNative -and (Test-FullSame $current $row.Before)) {$row.State='Restored';$handled[$row.Id]=$true;Write-FullData $journal $entry.Path;continue}
+            if ($row.Kind -eq 'Native' -and (Get-FullFeature $row.Id).Handler -in @('Widgets','Copilot','Edge','OneDrive','WindowsAI','BitLocker','OOSU','UltimateRemove','Temp','DiskCleanup')) {$notes+='Không tự hoàn tác thao tác gỡ/xóa/giải mã/công cụ ngoài: '+(Get-FullFeature $row.Id).Title;$handled[$row.Id]=$true;continue}
+            if ($null -eq $row.After) {throw 'Đợt bị ngắt trước khi lưu đích. Giữ nhật ký để kiểm tra.'}
             if (-not (Test-FullSame $current $row.After)) {throw ('Thiết lập đã đổi bên ngoài WinTune: '+(Get-FullFeature $row.Id).Title+'. Không ghi đè thay đổi đó.')}
-            Write-FullResource $row $row.Before $true
+            Write-FullResource $row $row.Before $true @($journal.Rows)
             if (-not (Test-FullSame (Read-FullResource $row) $row.Before)) {throw 'Hoàn tác chưa được xác minh; giữ nhật ký.'}
             $row.State='Restored';$handled[$row.Id]=$true;Write-FullData $journal $entry.Path
         }
         foreach ($id in @($handled.Keys)) {$remaining.Remove($id)}
-        if (@($journal.Rows | Where-Object State -notin @('Prepared','Restored')).Count -eq 0) {$journal.Status='Undone'} elseif ($journal.Status -eq 'Pending') {$journal.Status='Partial'}
-        Write-FullData $journal $entry.Path
+        if ($handled.Count) {
+            if (@($journal.Rows | Where-Object State -notin @('Prepared','Restored')).Count -eq 0) {$journal.Status='Undone'}
+            # An interrupted batch remains locked until every affected row is recovered.
+            Write-FullData $journal $entry.Path
+        }
     }
     if ($remaining.Count) {$notes+='Chưa có thay đổi đã lưu cho: '+(($remaining.Keys | ForEach-Object {(Get-FullFeature $_).Title}) -join ', ')}
     return [pscustomobject]@{Message='Đã xử lý các mục có bản sao và không xung đột.';Notes=$notes}

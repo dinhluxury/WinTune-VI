@@ -1,5 +1,6 @@
 ﻿# In-process WPF tests using the isolated provider. No UI Automation or real writes.
 $script:UiPass=0
+$null=New-Item -ItemType Directory -Path (Join-Path $PSScriptRoot 'evidence') -Force
 function Assert-UI([bool]$ok,[string]$name) { if (-not $ok) { throw "UI FAILED: $name" }; $script:UiPass++; Write-Output "PASS UI: $name" }
 Assert-UI ($IsSimulation -and $Selected.Count -eq 0 -and $SimWriteCount -eq 0) 'Opening selects nothing and uses simulated writes only'
 Assert-UI ($List.Items.Count -eq $Features.Count) 'All catalog entries rendered'
@@ -146,5 +147,6 @@ $Window.FindName('Profile').SelectedIndex=0
 . "$PSScriptRoot/Storage.Navigation.Tests.ps1"
 . "$PSScriptRoot/Care.UI.Tests.ps1"
 . "$PSScriptRoot/UnifiedTweaks.UI.Tests.ps1"
+. "$PSScriptRoot/Audit.UI.Tests.ps1"
 Write-Output "UI SELF TESTS PASSED: $script:UiPass (WPF controls, isolated providers; not a substitute for screen observation)."
 $Window.Close()

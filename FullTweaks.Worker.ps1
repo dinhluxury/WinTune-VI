@@ -14,8 +14,7 @@ try {
     $script:FullSimulation=$r.Simulation
     $simulationPath=Join-Path $FullRoot 'simulation.dat'
     if ($FullSimulation -and (Test-Path -LiteralPath $simulationPath)) {$saved=Read-FullData $simulationPath;foreach ($p in $saved.PSObject.Properties) {$script:FullMemory[$p.Name]=$p.Value}}
-    $lock=New-Object Threading.Mutex($false,('Local\WinTuneVI-Full-'+$FullUser))
-    if (-not $lock.WaitOne(0)) {throw 'Một tác vụ tinh chỉnh khác đang chạy.'}
+    $lock=Enter-FullOperationLock
     try {
         $result=switch ($r.Operation) {
             'Preview' {@(New-FullPlan @($r.Ids) $r.Parameters)}
@@ -26,5 +25,5 @@ try {
         }
         $message=switch ($r.Operation) {'Preview' {'Đã chuẩn bị xem trước. Chưa thay đổi Windows.'} 'Installed' {'Đã đọc các giá trị đang khớp. Chưa thay đổi Windows.'} 'Adapters' {'Đã đọc danh sách card mạng.'} 'Undo' {'Đã xử lý yêu cầu hoàn tác; xem ghi chú nếu có mục cần tự khôi phục.'} default {'Tác vụ đã kết thúc; xem kết quả trong Lịch sử. Một số thiết lập cần đăng xuất hoặc khởi động lại.'}}
         Write-FullData ([pscustomobject]@{Ok=$true;Operation=$r.Operation;Result=@($result);Message=$message}) ($RequestPath+'.result')
-    } finally {if ($FullSimulation) {Write-FullData $FullMemory $simulationPath};$lock.ReleaseMutex();$lock.Dispose()}
+    } finally {try {if ($FullSimulation) {Write-FullData $FullMemory $simulationPath}} finally {Exit-FullOperationLock $lock}}
 } catch {Write-FullData ([pscustomobject]@{Ok=$false;Operation='';Result=@();Message=$_.Exception.Message}) ($RequestPath+'.result');exit 1}

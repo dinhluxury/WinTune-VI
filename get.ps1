@@ -6,8 +6,8 @@ param([switch]$CheckOnly)
     $ErrorActionPreference='Stop'
     $file=Join-Path $env:TEMP ('WinTune-'+[guid]::NewGuid().ToString('N')+'.ps1')
     try {
-        Invoke-WebRequest -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop -Uri 'https://github.com/dinhluxury/WinTune-VI/releases/download/v0.16.3/WinTune-Online.ps1' -OutFile $file
-        if ((Get-FileHash -LiteralPath $file -Algorithm SHA256 -ErrorAction Stop).Hash -cne '8C63F1439F5415A5AB361754F1B79F647CC6F2DFA09C115D0840CD68388288E4') {throw 'Checksum launcher không khớp; chưa mở WinTune.'}
+        Invoke-WebRequest -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop -Uri 'https://github.com/dinhluxury/WinTune-VI/releases/download/v0.16.4/WinTune-Online.ps1' -OutFile $file
+        if ((Get-FileHash -LiteralPath $file -Algorithm SHA256 -ErrorAction Stop).Hash -cne '89465AD684356BDFA0A6D9EB14C558E7C1D6002F9B5FC0C513E73D86B3707A0C') {throw 'Checksum launcher không khớp; chưa mở WinTune.'}
         $hostExe=Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe'
         $mode=$(if ($OnlyCheck) {'-CheckOnly'} else {'-Confirmed'})
         & $hostExe -NoLogo -NoProfile -STA -ExecutionPolicy Bypass -File $file $mode

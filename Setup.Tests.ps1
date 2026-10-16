@@ -41,6 +41,7 @@ function Get-Content {param($LiteralPath,[switch]$Raw,$Encoding) return 'C:\fixt
 function Assert-DistributionPath($Path,$Root){return $Path}
 function Get-WinTuneVersion($Path){[pscustomobject]@{Version=$(if($env:WINTUNE_TEST_CURRENT){'0.16.0'}else{'0.15.2'})}}
 function Test-PortableIntegrity($Path,$Version){}
+function Assert-InstalledRelease($Path,$Info,$Root,$Config){$script:Trace.Add('VerifySignedCache')}
 function Get-DistributionUpdate($Config,$Current){$script:Trace.Add('Metadata');[pscustomobject]@{Status=$(if($env:WINTUNE_TEST_CURRENT){'Current'}else{'Available'});Manifest=[pscustomobject]@{Version='0.15.2';Size=123};ReleaseUrl='https://github.com/fixture/WinTune/releases/tag/v0.15.2'}}
 function Read-Host {param($Prompt);$script:Trace.Add('Confirm');return $env:WINTUNE_TEST_ANSWER}
 function Get-UserCommandRegistration {[pscustomobject]@{AppExists=$false}}
@@ -63,6 +64,6 @@ try{
     . $bootstrap -Setup -CheckOnly
     Check (($script:Trace -join ',') -eq 'Metadata') 'CheckOnly with Setup remains metadata only, no confirmation or registration'
     $env:WINTUNE_TEST_CURRENT='1';. $bootstrap -Setup
-    Check (($script:Trace -join ',') -eq 'Metadata,Confirm,Register,Launch:0.16.0') 'Existing newer package launches using its own version, without downgrade/download'
+    Check (($script:Trace -join ',') -eq 'Metadata,Confirm,VerifySignedCache,Register,Launch:0.16.0') 'Cached package must pass signed verification before registration or launch (verification mocked here)'
 } finally {$env:WINTUNE_TEST_ANSWER=$savedAnswer;$env:WINTUNE_TEST_CURRENT=$savedCurrent}
 Write-Output "SETUP TESTS PASSED: $pass; mocked install/PATH/process launch only, no real Windows changes."

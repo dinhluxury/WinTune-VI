@@ -50,7 +50,7 @@ foreach ($test in @('Tools.Tests.ps1','Tools.Worker.Tests.ps1','Monitor.Tests.ps
     } finally {$ErrorActionPreference=$previousPreference}
     if ($testExit -ne 0) {throw ("Packaged $test failed (exit $testExit).`n"+($testOutput|Out-String))}
 }
-$summary="PACKAGE CHECK: $count SHA-256 entries matched; Unicode/spaced extraction path; $exeNote; main WPF window and owned dialog rendered; 46 entries; zero native writes; packaged sources and mock tests verified. Native PATH/Win+R and production Releases remain unverified."
+$summary="PACKAGE CHECK: $count SHA-256 entries matched; Unicode/spaced extraction path; $exeNote; main WPF window and owned dialog rendered; $($probe.UnifiedFeatures) unified entries; zero native writes; packaged sources and mock tests verified. Native PATH/Win+R and production Releases remain unverified."
 [pscustomobject]@{Version=$packageVersion;Checksums=$count;ExecutableVerified=$exeVerified;WpfVerified=$true;NativeWindowsChanges=0;Limitations=$exeNote} | ConvertTo-Json | Set-Content "$PSScriptRoot/evidence/package-v$packageVersion.json" -Encoding UTF8
 $summary | Set-Content "$PSScriptRoot/evidence/package-check.log" -Encoding UTF8
 Write-Output $summary

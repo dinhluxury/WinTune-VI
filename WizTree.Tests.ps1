@@ -10,7 +10,7 @@ Check (-not (Get-WizTreeInstallation).Installed) 'Initial simulated detection do
 Reject {Install-WizTree $false} 'Installation needs an authorized disk-usage action'
 $args=@(Get-WizTreeInstallArguments)
 Check (($args -join ' ') -match '--id AntibodySoftware.WizTree --exact --source winget' -and '--no-upgrade' -in $args -and '--allow-reboot' -notin $args -and '--ignore-security-hash' -notin $args -and '--override' -notin $args -and '--force' -notin $args) 'Installer uses the fixed exact package with normal hash checks and no reboot or upgrade'
-function Run([string]$Id,[bool]$Confirmed) {$job=Start-ToolJob $Id ([pscustomobject]@{}) $Confirmed;if (-not $job.Process.WaitForExit(15000)) {throw 'Simulation worker timeout'};return (Get-ToolJobResult $job)}
+function Run([string]$Id,[bool]$Confirmed) {$job=Start-ToolJob $Id ([pscustomobject]@{}) $Confirmed;if (-not $job.Process.WaitForExit(15000)) {throw 'Simulation worker timeout'};$result=Get-ToolJobResult $job;Complete-ToolJob $job;return $result}
 $r=Run 'wiztreecheck' $false;Check ($r.Status -eq 'Completed' -and -not $r.Result.Installed) 'Detection worker only reads simulated installation state'
 $r=Run 'wiztreeinstall' $false;Check ($r.Status -eq 'Failed') 'Unconfirmed worker cannot install'
 $r=Run 'wiztreeinstall' $true;Check ($r.Status -eq 'Completed' -and $r.Mode -eq 'Simulation' -and $r.Result.Installed) 'Confirmed simulated installation returns a verified candidate to open'

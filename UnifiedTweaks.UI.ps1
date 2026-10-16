@@ -11,7 +11,7 @@
  $script:Window.FindName('History').Content='Lịch sử bản cũ';$script:Window.FindName('History').ToolTip='Các thay đổi từ bảng tùy chỉnh cũ. Lịch sử thay đổi mới nằm trong trang Tùy chỉnh Windows.'
  $view.Add_SizeChanged({param($sender,$eventArgs) $body=$script:FullWindow.FindName('FullBody');$body.ColumnDefinitions[1].Width=[Windows.GridLength]::new($(if($sender.ActualWidth -lt 900){280}else{370}))})
  $script:Window.FindName('Machine').Text=$script:Window.FindName('Machine').Text -replace '• \d+ tùy chỉnh',('• '+($FullCatalog.Count-2)+' tùy chỉnh')
- $script:Window.Add_Closing({param($sender,$eventArgs) if($script:FullJob -and -not $script:FullJob.Process.HasExited){$eventArgs.Cancel=$true;$script:FullWindow.FindName('FullStatus').Text='Đợi thao tác đang chạy hoàn tất trước khi đóng WinTune.'}})
+ $script:Window.Add_Closing({param($sender,$eventArgs) if($script:FullJob){$eventArgs.Cancel=$true;$script:FullWindow.FindName('FullStatus').Text='Đợi thao tác đang chạy hoàn tất trước khi đóng WinTune.'}})
 }
 function Update-UnifiedRecovery {
  $text=if($script:HistoryError){'Chưa đọc được bản sao lưu cũ. Mở Lịch sử bản cũ trên thanh bên để xem lỗi trước khi áp dụng thêm.'}elseif($script:PendingBatch){'Có đợt thay đổi cũ chưa hoàn tất. Mở Lịch sử bản cũ rồi Hoàn tác bản cũ trước khi áp dụng thêm.'}else{''}

@@ -35,7 +35,7 @@ try {
         $path=$installed.Path
     } else {
         if (-not $Confirmed -and (Read-Host 'Mở bản đã cài? Gõ DONG Y') -cne 'DONG Y') {return}
-        Test-PortableIntegrity $path $current
+        Assert-InstalledRelease $path $info $root $script:BootstrapTrust
     }
     if ($RegisterCommand) {
         $registration=Register-WinTuneCommand $path $root $true

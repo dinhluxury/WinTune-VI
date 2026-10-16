@@ -71,6 +71,28 @@ $install=Join-Path $test 'installed';$count=[WinTuneFakeHttp]::URLs.Count;Reject
 Response 200 (Bytes 'wrong ZIP');Reject {Install-DistributionUpdate $info $install $true $null $cfg} 'Incorrect ZIP checksum/size never activates';Check (-not (Test-Path (Join-Path $install 'current.txt'))) 'Failed validation leaves active version untouched'
 Response 200 $zipBytes;$installed=Install-DistributionUpdate $info $install $true $null $cfg
 Check ($installed.Status -eq 'Prepared' -and (Get-Content (Join-Path $install 'current.txt') -Raw).Trim() -eq $installed.Path) 'Verified update prepares a side-by-side version, never starts an EXE'
+$requests=[WinTuneFakeHttp]::URLs.Count
+Assert-InstalledRelease $installed.Path $info $install $cfg
+Check ([WinTuneFakeHttp]::URLs.Count -eq $requests) 'Installed package verifies against signed cached ZIP without another download'
+$inventoryPath=Join-Path $installed.Path 'SHA256.txt';$originalInventory=[IO.File]::ReadAllText($inventoryPath)
+$entryPath=Join-Path $installed.Path 'WinTune.ps1';$originalEntry=[IO.File]::ReadAllText($entryPath)
+[IO.File]::WriteAllText($entryPath,'changed but never executed')
+$replacement=$originalInventory -replace '(?m)^[A-F0-9]{64}  WinTune\.ps1',((Get-FileHash $entryPath).Hash+'  WinTune.ps1')
+[IO.File]::WriteAllText($inventoryPath,$replacement,[Text.UTF8Encoding]::new($true))
+Test-PortableIntegrity $installed.Path '0.16.0'
+Reject {Assert-InstalledRelease $installed.Path $info $install $cfg} 'Editing both installed code and its checksums cannot bypass signed inventory'
+[IO.File]::WriteAllText($entryPath,$originalEntry);[IO.File]::WriteAllText($inventoryPath,$originalInventory,[Text.UTF8Encoding]::new($true))
+$cache=Join-Path $install ('verified-archives/'+$m.SHA256+'.zip')
+$badBytes=$zipBytes.Clone();$badBytes[20]=$badBytes[20] -bxor 1;[IO.File]::WriteAllBytes($cache,$badBytes)
+Reject {Assert-InstalledRelease $installed.Path $info $install $cfg} 'Tampered local ZIP cache fails against independently signed digest'
+[IO.File]::WriteAllBytes($cache,$zipBytes)
+$versionPath=Join-Path $installed.Path 'version.json';$originalVersion=[IO.File]::ReadAllText($versionPath)
+[IO.File]::WriteAllText($versionPath,$originalVersion.Replace('0.16.0','99.0.0'))
+Reject {Assert-InstalledRelease $installed.Path $info $install $cfg} 'Fake newer installed version cannot skip verification'
+[IO.File]::WriteAllText($versionPath,$originalVersion)
+[IO.File]::Delete($cache);Response 200 $zipBytes
+Assert-InstalledRelease $installed.Path $info $install $cfg
+Check ([IO.File]::Exists($cache)) 'Legacy installation obtains signed archive once before reuse'
 [IO.File]::WriteAllText((Join-Path $install 'current.txt'),$installed.Path,[Text.UTF8Encoding]::new($false))
 Check ((Get-PreparedDistributionVersion $install '0.15.0') -eq '0.16.0') 'UTF-8 pointer without BOM supports Vietnamese installation paths'
 Write-DistributionAtomic (Join-Path $install 'current.txt') $installed.Path

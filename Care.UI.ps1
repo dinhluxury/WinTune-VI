@@ -39,7 +39,7 @@ function New-CareRepairWindow {
 function Start-CareRepair([string]$Id,$Parameters=@{}) {
  try {
   if($script:CareState.Job -and -not $script:CareState.Job.Handled){throw 'Đợi bước đang chạy kết thúc trước.'}
-  if($script:MainActionBusy -or ($script:FullJob -and -not $script:FullJob.Process.HasExited)){throw 'Đợi thao tác Windows đang chạy kết thúc trước.'}
+  if($script:MainActionBusy -or ($script:FullJob)){throw 'Đợi thao tác Windows đang chạy kết thúc trước.'}
   $step=@(Get-CareRepairSteps|Where-Object Id -CEQ $Id);if($step.Count -ne 1){throw 'Bước sửa chưa được hỗ trợ.'}
   $text=$step[0].Title+"`n`n"+$step[0].Action+"`n`n"+$step[0].Note+"`n`nWindows có thể hỏi quyền quản trị. Lưu công việc trước; WinTune không tự khởi động lại."
   if(-not (Show-TextDialog 'Bắt đầu bước đã chọn?' $text $true $step[0].Button)){return}
@@ -54,10 +54,15 @@ function Poll-CareRepair {
  $state=$script:CareState;if(-not $state -or -not $state.Job -or $state.Job.Handled){return}
  $w=$script:CareWindow;$seconds=[int]((Get-Date)-$state.Job.Started).TotalSeconds;$w.FindName('CareElapsed').Text='Đã chạy '+$seconds+' giây · Chưa có kết quả cuối'
  $result=Get-ToolJobResult $state.Job;if($null -eq $result){return}
- $state.Job.Handled=$true;$state.Timer.Stop();$state.Job.Process.Dispose();$script:ToolJob=$null;$summary=Get-CareRepairResult $result;$state.Results[$state.Current]=$summary
+ Complete-ToolJob $state.Job;$state.Timer.Stop();$script:ToolJob=$null
+ try {
+ $summary=Get-CareRepairResult $result;$state.Results[$state.Current]=$summary
  $w.FindName('CareResultTitle').Text=$summary.Title;Set-ThemeResource $w.FindName('CareResultTitle') Foreground $summary.Tone
  $w.FindName('CareResultBody').Text=$summary.Body;$w.FindName('CareNext').Text=$summary.Next;$w.FindName('CareRaw').Text=Format-ToolResult $result
- $w.FindName('CareElapsed').Text='Đã kết thúc sau '+$seconds+' giây';$w.FindName('CareProgress').Visibility='Collapsed';$w.FindName('CareClose').IsEnabled=$true
- foreach($button in $state.Buttons){$button.IsEnabled=$true}
+ } catch {$w.FindName('CareResultTitle').Text='Chưa đọc được kết quả';$w.FindName('CareResultBody').Text='Không đủ thông tin để kết luận đã sửa được Windows.';$w.FindName('CareNext').Text='Giữ nhật ký để kiểm tra; không cần chạy lặp lại ngay.';$w.FindName('CareRaw').Text=$_.Exception.Message}
+ finally {
+  $w.FindName('CareElapsed').Text='Đã kết thúc sau '+$seconds+' giây';$w.FindName('CareProgress').Visibility='Collapsed';$w.FindName('CareClose').IsEnabled=$true
+  foreach($button in $state.Buttons){$button.IsEnabled=$true}
+ }
 }
 function Open-CareRepair {try{$w=New-CareRepairWindow;$null=$w.ShowDialog()}catch{Message $_.Exception.Message}}

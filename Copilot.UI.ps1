@@ -16,7 +16,7 @@ function Complete-MainCopilot([string]$Text,[bool]$ClearSelection=$false) {
 }
 function Start-MainCopilotReview([string[]]$Ids,[object[]]$RegistryRows) {
     if ($script:MainActionBusy -or $script:PendingBatch -or $script:HistoryError) {throw 'Đợi thao tác đang chạy hoặc xử lý bản sao lưu trước.'}
-    if ($null -ne $script:FullJob -and -not $script:FullJob.Process.HasExited) {throw 'Đợi tác vụ tinh chỉnh đang chạy.'}
+    if ($null -ne $script:FullJob) {throw 'Đợi tác vụ tinh chỉnh đang chạy.'}
     $actionRoot=Join-Path $script:DataRoot 'actions'
     $job=Start-ToolJob 'copilotpreview' ([pscustomobject]@{ActionRoot=$actionRoot}) $false
     $script:MainActionState=[pscustomobject]@{Stage='Preview';Ids=@($Ids);RegistryRows=@($RegistryRows);ActionRoot=$actionRoot;Job=$job;RegistryApplied=$false}
@@ -45,7 +45,7 @@ function Get-MainCopilotPreviewText($State,$AppPreview) {
 function Poll-MainCopilot {
     $state=$script:MainActionState;if ($null -eq $state) {return}
     try {
-        $result=Get-ToolJobResult $state.Job;if ($null -eq $result) {return};$state.Job.Handled=$true;$script:MainActionTimer.Stop()
+        $result=Get-ToolJobResult $state.Job;if ($null -eq $result) {return};Complete-ToolJob $state.Job;$script:MainActionTimer.Stop()
         if ($result.Status -ne 'Completed') {throw $result.Message}
         if ($state.Stage -eq 'Preview') {
             $preview=$result.Result
@@ -70,5 +70,5 @@ function Poll-MainCopilot {
 function Initialize-MainCopilot {
     $script:MainActionBusy=$false;$script:MainActionState=$null;$script:MainActionControls=@{}
     $script:MainActionTimer=New-Object Windows.Threading.DispatcherTimer;$script:MainActionTimer.Interval=[TimeSpan]::FromMilliseconds(250);$script:MainActionTimer.Add_Tick({Poll-MainCopilot})
-    $Window.Add_Closing({param($sender,$args) if ($script:MainActionBusy) {$args.Cancel=$true;$Window.FindName('Status').Text='Đợi thao tác Copilot hoàn tất trước khi đóng WinTune.'}})
+    $Window.Add_Closing({param($sender,$eventArgs) if ($script:MainActionBusy) {$eventArgs.Cancel=$true;$Window.FindName('Status').Text='Đợi thao tác Copilot hoàn tất trước khi đóng WinTune.'}})
 }

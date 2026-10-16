@@ -116,6 +116,10 @@ function New-WinGetArguments([string]$Id,$Parameters) {
 function Get-ToolTempRoot {
  return [IO.Path]::GetFullPath((Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'Temp'))
 }
+function Test-ToolRestartRequired($Result) {
+ if ($null -eq $Result) {return $false}
+ return [bool](($Result.PSObject.Properties['ExitCode'] -and $Result.ExitCode -eq 3010) -or ($Result.PSObject.Properties['RestartRequested'] -and $Result.RestartRequested -eq $true))
+}
 function Test-SafeTempPath([string]$Path,[string]$Root) {
  try {
   $base=[IO.Path]::GetFullPath($Root).TrimEnd('\');$full=[IO.Path]::GetFullPath($Path)

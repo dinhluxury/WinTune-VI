@@ -92,4 +92,7 @@ Check ($r.RemovedBytes -eq 20 -and $HandleCalls -eq 1) 'Verified file records on
 $script:ToolSimulation=$true
 if ($null -ne $savedItem) {Set-Item Function:Get-Item $savedItem} else {Remove-Item Function:Get-Item}
 Set-Item Function:Remove-TempHandle $savedDelete
+Check (Test-ToolRestartRequired ([pscustomobject]@{ExitCode=3010})) 'Native exit 3010 preserves the reboot requirement'
+Check (Test-ToolRestartRequired ([pscustomobject]@{ExitCode=0;RestartRequested=$true})) 'Aggregated install preserves a reboot request from an individual package'
+Check (-not (Test-ToolRestartRequired ([pscustomobject]@{ExitCode=0;RestartRequested=$false}))) 'Successful operation without a reboot request stays false'
 Write-Output "TOOLS TESTS PASSED: $pass; all system-changing handlers simulated, no native cleanup/repair/install/power writes."

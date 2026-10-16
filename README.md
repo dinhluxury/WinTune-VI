@@ -1,15 +1,14 @@
-﻿> WinTune VI 0.16.3: danh mục lưu 113 mục (111 mục hiển thị, đã bỏ hai mục dọn tệp) và các lựa chọn tương ứng ảnh WinUtil/Win11Debloat. Chi tiết phần cứng hiện sẵn trên Tổng quan. Mở **Tùy chỉnh Windows** để xem ngay toàn bộ danh sách. Bấm tên hoặc khoảng trống của từng dòng để đọc chi tiết; không cần nút Chi tiết. Các bộ Tối thiểu/Tiêu chuẩn/Nâng cao có 8/19/31 mục trên Windows hiện tại. Chọn thêm, bỏ chọn hoặc đổi giá trị sẽ tự chuyển sang **Tùy chỉnh**. Đọc [hướng dẫn, ảnh hưởng và giới hạn](TINH-CHINH-DAY-DU.md). Tải bản portable tại [GitHub Releases](https://github.com/dinhluxury/WinTune-VI/releases/latest).
+﻿> WinTune VI 0.16.4: bản vá sau audit logic áp dụng/hoàn tác, tác vụ nền và chuỗi xác minh bộ tải. Giữ nguyên 111 mục hiển thị và lệnh mở ứng dụng. Xem [thay đổi](CHANGELOG-v0.16.4.md), [kết quả kiểm thử và giới hạn](TEST_REPORT.md).
 
 **Dung lượng ổ đĩa** tự cài WizTree nếu chưa có, mở trực tiếp **ổ C:** và tự quét. WizTree hiển thị tổng dung lượng, đã dùng và còn trống; không mở CSV. Đã bỏ trình xem cơ bản. Xem [cách dùng](WIZTREE.md). Khôi phục và Công cụ Windows hiện trực tiếp; đã bỏ mục Hiệu năng và pin cùng trang cập nhật WinTune. Mở lại bằng lệnh để tải bản stable mới nhất đã xác minh.
 
-# WinTune VI 0.16.3
+# WinTune VI 0.16.4
 
 Ứng dụng Windows 11 cá nhân, PowerShell 5.1 + WPF, giao diện tiếng Việt.
 Repository chính thức: [dinhluxury/WinTune-VI](https://github.com/dinhluxury/WinTune-VI).
-Nguồn/cập nhật ghim khóa công khai RSA3072; bộ tải có manifest ký. Bản 0.15.2
-đã được tác giả phát hành. [PUBLISHING.md](PUBLISHING.md) hướng
-dẫn đưa mã và bộ phát hành lên GitHub; [DISTRIBUTION.md](DISTRIBUTION.md)
-giải thích tải/cập nhật có xác nhận và đăng ký lệnh `wintune`.
+Nguồn tải ghim khóa công khai RSA3072; bộ tải có manifest ký. [PUBLISHING.md](PUBLISHING.md)
+hướng dẫn đóng gói, ký và phát hành; [DISTRIBUTION.md](DISTRIBUTION.md)
+giải thích chuỗi xác minh và tùy chọn đăng ký lệnh `wintune`.
 Giữ các tính năng và dữ liệu của 0.14; giao diện gọn theo cách tổ chức Windows Settings, có trang theo dõi máy. Các công cụ viết riêng, chỉ tham khảo có chọn lọc WinUtil và
 Win11Debloat. Không có preset tăng FPS/RAM hoặc thay bảo mật để giảm tiến trình.
 

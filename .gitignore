@@ -3,6 +3,7 @@
 /.test-runs/
 /.codex-remote-attachments/
 /evidence/
+/.audit/
 /simulation-data/
 /vm-test-runs/
 /vm-kit/

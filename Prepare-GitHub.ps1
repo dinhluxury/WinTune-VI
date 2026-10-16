@@ -49,38 +49,29 @@ foreach ($name in @($m.Asset,'WinTune-Online.ps1','WinTune-Online.ps1.sha256','r
 $note=@'
 # WinTune VI 0.15.0
 
-Ứng dụng Windows 11 x64 bằng tiếng Việt, PowerShell + WPF.
+Bản vá độ ổn định sau kiểm tra logic tính năng, hoàn tác và bộ tải.
 
-- Tùy chỉnh Windows, quyền riêng tư và giao diện có xem trước/hoàn tác.
-- Gỡ ứng dụng theo tài khoản, bảo vệ thành phần thiết yếu; không gỡ sẵn.
-- Cài 17 phần mềm thông dụng khi tự chọn và xác nhận.
-- Tổng quan máy tính, tiến trình cập nhật theo chu kỳ mục tiêu 2 giây.
-- PowerShell/WPF là lối mở chính; đăng ký wintune.cmd theo tài khoản khi xác nhận.
-- Mở online bằng một dòng PowerShell/CMD; không cần đăng ký lệnh trên máy mới.
-- Kiểm tra GitHub Releases khi bấm; RSA-SHA256 manifest và SHA256 ZIP.
+- Sửa hoàn tác Registry/Explorer và phục hồi những đợt bị ngắt; giữ dữ liệu được phần mềm khác thay đổi.
+- Đọc danh sách ứng dụng và chuẩn bị xem trước bằng tác vụ nền; xử lý đóng cửa sổ, hủy tác vụ đọc và kết quả bị thiếu/hỏng.
+- Xác minh lại cache đã cài bằng manifest có chữ ký và inventory từ ZIP đã ký. Giữ khóa công khai và URL chính thức.
+- Giữ 111 mục tùy chỉnh, WizTree mở ổ C:, công cụ sửa Windows và các tính năng hiện có. Không tự áp dụng tinh chỉnh.
+- Bổ sung kiểm thử hồi quy và báo cáo audit, bảo mật, hiệu năng cùng phạm vi chưa kiểm chứng.
 
-Tải **WinTune-VI-v0.15.0-portable.zip**, giải nén toàn bộ và mở
-**Mo-WinTune.cmd**. Thử mô phỏng bằng **Mo-Ban-Mo-Phong.cmd**.
-Tùy chọn mở offline bằng tên wintune: chạy **Cai-WinTune.cmd** một lần;
-đóng/mở lại Terminal từ Start, sau đó gõ **wintune**.
-EXE có sẵn là lựa chọn riêng khi chính sách Windows cho phép; chưa ký Authenticode.
-Không dùng gói Source code tự tạo bởi GitHub để chạy EXE.
+Mở PowerShell/Windows Terminal và chạy:
 
-Online Launcher: dùng lệnh ngắn trong **ONLINE-COMMAND.txt**, dạng
-`irm __PAGES_URL__ | iex`.
-Lệnh ngắn tin cậy get.ps1 đầu tiên qua HTTPS của repository chính thức;
-get.ps1 kiểm SHA256 launcher, rồi chữ ký manifest/ZIP và tài nguyên.
-Cũng giữ lệnh dài ghim hash trước khi chạy để tự chọn. Chỉ hoạt động
-sau khi docs đã lên main, GitHub Pages được bật từ main /docs và bản stable
-này được phát hành. URL raw get.ps1 vẫn được giữ trong ONLINE-COMMAND.txt.
-Khởi chạy bằng host PowerShell Microsoft và script WPF đã xác minh; không
-phụ thuộc EXE tự biên dịch, không tự đổi hoặc né chính sách Application Control.
+```powershell
+irm __PAGES_URL__ | iex
+```
 
-EXE không có chữ ký Authenticode; chữ ký release.sig dùng cho WinTune xác minh
-bản phát hành. Không bỏ qua chính sách bảo mật Windows.
-Các kiểm tra sửa/xóa/gỡ/cài/đổi PATH dùng mock; hiệu lực trên Windows thật,
-PATH/Win+R thật và chuỗi tải từ Release sản xuất còn cần kiểm chứng riêng.
-Đọc README.md, DISTRIBUTION.md và FEATURE_MATRIX.md để biết phạm vi/giới hạn.
+Hoặc tải **WinTune-VI-v0.15.0-portable.zip**, giải nén toàn bộ, mở **Mo-WinTune.cmd**.
+Thử mô phỏng bằng **Mo-Ban-Mo-Phong.cmd**. App chính vẫn là PowerShell 5.1/WPF.
+
+Các kiểm thử thay đổi Registry, gỡ/cài ứng dụng và sửa Windows dùng mock/mô phỏng.
+Không khẳng định hiệu lực trên mọi build Windows hay không có lỗi tuyệt đối.
+Xem **CHANGELOG-v0.15.0.md**, **KIEM-THU-v0.15.0.md** và **TEST_REPORT.md**.
+
+Entry Pages đầu tiên vẫn là nguồn tin cậy mutable; các bước sau ghim SHA256 launcher,
+chữ ký RSA manifest/ZIP và checksum tài nguyên. Không thay chính sách bảo mật Windows.
 '@
 $note=$note.Replace('0.15.0',$v)
 $note=$note.Replace('OWNER/REPOSITORY',$cfg.Repository)

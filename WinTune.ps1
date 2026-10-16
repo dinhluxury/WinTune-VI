@@ -9,8 +9,10 @@ Add-Type -AssemblyName @('PresentationFramework','PresentationCore','WindowsBase
 . (Join-Path $PSScriptRoot 'Core.ps1')
 $mutexName=if ($SelfTest -or $GuiProbe) {'Local\WinTuneVI-Test-'+[guid]::NewGuid().ToString('N')} elseif ($Simulation) {'Local\WinTuneVI-Simulation'} else {'Local\WinTuneVI-v2'}
 $mutex=New-Object Threading.Mutex($false,$mutexName)
-if (-not $mutex.WaitOne(0)) { $null=[Windows.MessageBox]::Show('WinTune VI đang mở.'); exit }
+$mutexOwned=$false
 try {
+    try {$mutexOwned=$mutex.WaitOne(0)} catch [Threading.AbandonedMutexException] {$mutexOwned=$true}
+    if (-not $mutexOwned) { $null=[Windows.MessageBox]::Show('WinTune VI đang mở.'); return }
     $cv=Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion'
     $build=[int]$cv.CurrentBuild
     $osName=if ($build -ge 22000) {'Windows 11'} else {'Windows 10'}
@@ -428,4 +430,4 @@ try {
     if ($SelfTest -or $GuiProbe) { Write-Output "Khởi động / kiểm thử WPF thất bại: $reason. $log"; exit 1 }
     $null=[Windows.MessageBox]::Show("Không mở được app: $reason`n`nChi tiết: $log",'WinTune VI'); exit 1
 }
-finally { if (Get-Command Stop-FullTweaksUI -ErrorAction SilentlyContinue) {Stop-FullTweaksUI}; if (Get-Command Stop-DistributionUI -ErrorAction SilentlyContinue) {Stop-DistributionUI}; if (Get-Command Stop-ThemeUI -ErrorAction SilentlyContinue) {Stop-ThemeUI}; if (Get-Command Stop-Monitor -ErrorAction SilentlyContinue) {Stop-Monitor}; $mutex.ReleaseMutex(); $mutex.Dispose() }
+finally { if ($mutexOwned) {try {if (Get-Command Stop-FullTweaksUI -ErrorAction SilentlyContinue) {Stop-FullTweaksUI}; if (Get-Command Stop-DistributionUI -ErrorAction SilentlyContinue) {Stop-DistributionUI}; if (Get-Command Stop-ThemeUI -ErrorAction SilentlyContinue) {Stop-ThemeUI}; if (Get-Command Stop-Monitor -ErrorAction SilentlyContinue) {Stop-Monitor}} finally {$mutex.ReleaseMutex();$mutex.Dispose()}} else {$mutex.Dispose()} }

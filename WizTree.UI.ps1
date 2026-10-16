@@ -42,7 +42,7 @@ function Poll-WizTreeTask {
   if ([IO.File]::Exists($statusPath)) {try {$status=Get-Content -LiteralPath $statusPath -Raw -Encoding UTF8 | ConvertFrom-Json;if ($status.Message) {$w.FindName('WizTreeStatus').Text=$status.Message}} catch {}}
  }
  $r=Get-ToolJobResult $s.Job;if ($null -eq $r) {return}
- $s.Job.Handled=$true;$s.Job=$null;$s.Timer.Stop();Set-WizTreeBusy $false
+ Complete-ToolJob $s.Job;$s.Job=$null;$s.Timer.Stop();Set-WizTreeBusy $false
  if ($r.Status -eq 'Completed' -and $r.Result.Launched) {$s.Preparation=$r.Result;Show-WizTreeOpenResult;return}
  if ($s.CloseRequested) {$w.Close();return}
  if ($s.CancelRequested) {$w.FindName('WizTreeStatus').Text='Đã hủy yêu cầu mở. Bấm Thử lại khi cần dùng WizTree.';return}
@@ -74,12 +74,12 @@ function New-WizTreeWindow {
  $w.FindName('WizTreeDownload').Add_Click({if ($script:IsSimulation -or $script:WriteBlocked) {Message 'MÔ PHỎNG — không mở trình duyệt.'} else {Start-Process 'https://diskanalyzer.com/download'}})
  $w.FindName('WizTreeClose').Add_Click({$script:WizTreeWindow.Close()})
  $timer=New-Object Windows.Threading.DispatcherTimer;$timer.Interval=[TimeSpan]::FromMilliseconds(300);$timer.Add_Tick({Poll-WizTreeTask});$script:WizTreeState.Timer=$timer
- $w.Add_Closing({param($sender,$args) if ($script:WizTreeState.Job) {$args.Cancel=$true;$script:WizTreeState.CloseRequested=$true;Stop-WizTreeTask}})
+ $w.Add_Closing({param($sender,$eventArgs) if ($script:WizTreeState.Job) {$eventArgs.Cancel=$true;$script:WizTreeState.CloseRequested=$true;Stop-WizTreeTask}})
  $w.Add_Closed({$script:WizTreeState.Timer.Stop()});return $w
 }
 function Open-Storage {
  try {
-  if ($script:ToolJob -and -not $script:ToolJob.Process.HasExited) {throw 'Đợi công cụ đang chạy hoàn tất trước khi mở dung lượng ổ đĩa.'}
+  if ($script:ToolJob -and -not $script:ToolJob.Handled) {throw 'Đợi công cụ đang chạy hoàn tất trước khi mở dung lượng ổ đĩa.'}
   Initialize-Tools (Join-Path $script:DataRoot 'tools') ([bool]($script:IsSimulation -or $script:WriteBlocked)) $script:UserId
   $w=New-WizTreeWindow;$w.Add_ContentRendered({Start-WizTreeTask});$null=$w.ShowDialog()
  } catch {Message $_.Exception.Message} finally {$script:WizTreeWindow=$null}

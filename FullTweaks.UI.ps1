@@ -1,5 +1,5 @@
 ﻿function New-FullTweaksWindow([switch]$Embedded) {
-    if ($null -ne $script:ToolJob -and -not $script:ToolJob.Process.HasExited) {throw 'Đợi công cụ đang chạy hoàn tất trước khi mở bảng tinh chỉnh.'}
+    if ($null -ne $script:ToolJob -and -not $script:ToolJob.Handled) {throw 'Đợi công cụ đang chạy hoàn tất trước khi mở bảng tinh chỉnh.'}
     Initialize-FullTweaks (Join-Path $script:DataRoot 'full-tweaks') ([bool]($script:IsSimulation -or $script:WriteBlocked)) $script:Build
     [xml]$xml=@'
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="WinTune VI — Toàn bộ tùy chỉnh" Width="1320" Height="880" MinWidth="880" MinHeight="540" Background="{DynamicResource Theme.WindowBrush}" Foreground="{DynamicResource Theme.TextBrush}" FontFamily="Segoe UI" FontSize="14" WindowStartupLocation="CenterOwner">
@@ -41,10 +41,10 @@
     $w.FindName('FullOosuSite').Add_Click({if (-not $script:FullSimulation) {Start-Process 'https://www.oo-software.com/en/shutup10'}})
     $w.FindName('FullOosuFile').Add_Click({$dialog=New-Object Microsoft.Win32.OpenFileDialog;$dialog.Filter='Ứng dụng O&O (*.exe)|*.exe';if ($dialog.ShowDialog()) {$script:FullOosuExecutable=$dialog.FileName;$script:FullWindow.FindName('FullOosuPath').Text=$dialog.FileName}})
     $w.FindName('FullClose').Add_Click({$script:FullWindow.Close()})
-    $w.Add_Closing({param($sender,$eventArgs) if ($null -ne $script:FullJob -and -not $script:FullJob.Process.HasExited) {$eventArgs.Cancel=$true;$script:FullWindow.FindName('FullStatus').Text='Đợi tác vụ hoàn tất trước khi đóng. Không kết thúc công cụ giữa lúc ghi thay đổi.'}})
+    $w.Add_Closing({param($sender,$eventArgs) if ($null -ne $script:FullJob) {$eventArgs.Cancel=$true;$script:FullWindow.FindName('FullStatus').Text='Đợi tác vụ hoàn tất trước khi đóng. Không kết thúc công cụ giữa lúc ghi thay đổi.'}})
     $timer=New-Object Windows.Threading.DispatcherTimer;$timer.Interval=[TimeSpan]::FromMilliseconds(250);$timer.Add_Tick({Poll-FullJob});$script:FullTimer=$timer
     $w.Add_Closed({$script:FullTimer.Stop();$script:FullWindow=$null})
-    $w.FindName('FullGroup').SelectedIndex=0;Render-FullTweaks
+    $w.FindName('FullGroup').SelectedIndex=0
     if($Embedded){$view=$w.Content;$w.Content=$null;$view.Resources=$w.Resources;$view.Margin='0';[Windows.NameScope]::SetNameScope($view,[Windows.NameScope]::GetNameScope($w));$w.FindName('FullHeading').Visibility='Collapsed';$w.FindName('FullClose').Visibility='Collapsed';return $view}
     return $w
 }
@@ -108,9 +108,9 @@ function Start-FullPreview([string[]]$Ids) {
     Start-FullJob Preview $Ids (Get-FullParameters) $false
 }
 function Start-FullJob([string]$Operation,[string[]]$Ids,$Parameters,[bool]$Confirmed,[object[]]$Rows=@()) {
-    if ($null -ne $script:FullJob -and -not $script:FullJob.Process.HasExited) {throw 'Đợi tác vụ hiện tại hoàn tất.'}
+    if ($null -ne $script:FullJob) {throw 'Đợi tác vụ hiện tại hoàn tất.'}
     if($Operation -in @('Preview','Apply') -and ($script:PendingBatch -or $script:HistoryError)){throw 'Cần xử lý bản sao lưu cũ trước: mở Lịch sử bản cũ và Hoàn tác bản cũ trên thanh bên.'}
-    if($script:MainActionBusy -or ($script:ToolJob -and -not $script:ToolJob.Process.HasExited)){throw 'Đợi công cụ hoặc thao tác ứng dụng đang chạy hoàn tất.'}
+    if($script:MainActionBusy -or ($script:ToolJob -and -not $script:ToolJob.Handled)){throw 'Đợi công cụ hoặc thao tác ứng dụng đang chạy hoàn tất.'}
     $request=Join-Path $script:FullRoot ('request-'+[guid]::NewGuid().ToString('N')+'.dat')
     Write-FullData ([pscustomobject]@{Version=1;User=$FullUser;Operation=$Operation;Simulation=$FullSimulation;Confirmed=$Confirmed;Ids=$Ids;Parameters=$Parameters;Rows=$Rows}) $request
     $exe=Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe'
@@ -124,7 +124,7 @@ function Start-FullJob([string]$Operation,[string[]]$Ids,$Parameters,[bool]$Conf
 }
 function Poll-FullJob {
     if ($null -eq $script:FullJob -or -not $script:FullJob.Process.HasExited) {return}
-    $job=$script:FullJob;$script:FullJob=$null;$script:FullTimer.Stop();Set-FullJobBusy $false
+    $job=$script:FullJob;$job.Process.Dispose();$script:FullJob=$null;$script:FullTimer.Stop();Set-FullJobBusy $false
     try {
         if (-not (Test-Path -LiteralPath ($job.Path+'.result'))) {throw 'Tác vụ đã dừng nhưng chưa có kết quả. Không coi là thành công; giữ lịch sử để kiểm tra.'}
         $result=Read-FullData ($job.Path+'.result');$script:FullWindow.FindName('FullStatus').Text=$result.Message

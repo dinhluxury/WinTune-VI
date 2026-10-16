@@ -141,6 +141,46 @@ function Test-DistributionMutableFile([string]$Name) {
     $name=$Name.Replace('\','/')
     return $name -in @('startup-error.log','launcher-error.log') -or $name.StartsWith('simulation-data/',[StringComparison]::OrdinalIgnoreCase) -or $name.StartsWith('.test-runs/',[StringComparison]::OrdinalIgnoreCase) -or ($name.StartsWith('evidence/',[StringComparison]::OrdinalIgnoreCase) -and [IO.Path]::GetExtension($name) -in @('.log','.png','.json'))
 }
+function Get-VerifiedReleaseInventory([byte[]]$Bytes,$Manifest) {
+    if ($Bytes.Length -ne $Manifest.Size -or (Get-DistributionHash $Bytes) -ine $Manifest.SHA256) {throw 'Bản lưu ZIP không khớp manifest đã ký; chưa mở ứng dụng.'}
+    Add-Type -AssemblyName System.IO.Compression
+    $stream=[IO.MemoryStream]::new($Bytes,$false)
+    $archive=$null;$reader=$null
+    try {
+        $archive=[IO.Compression.ZipArchive]::new($stream,[IO.Compression.ZipArchiveMode]::Read,$false)
+        $name='WinTune-VI-v'+$Manifest.Version+'/SHA256.txt'
+        $entries=@($archive.Entries | Where-Object {$_.FullName.Replace('\','/') -ceq $name})
+        if ($entries.Count -ne 1 -or $entries[0].Length -gt 1MB) {throw 'Gói đã ký thiếu bảng checksum duy nhất hoặc vượt giới hạn.'}
+        $reader=[IO.StreamReader]::new($entries[0].Open(),[Text.Encoding]::UTF8,$true)
+        return $reader.ReadToEnd()
+    } finally {if ($reader) {$reader.Dispose()};if ($archive) {$archive.Dispose()};$stream.Dispose()}
+}
+function Save-VerifiedReleaseArchive([byte[]]$Bytes,[string]$Root,$Manifest) {
+    $null=Get-VerifiedReleaseInventory $Bytes $Manifest
+    $cache=Assert-DistributionPath (Join-Path $Root 'verified-archives') $Root
+    $null=New-Item -ItemType Directory -Path $cache -Force
+    $path=Assert-DistributionPath (Join-Path $cache ($Manifest.SHA256+'.zip')) $Root
+    if ([IO.File]::Exists($path)) {return}
+    $temp=$path+'.'+[guid]::NewGuid().ToString('N')+'.tmp'
+    try {[IO.File]::WriteAllBytes($temp,$Bytes);[IO.File]::Move($temp,$path)} finally {if ([IO.File]::Exists($temp)) {[IO.File]::Delete($temp)}}
+}
+function Assert-InstalledRelease([string]$Package,$Info,[string]$Root,$Config) {
+    # The trust anchor comes from the bootstrap, never from installed package files.
+    $manifest=Read-SignedRelease $Info.ManifestBytes $Info.SignatureBytes $Config ('v'+$Info.Manifest.Version)
+    if ((Get-WinTuneVersion $Package).Version -cne $manifest.Version) {throw 'Bản đã cài khác phiên bản có chữ ký vừa xác minh; chưa mở hoặc tự hạ phiên bản.'}
+    $expected='https://github.com/'+$Config.Repository+'/releases/download/v'+$manifest.Version+'/'+$manifest.Asset
+    if ($Info.Url -cne $expected) {throw 'Đích ZIP không khớp bản phát hành đã ký.'}
+    $cache=Assert-DistributionPath (Join-Path $Root ('verified-archives/'+$manifest.SHA256+'.zip')) $Root
+    if ([IO.File]::Exists($cache)) {
+        if ((Get-Item -LiteralPath $cache).Length -ne $manifest.Size) {throw 'Bản lưu ZIP có dung lượng sai; chưa mở ứng dụng.'}
+        $bytes=[IO.File]::ReadAllBytes($cache)
+    } else {$bytes=Get-DistributionBytes $expected 67108864}
+    $trusted=Get-VerifiedReleaseInventory $bytes $manifest
+    $local=[IO.File]::ReadAllText((Join-Path $Package 'SHA256.txt'),[Text.Encoding]::UTF8)
+    if ($local -cne $trusted) {throw 'Bảng checksum đã cài khác gói có chữ ký; chưa mở ứng dụng.'}
+    Test-PortableIntegrity $Package $manifest.Version
+    Save-VerifiedReleaseArchive $bytes $Root $manifest
+}
 function Expand-VerifiedPackage([string]$Zip,[string]$Stage,[string]$Version,$Cancellation=$null) {
     Add-Type -AssemblyName System.IO.Compression,System.IO.Compression.FileSystem
     if (Test-Path -LiteralPath $Stage) {throw 'Thư mục staging phải mới.'}
@@ -209,7 +249,8 @@ function Install-DistributionUpdate($Info,[string]$Root,[bool]$Confirmed,$Cancel
     $null=New-Item -ItemType Directory -Path $stage -Force
     $bytes=Get-DistributionBytes $Info.Url 67108864 $Cancellation
     if ($bytes.Length -ne $m.Size -or (Get-DistributionHash $bytes) -ine $m.SHA256) {throw 'Checksum hoặc dung lượng ZIP không khớp manifest đã ký; không chạy.'}
-    Assert-DistributionCancelled $Cancellation;$zip=Join-Path $stage 'package.zip';[IO.File]::WriteAllBytes($zip,$bytes);$bytes=$null
+    Assert-DistributionCancelled $Cancellation;Save-VerifiedReleaseArchive $bytes $root $m
+    $zip=Join-Path $stage 'package.zip';[IO.File]::WriteAllBytes($zip,$bytes);$bytes=$null
     $package=Expand-VerifiedPackage $zip (Join-Path $stage 'unpacked') $m.Version $Cancellation
     return Activate-DistributionPackage $package $root $m.Version $m.SHA256 $Cancellation
 }

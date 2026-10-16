@@ -1,4 +1,20 @@
-﻿> Bản tiếp theo là v0.16.3. Kiểm thử bằng Run-Tests.ps1, đóng gói với -PublicRelease, chuẩn bị/ký đủ sáu asset, đưa mã nguồn và tag mới lên GitHub. Không thay asset hoặc tag của v0.16.0 đã phát hành.
+﻿> Quy trình bản vá v0.16.4. Giữ nguyên URL/lệnh PowerShell chính thức và khóa ký gốc; không thay tag hoặc asset của các bản đã phát hành.
+
+## Quy trình hiện tại
+
+1. Chạy `Run-Tests.ps1` bằng Windows PowerShell 5.1 STA; đọc `TEST_REPORT.md` để phân biệt kiểm thử mô phỏng với thao tác Windows thật.
+2. Đổi `version.json` và bổ sung changelog, báo cáo kiểm thử của bản mới trước khi build.
+3. Chạy `Build-Package.ps1 -PublicRelease`, rồi `Build-Distribution.ps1`.
+4. Dùng `Sign-Release.ps1` ký `release-assets/.../release.json` bằng khóa DPAPI gốc ngoài repository. Không đổi public key, không đưa khóa riêng vào Git hoặc ZIP.
+5. Chạy `Prepare-GitHub.ps1`, rồi `Build-CmdLauncher.ps1 -Prepared <thư mục vừa chuẩn bị>`. Kiểm tra đủ sáu asset, chữ ký, hash ZIP, nội dung ZIP, WPF mô phỏng và entry PowerShell/CMD sinh ra.
+6. Commit mã nguồn trên nhánh riêng; tạo tag mới ở đúng commit đó. Upload đủ sáu asset vào draft release, kiểm tra lại rồi công khai release. Sau khi asset công khai và kiểm chứng được mới cập nhật `main` với `get.ps1`, `docs/index.html`, `docs/run.cmd` tương ứng. Trình tự này tránh Pages trỏ tới asset chưa tồn tại.
+7. Kiểm tra GitHub Pages đã phục vụ đúng byte/hash entry mới, manifest và ZIP công khai đúng chữ ký/hash. Không chạy launcher Internet với quyền quản trị chỉ để kiểm thử.
+
+Lệnh mở được giữ nguyên: `irm https://dinhluxury.github.io/WinTune-VI | iex`.
+Giao diện cập nhật riêng đã bỏ; mở lại bằng lệnh online để nhận bản stable mới.
+
+Phần dưới là hướng dẫn lịch sử từ các bản trước; ví dụ version/đường dẫn cần thay bằng bộ mới trong `github-ready/LATEST.txt`.
+
 
 # Đưa WinTune VI lên GitHub
 

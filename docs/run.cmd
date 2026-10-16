@@ -26,9 +26,9 @@ mkdir "%wt_directory%" >nul 2>&1
 if errorlevel 1 goto temp_error
 set "WINTUNE_BOOTSTRAP_FILE=%wt_directory%\WinTune-Online.ps1"
 echo WinTune VI - dang tai va kiem tra launcher...
-"%wt_curl%" --disable --fail --location --silent --show-error --proto =https --proto-redir =https --connect-timeout 10 --max-time 60 --max-filesize 1048576 --output "%WINTUNE_BOOTSTRAP_FILE%" "https://github.com/dinhluxury/WinTune-VI/releases/download/v0.16.3/WinTune-Online.ps1"
+"%wt_curl%" --disable --fail --location --silent --show-error --proto =https --proto-redir =https --connect-timeout 10 --max-time 60 --max-filesize 1048576 --output "%WINTUNE_BOOTSTRAP_FILE%" "https://github.com/dinhluxury/WinTune-VI/releases/download/v0.16.4/WinTune-Online.ps1"
 if errorlevel 1 goto download_error
-"%wt_ps%" -NoLogo -NoProfile -Command "$ErrorActionPreference='Stop'; if ((Get-FileHash -LiteralPath $env:WINTUNE_BOOTSTRAP_FILE -Algorithm SHA256 -ErrorAction Stop).Hash -cne '8C63F1439F5415A5AB361754F1B79F647CC6F2DFA09C115D0840CD68388288E4') {Write-Error 'Checksum WinTune khong khop. Chua chay launcher.'; exit 1}"
+"%wt_ps%" -NoLogo -NoProfile -Command "$ErrorActionPreference='Stop'; if ((Get-FileHash -LiteralPath $env:WINTUNE_BOOTSTRAP_FILE -Algorithm SHA256 -ErrorAction Stop).Hash -cne '89465AD684356BDFA0A6D9EB14C558E7C1D6002F9B5FC0C513E73D86B3707A0C') {Write-Error 'Checksum WinTune khong khop. Chua chay launcher.'; exit 1}"
 if errorlevel 1 goto verification_error
 "%wt_ps%" -NoLogo -NoProfile -STA -ExecutionPolicy Bypass -File "%WINTUNE_BOOTSTRAP_FILE%" %wt_mode%
 set "wt_exit=%ERRORLEVEL%"

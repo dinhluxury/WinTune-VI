@@ -18,6 +18,14 @@ $deadline=[DateTime]::UtcNow.AddSeconds(25)
 while(-not $CareState.Job.Handled -and [DateTime]::UtcNow -lt $deadline){Start-Sleep -Milliseconds 60;Poll-CareRepair}
 Assert-UI ($CareState.Job.Handled -and $cw.FindName('CareResultTitle').Text.Contains('mô phỏng') -and $cw.FindName('CareProgress').Visibility -eq 'Collapsed' -and $CareState.Buttons[1].IsEnabled) 'Completed simulated worker produces a plain-language result and restores buttons'
 Assert-UI ($cw.FindName('CareRaw').Text.Contains('MÔ PHỎNG') -and -not $cw.FindName('CareTechnical').IsExpanded) 'Native details are available without replacing the understandable summary'
+$careFormatter=${function:Get-CareRepairResult}
+try {
+ function Get-CareRepairResult($Result) {throw 'Injected presentation failure'}
+ Start-CareRepair sfc @{}
+ $deadline=[DateTime]::UtcNow.AddSeconds(25)
+ while(-not $CareState.Job.Handled -and [DateTime]::UtcNow -lt $deadline){Start-Sleep -Milliseconds 60;Poll-CareRepair}
+ Assert-UI ($CareState.Job.Handled -and $cw.FindName('CareProgress').Visibility -eq 'Collapsed' -and $CareState.Buttons[0].IsEnabled -and $cw.FindName('CareResultTitle').Text -eq 'Chưa đọc được kết quả') 'Presentation failure restores repair controls and never claims successful repair'
+} finally {Set-Item Function:Get-CareRepairResult $careFormatter}
 $summary=Get-CareRepairResult ([pscustomobject]@{Id='sfc';Mode='Native';Message='fixture';Result=[pscustomobject]@{ExitCode=0;Output='Windows Resource Protection found corrupt files but was unable to fix some of them.'}})
 $cw.FindName('CareResultTitle').Text=$summary.Title;$cw.FindName('CareResultBody').Text=$summary.Body;$cw.FindName('CareNext').Text=$summary.Next;Set-ThemeResource $cw.FindName('CareResultTitle') Foreground $summary.Tone
 Apply-AppTheme Dark;Save-FullRendering $cw 'repair-simple-dark' 1120 820

@@ -20,7 +20,7 @@
     Register-ThemeWindow $w
     if ($script:Window.IsVisible) { $w.Owner=$script:Window }
     $work=[Windows.SystemParameters]::WorkArea; $w.Width=[Math]::Min($w.Width,$work.Width); $w.Height=[Math]::Min($w.Height,$work.Height)
-    $script:ManagerState=[pscustomobject]@{Window=$w;Kind=$Kind;Selected=@{};Inventory=@();Current=$null;Error=''}
+    $script:ManagerState=[pscustomobject]@{Window=$w;Kind=$Kind;Selected=@{};Inventory=@();Current=$null;Error='';ReadOperation='';Timer=$null}
     $w.Title=if ($Kind -eq 'Appx') {'WinTune — Gỡ ứng dụng Windows'} else {'WinTune — Quản lý tự khởi động'}
     if ($ActionSimulation) { $w.Title+=' [MÔ PHỎNG]' }
     $w.FindName('Heading').Text=if ($Kind -eq 'Appx') {'Chọn ứng dụng bạn không dùng'} else {'Ứng dụng tự mở khi đăng nhập'}
@@ -66,16 +66,24 @@
         Start-Process ('ms-windows-store://pdp/?ProductId='+$id)
     })
     $w.FindName('CloseManager').Add_Click({param($sender,$args) [Windows.Window]::GetWindow($sender).Close()})
-    $w.Add_Closing({param($sender,$args) if ($null -ne $script:ToolJob -and -not $script:ToolJob.Process.HasExited) {$args.Cancel=$true;Message 'Thao tác đang chạy; đợi kết quả. WinTune không tự kết thúc app/worker.'}})
+    $w.Add_Closing({param($sender,$eventArgs)
+        if ($script:ManagerState.ReadOperation) {
+            try {Stop-ManagementRead}
+            catch {$eventArgs.Cancel=$true;$script:ManagerState.Error=$_.Exception.Message;$sender.FindName('State').Text=$_.Exception.Message}
+        }
+        elseif ($null -ne $script:ToolJob -and -not $script:ToolJob.Handled) {$eventArgs.Cancel=$true;$sender.FindName('State').Text='Đợi kết quả thao tác trước khi đóng. Không kết thúc worker đang thay đổi Windows.'}
+    })
+    $w.Add_Closed({if ($script:ManagerState.Timer) {$script:ManagerState.Timer.Stop()}})
     Refresh-Management
     return $w
 }
 function Update-ManagementSelection {
     $m=$script:ManagerState; $w=$m.Window
-    $busy=$null -ne $script:ToolJob -and -not $script:ToolJob.Process.HasExited
+    $busy=$null -ne $script:ToolJob -and -not $script:ToolJob.Handled
     $w.FindName('Review').IsEnabled=$m.Selected.Count -gt 0 -and -not $m.Error -and -not $script:PendingBatch -and -not $script:HistoryError -and -not $busy
     $w.FindName('Reload').IsEnabled=-not $busy;$w.FindName('UndoStartup').IsEnabled=-not $busy
-    if ($busy) {$w.FindName('Queue').IsEnabled=$false}
+    $canQueue=$null -ne $m.Current -and ($m.Kind -ne 'Appx' -or -not (Get-AppProtection $m.Current).Protected)
+    $w.FindName('Queue').IsEnabled=$canQueue -and -not $busy -and -not $m.Error
     $w.FindName('State').Text=if ($m.Error) {'Không thể tiếp tục: '+$m.Error} else {"Đang hiện $($w.FindName('Items').Items.Count) / $($m.Inventory.Count) mục • Đã chọn $($m.Selected.Count). Đánh dấu chưa thay đổi Windows."}
     if ($null -ne $m.Current) { $w.FindName('Queue').Content=if ($m.Selected.ContainsKey($m.Current.Id)) {'Bỏ khỏi danh sách chờ'} else {'Thêm vào danh sách chờ'} }
 }
@@ -126,6 +134,8 @@ function Render-ManagementList {
 }
 function Refresh-Management {
     $m=$script:ManagerState
+    if ($null -ne $script:ToolJob -and -not $script:ToolJob.Handled) {return}
+    if (-not $SelfTest) {Start-ManagementRead 'actionsread';return}
     try {
         $null=@(Get-ActionJournals); $m.Inventory=@(if ($m.Kind -eq 'Appx') {Get-AllAppInventory} else {Get-ActionInventory $m.Kind}); $m.Error=''
         $m.Inventory=@($m.Inventory | Sort-Object Title)
@@ -143,7 +153,14 @@ function Invoke-ManagementReview {
         if ($script:PendingBatch -or $script:HistoryError) {throw 'Phục hồi đợt tùy chỉnh đang dở trước khi làm tiếp.'}
         $ids=@($m.Inventory | Where-Object {$m.Selected.ContainsKey($_.Id)} | ForEach-Object Id)
         if ($ids.Count -ne $m.Selected.Count) {throw 'Danh sách đã thay đổi; đọc lại trước khi xem trước.'}
+        if (-not $SelfTest) {Start-ManagementRead 'actionsplan' $ids;return}
         $plan=@(New-ActionPlan $m.Kind $ids)
+        Show-ManagementPlan $plan
+    } catch {Message $_.Exception.Message} finally {if ($SelfTest) {Refresh-Management}}
+}
+function Show-ManagementPlan([object[]]$plan) {
+    $m=$script:ManagerState
+    try {
         if ($plan.Count -eq 0) {Message 'Không có mục cần thay đổi; không tạo đợt.';return}
         $lines=@('XEM TRƯỚC — chưa thay đổi Windows.', "Tài khoản: $script:UserId", '')
         if ($ActionSimulation) {$lines+='MÔ PHỎNG — không thay đổi Windows thật.'}
@@ -158,7 +175,7 @@ function Invoke-ManagementReview {
         }
         $null=Invoke-ActionPlan $plan; $m.Selected.Clear()
         Message $(if ($m.Kind -eq 'Appx') {'Đã gỡ và kiểm tra lại gói cho tài khoản này. Xem lịch sử để cài lại; dữ liệu không được hoàn tác.'} else {'Đã tắt lệnh tự mở và xác minh. Có thể phục hồi trong cửa sổ này; không đóng app đang chạy.'})
-    } catch {Message $_.Exception.Message} finally {Refresh-Management}
+    } catch {Message $_.Exception.Message}
 }
 function Show-ManagementHistory {
     try {
@@ -182,17 +199,58 @@ function Start-ManagementPolling {
     $w=$script:ManagerState.Window
     foreach ($name in @('Review','Reload','UndoStartup','Queue')) {$w.FindName($name).IsEnabled=$false}
     $w.FindName('State').Text='Đang thực hiện trong worker; bạn vẫn có thể cuộn/xem chi tiết. Chưa có kết quả cuối.'
-    $timer=New-Object Windows.Threading.DispatcherTimer;$timer.Interval=[TimeSpan]::FromMilliseconds(500);$script:ManagerTimer=$timer
-    $timer.Add_Tick({
+    if ($script:ManagerState.Timer) {$script:ManagerState.Timer.Stop()}
+    $timer=New-Object Windows.Threading.DispatcherTimer;$timer.Interval=[TimeSpan]::FromMilliseconds(250);$script:ManagerTimer=$timer;$script:ManagerState.Timer=$timer
+    $timer.Add_Tick({Poll-ManagementJob});$timer.Start()
+}
+function Start-ManagementRead([string]$Operation,[string[]]$Ids=@()) {
+    $m=$script:ManagerState
+    try {
+        $null=Start-ToolJob $Operation ([pscustomobject]@{ActionRoot=$script:ActionRoot;Kind=$m.Kind;Ids=$Ids}) $false
+        $m.ReadOperation=$Operation;Start-ManagementPolling
+        $m.Window.FindName('State').Text='Đang đọc danh sách ứng dụng… Bạn có thể đóng cửa sổ để hủy việc đọc.'
+    } catch {$m.Error=$_.Exception.Message;Update-ManagementSelection}
+}
+function Stop-ManagementRead {
+    $m=$script:ManagerState;$job=$script:ToolJob
+    if (-not $m.ReadOperation -or $null -eq $job -or $job.Id -notin @('actionsread','actionsplan')) {return}
+    # Only these readers can be stopped. Never terminate a mutation worker.
+    if (-not $job.Handled -and -not $job.Process.HasExited) {
+        try {$job.Process.Kill()}
+        catch {
+            # Exit can race with Kill. Keep reader classification if it is still alive.
+            if (-not $job.Process.HasExited) {$job.Started=Get-Date;throw 'Chưa dừng được việc đọc. Bạn có thể thử đóng lại; tác vụ này không thay đổi Windows.'}
+        }
+    }
+    Complete-ToolJob $job;$script:ToolJob=$null;$m.ReadOperation=''
+    if ($m.Timer) {$m.Timer.Stop()}
+}
+function Poll-ManagementJob {
+    if ($null -eq $script:ManagerState -or $null -eq $script:ToolJob -or $script:ToolJob.Handled) {return}
+    $m=$script:ManagerState
+    try {
+        if ($m.ReadOperation -and ((Get-Date)-$script:ToolJob.Started).TotalSeconds -gt 60) {Stop-ManagementRead;throw 'Đọc danh sách quá lâu. Đã dừng việc đọc; hãy thử lại.'}
         $r=Get-ToolJobResult $script:ToolJob
         if ($null -eq $r) {return}
-        $script:ManagerTimer.Stop();$script:ToolJob.Handled=$true
+        $script:ManagerTimer.Stop();Complete-ToolJob $script:ToolJob
+        if ($m.ReadOperation) {
+            $operation=$m.ReadOperation;$m.ReadOperation=''
+            if ($r.Status -ne 'Completed') {throw $r.Message}
+            $m.Error=''
+            if ($operation -eq 'actionsread') {
+                $m.Inventory=@($r.Result.Inventory | Sort-Object Title)
+                $present=@($m.Inventory | ForEach-Object Id)
+                foreach ($id in @($m.Selected.Keys)) {if ($id -cnotin $present) {$m.Selected.Remove($id)}}
+                Render-ManagementList
+            } else {Update-ManagementSelection;Show-ManagementPlan @($r.Result.Rows)}
+            return
+        }
         Initialize-Actions $script:ActionRoot ([bool]($script:IsSimulation -or $script:WriteBlocked)) $script:UserId
         if ($r.Status -eq 'Completed') {$script:ManagerState.Selected.Clear()}
         foreach ($name in @('Review','Reload','UndoStartup','Queue')) {$script:ManagerState.Window.FindName($name).IsEnabled=$true}
         Refresh-Management
         Message ((Get-ToolStatusLabel $r.Status)+' — '+$r.Message+' Xem lịch sử từng mục. Gỡ app không khôi phục dữ liệu.')
-    });$timer.Start()
+    } catch {if ($null -eq $script:ToolJob -or $script:ToolJob.Handled) {$m.ReadOperation=''};$m.Error=$_.Exception.Message;Update-ManagementSelection}
 }
 function Open-Management([string]$Kind) {
     try { $script:ManagementWindow=New-ManagementWindow $Kind; $null=$script:ManagementWindow.ShowDialog() }

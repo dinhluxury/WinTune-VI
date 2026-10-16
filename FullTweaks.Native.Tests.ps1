@@ -45,4 +45,39 @@ Check (Reject {Assert-FullNativeResult $a @{} @{} ([pscustomobject]@{Files=@();S
 Check ((Get-FullServiceTarget Manual ([pscustomobject]@{Exists=$true;Start=2;Delayed=1})).Delayed -eq 1) 'Service planning preserves the delayed-start setting'
 Check (Reject {Get-FullServiceTarget Disabled ([pscustomobject]@{Exists=$false})}) 'Missing services never become new registry service entries'
 Check (Reject {Get-FullBase HKCR}) 'Unlisted registry hives are not accepted'
+
+# WindowsAI must distinguish an absent Recall feature from unreadable servicing
+# state, and must perform this check before any irreversible app removal.
+$script:RecallReadFail=$false;$script:RecallState='Enabled';$script:RecallMutations=0;$script:RecallApps=@()
+function Get-WindowsOptionalFeature {
+    param([switch]$Online,[string]$FeatureName,[string]$ErrorAction)
+    if ($script:RecallReadFail) {Write-Error 'Injected servicing query failure' -ErrorAction $ErrorAction;return}
+    if ($script:RecallState -ne 'Absent') {[pscustomobject]@{FeatureName='Recall';State=$script:RecallState}}
+}
+function Get-FullApps([string[]]$Names) {return @($script:RecallApps)}
+function Read-FullRegistry($Change) {return [pscustomobject]@{Exists=$false;KeyExisted=$false;Type=$Change.Type;Value=$null}}
+function Remove-AppxPackage {param([string]$Package,[string]$ErrorAction) $script:RecallMutations++;$script:RecallApps=@()}
+function Disable-WindowsOptionalFeature {param([switch]$Online,[string]$FeatureName,[switch]$NoRestart,[string]$ErrorAction) $script:RecallMutations++;$script:RecallState='DisablePending'}
+$ai=Get-FullFeature WPFTweaksWindowsAI
+$script:RecallReadFail=$true
+Check (Reject {Read-FullNative $ai @{}}) 'Unreadable Recall inventory is not treated as an absent feature'
+Check (Reject {Write-FullNative $ai @{} @{} $false}) 'WindowsAI stops when Recall state cannot be read'
+Check ($script:RecallMutations -eq 0) 'Recall read failure performs zero app or optional-feature mutations'
+$script:RecallReadFail=$false;$script:RecallState='EnablePending'
+Check (Reject {New-FullPlan @($ai.Id) @{}}) 'WindowsAI preview refuses a pending Recall restart before creating a plan'
+Check (Reject {Write-FullNative $ai @{} @{} $false}) 'WindowsAI waits for a pending Recall restart before removing apps'
+Check ($script:RecallMutations -eq 0) 'Pending Recall restart performs zero irreversible mutations'
+$script:RecallState='Unrecognized'
+Check (Reject {Read-FullNative $ai @{}}) 'Unknown Recall servicing states fail closed'
+$script:RecallState='Absent'
+Check ((Read-FullNative $ai @{}).Recall -eq 'Absent') 'Successful inventory can explicitly establish that Recall is absent'
+$script:RecallState='Disabled';$script:RecallApps=@([pscustomobject]@{Name='Microsoft.Copilot';FullName='fixture-removable';NonRemovable=$false},[pscustomobject]@{Name='MicrosoftWindows.Client.CoreAI';FullName='fixture-protected';NonRemovable=$true})
+Check (Reject {New-FullPlan @($ai.Id) @{}}) 'WindowsAI preview rejects a protected package before any registry or app changes'
+Check (Reject {Write-FullNative $ai @{} @{} $false}) 'A protected AI package prevents the full app removal pass'
+Check ($script:RecallMutations -eq 0 -and $script:RecallApps.Count -eq 2) 'Protected second package is detected before removing the first package'
+$script:RecallState='Enabled';$script:RecallApps=@([pscustomobject]@{Name='Microsoft.Copilot';FullName='fixture-only';NonRemovable=$false})
+Write-FullNative $ai @{} @{} $false
+$after=Read-FullNative $ai @{}
+$null=Assert-FullNativeResult $ai @{} @{} $after @{}
+Check ($script:RecallMutations -eq 2 -and $after.Recall -eq 'DisablePending' -and $after.Apps.Count -eq 0) 'Known enabled Recall is disabled without reboot and its pending completion is verified'
 Write-Output "FULL NATIVE ADAPTER TESTS PASSED: $pass; no native Windows command executed."

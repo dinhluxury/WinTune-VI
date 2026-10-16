@@ -23,6 +23,12 @@ try {
   . "$PSScriptRoot/Actions.Core.ps1"; . "$PSScriptRoot/Copilot.Core.ps1"
   Initialize-Actions $r.Parameters.ActionRoot $ToolSimulation $user
   $result=New-CopilotRemovalPreview
+ } elseif ($r.Id -in @('actionsread','actionsplan')) {
+  if ($r.Parameters.Kind -notin @('Appx','Startup')) {throw 'Loại danh sách không được hỗ trợ.'}
+  . "$PSScriptRoot/Actions.Core.ps1";Initialize-Actions $r.Parameters.ActionRoot $ToolSimulation $user
+  $null=@(Get-ActionJournals)
+  if ($r.Id -eq 'actionsread') {$result=[pscustomobject]@{Inventory=@(if ($r.Parameters.Kind -eq 'Appx') {Get-AllAppInventory} else {Get-ActionInventory $r.Parameters.Kind})}}
+  else {$result=[pscustomobject]@{Rows=@(New-ActionPlan $r.Parameters.Kind @($r.Parameters.Ids))}}
  } elseif ($r.Id -in @('actionsapply','startupundo')) {
   if (-not $r.Confirmed) {throw 'Chưa xác nhận thao tác app/khởi động.'}
   . "$PSScriptRoot/Actions.Core.ps1";Initialize-Actions $r.Parameters.ActionRoot $ToolSimulation $user
@@ -58,5 +64,5 @@ try {
  if ($null -ne $result -and $result.PSObject.Properties['ExitCode']) {$summary='Lệnh đã thoát với mã '+$result.ExitCode+'. Đọc output để xác định có lỗi/có sửa hay không. Không kết luận Windows đã hết lỗi.'}
  $state=if ($null -ne $result -and $result.PSObject.Properties['ExitCode'] -and $result.ExitCode -notin @(0,3010)) {'Failed'} else {'Completed'}
  if ($r.Id -eq 'tempdelete' -and @($result.Rows | Where-Object State -EQ 'Bỏ qua/lỗi').Count) {$state='Partial';$summary='Chỉ xóa được một phần; xem file đã xóa và file bỏ qua/lỗi. Không hứa phục hồi dữ liệu.'}
- Write-ToolJson ([pscustomobject]@{Status=$state;Id=$r.Id;Mode=$r.Mode;Time=(Get-Date).ToString('o');Message=$summary;Result=$result;RestartRequired=($null -ne $result -and $result.PSObject.Properties['ExitCode'] -and $result.ExitCode -eq 3010)}) (Join-Path $parent 'result.json')
+ Write-ToolJson ([pscustomobject]@{Status=$state;Id=$r.Id;Mode=$r.Mode;Time=(Get-Date).ToString('o');Message=$summary;Result=$result;RestartRequired=(Test-ToolRestartRequired $result)}) (Join-Path $parent 'result.json')
 } catch {Write-ToolJson ([pscustomobject]@{Status='Failed';Message=$_.Exception.Message;Time=(Get-Date).ToString('o')}) (Join-Path $parent 'result.json');exit 1}

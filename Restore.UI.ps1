@@ -31,7 +31,7 @@ function Poll-RestoreCenter {
     if ($s.Busy) {
         $r=Get-ToolJobResult $s.Job
         if ($null -ne $r) {
-            $s.Busy=$false;$s.Job.Handled=$true;$w.FindName('CreateRestore').IsEnabled=$true
+            $s.Busy=$false;Complete-ToolJob $s.Job;$w.FindName('CreateRestore').IsEnabled=$true
             if ($r.Status -eq 'Completed') {
                 $w.FindName('RestoreOperation').Text=if ($r.Mode -eq 'Simulation') {'MÔ PHỎNG — đã thử quy trình; không tạo mốc thật.'} else {'Đã tạo mốc khôi phục và kiểm tra mốc mới trong Windows.'}
                 Read-RestorePoints

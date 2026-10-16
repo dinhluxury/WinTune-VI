@@ -6,7 +6,7 @@ function Check([bool]$Ok,[string]$Name) {if (-not $Ok) {throw "WIZTREE LAUNCH FA
 function Reject([scriptblock]$Work,[string]$Name) {$failed=$false;try {& $Work | Out-Null} catch {$failed=$true};Check $failed $Name}
 $root=Join-Path $PSScriptRoot ('.test-runs/wiztree-direct-'+[guid]::NewGuid().ToString('N'));$user=[Security.Principal.WindowsIdentity]::GetCurrent().User.Value
 Initialize-Tools $root $true $user;$script:ToolJob=$null;$script:IsSimulation=$true;$script:WriteBlocked=$false
-function Run([bool]$Confirmed) {$job=Start-ToolJob 'wiztreeopen' ([pscustomobject]@{}) $Confirmed;if (-not $job.Process.WaitForExit(15000)) {throw 'Simulation worker timeout'};return (Get-ToolJobResult $job)}
+function Run([bool]$Confirmed) {$job=Start-ToolJob 'wiztreeopen' ([pscustomobject]@{}) $Confirmed;if (-not $job.Process.WaitForExit(15000)) {throw 'Simulation worker timeout'};$result=Get-ToolJobResult $job;Complete-ToolJob $job;return $result}
 $r=Run $false;Check ($r.Status -eq 'Failed' -and -not (Get-WizTreeInstallation).Installed) 'Unconfirmed job cannot install or open WizTree'
 $r=Run $true
 Check ($r.Status -eq 'Completed' -and $r.Mode -eq 'Simulation' -and $r.Result.Installed -and $r.Result.Drive -eq 'C:' -and $r.Result.ScanMode -eq 'DirectDrive') 'One confirmed job prepares the real C drive rather than a CSV import'
@@ -16,7 +16,7 @@ $receipt=Get-Item -LiteralPath (Join-Path $ToolRoot 'simulation-wiztree.json');$
 $r=Run $true
 Check ($r.Status -eq 'Completed' -and (Get-Item -LiteralPath $receipt.FullName).LastWriteTimeUtc -eq $installedWhen) 'Subsequent opening reuses the installed WizTree'
 $job=Start-ToolJob 'wiztreeopen' ([pscustomobject]@{MockDelayMs=1200}) $true
-[IO.File]::WriteAllText((Join-Path $job.Path 'cancel.open'),'cancel');$null=$job.Process.WaitForExit(15000);$r=Get-ToolJobResult $job
+[IO.File]::WriteAllText((Join-Path $job.Path 'cancel.open'),'cancel');$null=$job.Process.WaitForExit(15000);$r=Get-ToolJobResult $job;Complete-ToolJob $job
 Check ($r.Status -eq 'Failed' -and $r.Message.Contains('hủy')) 'Cancellation before handoff starts no WizTree process'
 $arguments=@(Get-WizTreeLaunchArguments 'c:')
 Check ($arguments.Count -eq 2 -and $arguments[0] -ceq 'C:' -and $arguments[1] -eq '/admin=1' -and -not (($arguments -join ' ') -match 'csv|export')) 'Launch arguments name the actual drive with native admin scanning and no export switch'

@@ -33,4 +33,14 @@ Assert-UI ($null -ne $result -and $result.Status -eq 'Completed' -and $result.Mo
 Assert-UI ($result.Result.Mode -eq 'MÔ PHỎNG') 'Worker never labels fake hardware as real Windows measurements'
 $ToolJob.Handled=$false;Poll-ToolsJob
 Assert-UI ($ToolJob.Handled -and $tw.FindName('RunTool').IsEnabled -and $tw.FindName('ToolOutput').Text.Contains('MÔ PHỎNG')) 'Completed job updates result and reenables controls'
+$tw.FindName('ToolList').SelectedIndex=-1;$tw.FindName('ToolList').SelectedIndex=0
+Assert-UI ($tw.FindName('RunTool').IsEnabled) 'Changing tool details after completion does not access a disposed Process'
+$savedToolResultReader=${function:Get-ToolJobResult}
+$fakeCompleted=[pscustomobject]@{HasExited=$true};$fakeCompleted|Add-Member ScriptMethod Dispose {}
+$script:ToolJob=[pscustomobject]@{Id='wingetinstall';Process=$fakeCompleted;Handled=$false;Started=Get-Date}
+try {
+ function Get-ToolJobResult($Job) {return [pscustomobject]@{Status='Completed';Id='wingetinstall';Mode='Simulation';Message='fixture';RestartRequired=$true;Result=[pscustomobject]@{ExitCode=0;Output='fixture';Rows=@([pscustomobject]@{Id='7zip.7zip';State='Completed'})}}}
+ Poll-ToolsJob
+ Assert-UI ($tw.FindName('ToolStatus').Text.Contains('yêu cầu khởi động lại') -and $ToolJob.Handled) 'Install summary preserves restart guidance instead of overwriting the worker warning'
+} finally {Set-Item Function:Get-ToolJobResult $savedToolResultReader}
 $tw.Close();$script:ToolsWindow=$null;$script:ToolJob=$null
